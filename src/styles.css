@@ -683,14 +683,17 @@ a {
 
 .site-footer {
   width: 100vw;
-  margin: 40px 0 0 calc(50% - 50vw);
-  padding: 42px 16px;
-  border-top: 1px solid rgba(148, 163, 184, 0.22);
-  background: #111827;
-  color: #9ec4f4;
+  margin: 44px 0 0 calc(50% - 50vw);
+  padding: 30px 16px 34px;
+  border-top: 1px solid rgba(234, 222, 213, 0.92);
+  background:
+    linear-gradient(180deg, rgba(255, 248, 243, 0.62), #fff8f3 42%, #fff3ec 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88);
+  color: var(--muted);
   text-align: center;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
 }
 
 .offer-price {
@@ -855,8 +858,8 @@ a {
   }
 
   .site-footer {
-    margin-top: 28px;
-    padding: 34px 14px;
-    font-size: 15px;
+    margin-top: 30px;
+    padding: 26px 14px 30px;
+    font-size: 13px;
   }
 }
