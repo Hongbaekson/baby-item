@@ -32,9 +32,15 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
   background:
     linear-gradient(180deg, rgba(255, 232, 168, 0.32), rgba(255, 248, 243, 0) 360px),
     #fff8f3;
+}
+
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 button,
@@ -73,6 +79,10 @@ a {
   min-width: 0;
 }
 
+.brand-block > div {
+  min-width: 0;
+}
+
 .brand-mark {
   display: inline-flex;
   width: 52px;
@@ -92,6 +102,7 @@ a {
   color: var(--ink);
   font-size: 30px;
   line-height: 1.15;
+  overflow-wrap: break-word;
 }
 
 .brand-block p {
@@ -99,6 +110,7 @@ a {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.45;
+  overflow-wrap: break-word;
 }
 
 .summary-strip {
@@ -245,13 +257,25 @@ a {
   line-height: 1.2;
 }
 
-.affiliate-note {
+.notice-stack {
   max-width: 430px;
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.affiliate-note,
+.price-note {
   margin: 0;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.5;
   text-align: right;
+  overflow-wrap: break-word;
+}
+
+.price-note {
+  color: #936b39;
 }
 
 .product-grid {
@@ -290,7 +314,7 @@ a {
 
 .card-meta {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 8px;
 }
@@ -325,6 +349,11 @@ a {
 .price-pill {
   background: #fff;
   color: var(--ink);
+  justify-content: center;
+  max-width: 148px;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.2;
 }
 
 .product-card h3 {
@@ -363,6 +392,14 @@ a {
   line-height: 1.5;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+.reference-price {
+  margin: 8px 0 0;
+  color: #936b39;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.45;
 }
 
 .issue-row {
@@ -513,6 +550,14 @@ a {
   font-weight: 900;
 }
 
+.modal-reference-price {
+  margin: -6px 0 14px;
+  color: #936b39;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 .category-list.expanded {
   margin-bottom: 14px;
 }
@@ -609,7 +654,12 @@ a {
     justify-content: flex-start;
   }
 
-  .affiliate-note {
+  .notice-stack {
+    max-width: none;
+  }
+
+  .affiliate-note,
+  .price-note {
     text-align: left;
   }
 
@@ -624,7 +674,7 @@ a {
 
 @media (max-width: 620px) {
   .app-shell {
-    width: min(100% - 20px, 1180px);
+    width: min(calc(100% - 20px), 1180px);
     padding-top: 12px;
   }
 
@@ -632,8 +682,14 @@ a {
     align-items: flex-start;
   }
 
+  .brand-mark {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+
   .brand-block h1 {
-    font-size: 25px;
+    font-size: 22px;
   }
 
   .brand-block p {
@@ -645,12 +701,31 @@ a {
     justify-content: center;
   }
 
+  .summary-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .summary-strip span {
+    min-width: 0;
+    padding: 8px 7px;
+  }
+
   .toolbar {
     padding-top: 8px;
   }
 
   .product-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card-meta {
+    gap: 6px;
+  }
+
+  .price-pill {
+    max-width: 132px;
   }
 
   .result-heading h2 {

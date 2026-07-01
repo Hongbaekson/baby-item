@@ -10,7 +10,7 @@
 - 인스턴스 표시 이름: `prod-app-01`
 - VM private IP: `10.0.0.44`
 - 배포 경로: `/opt/stacks/euni-baby-items`
-- Git commit: `a29a1ea`
+- Git commit: 서버에서 `git rev-parse --short HEAD`로 확인
 - 컨테이너명: `euni-baby-items-web`
 - 공개 주소: `http://134.185.110.26:1206`
 - 앱 포트 설정: `APP_PORT=1206`
@@ -29,6 +29,9 @@
 - 외부 PC에서 public IP HTTP 200 확인 완료
 - HTTP public IP 배포 기준에 맞게 CSP에서 `upgrade-insecure-requests` 제거 완료
 - headless Chrome 기준 React 렌더링 DOM 확인 완료
+- 브랜드명 `이은이 아빠가 준비하는 육아템` 반영 준비 완료
+- 소셜 미리보기 이미지 `/site-preview.png` 반영 준비 완료
+- 가격 표시는 구매처 최신가 확인 CTA와 기록가로 분리 준비 완료
 
 서버 내부 검증:
 
@@ -48,7 +51,7 @@ curl -I http://10.0.0.44:1206
 - `http://134.185.110.26:1206` HTTP 200
 - HTML title/description과 asset 경로 확인 완료
 - Nginx 보안 헤더 적용 확인
-- 실제 브라우저 렌더링 후 `이은이 육아템`, 제품 목록, 카테고리 필터 노출 확인 완료
+- 실제 브라우저 렌더링 후 `이은이 아빠가 준비하는 육아템`, 제품 목록, 카테고리 필터 노출 확인 완료
 
 ## 남은 작업
 

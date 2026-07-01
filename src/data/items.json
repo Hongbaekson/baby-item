@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-07-01T00:36:46.867Z",
+  "generatedAt": "2026-07-01T02:03:34.245Z",
   "site": {
-    "name": "이은이 육아템",
-    "affiliateDisclosure": "이 페이지의 일부 링크는 제휴 링크이며, 구매 시 일정액의 수수료를 제공받을 수 있습니다."
+    "name": "이은이 아빠가 준비하는 육아템",
+    "affiliateDisclosure": "이 페이지의 일부 링크는 제휴 링크이며, 구매 시 일정액의 수수료를 제공받을 수 있습니다.",
+    "priceDisclosure": "가격과 품절 상태는 구매처에서 수시로 바뀔 수 있습니다. 결제 전 구매처에서 최신가와 재고를 확인하세요."
   },
   "summary": {
     "totalItems": 37,
@@ -71,7 +72,8 @@
       ],
       "price": 37900,
       "priceText": "37900",
-      "displayPrice": "37,900원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 37,900원",
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -110,7 +112,8 @@
       ],
       "price": 69520,
       "priceText": "69520",
-      "displayPrice": "69,520원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 69,520원",
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -144,7 +147,8 @@
       ],
       "price": 95000,
       "priceText": "95000",
-      "displayPrice": "95,000원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 95,000원",
       "memo": "-> 물을 100도까지 끓여 염소를 제거한 후 아기의 분유를 타기 좋은 온도인 43도로 물온도를 맞춰줌\n\n-> 분유 탈때마다 물을 끓이고 식히면 너무 힘드니 필요",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -178,7 +182,8 @@
       ],
       "price": 109800,
       "priceText": "109800",
-      "displayPrice": "109,800원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 109,800원",
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -217,7 +222,8 @@
       ],
       "price": 340920,
       "priceText": "340920",
-      "displayPrice": "340,920원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 340,920원",
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -256,7 +262,8 @@
       ],
       "price": 72900,
       "priceText": "72900",
-      "displayPrice": "72,900원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 72,900원",
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -295,7 +302,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/mat.svg",
       "hasOriginalImage": true,
@@ -308,7 +316,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -333,7 +341,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -346,7 +355,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -378,7 +387,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -391,7 +401,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -418,7 +428,8 @@
       ],
       "price": 8010,
       "priceText": "8010",
-      "displayPrice": "8,010원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 8,010원",
       "memo": "",
       "imagePath": "/images/placeholders/diaper.svg",
       "hasOriginalImage": false,
@@ -456,7 +467,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -469,7 +481,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -494,7 +506,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -507,7 +520,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -532,7 +545,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -545,7 +559,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -570,7 +584,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -583,7 +598,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -608,7 +623,8 @@
       ],
       "price": 18900,
       "priceText": "18900",
-      "displayPrice": "18,900원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 18,900원",
       "memo": "",
       "imagePath": "/images/placeholders/sleep.svg",
       "hasOriginalImage": false,
@@ -646,7 +662,8 @@
       ],
       "price": 42000,
       "priceText": "42000",
-      "displayPrice": "42,000원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 42,000원",
       "memo": "",
       "imagePath": "/images/placeholders/sleep.svg",
       "hasOriginalImage": false,
@@ -684,7 +701,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/colic.svg",
       "hasOriginalImage": true,
@@ -697,7 +715,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -722,7 +740,8 @@
       ],
       "price": 309000,
       "priceText": "309000",
-      "displayPrice": "309,000원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 309,000원",
       "memo": "",
       "imagePath": "/images/placeholders/feeding.svg",
       "hasOriginalImage": false,
@@ -760,7 +779,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -773,7 +793,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -798,7 +818,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -811,7 +832,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -836,7 +857,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -849,7 +871,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -874,7 +896,8 @@
       ],
       "price": 9900,
       "priceText": "9900",
-      "displayPrice": "9,900원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 9,900원",
       "memo": "",
       "imagePath": "/images/placeholders/diaper.svg",
       "hasOriginalImage": false,
@@ -912,7 +935,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -925,7 +949,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -950,7 +974,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/caregiver.svg",
       "hasOriginalImage": true,
@@ -963,7 +988,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -988,7 +1013,8 @@
       ],
       "price": 128000,
       "priceText": "128000",
-      "displayPrice": "128,000원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 128,000원",
       "memo": "",
       "imagePath": "/images/placeholders/play.svg",
       "hasOriginalImage": false,
@@ -1026,7 +1052,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/caregiver.svg",
       "hasOriginalImage": true,
@@ -1039,7 +1066,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -1064,7 +1091,8 @@
       ],
       "price": 69900,
       "priceText": "69900",
-      "displayPrice": "69,900원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 69,900원",
       "memo": "",
       "imagePath": "/images/placeholders/play.svg",
       "hasOriginalImage": false,
@@ -1102,7 +1130,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -1115,7 +1144,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -1140,7 +1169,8 @@
       ],
       "price": 79800,
       "priceText": "79800",
-      "displayPrice": "79,800원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 79,800원",
       "memo": "최근 가격 변동 확인 필요, 인기 선물 아이템",
       "imagePath": "/images/placeholders/play.svg",
       "hasOriginalImage": false,
@@ -1183,7 +1213,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -1196,7 +1227,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -1221,7 +1252,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -1234,7 +1266,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -1259,7 +1291,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -1272,7 +1305,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -1297,7 +1330,8 @@
       ],
       "price": 87200,
       "priceText": "87200",
-      "displayPrice": "87,200원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 87,200원",
       "memo": "",
       "imagePath": "/images/placeholders/diaper.svg",
       "hasOriginalImage": false,
@@ -1335,7 +1369,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -1348,7 +1383,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -1373,7 +1408,8 @@
       ],
       "price": 11900,
       "priceText": "11900",
-      "displayPrice": "11,900원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 11,900원",
       "memo": "",
       "imagePath": "/images/placeholders/sleep.svg",
       "hasOriginalImage": false,
@@ -1411,7 +1447,8 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "가격 확인 필요",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -1424,7 +1461,7 @@
           {
             "code": "missing_price",
             "severity": "warning",
-            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
           }
         ]
       },
@@ -1449,7 +1486,8 @@
       ],
       "price": 252200,
       "priceText": "252200",
-      "displayPrice": "252,200원",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 252,200원",
       "memo": "인기 있는 무선 이어폰, 블랙 프라이데이 할인 예정",
       "imagePath": "/images/placeholders/sleep.svg",
       "hasOriginalImage": false,

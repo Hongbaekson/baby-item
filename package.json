@@ -9,6 +9,7 @@
     "preview": "vite preview --host 0.0.0.0",
     "serve:dist": "node ./scripts/serve-dist.mjs",
     "data:check": "node ./scripts/check-app-data.mjs",
+    "price:check-readiness": "node ./scripts/check-price-sync-readiness.mjs",
     "data:extract": "node ./scripts/extract-notion-items.mjs",
     "data:normalize": "node ./scripts/normalize-items.mjs && node ./scripts/build-canonical-items.mjs && node ./scripts/normalize-links.mjs && node ./scripts/apply-data-quality.mjs && node ./scripts/build-app-data.mjs"
   },

@@ -4,6 +4,8 @@ import path from "node:path";
 const QUALITY_INPUT_PATH = path.join("data", "items.quality.json");
 const APP_DATA_OUTPUT_PATH = path.join("src", "data", "items.json");
 const DATA_REPORT_OUTPUT_PATH = path.join("data", "data-quality-report.json");
+const SITE_NAME = "이은이 아빠가 준비하는 육아템";
+const PRICE_CTA = "구매처에서 최신가 확인";
 
 const CATEGORY_PLACEHOLDERS = new Map([
   ["👶300일간 매일 사용한 육아템 정리", "top-used"],
@@ -19,11 +21,15 @@ const CATEGORY_PLACEHOLDERS = new Map([
 ]);
 
 function getDisplayPrice(item) {
+  return PRICE_CTA;
+}
+
+function getReferencePrice(item) {
   if (item.price === null) {
-    return "가격 확인 필요";
+    return null;
   }
 
-  return `${item.price.toLocaleString("ko-KR")}원`;
+  return `기록가 ${item.price.toLocaleString("ko-KR")}원`;
 }
 
 function getImagePath(item) {
@@ -47,6 +53,7 @@ function toAppItem(item) {
     price: item.price,
     priceText: item.priceText,
     displayPrice: getDisplayPrice(item),
+    referencePrice: getReferencePrice(item),
     memo: item.memo,
     imagePath: getImagePath(item),
     hasOriginalImage: item.image?.hasImage ?? false,
@@ -104,9 +111,11 @@ async function main() {
   const appData = {
     generatedAt: new Date().toISOString(),
     site: {
-      name: "이은이 육아템",
+      name: SITE_NAME,
       affiliateDisclosure:
         "이 페이지의 일부 링크는 제휴 링크이며, 구매 시 일정액의 수수료를 제공받을 수 있습니다.",
+      priceDisclosure:
+        "가격과 품절 상태는 구매처에서 수시로 바뀔 수 있습니다. 결제 전 구매처에서 최신가와 재고를 확인하세요.",
     },
     summary: {
       totalItems: appItems.length,

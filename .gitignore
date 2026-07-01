@@ -11,3 +11,5 @@ dist/
 vite.config.js
 vite.config.d.ts
 data/items.*.json
+data/prices.*.json
+data/price-candidates*.json

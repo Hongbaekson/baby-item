@@ -90,7 +90,7 @@ function collectItemIssues(item) {
 
   if (item.price === null) {
     issues.push(
-      createIssue("missing_price", "warning", "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."),
+      createIssue("missing_price", "warning", "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."),
     );
   }
 

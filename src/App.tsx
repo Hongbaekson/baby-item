@@ -27,6 +27,7 @@ type Item = {
   }>;
   price: number | null;
   displayPrice: string;
+  referencePrice: string | null;
   memo: string;
   imagePath: string;
   hasOriginalImage: boolean;
@@ -46,6 +47,7 @@ const data = appData as {
   site: {
     name: string;
     affiliateDisclosure: string;
+    priceDisclosure: string;
   };
   summary: {
     totalItems: number;
@@ -102,7 +104,7 @@ function qualityLabel(status: QualityStatus) {
 }
 
 function issueLabel(code: string) {
-  if (code === "missing_price") return "가격 확인 필요";
+  if (code === "missing_price") return "기록가 없음";
   if (code === "missing_image") return "기본 이미지 사용";
   if (code === "suspicious_unrelated_memo") return "메모 확인 필요";
   if (code === "normalized_partner_link") return "링크 보정됨";
@@ -153,7 +155,7 @@ export function App() {
           </span>
           <div>
             <h1>{data.site.name}</h1>
-            <p>수유, 수면, 외출, 배변까지 한눈에 보는 파스텔 육아템 보드</p>
+            <p>아빠가 직접 고르고 정리한 수유, 수면, 외출, 배변 육아템</p>
           </div>
         </div>
         <div className="summary-strip" aria-label="제품 요약">
@@ -217,7 +219,10 @@ export function App() {
             </p>
             <h2>{filteredItems.length}개의 육아템</h2>
           </div>
-          <p className="affiliate-note">{data.site.affiliateDisclosure}</p>
+          <div className="notice-stack">
+            <p className="affiliate-note">{data.site.affiliateDisclosure}</p>
+            <p className="price-note">{data.site.priceDisclosure}</p>
+          </div>
         </section>
 
         <section className="product-grid" aria-label="제품 목록">
@@ -278,6 +283,9 @@ function ProductCard({
           ))}
         </div>
         {item.memo && <p className="memo">{item.memo}</p>}
+        {item.referencePrice && (
+          <p className="reference-price">{item.referencePrice} · 실제 결제가는 구매처 기준</p>
+        )}
         {warningIssues.length > 0 && (
           <div className="issue-row" aria-label="확인 상태">
             {warningIssues.slice(0, 2).map((issue) => (
@@ -335,6 +343,11 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
           </span>
           <h2 id="modal-title">{item.title}</h2>
           <p className="modal-price">{item.displayPrice}</p>
+          {item.referencePrice && (
+            <p className="modal-reference-price">
+              {item.referencePrice} · 실제 결제가는 구매처에서 확인하세요.
+            </p>
+          )}
           <div className="category-list expanded">
             {item.categories.map((category) => (
               <span key={category}>{category}</span>
@@ -350,7 +363,8 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
             </div>
           )}
           <p className="link-security-note">
-            외부 구매 링크는 새 창으로 열립니다. 결제 전 연결 도메인을 확인하세요.
+            외부 구매 링크는 새 창으로 열립니다. 결제 전 연결 도메인, 최신가, 품절 여부를
+            확인하세요.
           </p>
           <div className="link-list">
             {item.partnerLinks.map((link, index) => (
@@ -372,6 +386,7 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
             ))}
           </div>
           <p className="modal-disclosure">{data.site.affiliateDisclosure}</p>
+          <p className="modal-disclosure">{data.site.priceDisclosure}</p>
         </div>
       </section>
     </div>
