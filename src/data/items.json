@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-07-01T13:43:31.746Z",
+  "generatedAt": "2026-07-01T14:06:58.926Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템"
   },
   "summary": {
-    "totalItems": 24,
+    "totalItems": 31,
     "categories": [
       {
         "name": "👶300일간 매일 사용한 육아템 정리",
-        "count": 4
+        "count": 5
       },
       {
         "name": "💤수면 아이템",
@@ -16,7 +16,7 @@
       },
       {
         "name": "💩배변아이템",
-        "count": 2
+        "count": 4
       },
       {
         "name": "🍼수유아이템",
@@ -32,7 +32,7 @@
       },
       {
         "name": "😎외출 아이템",
-        "count": 1
+        "count": 2
       },
       {
         "name": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
@@ -44,10 +44,10 @@
       },
       {
         "name": "🧼목욕/세탁 아이템",
-        "count": 3
+        "count": 6
       }
     ],
-    "readyItems": 13,
+    "readyItems": 20,
     "usableWithWarningsItems": 11,
     "needsReviewItems": 0
   },
@@ -1887,135 +1887,6 @@
       }
     },
     {
-      "id": "item-db73a1a6e6",
-      "title": "휴비딕 온습도계",
-      "categories": [
-        "💤수면 아이템"
-      ],
-      "primaryCategory": "💤수면 아이템",
-      "partnerLink": "https://link.coupang.com/a/cHXYP2",
-      "partnerLinks": [
-        {
-          "url": "https://link.coupang.com/a/cHXYP2",
-          "category": "💤수면 아이템",
-          "sourceItemId": "248b4abb-08ed-8057-a37f-f09b818c83a2"
-        }
-      ],
-      "price": 11900,
-      "priceText": "11900",
-      "displayPrice": "최저가 6,570원부터",
-      "referencePrice": "기록가 11,900원",
-      "bestOffer": {
-        "url": "https://link.auction.co.kr/gate/pcs?item-no=F556902126&sub-id=1&service-code=10000003",
-        "platform": "naver",
-        "mallName": "옥션",
-        "price": 6570,
-        "shippingFee": null,
-        "totalPrice": null,
-        "priceBasis": "listed_price",
-        "inStock": true,
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T04:53:49.168Z",
-        "matchConfidence": "high",
-        "productName": "MONGF 테이블 온습도계 온도측정기 온도계습도계 휴비딕온습도계 출산용품",
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_5997138/59971382730.jpg",
-        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-      },
-      "purchaseOffers": [
-        {
-          "url": "https://link.auction.co.kr/gate/pcs?item-no=F556902126&sub-id=1&service-code=10000003",
-          "platform": "naver",
-          "mallName": "옥션",
-          "price": 6570,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:49.168Z",
-          "matchConfidence": "high",
-          "productName": "MONGF 테이블 온습도계 온도측정기 온도계습도계 휴비딕온습도계 출산용품",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5997138/59971382730.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://link.auction.co.kr/gate/pcs?item-no=F549154442&sub-id=1&service-code=10000003",
-          "platform": "naver",
-          "mallName": "옥션",
-          "price": 6730,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:49.168Z",
-          "matchConfidence": "high",
-          "productName": "나으리네 디지털 온습도계 실내온습도계 온도습도계 휴비딕온습도계 디지털온도계",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5984432/59844329473.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://search.shopping.naver.com/catalog/60325168031",
-          "platform": "naver",
-          "mallName": "네이버",
-          "price": 7900,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:49.168Z",
-          "matchConfidence": "high",
-          "productName": "휴비딕 디지털 미니 온습도계 HT-7 mini",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6032516/60325168031.20260619163618.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://smartstore.naver.com/main/products/9946344496",
-          "platform": "naver",
-          "mallName": "휴비딕",
-          "price": 7900,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:49.168Z",
-          "matchConfidence": "high",
-          "productName": "휴비딕 디지털 온습도계 HT-7 mini",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_8749084/87490846769.2.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        }
-      ],
-      "offerStatus": {
-        "state": "available",
-        "syncedAt": "2026-07-01T04:53:49.168Z",
-        "checkedOffers": 10
-      },
-      "memo": "",
-      "imagePath": "https://shopping-phinf.pstatic.net/main_8984064/89840644739.jpg",
-      "hasOriginalImage": true,
-      "placeholderKey": "sleep",
-      "dataQuality": {
-        "status": "ready",
-        "errorCount": 0,
-        "warningCount": 0,
-        "issues": []
-      },
-      "sourceItemIds": [
-        "248b4abb-08ed-8057-a37f-f09b818c83a2"
-      ],
-      "imageSource": {
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_8984064/89840644739.jpg",
-        "matchConfidence": "high",
-        "platform": "naver",
-        "mallName": "섬세한잡화점",
-        "productName": "따뜻한잡화점 온도계 습도계 화이트 휴비딕 온습도계 온도습도계 온습도계",
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T04:53:49.168Z"
-      }
-    },
-    {
       "id": "item-7993572892",
       "title": "FRANKLIIN 바스 앤 샴푸, 500ml, 1개",
       "categories": [
@@ -2862,6 +2733,750 @@
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T13:43:31.746Z"
       }
+    },
+    {
+      "id": "item-57429157998",
+      "title": "말랑하니 터치형 백라이트 온습도계",
+      "categories": [
+        "💤수면 아이템"
+      ],
+      "primaryCategory": "💤수면 아이템",
+      "partnerLink": "https://search.shopping.naver.com/catalog/57429157998",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/57429157998",
+          "category": "💤수면 아이템",
+          "sourceItemId": "57429157998"
+        }
+      ],
+      "price": 19900,
+      "priceText": "19900",
+      "displayPrice": "최저가 15,900원부터",
+      "referencePrice": "기록가 19,900원",
+      "bestOffer": {
+        "url": "https://malanghoney.com/product/detail.html?product_no=895&cate_no=271&display_group=1&utm_source=naver&utm_medium=shopping&utm_campaign=knowledge_shopping&mkt_in=Y&ghost_mall_id=naver&ref=naver_open",
+        "platform": "naver",
+        "mallName": "말랑하니",
+        "price": 15900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "matchConfidence": "high",
+        "productName": "백라이트 온습도계",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4465722/44657220037.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://malanghoney.com/product/detail.html?product_no=895&cate_no=271&display_group=1&utm_source=naver&utm_medium=shopping&utm_campaign=knowledge_shopping&mkt_in=Y&ghost_mall_id=naver&ref=naver_open",
+          "platform": "naver",
+          "mallName": "말랑하니",
+          "price": 15900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "백라이트 온습도계",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4465722/44657220037.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/57429157998",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 19900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "말랑하니 터치형 백라이트 온습도계",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5742915/57429157998.20251029102338.jpg",
+          "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "checkedOffers": 2
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_5742915/57429157998.20251029102338.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sleep",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "57429157998"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4465722/44657220037.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "말랑하니",
+        "productName": "백라이트 온습도계",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z"
+      }
+    },
+    {
+      "id": "item-9157246424",
+      "title": "BRAUN 브라운체온계 브라운 귀체온계 IRT-6525",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://www.coupang.com/vp/products/9157246424?itemId=26948035575&vendorItemId=88164930006",
+      "partnerLinks": [
+        {
+          "url": "https://www.coupang.com/vp/products/9157246424?itemId=26948035575&vendorItemId=88164930006",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "9157246424"
+        }
+      ],
+      "price": 93000,
+      "priceText": "93000",
+      "displayPrice": "최저가 93,000원부터",
+      "referencePrice": "기록가 93,000원",
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/49053070470",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 93000,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "matchConfidence": "high",
+        "productName": "BRAUN 브라운체온계 브라운 귀체온계 IRT-6525",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4905307/49053070470.20260608102904.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/49053070470",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 93000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "BRAUN 브라운체온계 브라운 귀체온계 IRT-6525",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4905307/49053070470.20260608102904.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11314499777",
+          "platform": "naver",
+          "mallName": "브라운 브랜드몰",
+          "price": 99000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "브라운 체온계 IRT6525KO 아기 신생아 귀 체온계 야간모드",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8885901/88859010108.14.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "checkedOffers": 2
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_4905307/49053070470.20260608102904.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "9157246424"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4905307/49053070470.20260608102904.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "네이버",
+        "productName": "BRAUN 브라운체온계 브라운 귀체온계 IRT-6525",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z"
+      }
+    },
+    {
+      "id": "item-3962205",
+      "title": "[밤부베베] 시그니처 거즈손수건_퓨어 10장",
+      "categories": [
+        "🧼목욕/세탁 아이템"
+      ],
+      "primaryCategory": "🧼목욕/세탁 아이템",
+      "partnerLink": "https://www.29cm.co.kr/products/3962205",
+      "partnerLinks": [
+        {
+          "url": "https://www.29cm.co.kr/products/3962205",
+          "category": "🧼목욕/세탁 아이템",
+          "sourceItemId": "3962205"
+        }
+      ],
+      "price": 22500,
+      "priceText": "22500",
+      "displayPrice": "최저가 17,000원부터",
+      "referencePrice": "기록가 22,500원",
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/56665043160",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 17000,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "matchConfidence": "high",
+        "productName": "더밤부 밤부베베 시그니처 거즈손수건 퓨어, 10장",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5666504/56665043160.20250910094106.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/56665043160",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 17000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "더밤부 밤부베베 시그니처 거즈손수건 퓨어, 10장",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5666504/56665043160.20250910094106.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/5915002180",
+          "platform": "naver",
+          "mallName": "밤부베베",
+          "price": 17000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "[밤부베베] 시그니처 거즈손수건_퓨어 10장",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8345950/83459501668.2.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://product.29cm.co.kr/catalog/3962205?BSCCN1=3962205&BSCPN=CMCOM&utm_campaign=conversion_navershopping&utm_source=growth_naver&utm_term=3962205&naver_code=naver_ep&utm_content=conversion_navershopping&BSPRG=NAVERSH&utm_medium=display",
+          "platform": "naver",
+          "mallName": "29CM",
+          "price": 22500,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "[밤부베베] 시그니처 거즈손수건_퓨어 10장",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6049231/60492318718.jpg",
+          "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "checkedOffers": 3
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_6049231/60492318718.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "default",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "3962205"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5666504/56665043160.20250910094106.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "네이버",
+        "productName": "더밤부 밤부베베 시그니처 거즈손수건 퓨어, 10장",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z"
+      }
+    },
+    {
+      "id": "item-100700814",
+      "title": "매직캔 히포21L 휴지통 냄새차단 인테리어 페달 무소음",
+      "categories": [
+        "💩배변아이템"
+      ],
+      "primaryCategory": "💩배변아이템",
+      "partnerLink": "https://smartstore.naver.com/magikan/products/100700814",
+      "partnerLinks": [
+        {
+          "url": "https://smartstore.naver.com/magikan/products/100700814",
+          "category": "💩배변아이템",
+          "sourceItemId": "100700814"
+        }
+      ],
+      "price": 56900,
+      "priceText": "56900",
+      "displayPrice": "최저가 56,900원부터",
+      "referencePrice": "기록가 56,900원",
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/magikan/products/100700814",
+        "platform": "naver",
+        "mallName": "매직몰",
+        "price": 56900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "manual-reviewed",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "matchConfidence": "high",
+        "productName": "매직캔 히포21L 휴지통 냄새차단 인테리어 페달 무소음",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6236323/6236323437.24.jpg",
+        "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/magikan/products/100700814",
+          "platform": "naver",
+          "mallName": "매직몰",
+          "price": 56900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "매직캔 히포21L 휴지통 냄새차단 인테리어 페달 무소음",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6236323/6236323437.24.jpg",
+          "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "checkedOffers": 1
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_6236323/6236323437.24.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "diaper",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "100700814"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6236323/6236323437.24.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "매직몰",
+        "productName": "매직캔 히포21L 휴지통 냄새차단 인테리어 페달 무소음",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z"
+      }
+    },
+    {
+      "id": "item-13303567063",
+      "title": "대림바스 세면대 세면기 필터 워터탭 아기비데 양치수전 수도꼭지 토수구 교체",
+      "categories": [
+        "💩배변아이템"
+      ],
+      "primaryCategory": "💩배변아이템",
+      "partnerLink": "https://smartstore.naver.com/kimsa0408/products/13303567063",
+      "partnerLinks": [
+        {
+          "url": "https://smartstore.naver.com/kimsa0408/products/13303567063",
+          "category": "💩배변아이템",
+          "sourceItemId": "13303567063"
+        }
+      ],
+      "price": 34000,
+      "priceText": "34000",
+      "displayPrice": "최저가 34,000원부터",
+      "referencePrice": "기록가 34,000원",
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/kimsa0408/products/13303567063",
+        "platform": "naver",
+        "mallName": "선진수도",
+        "price": 34000,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "manual-reviewed",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "matchConfidence": "high",
+        "productName": "대림바스 세면대 세면기 필터 워터탭 아기비데 양치수전 수도꼭지 토수구 교체",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9084807/90848077395.jpg",
+        "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/kimsa0408/products/13303567063",
+          "platform": "naver",
+          "mallName": "선진수도",
+          "price": 34000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "대림바스 세면대 세면기 필터 워터탭 아기비데 양치수전 수도꼭지 토수구 교체",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9084807/90848077395.jpg",
+          "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "checkedOffers": 1
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_9084807/90848077395.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "diaper",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "13303567063"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9084807/90848077395.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "선진수도",
+        "productName": "대림바스 세면대 세면기 필터 워터탭 아기비데 양치수전 수도꼭지 토수구 교체",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z"
+      }
+    },
+    {
+      "id": "item-10126755890",
+      "title": "단독/아텍스 한방에착 접이식 조립없는 미니 양말 빨래건조대 속옷건조대 원룸형",
+      "categories": [
+        "🧼목욕/세탁 아이템"
+      ],
+      "primaryCategory": "🧼목욕/세탁 아이템",
+      "partnerLink": "https://brand.naver.com/artex/products/10126755890",
+      "partnerLinks": [
+        {
+          "url": "https://brand.naver.com/artex/products/10126755890",
+          "category": "🧼목욕/세탁 아이템",
+          "sourceItemId": "10126755890"
+        }
+      ],
+      "price": 26000,
+      "priceText": "26000",
+      "displayPrice": "최저가 25,420원부터",
+      "referencePrice": "기록가 26,000원",
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/47220623461",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 25420,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "matchConfidence": "high",
+        "productName": "ARTEX 아텍스 한방에착 미니 빨래건조대",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4722062/47220623461.20260621070811.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/47220623461",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 25420,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "ARTEX 아텍스 한방에착 미니 빨래건조대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4722062/47220623461.20260621070811.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://brand.naver.com/artex/products/10126755890",
+          "platform": "naver",
+          "mallName": "아텍스 직영몰",
+          "price": 26000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "단독/아텍스 한방에착 접이식 조립없는 미니 양말 빨래건조대 속옷건조대 원룸형",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8767125/87671258820.4.jpg",
+          "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "checkedOffers": 2
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8767125/87671258820.4.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "default",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "10126755890"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4722062/47220623461.20260621070811.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "네이버",
+        "productName": "ARTEX 아텍스 한방에착 미니 빨래건조대",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z"
+      }
+    },
+    {
+      "id": "item-13059044648",
+      "title": "[컨디션A 대여]NEW 싸이벡스 클라우드티 i-Size 신생아 바구니 카시트 7일대여 렌탈",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://smartstore.naver.com/littlebaby/products/13059044648",
+      "partnerLinks": [
+        {
+          "url": "https://smartstore.naver.com/littlebaby/products/13059044648",
+          "category": "😎외출 아이템",
+          "sourceItemId": "13059044648"
+        }
+      ],
+      "price": 45000,
+      "priceText": "45000",
+      "displayPrice": "최저가 45,000원부터",
+      "referencePrice": "기록가 45,000원",
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/littlebaby/products/13059044648",
+        "platform": "naver",
+        "mallName": "리틀베이비",
+        "price": 45000,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "manual-reviewed",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "matchConfidence": "high",
+        "productName": "[컨디션A 대여]NEW 싸이벡스 클라우드티 i-Size 신생아 바구니 카시트 7일대여 렌탈",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9060355/90603555740.6.jpg",
+        "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/littlebaby/products/13059044648",
+          "platform": "naver",
+          "mallName": "리틀베이비",
+          "price": 45000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "[컨디션A 대여]NEW 싸이벡스 클라우드티 i-Size 신생아 바구니 카시트 7일대여 렌탈",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9060355/90603555740.6.jpg",
+          "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "checkedOffers": 1
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_9060355/90603555740.6.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "13059044648"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9060355/90603555740.6.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "리틀베이비",
+        "productName": "[컨디션A 대여]NEW 싸이벡스 클라우드티 i-Size 신생아 바구니 카시트 7일대여 렌탈",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z"
+      }
+    },
+    {
+      "id": "item-4422933574",
+      "title": "코코베베 3+1 밤부 아기목욕타올 360g",
+      "categories": [
+        "🧼목욕/세탁 아이템"
+      ],
+      "primaryCategory": "🧼목욕/세탁 아이템",
+      "partnerLink": "https://smartstore.naver.com/cocobebe__towel/products/4422933574",
+      "partnerLinks": [
+        {
+          "url": "https://smartstore.naver.com/cocobebe__towel/products/4422933574",
+          "category": "🧼목욕/세탁 아이템",
+          "sourceItemId": "4422933574"
+        }
+      ],
+      "price": 11900,
+      "priceText": "11900",
+      "displayPrice": "최저가 11,900원부터",
+      "referencePrice": "기록가 11,900원",
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/cocobebe__towel/products/4422933574",
+        "platform": "naver",
+        "mallName": "코코베베 타올",
+        "price": 11900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "manual-reviewed",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "matchConfidence": "high",
+        "productName": "코코베베 3+1 밤부 아기목욕타올 360g",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8196745/81967456127.16.jpg",
+        "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/cocobebe__towel/products/4422933574",
+          "platform": "naver",
+          "mallName": "코코베베 타올",
+          "price": 11900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "코코베베 3+1 밤부 아기목욕타올 360g",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8196745/81967456127.16.jpg",
+          "note": "사용자가 전달한 상품 URL과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/60357032298",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 11900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T14:06:58.926Z",
+          "matchConfidence": "high",
+          "productName": "코코베베 3 1 밤부 아기목욕타올 360g",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6035703/60357032298.20260609200949.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T14:06:58.926Z",
+        "checkedOffers": 2
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8196745/81967456127.16.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "default",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "4422933574"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8196745/81967456127.16.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "코코베베 타올",
+        "productName": "코코베베 3+1 밤부 아기목욕타올 360g",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T14:06:58.926Z"
+      }
     }
   ],
   "imageSync": {
@@ -2882,9 +3497,9 @@
     "skipped": 208
   },
   "manualReview": {
-    "appliedAt": "2026-07-01T13:43:31.746Z",
-    "addedItemCount": 1,
-    "deletedItemCount": 0,
-    "note": "사용자 요청으로 벨라쿠진 잼팟 6리터와 유리뚜껑 세트 항목을 추가했습니다."
+    "appliedAt": "2026-07-01T14:06:58.926Z",
+    "addedItemCount": 8,
+    "deletedItemCount": 1,
+    "note": "사용자 요청으로 상품 8개를 추가하고 휴비딕 온습도계를 삭제했습니다."
   }
 }
