@@ -171,10 +171,11 @@ a {
 
 .category-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-top: 12px;
   padding-bottom: 2px;
-  overflow-x: auto;
+  overflow: visible;
 }
 
 .category-chip {
@@ -255,27 +256,6 @@ a {
   margin: 0;
   font-size: 26px;
   line-height: 1.2;
-}
-
-.notice-stack {
-  max-width: 430px;
-  display: grid;
-  gap: 6px;
-  min-width: 0;
-}
-
-.affiliate-note,
-.price-note {
-  margin: 0;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
-  text-align: right;
-  overflow-wrap: break-word;
-}
-
-.price-note {
-  color: #936b39;
 }
 
 .product-grid {
@@ -489,16 +469,6 @@ a {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.5);
   color: var(--muted);
-}
-
-.site-footer {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-top: 24px;
-  padding: 18px 0 0;
-  color: var(--muted);
-  font-size: 13px;
 }
 
 .modal-backdrop {
@@ -767,13 +737,6 @@ a {
   white-space: nowrap;
 }
 
-.modal-disclosure {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
 @media (max-width: 920px) {
   .topbar,
   .result-heading {
@@ -783,15 +746,6 @@ a {
 
   .summary-strip {
     justify-content: flex-start;
-  }
-
-  .notice-stack {
-    max-width: none;
-  }
-
-  .affiliate-note,
-  .price-note {
-    text-align: left;
   }
 
   .product-grid {

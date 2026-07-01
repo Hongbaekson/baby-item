@@ -167,10 +167,6 @@ async function main() {
     generatedAt: new Date().toISOString(),
     site: {
       name: SITE_NAME,
-      affiliateDisclosure:
-        "이 페이지의 일부 링크는 제휴 링크이며, 구매 시 일정액의 수수료를 제공받을 수 있습니다.",
-      priceDisclosure:
-        "가격과 품절 상태는 구매처에서 수시로 바뀔 수 있습니다. 결제 전 구매처에서 최신가와 재고를 확인하세요.",
     },
     summary: {
       totalItems: appItems.length,

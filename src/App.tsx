@@ -72,8 +72,6 @@ type Item = {
 const data = appData as {
   site: {
     name: string;
-    affiliateDisclosure: string;
-    priceDisclosure: string;
   };
   summary: {
     totalItems: number;
@@ -297,10 +295,6 @@ export function App() {
             </p>
             <h2>{filteredItems.length}개의 육아템</h2>
           </div>
-          <div className="notice-stack">
-            <p className="affiliate-note">{data.site.affiliateDisclosure}</p>
-            <p className="price-note">{data.site.priceDisclosure}</p>
-          </div>
         </section>
 
         <section className="product-grid" aria-label="제품 목록">
@@ -316,11 +310,6 @@ export function App() {
           </section>
         )}
       </main>
-
-      <footer className="site-footer">
-        <Info size={16} aria-hidden="true" />
-        <span>{data.site.affiliateDisclosure}</span>
-      </footer>
 
       {selectedItem && <ProductModal item={selectedItem} onClose={() => setSelectedItem(null)} />}
     </div>
@@ -542,8 +531,6 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
               </div>
             </section>
           )}
-          <p className="modal-disclosure">{data.site.affiliateDisclosure}</p>
-          <p className="modal-disclosure">{data.site.priceDisclosure}</p>
         </div>
       </section>
     </div>
