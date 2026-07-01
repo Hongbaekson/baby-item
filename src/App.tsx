@@ -4,16 +4,21 @@ import {
   ExternalLink,
   Heart,
   Info,
+  Moon,
   Search,
   ShoppingBag,
   Sparkles,
+  Sun,
   X,
 } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import appData from "./data/items.json";
 
 type QualityStatus = "ready" | "usable_with_warnings" | "needs_review" | "draft";
 type OfferStatusState = "not_synced" | "available" | "no_available_offer" | "needs_review";
+type ThemeMode = "light" | "dark";
+
+const THEME_STORAGE_KEY = "euni-baby-items-theme";
 
 type BestOffer = {
   url: string;
@@ -83,6 +88,22 @@ const data = appData as {
   };
   items: Item[];
 };
+
+function getInitialTheme(): ThemeMode {
+  if (typeof window === "undefined") return "light";
+
+  try {
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+
+    if (storedTheme === "dark" || storedTheme === "light") {
+      return storedTheme;
+    }
+  } catch {
+    return "light";
+  }
+
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
 
 const CATEGORY_TONES = [
   "mint",
@@ -212,6 +233,18 @@ export function App() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("전체");
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const [theme, setTheme] = useState<ThemeMode>(getInitialTheme);
+  const nextTheme = theme === "dark" ? "light" : "dark";
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch {
+      // Theme persistence is a convenience; the UI still works without storage access.
+    }
+  }, [theme]);
 
   const filteredItems = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
@@ -242,19 +275,31 @@ export function App() {
             <p>아빠가 직접 고르고 정리한 수유, 수면, 외출, 배변 육아템</p>
           </div>
         </div>
-        <div className="summary-strip" aria-label="제품 요약">
-          <span>
-            <strong>{data.summary.totalItems}</strong>
-            제품
-          </span>
-          <span>
-            <strong>{data.summary.categories.length}</strong>
-            카테고리
-          </span>
-          <span>
-            <strong>{data.summary.needsReviewItems}</strong>
-            확인중
-          </span>
+        <div className="topbar-actions">
+          <div className="summary-strip" aria-label="제품 요약">
+            <span>
+              <strong>{data.summary.totalItems}</strong>
+              제품
+            </span>
+            <span>
+              <strong>{data.summary.categories.length}</strong>
+              카테고리
+            </span>
+            <span>
+              <strong>{data.summary.needsReviewItems}</strong>
+              확인중
+            </span>
+          </div>
+          <button
+            type="button"
+            className="icon-button theme-toggle"
+            onClick={() => setTheme(nextTheme)}
+            aria-label={theme === "dark" ? "라이트 모드로 전환" : "다크 모드로 전환"}
+            aria-pressed={theme === "dark"}
+            title={theme === "dark" ? "라이트 모드" : "다크 모드"}
+          >
+            {theme === "dark" ? <Sun size={19} aria-hidden="true" /> : <Moon size={19} aria-hidden="true" />}
+          </button>
         </div>
       </header>
 
