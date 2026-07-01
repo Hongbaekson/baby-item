@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-01T13:16:34.914Z",
+  "generatedAt": "2026-07-01T13:32:54.923Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템"
   },
   "summary": {
-    "totalItems": 21,
+    "totalItems": 22,
     "categories": [
       {
         "name": "👶300일간 매일 사용한 육아템 정리",
@@ -20,7 +20,7 @@
       },
       {
         "name": "🍼수유아이템",
-        "count": 3
+        "count": 4
       },
       {
         "name": "💩신생아 배앓이 꿀템",
@@ -47,7 +47,7 @@
         "count": 3
       }
     ],
-    "readyItems": 10,
+    "readyItems": 11,
     "usableWithWarningsItems": 11,
     "needsReviewItems": 0
   },
@@ -2555,6 +2555,119 @@
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T13:02:18.155Z"
       }
+    },
+    {
+      "id": "item-5833708604",
+      "title": "(한국공식) 압타밀 프로푸트라 듀오어드밴스 1단계 분유 800g, 1개",
+      "categories": [
+        "🍼수유아이템"
+      ],
+      "primaryCategory": "🍼수유아이템",
+      "partnerLink": "https://brand.naver.com/nutricia/products/5833708604",
+      "partnerLinks": [
+        {
+          "url": "https://brand.naver.com/nutricia/products/5833708604",
+          "category": "🍼수유아이템",
+          "sourceItemId": "naver-brand-5833708604"
+        }
+      ],
+      "price": 47500,
+      "priceText": "47500",
+      "displayPrice": "최저가 47,500원",
+      "referencePrice": "기록가 47,500원",
+      "bestOffer": {
+        "url": "https://brand.naver.com/nutricia/products/5833708604",
+        "platform": "naver",
+        "mallName": "뉴트리시아",
+        "price": 47500,
+        "shippingFee": 0,
+        "totalPrice": 47500,
+        "priceBasis": "shipping_included",
+        "inStock": true,
+        "source": "manual-reviewed",
+        "syncedAt": "2026-07-01T13:32:54.923Z",
+        "matchConfidence": "high",
+        "productName": "(한국공식) 압타밀 프로푸트라 듀오어드밴스 1단계 분유 800g, 1개",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8337820/83378208018.5.jpg",
+        "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비 포함 여부와 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://brand.naver.com/nutricia/products/5833708604",
+          "platform": "naver",
+          "mallName": "뉴트리시아",
+          "price": 47500,
+          "shippingFee": 0,
+          "totalPrice": 47500,
+          "priceBasis": "shipping_included",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T13:32:54.923Z",
+          "matchConfidence": "high",
+          "productName": "(한국공식) 압타밀 프로푸트라 듀오어드밴스 1단계 분유 800g, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8337820/83378208018.5.jpg",
+          "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비 포함 여부와 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7116177395&ctag=7116177395&lptag=V78412809197&itemId=17804673630&vendorItemId=78412809197&spec=10305199",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 47500,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:32:54.923Z",
+          "matchConfidence": "high",
+          "productName": "압타밀 프로푸트라 듀오어드밴스 분유 1단계  800g  1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5957524/59575240696.10.jpg",
+          "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/52324414621",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 47500,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:32:54.923Z",
+          "matchConfidence": "high",
+          "productName": "뉴트리시아 압타밀 프로푸트라 1단계 800g, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5232441/52324414621.20250106153748.jpg",
+          "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T13:32:54.923Z",
+        "checkedOffers": 3
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8337820/83378208018.5.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "feeding",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "naver-brand-5833708604"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8337820/83378208018.5.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "뉴트리시아",
+        "productName": "(한국공식) 압타밀 프로푸트라 듀오어드밴스 1단계 분유 800g, 1개",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:32:54.923Z"
+      }
     }
   ],
   "imageSync": {
@@ -2575,9 +2688,9 @@
     "skipped": 208
   },
   "manualReview": {
-    "appliedAt": "2026-07-01T13:16:34.914Z",
-    "addedItemCount": 0,
-    "deletedItemCount": 9,
-    "note": "사용자 요청으로 소베맘 기저귀갈이대, 꿈비 분유쉐이커, LG 휘센 제습기, 휴대용 기저귀 매트, 보온 텀블러, 보르르 주전자 단품, 마롤로뜨 듀라론 쿨매트, 마더케이 젖병 솔 세트, 마더케이 일회용 젖병 세트 항목을 삭제했습니다."
+    "appliedAt": "2026-07-01T13:32:54.923Z",
+    "addedItemCount": 1,
+    "deletedItemCount": 0,
+    "note": "사용자 요청으로 뉴트리시아 압타밀 프로푸트라 듀오어드밴스 1단계 분유 항목을 추가했습니다."
   }
 }
