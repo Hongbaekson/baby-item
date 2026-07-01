@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-01T13:02:18.155Z",
+  "generatedAt": "2026-07-01T13:08:16.540Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템"
   },
   "summary": {
-    "totalItems": 31,
+    "totalItems": 30,
     "categories": [
       {
         "name": "👶300일간 매일 사용한 육아템 정리",
@@ -32,7 +32,7 @@
       },
       {
         "name": "😎외출 아이템",
-        "count": 5
+        "count": 4
       },
       {
         "name": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
@@ -47,7 +47,7 @@
         "count": 3
       }
     ],
-    "readyItems": 16,
+    "readyItems": 15,
     "usableWithWarningsItems": 15,
     "needsReviewItems": 0
   },
@@ -1740,135 +1740,6 @@
         "productName": "웰러스 클린앤화이트 구강유산균 30포 입냄새 구취 제거 입마름 관리 바이오가이아 종근당",
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T04:53:45.364Z"
-      }
-    },
-    {
-      "id": "item-b1bc91e327",
-      "title": "베이비 워터 (아기 생수)",
-      "categories": [
-        "😎외출 아이템"
-      ],
-      "primaryCategory": "😎외출 아이템",
-      "partnerLink": "https://smartstore.naver.com/k1water/products/5006694177",
-      "partnerLinks": [
-        {
-          "url": "https://smartstore.naver.com/k1water/products/5006694177",
-          "category": "😎외출 아이템",
-          "sourceItemId": "2c2b4abb-08ed-8012-b2cf-d8b46b33f3d7"
-        }
-      ],
-      "price": 5800,
-      "priceText": "5800",
-      "displayPrice": "최저가 5,800원부터",
-      "referencePrice": "기록가 5,800원",
-      "bestOffer": {
-        "url": "https://search.shopping.naver.com/catalog/55343016734",
-        "platform": "naver",
-        "mallName": "네이버",
-        "price": 5800,
-        "shippingFee": null,
-        "totalPrice": null,
-        "priceBasis": "listed_price",
-        "inStock": true,
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T05:38:47.919Z",
-        "matchConfidence": "high",
-        "productName": "팔도 뽀로로 샘물 250ml, 20개",
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_5534301/55343016734.20250617163119.jpg",
-        "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-      },
-      "purchaseOffers": [
-        {
-          "url": "https://search.shopping.naver.com/catalog/55343016734",
-          "platform": "naver",
-          "mallName": "네이버",
-          "price": 5800,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "팔도 뽀로로 샘물 250ml, 20개",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5534301/55343016734.20250617163119.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://smartstore.naver.com/main/products/11533246025",
-          "platform": "naver",
-          "mallName": "으쓱몰",
-          "price": 5800,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "팔도 뽀로로 샘물 무라벨 260ml X 20개",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_8907775/89077756431.1.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://smartstore.naver.com/k1water/products/5006694177",
-          "platform": "naver",
-          "mallName": "K1 Water",
-          "price": 5800,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "manual-reviewed",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "베이비 워터 (아기 생수)",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5534301/55343016734.20250617163119.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://smartstore.naver.com/main/products/10378566828",
-          "platform": "naver",
-          "mallName": "드링크올데이",
-          "price": 6300,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "팔도 뽀로로 먹는샘물 어린이생수 250ml 20PET 뽀로로생수",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_8792307/87923071535.1.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        }
-      ],
-      "offerStatus": {
-        "state": "available",
-        "syncedAt": "2026-07-01T05:38:47.919Z",
-        "checkedOffers": 4
-      },
-      "memo": "",
-      "imagePath": "https://shopping-phinf.pstatic.net/main_5534301/55343016734.20250617163119.jpg",
-      "hasOriginalImage": true,
-      "placeholderKey": "outing",
-      "dataQuality": {
-        "status": "ready",
-        "errorCount": 0,
-        "warningCount": 0,
-        "issues": []
-      },
-      "sourceItemIds": [
-        "2c2b4abb-08ed-8012-b2cf-d8b46b33f3d7"
-      ],
-      "imageSource": {
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_5534301/55343016734.20250617163119.jpg",
-        "matchConfidence": "high",
-        "platform": "naver",
-        "mallName": "네이버",
-        "productName": "팔도 뽀로로 샘물 250ml, 20개",
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T05:38:47.919Z"
       }
     },
     {
@@ -3843,9 +3714,9 @@
     "skipped": 208
   },
   "manualReview": {
-    "appliedAt": "2026-07-01T13:02:18.155Z",
-    "addedItemCount": 4,
-    "deletedItemCount": 5,
-    "note": "사용자가 전달한 Coupang 상품 URL 4개를 직접 확인하고, 네이버 쇼핑 검색 API 후보를 수동 검토해 반영했습니다."
+    "appliedAt": "2026-07-01T13:08:16.540Z",
+    "addedItemCount": 0,
+    "deletedItemCount": 1,
+    "note": "사용자 요청으로 베이비 워터 (아기 생수) 항목을 삭제했습니다."
   }
 }
