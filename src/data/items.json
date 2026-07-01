@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-01T13:32:54.923Z",
+  "generatedAt": "2026-07-01T13:37:51.328Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템"
   },
   "summary": {
-    "totalItems": 22,
+    "totalItems": 23,
     "categories": [
       {
         "name": "👶300일간 매일 사용한 육아템 정리",
@@ -28,7 +28,7 @@
       },
       {
         "name": "🍼젖병 열탕 소독",
-        "count": 4
+        "count": 5
       },
       {
         "name": "😎외출 아이템",
@@ -47,7 +47,7 @@
         "count": 3
       }
     ],
-    "readyItems": 11,
+    "readyItems": 12,
     "usableWithWarningsItems": 11,
     "needsReviewItems": 0
   },
@@ -2668,6 +2668,87 @@
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T13:32:54.923Z"
       }
+    },
+    {
+      "id": "item-11657920227",
+      "title": "[슈퍼적립] 마더케이 롱핸들 리필형 스펀지 젖병솔&젖꼭지솔+소독집게 세트 1개입, 크림/크림",
+      "categories": [
+        "🍼젖병 열탕 소독"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://brand.naver.com/motherk/products/11657920227",
+      "partnerLinks": [
+        {
+          "url": "https://brand.naver.com/motherk/products/11657920227",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "naver-brand-11657920227"
+        }
+      ],
+      "price": 32900,
+      "priceText": "32900",
+      "displayPrice": "최저가 32,900원",
+      "referencePrice": "기록가 32,900원",
+      "bestOffer": {
+        "url": "https://brand.naver.com/motherk/products/11657920227",
+        "platform": "naver",
+        "mallName": "마더케이",
+        "price": 32900,
+        "shippingFee": 0,
+        "totalPrice": 32900,
+        "priceBasis": "shipping_included",
+        "inStock": true,
+        "source": "manual-reviewed",
+        "syncedAt": "2026-07-01T13:37:51.328Z",
+        "matchConfidence": "high",
+        "productName": "[슈퍼적립] 마더케이 롱핸들 리필형 스펀지 젖병솔&젖꼭지솔+소독집게 세트 1개입, 크림/크림",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8920243/89202430695.11.jpg",
+        "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비 포함 여부와 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://brand.naver.com/motherk/products/11657920227",
+          "platform": "naver",
+          "mallName": "마더케이",
+          "price": 32900,
+          "shippingFee": 0,
+          "totalPrice": 32900,
+          "priceBasis": "shipping_included",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T13:37:51.328Z",
+          "matchConfidence": "high",
+          "productName": "[슈퍼적립] 마더케이 롱핸들 리필형 스펀지 젖병솔&젖꼭지솔+소독집게 세트 1개입, 크림/크림",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8920243/89202430695.11.jpg",
+          "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비 포함 여부와 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T13:37:51.328Z",
+        "checkedOffers": 1
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8920243/89202430695.11.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "naver-brand-11657920227"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8920243/89202430695.11.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "마더케이",
+        "productName": "[슈퍼적립] 마더케이 롱핸들 리필형 스펀지 젖병솔&젖꼭지솔+소독집게 세트 1개입, 크림/크림",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:37:51.328Z"
+      }
     }
   ],
   "imageSync": {
@@ -2688,9 +2769,9 @@
     "skipped": 208
   },
   "manualReview": {
-    "appliedAt": "2026-07-01T13:32:54.923Z",
+    "appliedAt": "2026-07-01T13:37:51.328Z",
     "addedItemCount": 1,
     "deletedItemCount": 0,
-    "note": "사용자 요청으로 뉴트리시아 압타밀 프로푸트라 듀오어드밴스 1단계 분유 항목을 추가했습니다."
+    "note": "사용자 요청으로 마더케이 롱핸들 리필형 스펀지 젖병솔, 젖꼭지솔, 소독집게 세트 항목을 추가했습니다."
   }
 }
