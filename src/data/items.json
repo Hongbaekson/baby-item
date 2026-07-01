@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-01T05:52:44.458Z",
+  "generatedAt": "2026-07-01T07:01:36.666Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템"
   },
   "summary": {
-    "totalItems": 31,
+    "totalItems": 32,
     "categories": [
       {
         "name": "👶300일간 매일 사용한 육아템 정리",
@@ -20,7 +20,7 @@
       },
       {
         "name": "🍼수유아이템",
-        "count": 3
+        "count": 4
       },
       {
         "name": "💩신생아 배앓이 꿀템",
@@ -28,7 +28,7 @@
       },
       {
         "name": "🍼젖병 열탕 소독",
-        "count": 5
+        "count": 7
       },
       {
         "name": "😎외출 아이템",
@@ -40,10 +40,10 @@
       },
       {
         "name": "🎉놀이아이템",
-        "count": 2
+        "count": 1
       }
     ],
-    "readyItems": 18,
+    "readyItems": 19,
     "usableWithWarningsItems": 13,
     "needsReviewItems": 0
   },
@@ -2894,135 +2894,6 @@
       ]
     },
     {
-      "id": "item-1ed600be8f",
-      "title": "제이앤제이 역류방지쿠션 오리지널",
-      "categories": [
-        "🎉놀이아이템"
-      ],
-      "primaryCategory": "🎉놀이아이템",
-      "partnerLink": "https://brand.naver.com/jeinjena_brand/products/4900049920",
-      "partnerLinks": [
-        {
-          "url": "https://brand.naver.com/jeinjena_brand/products/4900049920",
-          "category": "🎉놀이아이템",
-          "sourceItemId": "248b4abb-08ed-8054-9900-dd2dca624fa0"
-        }
-      ],
-      "price": 79800,
-      "priceText": "79800",
-      "displayPrice": "최저가 79,800원부터",
-      "referencePrice": "기록가 79,800원",
-      "bestOffer": {
-        "url": "https://brand.naver.com/jeinjena_brand/products/4900049920",
-        "platform": "naver",
-        "mallName": "제이앤제나",
-        "price": 79800,
-        "shippingFee": null,
-        "totalPrice": null,
-        "priceBasis": "listed_price",
-        "inStock": true,
-        "source": "manual-reviewed",
-        "syncedAt": "2026-07-01T05:38:47.919Z",
-        "matchConfidence": "high",
-        "productName": "제이앤제나 역류방지쿠션 오리지널",
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_6038871/60388718817.jpg",
-        "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-      },
-      "purchaseOffers": [
-        {
-          "url": "https://brand.naver.com/jeinjena_brand/products/4900049920",
-          "platform": "naver",
-          "mallName": "제이앤제나",
-          "price": 79800,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "manual-reviewed",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "제이앤제나 역류방지쿠션 오리지널",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6038871/60388718817.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://link.gmarket.co.kr/gate/pcs?item-no=4776667928&sub-id=1003&service-code=10000003&lcd=100000006",
-          "platform": "naver",
-          "mallName": "G마켓",
-          "price": 86020,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "제이앤제나 역류방지쿠션 오리지널 백수",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6038871/60388718817.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://link.gmarket.co.kr/gate/pcs?item-no=4777560997&sub-id=1003&service-code=10000003&lcd=100000006",
-          "platform": "naver",
-          "mallName": "G마켓",
-          "price": 87850,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "제이앤제나 역류방지쿠션 오리지널 인견",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6040848/60408480895.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://link.auction.co.kr/gate/pcs?item-no=F584657930&sub-id=1&service-code=10000003",
-          "platform": "naver",
-          "mallName": "옥션",
-          "price": 90620,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "역류방지쿠션 오리지널 백수",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6038844/60388440224.3.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        }
-      ],
-      "offerStatus": {
-        "state": "available",
-        "syncedAt": "2026-07-01T05:38:47.919Z",
-        "checkedOffers": 4
-      },
-      "memo": "최근 가격 변동 확인 필요, 인기 선물 아이템",
-      "imagePath": "https://shopping-phinf.pstatic.net/main_6038871/60388718817.jpg",
-      "hasOriginalImage": true,
-      "placeholderKey": "play",
-      "dataQuality": {
-        "status": "ready",
-        "errorCount": 0,
-        "warningCount": 0,
-        "issues": []
-      },
-      "sourceItemIds": [
-        "248b4abb-08ed-8054-9900-dd2dca624fa0"
-      ],
-      "imageSource": {
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_6038871/60388718817.jpg",
-        "matchConfidence": "high",
-        "platform": "naver",
-        "mallName": "제이앤제나",
-        "productName": "제이앤제나 역류방지쿠션 오리지널",
-        "source": "manual-reviewed",
-        "syncedAt": "2026-07-01T05:38:47.919Z"
-      }
-    },
-    {
       "id": "item-5d59feb51f",
       "title": "줄즈 데이 5 세미 디럭스 유모차",
       "categories": [
@@ -3282,6 +3153,249 @@
       "sourceItemIds": [
         "2bbb4abb-08ed-80f0-a404-cd5000501f7e"
       ]
+    },
+    {
+      "id": "item-ac575a2504",
+      "title": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
+      "categories": [
+        "🍼젖병 열탕 소독",
+        "🍼수유아이템"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://brand.naver.com/narimong/products/12553411586",
+      "partnerLinks": [
+        {
+          "url": "https://brand.naver.com/narimong/products/12553411586",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "manual-20260701-narimong-milkbox-bottle-washer"
+        }
+      ],
+      "price": 199000,
+      "priceText": "199000",
+      "displayPrice": "최저가 199,000원부터",
+      "referencePrice": "기록가 199,000원",
+      "bestOffer": {
+        "url": "https://brand.naver.com/narimong/products/12553411586",
+        "platform": "naver",
+        "mallName": "나리몽",
+        "price": 199000,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "manual-reviewed",
+        "syncedAt": "2026-07-01T07:01:36.666Z",
+        "matchConfidence": "high",
+        "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9009792/90097922440.1.jpg",
+        "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://brand.naver.com/narimong/products/12553411586",
+          "platform": "naver",
+          "mallName": "나리몽",
+          "price": 199000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T07:01:36.666Z",
+          "matchConfidence": "high",
+          "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9009792/90097922440.1.jpg",
+          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=1696377057&ctag=1696377057&lptag=l262368414990&itemId=69238410469&vendorItemId=93875023782&spec=10305198",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 199000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T07:01:36.666Z",
+          "matchConfidence": "high",
+          "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5807035/58070353927.jpg",
+          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/58106263733",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 199000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T07:01:36.666Z",
+          "matchConfidence": "high",
+          "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5810626/58106263733.20260619162123.jpg",
+          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://www.lotteon.com/p/product/LO2589878497?sitmNo=LO2589878497_2589878498&ch_no=100065&ch_dtl_no=1000030&entryPoint=pcs&dp_infw_cd=CHT",
+          "platform": "naver",
+          "mallName": "롯데ON",
+          "price": 209000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T07:01:36.666Z",
+          "matchConfidence": "high",
+          "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5973484/59734848479.jpg",
+          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T07:01:36.666Z",
+        "checkedOffers": 4
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_9009792/90097922440.1.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "manual-20260701-narimong-milkbox-bottle-washer"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9009792/90097922440.1.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "나리몽",
+        "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
+        "source": "manual-reviewed",
+        "syncedAt": "2026-07-01T07:01:36.666Z"
+      }
+    },
+    {
+      "id": "item-2daa879f7f",
+      "title": "리뗀클로르 특대형 젖병보관함",
+      "categories": [
+        "🍼젖병 열탕 소독"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://brand.naver.com/litenkulor/products/10839874654",
+      "partnerLinks": [
+        {
+          "url": "https://brand.naver.com/litenkulor/products/10839874654",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "manual-20260701-litenkulor-large-bottle-case"
+        }
+      ],
+      "price": 16800,
+      "priceText": "16800",
+      "displayPrice": "최저가 16,790원부터",
+      "referencePrice": "기록가 16,800원",
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/45147938273",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 16790,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T07:01:36.666Z",
+        "matchConfidence": "high",
+        "productName": "리뗀클로르 특대형 젖병보관함",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4514793/45147938273.20260626070646.jpg",
+        "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/45147938273",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 16790,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T07:01:36.666Z",
+          "matchConfidence": "high",
+          "productName": "리뗀클로르 특대형 젖병보관함",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4514793/45147938273.20260626070646.jpg",
+          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://brand.naver.com/litenkulor/products/10839874654",
+          "platform": "naver",
+          "mallName": "리뗀클로르",
+          "price": 16800,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T07:01:36.666Z",
+          "matchConfidence": "high",
+          "productName": "리뗀클로르 특대형 젖병보관함",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8729444/87294441743.5.jpg",
+          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://ohou.se/productions/2526412/selling?utm_source=naver_shop&bp_sub_id_2=search&bp_sub_id_3=inorganic&utm_medium=cpc&utm_campaign=2526412-19302504&utm_term={query}&utm_content={ad}&bp_adset={network}_{media}",
+          "platform": "naver",
+          "mallName": "오늘의집",
+          "price": 16800,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T07:01:36.666Z",
+          "matchConfidence": "high",
+          "productName": "리뗀클로르 특대형 젖병보관함",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6055016/60550164013.jpg",
+          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T07:01:36.666Z",
+        "checkedOffers": 3
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_4514793/45147938273.20260626070646.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "manual-20260701-litenkulor-large-bottle-case"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4514793/45147938273.20260626070646.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "네이버",
+        "productName": "리뗀클로르 특대형 젖병보관함",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T07:01:36.666Z"
+      }
     },
     {
       "id": "item-08cfcdce92",
