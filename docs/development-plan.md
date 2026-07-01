@@ -231,6 +231,22 @@ MVP에서 제외:
 
 - 새 제품 추가나 가격 수정 시 어떤 파일을 바꾸고 어떤 명령을 실행할지 명확하다.
 
+### Phase 8. CI/CD 산출물 무결성
+
+목표: 자동 배포 전에 빌드 산출물이 CI에서 만든 것인지 검증할 수 있게 한다.
+
+- Step 8.1: CI에서 `dist`를 tarball로 패키징
+- Step 8.2: `SHA256SUMS` 생성
+- Step 8.3: GitHub Actions artifact 업로드
+- Step 8.4: `main` push 산출물에 GitHub artifact attestation 발급
+- Step 8.5: 자동 CD 도입 시 OCI 서버에서 체크섬과 attestation 검증 후 배포
+- Step 8.6: 장기 보관이 필요하면 S3 또는 OCI Object Storage에 tarball, checksum, provenance 메타데이터 업로드
+
+완료 조건:
+
+- 배포 가능한 산출물마다 체크섬과 출처 증명이 남는다.
+- OCI 자동 배포는 검증 통과 산출물만 반영한다.
+
 ## 6. OCI 주의사항
 
 - DNS를 구매하지 않으면 기본 접속 주소는 `http://<public-ip>:1206`이 된다.
@@ -250,6 +266,7 @@ MVP에서 제외:
 - Phase 4 Notion 이미지 의존 제거 완료: 카테고리별 SVG placeholder 적용
 - Phase 5 품질 검증 완료
 - OCI 배포 준비 파일 작성 완료: `Dockerfile`, `docker-compose.yml`, `nginx.conf`
+- CI/CD 무결성 기준 문서화 완료: `docs/cicd-integrity.md`
 
 현재 검증 결과:
 

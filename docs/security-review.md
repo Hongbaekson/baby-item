@@ -54,11 +54,19 @@ npm audit --audit-level=moderate
 
 GitHub Actions:
 
-- `permissions: contents: read`
+- `permissions: contents: read`, `id-token: write`, `attestations: write`, `artifact-metadata: write`
 - `pull_request_target` 미사용
 - 현재 secret 사용 없음
 - CI에 `npm audit --audit-level=moderate` 포함
 - CI에 `npm run data:check`, `npm run build`, `docker compose config` 포함
+- 빌드 산출물 tarball과 `SHA256SUMS` 생성
+- `main` push 산출물에 GitHub artifact attestation 발급
+
+무결성 기준:
+
+- 배포 가능한 기준 산출물은 `main` push에서 생성된 artifact다.
+- PR은 배포 대상이 아니므로 빌드/체크섬/업로드까지 검증한다.
+- 자동 CD를 붙일 때는 OCI 배포 전에 `sha256sum -c SHA256SUMS`와 attestation 검증을 통과한 산출물만 반영한다.
 
 ### Docker / Nginx
 

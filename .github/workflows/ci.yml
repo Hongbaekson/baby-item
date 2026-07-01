@@ -10,6 +10,9 @@ on:
 
 permissions:
   contents: read
+  id-token: write
+  attestations: write
+  artifact-metadata: write
 
 jobs:
   verify:
@@ -37,6 +40,32 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Package build artifact
+        run: |
+          mkdir -p artifacts
+          artifact="euni-baby-items-${GITHUB_SHA}.tar.gz"
+          tar -C dist -czf "artifacts/${artifact}" .
+          (
+            cd artifacts
+            sha256sum "${artifact}" > SHA256SUMS
+          )
+          cat artifacts/SHA256SUMS
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: euni-baby-items-${{ github.sha }}
+          path: |
+            artifacts/euni-baby-items-${{ github.sha }}.tar.gz
+            artifacts/SHA256SUMS
+          retention-days: 14
+
+      - name: Attest build artifact
+        if: github.event_name == 'push'
+        uses: actions/attest@v4
+        with:
+          subject-checksums: artifacts/SHA256SUMS
 
       - name: Validate Docker Compose config
         run: docker compose config

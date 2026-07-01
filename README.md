@@ -67,6 +67,12 @@ npm run build
 - 로컬 이미지 파일 존재 여부
 - 품질 상태별 제품 수
 
+## CI 산출물 무결성
+
+GitHub Actions는 빌드 결과를 `euni-baby-items-<commit-sha>.tar.gz`로 패키징하고 `SHA256SUMS`를 생성합니다. `main` push 산출물에는 GitHub artifact attestation을 발급합니다.
+
+상세 기준과 CD 적용 순서는 `docs/cicd-integrity.md`에 정리되어 있습니다.
+
 ## Docker 로컬 준비
 
 Docker Compose 설정 확인:
