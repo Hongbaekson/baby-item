@@ -7,7 +7,7 @@
 - 제품 데이터: 37개 canonical 제품
 - 원본 중복 병합: 7개 그룹
 - 빈 제목 draft: 2개 숨김
-- 이미지: Notion 서명 URL 대신 카테고리별 로컬 SVG placeholder 사용
+- 이미지: 사용 가능한 상품 썸네일 URL을 우선 표시하고, 없으면 카테고리별 로컬 SVG placeholder 사용
 - 링크: `https://` 형식 검증 완료
 - 가격: 화면에는 구매처 최신가 확인 CTA를 노출하고, Notion 기준 가격은 `기록가`로만 표시
 - 검수 필요: 1개 제품의 원본 메모가 육아템과 무관한 내용일 가능성이 있어 배지로 표시
@@ -56,15 +56,23 @@ npm run data:check
 npm run price:check-readiness
 ```
 
+네이버 쇼핑 검색 API로 가격 후보를 수집할 때:
+
+```bash
+npm run price:collect-naver
+```
+
 수집된 가격 후보를 앱 데이터에 반영할 때:
 
 ```bash
 npm run price:apply-candidates
 ```
 
-이 명령은 `data/price-candidates.json`에서 품절이 아니고 매칭 신뢰도가 높은 배송비 포함 최저가만 `bestOffer`로 반영합니다. `bestOffer`가 있으면 `보러가기` 버튼은 기존 링크 대신 검증된 최저가 링크로 이동합니다.
+`price:collect-naver`는 `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`이 있을 때 `data/price-candidates.naver.json`을 생성합니다. 네이버 쇼핑 검색 API는 상품 썸네일을 제공하지만 배송비와 결제 단계 재고를 명시하지 않으므로, 이 파일은 후보 수집용입니다.
 
-LLM, Hermes, Codex 같은 모델은 제품명 매칭과 이상치 검토에는 사용할 수 있지만, 가격 숫자의 원천으로 사용하지 않습니다. 자세한 운영안은 `docs/price-sync.md`에 정리되어 있습니다.
+`price:apply-candidates`는 `data/price-candidates.json`에서 품절이 아니고, 배송비 포함 총액이 있으며, 매칭 신뢰도가 높은 후보만 `bestOffer`로 반영합니다. `bestOffer`가 있으면 `보러가기` 버튼은 기존 링크 대신 검증된 최저가 링크로 이동합니다.
+
+가격 갱신은 Hermes/LLM 없이 공식 API와 규칙 기반 검증으로 운영합니다. 자세한 운영안은 `docs/price-sync.md`에 정리되어 있습니다.
 
 ## 품질 확인
 

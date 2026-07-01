@@ -2,12 +2,25 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 
 const appDataPath = path.join('src', 'data', 'items.json');
+const allowedRemoteImageHosts = new Set([
+  'thumbnail.coupangcdn.com',
+  'shopping-phinf.pstatic.net',
+  'shop-phinf.pstatic.net',
+]);
 const data = JSON.parse(readFileSync(appDataPath, 'utf8'));
 const items = data.items ?? [];
 const failures = [];
 const warnings = [];
 const shortUrlHosts = new Set(['bit.ly', 'naver.me', 'tinyurl.com', 't.co', 'goo.gl']);
 const offerStatusStates = new Set(['not_synced', 'available', 'no_available_offer', 'needs_review']);
+
+function remoteImageHost(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '').toLowerCase();
+  } catch {
+    return '';
+  }
+}
 
 const ids = new Set();
 for (const item of items) {
@@ -28,13 +41,19 @@ for (const item of items) {
     failures.push(`bad offer status: ${item.title}`);
   }
 
-  if (!item.imagePath?.startsWith('/images/')) {
-    failures.push(`bad image path: ${item.title}`);
-  } else {
+  if (item.imagePath?.startsWith('/images/')) {
     const localImagePath = path.join('public', item.imagePath.replace(/^\//, ''));
     if (!existsSync(localImagePath)) {
       failures.push(`missing image file: ${item.imagePath}`);
     }
+  } else if (item.imagePath?.startsWith('https://')) {
+    const host = remoteImageHost(item.imagePath);
+
+    if (!allowedRemoteImageHosts.has(host)) {
+      failures.push(`remote image host is not allowed: ${item.title} -> ${host}`);
+    }
+  } else {
+    failures.push(`bad image path: ${item.title}`);
   }
 
   for (const link of item.partnerLinks ?? []) {
@@ -66,8 +85,28 @@ for (const item of items) {
       failures.push(`best offer has bad total price: ${item.title}`);
     }
 
+    if (item.bestOffer.totalPrice < item.bestOffer.price) {
+      failures.push(`best offer total price is lower than base price: ${item.title}`);
+    }
+
+    if (!Number.isFinite(item.bestOffer.shippingFee) || item.bestOffer.shippingFee < 0) {
+      failures.push(`best offer has bad shipping fee: ${item.title}`);
+    }
+
     if (!item.bestOffer.syncedAt) {
       failures.push(`best offer missing syncedAt: ${item.title}`);
+    }
+
+    if (item.bestOffer.imageUrl) {
+      if (!item.bestOffer.imageUrl.startsWith('https://')) {
+        failures.push(`best offer image must use https: ${item.title}`);
+      }
+
+      const host = remoteImageHost(item.bestOffer.imageUrl);
+
+      if (!allowedRemoteImageHosts.has(host)) {
+        failures.push(`best offer image host is not allowed: ${item.title} -> ${host}`);
+      }
     }
   }
 }

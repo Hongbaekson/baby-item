@@ -49,7 +49,6 @@ for (const item of items) {
 
 const env = {
   naverShoppingApiReady: Boolean(process.env.NAVER_CLIENT_ID && process.env.NAVER_CLIENT_SECRET),
-  priceSyncModelConfigured: Boolean(process.env.PRICE_SYNC_MODEL),
 };
 
 const summary = {
@@ -62,8 +61,8 @@ const summary = {
   shortLinks: shortLinks.length,
   env,
   nextAction:
-    env.naverShoppingApiReady || env.priceSyncModelConfigured
-      ? "Run an official price candidate collector before updating app data."
+    env.naverShoppingApiReady
+      ? "Run npm run price:collect-naver to collect official search candidates, then enrich stock and shipping data before auto-apply."
       : "Configure official shopping API credentials before enabling automated price candidates.",
 };
 

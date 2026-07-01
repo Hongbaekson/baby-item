@@ -9,6 +9,7 @@ const SHORT_URL_HOSTS = new Set(["bit.ly", "naver.me", "tinyurl.com", "t.co", "g
 const args = process.argv.slice(2);
 const candidatesPath = args.find((arg) => !arg.startsWith("--")) ?? DEFAULT_CANDIDATES_PATH;
 const allowMediumConfidence = args.includes("--allow-medium");
+const allowUnknownShipping = args.includes("--allow-unknown-shipping");
 
 function formatWon(value) {
   return `${value.toLocaleString("ko-KR")}원`;
@@ -38,6 +39,12 @@ function isHttpsUrl(url) {
   } catch {
     return false;
   }
+}
+
+function optionalHttpsUrl(value) {
+  const url = String(value ?? "");
+
+  return isHttpsUrl(url) ? url : null;
 }
 
 function isInStock(candidate) {
@@ -104,16 +111,35 @@ function flattenCandidateInput(input) {
 function normalizeOffer(raw, fallbackSyncedAt) {
   const url = String(raw.url ?? raw.productUrl ?? raw.link ?? "");
   const price = toNumber(raw.price ?? raw.salePrice ?? raw.lprice);
-  const shippingFee = toNumber(raw.shippingFee ?? raw.deliveryFee ?? raw.shipping) ?? 0;
-  const totalPrice = toNumber(raw.totalPrice ?? raw.total) ?? (price === null ? null : price + shippingFee);
+  const rawShippingFee = raw.shippingFee ?? raw.deliveryFee ?? raw.shipping;
+  const explicitTotalPrice = toNumber(raw.totalPrice ?? raw.total);
+  let shippingFee = toNumber(rawShippingFee);
+
+  if (shippingFee === null && explicitTotalPrice !== null && price !== null && explicitTotalPrice >= price) {
+    shippingFee = explicitTotalPrice - price;
+  }
+
+  if (shippingFee === null && allowUnknownShipping) {
+    shippingFee = 0;
+  }
+
+  const totalPrice = explicitTotalPrice ?? (price === null || shippingFee === null ? null : price + shippingFee);
   const matchConfidence = normalizeConfidence(raw.matchConfidence ?? raw.confidence);
 
   if (!isHttpsUrl(url)) {
     return { skipped: true, reason: "non_https_url", url };
   }
 
-  if (price === null || price <= 0 || totalPrice === null || totalPrice <= 0 || shippingFee < 0) {
+  if (price === null || price <= 0) {
     return { skipped: true, reason: "bad_price", url };
+  }
+
+  if (shippingFee === null || shippingFee < 0) {
+    return { skipped: true, reason: "missing_shipping_fee", url };
+  }
+
+  if (totalPrice === null || totalPrice <= 0 || totalPrice < price) {
+    return { skipped: true, reason: "bad_total_price", url };
   }
 
   if (!isInStock(raw)) {
@@ -139,6 +165,7 @@ function normalizeOffer(raw, fallbackSyncedAt) {
       syncedAt: String(raw.syncedAt ?? fallbackSyncedAt ?? new Date().toISOString()),
       matchConfidence,
       productName: raw.productName ?? raw.name ?? null,
+      imageUrl: optionalHttpsUrl(raw.imageUrl ?? raw.image ?? raw.thumbnail),
       note: raw.note ?? null,
       isShortUrl: SHORT_URL_HOSTS.has(host),
     },

@@ -17,6 +17,7 @@ type OfferStatusState = "not_synced" | "available" | "no_available_offer" | "nee
 
 type BestOffer = {
   url: string;
+  imageUrl?: string | null;
   mallName: string;
   price: number;
   shippingFee: number;
@@ -149,6 +150,10 @@ function primaryPurchaseUrl(item: Item) {
   return item.bestOffer?.url ?? item.partnerLink;
 }
 
+function productImageUrl(item: Item) {
+  return item.bestOffer?.imageUrl ?? item.imagePath;
+}
+
 function offerStatusLabel(item: Item) {
   if (item.bestOffer) {
     const shipping =
@@ -156,7 +161,7 @@ function offerStatusLabel(item: Item) {
         ? `배송비 ${item.bestOffer.shippingFee.toLocaleString("ko-KR")}원 포함`
         : "무료배송 또는 배송비 없음";
 
-    return `${item.bestOffer.mallName} · ${shipping} · 품절 아님 확인`;
+    return `${item.bestOffer.mallName} · ${shipping} · 구매 가능 후보`;
   }
 
   if (item.offerStatus.state === "no_available_offer") {
@@ -298,7 +303,7 @@ function ProductCard({
   item: Item;
   onSelect: (item: Item) => void;
 }) {
-  const [imageSrc, setImageSrc] = useState(item.imagePath);
+  const [imageSrc, setImageSrc] = useState(productImageUrl(item));
   const warningIssues = item.dataQuality.issues.filter((issue) => issue.severity !== "info");
   const purchaseUrl = primaryPurchaseUrl(item);
   const statusLabel = offerStatusLabel(item);
@@ -361,7 +366,7 @@ function ProductCard({
 }
 
 function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
-  const [imageSrc, setImageSrc] = useState(item.imagePath);
+  const [imageSrc, setImageSrc] = useState(productImageUrl(item));
   const purchaseUrl = primaryPurchaseUrl(item);
   const statusLabel = offerStatusLabel(item);
 

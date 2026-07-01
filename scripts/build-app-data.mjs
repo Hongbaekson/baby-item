@@ -37,7 +37,54 @@ function getReferencePrice(item) {
   return `기록가 ${item.price.toLocaleString("ko-KR")}원`;
 }
 
+function findFirstHttpsUrl(value) {
+  if (!value) {
+    return null;
+  }
+
+  if (typeof value === "string") {
+    return value.startsWith("https://") ? value : null;
+  }
+
+  if (Array.isArray(value)) {
+    for (const entry of value) {
+      const url = findFirstHttpsUrl(entry);
+
+      if (url) {
+        return url;
+      }
+    }
+
+    return null;
+  }
+
+  if (typeof value === "object") {
+    for (const entry of Object.values(value)) {
+      const url = findFirstHttpsUrl(entry);
+
+      if (url) {
+        return url;
+      }
+    }
+  }
+
+  return null;
+}
+
+function getRemoteImageUrl(item) {
+  return (
+    findFirstHttpsUrl(item.image?.filePropertyRaw) ??
+    findFirstHttpsUrl(item.image?.socialMediaImagePreviewUrl)
+  );
+}
+
 function getImagePath(item) {
+  const remoteImageUrl = getRemoteImageUrl(item);
+
+  if (remoteImageUrl) {
+    return remoteImageUrl;
+  }
+
   const placeholderSlug = CATEGORY_PLACEHOLDERS.get(item.primaryCategory) ?? "default";
 
   return `/images/placeholders/${placeholderSlug}.svg`;
@@ -63,7 +110,7 @@ function toAppItem(item) {
     offerStatus: DEFAULT_OFFER_STATUS,
     memo: item.memo,
     imagePath: getImagePath(item),
-    hasOriginalImage: item.image?.hasImage ?? false,
+    hasOriginalImage: Boolean(getRemoteImageUrl(item)),
     placeholderKey: CATEGORY_PLACEHOLDERS.get(item.primaryCategory) ?? "default",
     dataQuality: {
       status: item.dataQuality.status,

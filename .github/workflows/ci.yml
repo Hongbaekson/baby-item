@@ -35,6 +35,9 @@ jobs:
       - name: Check app data
         run: npm run data:check
 
+      - name: Check price sync readiness
+        run: npm run price:check-readiness
+
       - name: Audit dependencies
         run: npm audit --audit-level=moderate
 
