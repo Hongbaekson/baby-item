@@ -3286,97 +3286,33 @@
     },
     {
       "id": "item-2daa879f7f",
-      "title": "리뗀클로르 특대형 젖병보관함",
+      "title": "브레짜 젖병보관함",
       "categories": [
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://brand.naver.com/litenkulor/products/10839874654",
+      "partnerLink": "https://brand.naver.com/babybrezza/products/9682243165",
       "partnerLinks": [
         {
-          "url": "https://brand.naver.com/litenkulor/products/10839874654",
+          "url": "https://brand.naver.com/babybrezza/products/9682243165",
           "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "manual-20260701-litenkulor-large-bottle-case"
+          "sourceItemId": "manual-20260701-babybrezza-bottle-case"
         }
       ],
-      "price": 16800,
-      "priceText": "16800",
-      "displayPrice": "최저가 16,790원부터",
-      "referencePrice": "기록가 16,800원",
-      "bestOffer": {
-        "url": "https://search.shopping.naver.com/catalog/45147938273",
-        "platform": "naver",
-        "mallName": "네이버",
-        "price": 16790,
-        "shippingFee": null,
-        "totalPrice": null,
-        "priceBasis": "listed_price",
-        "inStock": true,
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T07:01:36.666Z",
-        "matchConfidence": "high",
-        "productName": "리뗀클로르 특대형 젖병보관함",
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_4514793/45147938273.20260626070646.jpg",
-        "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-      },
-      "purchaseOffers": [
-        {
-          "url": "https://search.shopping.naver.com/catalog/45147938273",
-          "platform": "naver",
-          "mallName": "네이버",
-          "price": 16790,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T07:01:36.666Z",
-          "matchConfidence": "high",
-          "productName": "리뗀클로르 특대형 젖병보관함",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_4514793/45147938273.20260626070646.jpg",
-          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://brand.naver.com/litenkulor/products/10839874654",
-          "platform": "naver",
-          "mallName": "리뗀클로르",
-          "price": 16800,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "manual-reviewed",
-          "syncedAt": "2026-07-01T07:01:36.666Z",
-          "matchConfidence": "high",
-          "productName": "리뗀클로르 특대형 젖병보관함",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_8729444/87294441743.5.jpg",
-          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://ohou.se/productions/2526412/selling?utm_source=naver_shop&bp_sub_id_2=search&bp_sub_id_3=inorganic&utm_medium=cpc&utm_campaign=2526412-19302504&utm_term={query}&utm_content={ad}&bp_adset={network}_{media}",
-          "platform": "naver",
-          "mallName": "오늘의집",
-          "price": 16800,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T07:01:36.666Z",
-          "matchConfidence": "high",
-          "productName": "리뗀클로르 특대형 젖병보관함",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6055016/60550164013.jpg",
-          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        }
-      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": null,
+      "bestOffer": null,
+      "purchaseOffers": [],
       "offerStatus": {
-        "state": "available",
-        "syncedAt": "2026-07-01T07:01:36.666Z",
-        "checkedOffers": 3
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
       },
       "memo": "",
-      "imagePath": "https://shopping-phinf.pstatic.net/main_4514793/45147938273.20260626070646.jpg",
-      "hasOriginalImage": true,
+      "imagePath": "/images/placeholders/sterilize.svg",
+      "hasOriginalImage": false,
       "placeholderKey": "sterilize",
       "dataQuality": {
         "status": "ready",
@@ -3385,17 +3321,8 @@
         "issues": []
       },
       "sourceItemIds": [
-        "manual-20260701-litenkulor-large-bottle-case"
-      ],
-      "imageSource": {
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_4514793/45147938273.20260626070646.jpg",
-        "matchConfidence": "high",
-        "platform": "naver",
-        "mallName": "네이버",
-        "productName": "리뗀클로르 특대형 젖병보관함",
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T07:01:36.666Z"
-      }
+        "manual-20260701-babybrezza-bottle-case"
+      ]
     },
     {
       "id": "item-08cfcdce92",
