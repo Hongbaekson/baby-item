@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-07-01T07:01:36.666Z",
+  "generatedAt": "2026-07-01T13:02:18.155Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템"
   },
   "summary": {
-    "totalItems": 32,
+    "totalItems": 31,
     "categories": [
       {
         "name": "👶300일간 매일 사용한 육아템 정리",
-        "count": 9
+        "count": 8
       },
       {
         "name": "💤수면 아이템",
@@ -16,7 +16,7 @@
       },
       {
         "name": "💩배변아이템",
-        "count": 4
+        "count": 3
       },
       {
         "name": "🍼수유아이템",
@@ -28,11 +28,11 @@
       },
       {
         "name": "🍼젖병 열탕 소독",
-        "count": 7
+        "count": 5
       },
       {
         "name": "😎외출 아이템",
-        "count": 6
+        "count": 5
       },
       {
         "name": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
@@ -41,10 +41,14 @@
       {
         "name": "🎉놀이아이템",
         "count": 1
+      },
+      {
+        "name": "🧼목욕/세탁 아이템",
+        "count": 3
       }
     ],
-    "readyItems": 19,
-    "usableWithWarningsItems": 13,
+    "readyItems": 16,
+    "usableWithWarningsItems": 15,
     "needsReviewItems": 0
   },
   "items": [
@@ -177,142 +181,6 @@
         "productName": "백색소음기 선물쇼핑백",
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T04:53:41.930Z"
-      }
-    },
-    {
-      "id": "item-2ded103b0e",
-      "title": "매직캔 히포 2 크롬 27L 휴지통",
-      "categories": [
-        "👶300일간 매일 사용한 육아템 정리",
-        "💩배변아이템"
-      ],
-      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
-      "partnerLink": "https://smartstore.naver.com/you-stor2/products/10257152878",
-      "partnerLinks": [
-        {
-          "url": "https://smartstore.naver.com/you-stor2/products/10257152878",
-          "category": "👶300일간 매일 사용한 육아템 정리",
-          "sourceItemId": "32eb4abb-08ed-8058-84b6-e36c37f6aa44"
-        },
-        {
-          "url": "https://bit.ly/47a2zbY",
-          "category": "💩배변아이템",
-          "sourceItemId": "248b4abb-08ed-803f-8430-d3652689bb74"
-        }
-      ],
-      "price": 69520,
-      "priceText": "69520",
-      "displayPrice": "최저가 58,420원부터",
-      "referencePrice": "기록가 69,520원",
-      "bestOffer": {
-        "url": "https://link.gmarket.co.kr/gate/pcs?item-no=2778869527&sub-id=1003&service-code=10000003&lcd=100000014",
-        "platform": "naver",
-        "mallName": "G마켓",
-        "price": 58420,
-        "shippingFee": null,
-        "totalPrice": null,
-        "priceBasis": "listed_price",
-        "inStock": true,
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T04:53:42.138Z",
-        "matchConfidence": "high",
-        "productName": "매직캔 (리필증정2개) 매직캔 크롬히포 21L 27L MH250 MH280 기본리필포함 3개리필",
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_6016900/60169009228.jpg",
-        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-      },
-      "purchaseOffers": [
-        {
-          "url": "https://link.gmarket.co.kr/gate/pcs?item-no=2778869527&sub-id=1003&service-code=10000003&lcd=100000014",
-          "platform": "naver",
-          "mallName": "G마켓",
-          "price": 58420,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:42.138Z",
-          "matchConfidence": "high",
-          "productName": "매직캔 (리필증정2개) 매직캔 크롬히포 21L 27L MH250 MH280 기본리필포함 3개리필",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6016900/60169009228.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://link.auction.co.kr/gate/pcs?item-no=F269669780&sub-id=1&service-code=10000003",
-          "platform": "naver",
-          "mallName": "옥션",
-          "price": 58420,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:42.138Z",
-          "matchConfidence": "high",
-          "productName": "매직캔 (리필증정2개) 매직캔 크롬히포 21L 27L MH250 MH280 기본리필포함 3개리필",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6016901/60169019396.2.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=6429505953&ctag=6429505953&lptag=I19236842744&itemId=19236842744&vendorItemId=86353210505&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 60390,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:42.138Z",
-          "matchConfidence": "high",
-          "productName": "매직캔 크롬히포 (오토실링) 21L 27L MH250 MH280 HIPPO II 듀얼 오픈시스템 신제품  크롬화이트  21L(275 x 235 x 470 mm)",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_4160462/41604628626.71.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9572359144&ctag=9572359144&lptag=I28571476029&itemId=28571476029&vendorItemId=85041781355&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 60800,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:42.138Z",
-          "matchConfidence": "high",
-          "productName": "[리필증정2개] 매직캔 크롬히포 21L 27L+리필2개 MH250 MH280 신제품 더블락시스템  21L그레이+리필2개 (MH250GCR)",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6024704/60247040433.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        }
-      ],
-      "offerStatus": {
-        "state": "available",
-        "syncedAt": "2026-07-01T04:53:42.138Z",
-        "checkedOffers": 10
-      },
-      "memo": "",
-      "imagePath": "https://shopping-phinf.pstatic.net/main_4966997/49669975719.37.jpg",
-      "hasOriginalImage": true,
-      "placeholderKey": "top-used",
-      "dataQuality": {
-        "status": "ready",
-        "errorCount": 0,
-        "warningCount": 0,
-        "issues": []
-      },
-      "sourceItemIds": [
-        "32eb4abb-08ed-8058-84b6-e36c37f6aa44",
-        "248b4abb-08ed-803f-8430-d3652689bb74"
-      ],
-      "imageSource": {
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_4966997/49669975719.37.jpg",
-        "matchConfidence": "high",
-        "platform": "naver",
-        "mallName": "쿠팡",
-        "productName": "매직캔 크롬히포 (오토실링) 21L 27L MH250 MH280 HIPPO II 듀얼 오픈시스템 신제품  리필_01_250R5G->매직캔히포 21L리필5롤",
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T04:53:42.138Z"
       }
     },
     {
@@ -1386,132 +1254,6 @@
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T05:38:47.919Z"
       }
-    },
-    {
-      "id": "item-987cdfc551",
-      "title": "마더케이 젖병 건조대",
-      "categories": [
-        "🍼젖병 열탕 소독"
-      ],
-      "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://link.coupang.com/a/c0Lyqv",
-      "partnerLinks": [
-        {
-          "url": "https://link.coupang.com/a/c0Lyqv",
-          "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "2bbb4abb-08ed-8076-a13b-eb08b7402c6a"
-        }
-      ],
-      "price": null,
-      "priceText": "",
-      "displayPrice": "최저가 15,390원부터",
-      "referencePrice": null,
-      "bestOffer": {
-        "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9594032263&ctag=9594032263&lptag=I28640190562&itemId=28640190562&vendorItemId=95582939673&spec=10305199",
-        "platform": "naver",
-        "mallName": "쿠팡",
-        "price": 15390,
-        "shippingFee": null,
-        "totalPrice": null,
-        "priceBasis": "listed_price",
-        "inStock": true,
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T04:53:44.500Z",
-        "matchConfidence": "high",
-        "productName": "마더케이 프리미엄 젖병 건조대",
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_6041273/60412734641.jpg",
-        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-      },
-      "purchaseOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9594032263&ctag=9594032263&lptag=I28640190562&itemId=28640190562&vendorItemId=95582939673&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 15390,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:44.500Z",
-          "matchConfidence": "high",
-          "productName": "마더케이 프리미엄 젖병 건조대",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6041273/60412734641.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9594040291&ctag=9594040291&lptag=I28640218626&itemId=28640218626&vendorItemId=95582967224&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 15390,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:44.500Z",
-          "matchConfidence": "high",
-          "productName": "마더케이 프리미엄 젖병 건조대 베이지",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6041340/60413409085.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=8233730233&tid=1000000061",
-          "platform": "naver",
-          "mallName": "11번가",
-          "price": 15590,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:44.500Z",
-          "matchConfidence": "high",
-          "productName": "마더케이 젖병 건조대_네이비",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5467518/54675180594.2.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://search.shopping.naver.com/catalog/22646470921",
-          "platform": "naver",
-          "mallName": "네이버",
-          "price": 17310,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:44.500Z",
-          "matchConfidence": "high",
-          "productName": "마더케이 젖병 건조대",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_2264647/22646470921.20260401152532.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        }
-      ],
-      "offerStatus": {
-        "state": "available",
-        "syncedAt": "2026-07-01T04:53:44.500Z",
-        "checkedOffers": 10
-      },
-      "memo": "",
-      "imagePath": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/377360215634252-c4b5a9ce-04be-4137-9906-2f8bd3f027cc.jpg",
-      "hasOriginalImage": true,
-      "placeholderKey": "sterilize",
-      "dataQuality": {
-        "status": "usable_with_warnings",
-        "errorCount": 0,
-        "warningCount": 1,
-        "issues": [
-          {
-            "code": "missing_price",
-            "severity": "warning",
-            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
-          }
-        ]
-      },
-      "sourceItemIds": [
-        "2bbb4abb-08ed-8076-a13b-eb08b7402c6a"
-      ]
     },
     {
       "id": "item-fc1e6655d0",
@@ -2894,141 +2636,6 @@
       ]
     },
     {
-      "id": "item-5d59feb51f",
-      "title": "줄즈 데이 5 세미 디럭스 유모차",
-      "categories": [
-        "😎외출 아이템"
-      ],
-      "primaryCategory": "😎외출 아이템",
-      "partnerLink": "https://link.coupang.com/a/dbMC0K",
-      "partnerLinks": [
-        {
-          "url": "https://link.coupang.com/a/dbMC0K",
-          "category": "😎외출 아이템",
-          "sourceItemId": "2c2b4abb-08ed-806c-b4f6-eba5d588e9c3"
-        }
-      ],
-      "price": null,
-      "priceText": "",
-      "displayPrice": "최저가 1,396,000원부터",
-      "referencePrice": null,
-      "bestOffer": {
-        "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670983&itemId=21866670983&vendorItemId=88914853528&spec=10305197",
-        "platform": "naver",
-        "mallName": "쿠팡",
-        "price": 1396000,
-        "shippingFee": null,
-        "totalPrice": null,
-        "priceBasis": "listed_price",
-        "inStock": true,
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T04:53:48.156Z",
-        "matchConfidence": "high",
-        "productName": "줄즈 데이5 세미디럭스형 유모차 세이지 그린 JOOLZ  디럭스 유아동 외출용품 아기 베이비 키즈 줄즈데이 줄즈디럭스 줄즈유모차 애기 영아 아가 BABEE Babies",
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_4760482/47604824403.1.jpg",
-        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-      },
-      "purchaseOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670983&itemId=21866670983&vendorItemId=88914853528&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 1396000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:48.156Z",
-          "matchConfidence": "high",
-          "productName": "줄즈 데이5 세미디럭스형 유모차 세이지 그린 JOOLZ  디럭스 유아동 외출용품 아기 베이비 키즈 줄즈데이 줄즈디럭스 줄즈유모차 애기 영아 아가 BABEE Babies",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_4760482/47604824403.1.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670976&itemId=21866670976&vendorItemId=88914853487&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 1470000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:48.156Z",
-          "matchConfidence": "high",
-          "productName": "줄즈 데이5 세미디럭스형 유모차 스페이스 블랙  JOOLZ 데이5 디럭스유모차 외출용품",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_4631346/46313467081.1.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670980&itemId=21866670980&vendorItemId=88914853505&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 1470000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:48.156Z",
-          "matchConfidence": "high",
-          "productName": "줄즈 데이5 세미디럭스형 유모차 샌디 타프 JOOLZ  디럭스 유아동 외출용품 아기 베이비 키즈 신생아 영아 아가",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5090534/50905344971.1.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670974&itemId=21866670974&vendorItemId=88914853462&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 1470000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:48.156Z",
-          "matchConfidence": "high",
-          "productName": "줄즈 데이5 세미디럭스형 유모차 포레스트 그린 JOOLZ 디럭스유모차 아기 베이비 외출용품  줄즈데이 줄즈디럭스 유아동 키즈 영아 아가",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_4631344/46313447201.1.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
-        }
-      ],
-      "offerStatus": {
-        "state": "available",
-        "syncedAt": "2026-07-01T04:53:48.156Z",
-        "checkedOffers": 4
-      },
-      "memo": "",
-      "imagePath": "https://shopping-phinf.pstatic.net/main_4760482/47604824403.1.jpg",
-      "hasOriginalImage": true,
-      "placeholderKey": "outing",
-      "dataQuality": {
-        "status": "usable_with_warnings",
-        "errorCount": 0,
-        "warningCount": 1,
-        "issues": [
-          {
-            "code": "missing_price",
-            "severity": "warning",
-            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
-          }
-        ]
-      },
-      "sourceItemIds": [
-        "2c2b4abb-08ed-806c-b4f6-eba5d588e9c3"
-      ],
-      "imageSource": {
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_4760482/47604824403.1.jpg",
-        "matchConfidence": "high",
-        "platform": "naver",
-        "mallName": "쿠팡",
-        "productName": "줄즈 데이5 세미디럭스형 유모차 세이지 그린 JOOLZ  디럭스 유아동 외출용품 아기 베이비 키즈 줄즈데이 줄즈디럭스 줄즈유모차 애기 영아 아가 BABEE Babies",
-        "source": "naver-shopping-search-api",
-        "syncedAt": "2026-07-01T04:53:48.156Z"
-      }
-    },
-    {
       "id": "item-30c64e909c",
       "title": "코멧 스테인레스 사각 설거지통 10L",
       "categories": [
@@ -3152,176 +2759,6 @@
       },
       "sourceItemIds": [
         "2bbb4abb-08ed-80f0-a404-cd5000501f7e"
-      ]
-    },
-    {
-      "id": "item-ac575a2504",
-      "title": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
-      "categories": [
-        "🍼젖병 열탕 소독",
-        "🍼수유아이템"
-      ],
-      "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://brand.naver.com/narimong/products/12553411586",
-      "partnerLinks": [
-        {
-          "url": "https://brand.naver.com/narimong/products/12553411586",
-          "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "manual-20260701-narimong-milkbox-bottle-washer"
-        }
-      ],
-      "price": 199000,
-      "priceText": "199000",
-      "displayPrice": "최저가 199,000원부터",
-      "referencePrice": "기록가 199,000원",
-      "bestOffer": {
-        "url": "https://brand.naver.com/narimong/products/12553411586",
-        "platform": "naver",
-        "mallName": "나리몽",
-        "price": 199000,
-        "shippingFee": null,
-        "totalPrice": null,
-        "priceBasis": "listed_price",
-        "inStock": true,
-        "source": "manual-reviewed",
-        "syncedAt": "2026-07-01T07:01:36.666Z",
-        "matchConfidence": "high",
-        "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_9009792/90097922440.1.jpg",
-        "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-      },
-      "purchaseOffers": [
-        {
-          "url": "https://brand.naver.com/narimong/products/12553411586",
-          "platform": "naver",
-          "mallName": "나리몽",
-          "price": 199000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "manual-reviewed",
-          "syncedAt": "2026-07-01T07:01:36.666Z",
-          "matchConfidence": "high",
-          "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_9009792/90097922440.1.jpg",
-          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=1696377057&ctag=1696377057&lptag=l262368414990&itemId=69238410469&vendorItemId=93875023782&spec=10305198",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 199000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T07:01:36.666Z",
-          "matchConfidence": "high",
-          "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5807035/58070353927.jpg",
-          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://search.shopping.naver.com/catalog/58106263733",
-          "platform": "naver",
-          "mallName": "네이버",
-          "price": 199000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T07:01:36.666Z",
-          "matchConfidence": "high",
-          "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5810626/58106263733.20260619162123.jpg",
-          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        },
-        {
-          "url": "https://www.lotteon.com/p/product/LO2589878497?sitmNo=LO2589878497_2589878498&ch_no=100065&ch_dtl_no=1000030&entryPoint=pcs&dp_infw_cd=CHT",
-          "platform": "naver",
-          "mallName": "롯데ON",
-          "price": 209000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T07:01:36.666Z",
-          "matchConfidence": "high",
-          "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5973484/59734848479.jpg",
-          "note": "사용자가 확인한 Naver BrandStore 상품 번호와 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
-        }
-      ],
-      "offerStatus": {
-        "state": "available",
-        "syncedAt": "2026-07-01T07:01:36.666Z",
-        "checkedOffers": 4
-      },
-      "memo": "",
-      "imagePath": "https://shopping-phinf.pstatic.net/main_9009792/90097922440.1.jpg",
-      "hasOriginalImage": true,
-      "placeholderKey": "sterilize",
-      "dataQuality": {
-        "status": "ready",
-        "errorCount": 0,
-        "warningCount": 0,
-        "issues": []
-      },
-      "sourceItemIds": [
-        "manual-20260701-narimong-milkbox-bottle-washer"
-      ],
-      "imageSource": {
-        "imageUrl": "https://shopping-phinf.pstatic.net/main_9009792/90097922440.1.jpg",
-        "matchConfidence": "high",
-        "platform": "naver",
-        "mallName": "나리몽",
-        "productName": "나리몽 밀크박스 젖병소독기 분유포트 보온 분유쉐이커 올인원",
-        "source": "manual-reviewed",
-        "syncedAt": "2026-07-01T07:01:36.666Z"
-      }
-    },
-    {
-      "id": "item-2daa879f7f",
-      "title": "브레짜 젖병보관함",
-      "categories": [
-        "🍼젖병 열탕 소독"
-      ],
-      "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://brand.naver.com/babybrezza/products/9682243165",
-      "partnerLinks": [
-        {
-          "url": "https://brand.naver.com/babybrezza/products/9682243165",
-          "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "manual-20260701-babybrezza-bottle-case"
-        }
-      ],
-      "price": null,
-      "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
-      "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
-      "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
-      },
-      "memo": "",
-      "imagePath": "/images/placeholders/sterilize.svg",
-      "hasOriginalImage": false,
-      "placeholderKey": "sterilize",
-      "dataQuality": {
-        "status": "ready",
-        "errorCount": 0,
-        "warningCount": 0,
-        "issues": []
-      },
-      "sourceItemIds": [
-        "manual-20260701-babybrezza-bottle-case"
       ]
     },
     {
@@ -3845,6 +3282,547 @@
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T05:50:47.516Z"
       }
+    },
+    {
+      "id": "item-7993572892",
+      "title": "FRANKLIIN 바스 앤 샴푸, 500ml, 1개",
+      "categories": [
+        "🧼목욕/세탁 아이템"
+      ],
+      "primaryCategory": "🧼목욕/세탁 아이템",
+      "partnerLink": "https://www.coupang.com/vp/products/7993572892?itemId=22226708048&vendorItemId=89272628995&src=1191000&spec=10999999&addtag=400&ctag=7993572892&lptag=CFM59422370&itime=20260701165520&pageType=PRODUCT&pageValue=7993572892&wPcid=17828620151193510270454&wRef=&wTime=20260701165520&redirect=landing&abTestInfo=&mcid=502a8429551e43779e71ca071fa46f91&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+      "partnerLinks": [
+        {
+          "url": "https://www.coupang.com/vp/products/7993572892?itemId=22226708048&vendorItemId=89272628995&src=1191000&spec=10999999&addtag=400&ctag=7993572892&lptag=CFM59422370&itime=20260701165520&pageType=PRODUCT&pageValue=7993572892&wPcid=17828620151193510270454&wRef=&wTime=20260701165520&redirect=landing&abTestInfo=&mcid=502a8429551e43779e71ca071fa46f91&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+          "category": "🧼목욕/세탁 아이템",
+          "sourceItemId": "coupang-7993572892-22226708048"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "최저가 21,900원부터",
+      "referencePrice": null,
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/main/products/10063740992",
+        "platform": "naver",
+        "mallName": "FRANKLiiN 프랭클린",
+        "price": 21900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:02:18.155Z",
+        "matchConfidence": "medium",
+        "productName": "프랭클린 바스앤샴푸 500ml 신생아 아기 바디워시 고농축 올인원 탑투토",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8760824/87608243616.1.jpg",
+        "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/10063740992",
+          "platform": "naver",
+          "mallName": "FRANKLiiN 프랭클린",
+          "price": 21900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "medium",
+          "productName": "프랭클린 바스앤샴푸 500ml 신생아 아기 바디워시 고농축 올인원 탑투토",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8760824/87608243616.1.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7993572892&ctag=7993572892&lptag=I22226708048&itemId=22226708048&vendorItemId=89272628995&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 21900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "medium",
+          "productName": "FRANKLIIN 바스 앤 샴푸 500ml  신생아 및 어린이용 올인원 워시",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5557388/55573888013.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=9145020904&tid=1000000061",
+          "platform": "naver",
+          "mallName": "11번가",
+          "price": 27360,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "FRANKLIIN 바스 앤 샴푸 500ml 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5905186/59051862442.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/13103602206",
+          "platform": "naver",
+          "mallName": "DAZZLE대즐",
+          "price": 27750,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "FRANKLIIN 바스 앤 샴푸 500ml 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9064811/90648113298.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T13:02:18.155Z",
+        "checkedOffers": 4
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8760824/87608243616.1.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "default",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "coupang-7993572892-22226708048"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8760824/87608243616.1.jpg",
+        "matchConfidence": "medium",
+        "platform": "naver",
+        "mallName": "FRANKLiiN 프랭클린",
+        "productName": "프랭클린 바스앤샴푸 500ml 신생아 아기 바디워시 고농축 올인원 탑투토",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:02:18.155Z"
+      }
+    },
+    {
+      "id": "item-8360713149",
+      "title": "FRANKLIIN 세탁세제 무향",
+      "categories": [
+        "🧼목욕/세탁 아이템"
+      ],
+      "primaryCategory": "🧼목욕/세탁 아이템",
+      "partnerLink": "https://www.coupang.com/vp/products/8360713149?itemId=24161000200&vendorItemId=95690820792&src=1191000&spec=10999999&addtag=400&ctag=8360713149&lptag=CFM59422370&itime=20260701165544&pageType=PRODUCT&pageValue=8360713149&wPcid=17828620151193510270454&wRef=&wTime=20260701165544&redirect=landing&abTestInfo=&mcid=20b8f53773554a808dcd1e687d2e8573&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+      "partnerLinks": [
+        {
+          "url": "https://www.coupang.com/vp/products/8360713149?itemId=24161000200&vendorItemId=95690820792&src=1191000&spec=10999999&addtag=400&ctag=8360713149&lptag=CFM59422370&itime=20260701165544&pageType=PRODUCT&pageValue=8360713149&wPcid=17828620151193510270454&wRef=&wTime=20260701165544&redirect=landing&abTestInfo=&mcid=20b8f53773554a808dcd1e687d2e8573&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+          "category": "🧼목욕/세탁 아이템",
+          "sourceItemId": "coupang-8360713149-24161000200"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "최저가 12,130원부터",
+      "referencePrice": null,
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/54368734319",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 12130,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:02:18.155Z",
+        "matchConfidence": "high",
+        "productName": "FRANKLIIN 세탁세제 1L, 무향, 1개",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5436873/54368734319.20250826185350.jpg",
+        "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/54368734319",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 12130,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "FRANKLIIN 세탁세제 1L, 무향, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5436873/54368734319.20250826185350.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=8360713149&ctag=8360713149&lptag=I24161000200&itemId=24161000200&vendorItemId=95690820792&spec=10305199",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 12130,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "FRANKLIIN 세탁세제 무향  1L  1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5811078/58110782960.28.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=3081617934&ctag=3081617934&lptag=l210041220006&itemId=46201010002&vendorItemId=95690820792&spec=10305199",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 12130,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "FRANKLIIN 세탁세제 무향",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6059213/60592132678.1.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/60261950769",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 12900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "FRANKLIIN 세탁세제 1L(리필), 무향, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6026195/60261950769.20260601105250.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T13:02:18.155Z",
+        "checkedOffers": 4
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_5436873/54368734319.20250826185350.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "default",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "coupang-8360713149-24161000200"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5436873/54368734319.20250826185350.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "네이버",
+        "productName": "FRANKLIIN 세탁세제 1L, 무향, 1개",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:02:18.155Z"
+      }
+    },
+    {
+      "id": "item-8309014082",
+      "title": "FRANKLIIN 주방세제&젖병세정제, 500ml, 1개",
+      "categories": [
+        "🍼젖병 열탕 소독",
+        "🧼목욕/세탁 아이템"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://www.coupang.com/vp/products/8309014082?itemId=23974362780&vendorItemId=86714034495&src=1191000&spec=10999999&addtag=400&ctag=8309014082&lptag=CFM59422370&itime=20260701165551&pageType=PRODUCT&pageValue=8309014082&wPcid=17828620151193510270454&wRef=&wTime=20260701165551&redirect=landing&abTestInfo=&mcid=d6726ec896a14405b5ab5054e9c658a5&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+      "partnerLinks": [
+        {
+          "url": "https://www.coupang.com/vp/products/8309014082?itemId=23974362780&vendorItemId=86714034495&src=1191000&spec=10999999&addtag=400&ctag=8309014082&lptag=CFM59422370&itime=20260701165551&pageType=PRODUCT&pageValue=8309014082&wPcid=17828620151193510270454&wRef=&wTime=20260701165551&redirect=landing&abTestInfo=&mcid=d6726ec896a14405b5ab5054e9c658a5&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "coupang-8309014082-23974362780"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "최저가 9,900원부터",
+      "referencePrice": null,
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/60227447545",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 9900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:02:18.155Z",
+        "matchConfidence": "medium",
+        "productName": "FRANKLIIN 비건 주방세제 500ml, 1개",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6022744/60227447545.20260529102747.jpg",
+        "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/60227447545",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 9900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "medium",
+          "productName": "FRANKLIIN 비건 주방세제 500ml, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6022744/60227447545.20260529102747.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/9817355616",
+          "platform": "naver",
+          "mallName": "FRANKLiiN 프랭클린",
+          "price": 9900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "medium",
+          "productName": "프랭클린 비건 아기주방세제 500ml 과일 유아 식기세제",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8736185/87361857889.4.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://ohou.se/products/3966709/selling?option_id=29712881&utm_source=naver_shop&bp_sub_id_2=search&bp_sub_id_3=inorganic&utm_medium=cpc&utm_campaign=3966709-29712881&utm_term={query}&utm_content={ad}&bp_adset={network}_{media}",
+          "platform": "naver",
+          "mallName": "오늘의집",
+          "price": 9900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "medium",
+          "productName": "프랭클린 비건 아기주방세제 500ml 과일 유아 식기세제 - 주방세제 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5913070/59130705289.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/12027130061",
+          "platform": "naver",
+          "mallName": "블루 가성비 정품 mall",
+          "price": 12480,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "medium",
+          "productName": "FRANKLIIN 주방세제 유아 앤 젖병세제 500ml 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8957164/89571640752.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T13:02:18.155Z",
+        "checkedOffers": 4
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_6022744/60227447545.20260529102747.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "coupang-8309014082-23974362780"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6022744/60227447545.20260529102747.jpg",
+        "matchConfidence": "medium",
+        "platform": "naver",
+        "mallName": "네이버",
+        "productName": "FRANKLIIN 비건 주방세제 500ml, 1개",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:02:18.155Z"
+      }
+    },
+    {
+      "id": "item-8631775229",
+      "title": "앱솔루트 명작 분유 1단계, 800g, 1개",
+      "categories": [
+        "🍼수유아이템"
+      ],
+      "primaryCategory": "🍼수유아이템",
+      "partnerLink": "https://www.coupang.com/vp/products/8631775229?itemId=13528009204&vendorItemId=78809898534&src=1191000&spec=10999999&addtag=400&ctag=8631775229&lptag=CFM59422370&itime=20260701165604&pageType=PRODUCT&pageValue=8631775229&wPcid=17828620151193510270454&wRef=&wTime=20260701165604&redirect=landing&abTestInfo=&mcid=5dc1144792d54e77add106a2a98920f1&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+      "partnerLinks": [
+        {
+          "url": "https://www.coupang.com/vp/products/8631775229?itemId=13528009204&vendorItemId=78809898534&src=1191000&spec=10999999&addtag=400&ctag=8631775229&lptag=CFM59422370&itime=20260701165604&pageType=PRODUCT&pageValue=8631775229&wPcid=17828620151193510270454&wRef=&wTime=20260701165604&redirect=landing&abTestInfo=&mcid=5dc1144792d54e77add106a2a98920f1&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+          "category": "🍼수유아이템",
+          "sourceItemId": "coupang-8631775229-13528009204"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "최저가 16,900원부터",
+      "referencePrice": null,
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/main/products/5178236293",
+        "platform": "naver",
+        "mallName": "베스트커머스샵",
+        "price": 16900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:02:18.155Z",
+        "matchConfidence": "high",
+        "productName": "소비기한 임박 (P) 매일 앱솔루트 명작 1단계 800g 1캔",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8272275/82722757437.8.jpg",
+        "note": "네이버 쇼핑 검색 API의 800g 일치 최저가 후보입니다. 소비기한 임박 문구가 있어 구매처에서 소비기한과 재고를 반드시 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/5178236293",
+          "platform": "naver",
+          "mallName": "베스트커머스샵",
+          "price": 16900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "소비기한 임박 (P) 매일 앱솔루트 명작 1단계 800g 1캔",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8272275/82722757437.8.jpg",
+          "note": "네이버 쇼핑 검색 API의 800g 일치 최저가 후보입니다. 소비기한 임박 문구가 있어 구매처에서 소비기한과 재고를 반드시 확인해야 합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/52252111618",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 20900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "매일유업 ABSOLUTE 시작부터 프리미엄 명작 2FL 1단계 800g, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5225211/52252111618.20250102161058.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://direct.maeil.com/m/product/productView.do?productCode=P13488&utm_source=Naver_shopping&utm_medium=SS&utm_campaign=MaeilDirect@{campaign}&utm_content={ad_group}&utm_term={query}",
+          "platform": "naver",
+          "mallName": "매일유업 공식몰",
+          "price": 22000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "앱솔루트 명작 2FL HMO 분유 1단계(0~6개월) 800g 1캔",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4716289/47162897152.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/5946822360",
+          "platform": "naver",
+          "mallName": "매일유업 직영스토어",
+          "price": 22000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:02:18.155Z",
+          "matchConfidence": "high",
+          "productName": "매일유업 앱솔루트 명작 2FL (HMO) 분유 1단계(0~6개월) 800g 1캔 [도착보장]",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8349132/83491321848.2.jpg",
+          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T13:02:18.155Z",
+        "checkedOffers": 4
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8272275/82722757437.8.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "feeding",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "coupang-8631775229-13528009204"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8272275/82722757437.8.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "베스트커머스샵",
+        "productName": "소비기한 임박 (P) 매일 앱솔루트 명작 1단계 800g 1캔",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:02:18.155Z"
+      }
     }
   ],
   "imageSync": {
@@ -3865,9 +3843,9 @@
     "skipped": 208
   },
   "manualReview": {
-    "appliedAt": "2026-07-01T05:52:44.458Z",
-    "updatedItemCount": 11,
-    "deletedItemCount": 7,
-    "note": "사용자가 직접 확인한 URL과 Naver Shopping API 후보를 수동 검토해 반영했습니다."
+    "appliedAt": "2026-07-01T13:02:18.155Z",
+    "addedItemCount": 4,
+    "deletedItemCount": 5,
+    "note": "사용자가 전달한 Coupang 상품 URL 4개를 직접 확인하고, 네이버 쇼핑 검색 API 후보를 수동 검토해 반영했습니다."
   }
 }
