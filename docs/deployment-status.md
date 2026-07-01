@@ -10,7 +10,7 @@
 - 인스턴스 표시 이름: `prod-app-01`
 - VM private IP: `10.0.0.44`
 - 배포 경로: `/opt/stacks/euni-baby-items`
-- Git commit: `0a94a4c`
+- Git commit: `a29a1ea`
 - 컨테이너명: `euni-baby-items-web`
 - 공개 주소: `http://134.185.110.26:1206`
 - 앱 포트 설정: `APP_PORT=1206`
@@ -27,6 +27,8 @@
 - 2026-07-01 최신 `main`으로 fast-forward 후 컨테이너 재생성 완료
 - OCI Security List에 TCP `1206` ingress 추가 완료
 - 외부 PC에서 public IP HTTP 200 확인 완료
+- HTTP public IP 배포 기준에 맞게 CSP에서 `upgrade-insecure-requests` 제거 완료
+- headless Chrome 기준 React 렌더링 DOM 확인 완료
 
 서버 내부 검증:
 
@@ -46,6 +48,7 @@ curl -I http://10.0.0.44:1206
 - `http://134.185.110.26:1206` HTTP 200
 - HTML title/description과 asset 경로 확인 완료
 - Nginx 보안 헤더 적용 확인
+- 실제 브라우저 렌더링 후 `이은이 육아템`, 제품 목록, 카테고리 필터 노출 확인 완료
 
 ## 남은 작업
 
