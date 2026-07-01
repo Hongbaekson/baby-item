@@ -1,0 +1,9 @@
+services:
+  euni-baby-items:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: euni-baby-items-web
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8080}:80"

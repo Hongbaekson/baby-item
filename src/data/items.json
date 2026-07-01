@@ -1,0 +1,1474 @@
+{
+  "generatedAt": "2026-07-01T00:13:33.875Z",
+  "site": {
+    "name": "이은이 육아템",
+    "affiliateDisclosure": "이 페이지의 일부 링크는 제휴 링크이며, 구매 시 일정액의 수수료를 제공받을 수 있습니다."
+  },
+  "summary": {
+    "totalItems": 37,
+    "categories": [
+      {
+        "name": "👶300일간 매일 사용한 육아템 정리",
+        "count": 9
+      },
+      {
+        "name": "💤수면 아이템",
+        "count": 6
+      },
+      {
+        "name": "😎외출 아이템",
+        "count": 8
+      },
+      {
+        "name": "🍼젖병 열탕 소독",
+        "count": 5
+      },
+      {
+        "name": "🍼수유아이템",
+        "count": 4
+      },
+      {
+        "name": "💩신생아 배앓이 꿀템",
+        "count": 2
+      },
+      {
+        "name": "🎉놀이아이템",
+        "count": 3
+      },
+      {
+        "name": "💩배변아이템",
+        "count": 5
+      },
+      {
+        "name": "👶거실매트",
+        "count": 1
+      },
+      {
+        "name": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
+        "count": 2
+      }
+    ],
+    "readyItems": 6,
+    "usableWithWarningsItems": 30,
+    "needsReviewItems": 1
+  },
+  "items": [
+    {
+      "id": "item-95739902b6",
+      "title": "말랑하니 백색소음기",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리",
+        "💤수면 아이템"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://bit.ly/3UC8sXQ",
+      "partnerLinks": [
+        {
+          "url": "https://bit.ly/3UC8sXQ",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "32eb4abb-08ed-80f4-a319-f79a86a68b1a"
+        }
+      ],
+      "price": 37900,
+      "priceText": "37900",
+      "displayPrice": "37,900원",
+      "memo": "",
+      "imagePath": "/images/placeholders/top-used.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "32eb4abb-08ed-80f4-a319-f79a86a68b1a",
+        "248b4abb-08ed-806e-b68d-cde9d15949ff"
+      ]
+    },
+    {
+      "id": "item-2ded103b0e",
+      "title": "매직캔 히포 2 크롬 27L 휴지통",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리",
+        "💩배변아이템"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://smartstore.naver.com/you-stor2/products/10257152878",
+      "partnerLinks": [
+        {
+          "url": "https://smartstore.naver.com/you-stor2/products/10257152878",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "32eb4abb-08ed-8058-84b6-e36c37f6aa44"
+        },
+        {
+          "url": "https://bit.ly/47a2zbY",
+          "category": "💩배변아이템",
+          "sourceItemId": "248b4abb-08ed-803f-8430-d3652689bb74"
+        }
+      ],
+      "price": 69520,
+      "priceText": "69520",
+      "displayPrice": "69,520원",
+      "memo": "",
+      "imagePath": "/images/placeholders/top-used.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "32eb4abb-08ed-8058-84b6-e36c37f6aa44",
+        "248b4abb-08ed-803f-8430-d3652689bb74"
+      ]
+    },
+    {
+      "id": "item-7995e62fc2",
+      "title": "보르르 분유포트",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리",
+        "🍼수유아이템"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://link.coupang.com/a/cHM8Zm",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cHM8Zm",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "32eb4abb-08ed-80d5-9011-f4eab770f1d2"
+        }
+      ],
+      "price": 95000,
+      "priceText": "95000",
+      "displayPrice": "95,000원",
+      "memo": "-> 물을 100도까지 끓여 염소를 제거한 후 아기의 분유를 타기 좋은 온도인 43도로 물온도를 맞춰줌\n\n-> 분유 탈때마다 물을 끓이고 식히면 너무 힘드니 필요",
+      "imagePath": "/images/placeholders/top-used.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "32eb4abb-08ed-80d5-9011-f4eab770f1d2",
+        "248b4abb-08ed-8095-89c7-c0b2be795034"
+      ]
+    },
+    {
+      "id": "item-1d5fa5a493",
+      "title": "소베맘 기저귀갈이대",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리",
+        "💩배변아이템"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://brand.naver.com/sobemom/products/8431258393",
+      "partnerLinks": [
+        {
+          "url": "https://brand.naver.com/sobemom/products/8431258393",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "32eb4abb-08ed-80ae-a203-f6a41dae9e3b"
+        }
+      ],
+      "price": 109800,
+      "priceText": "109800",
+      "displayPrice": "109,800원",
+      "memo": "",
+      "imagePath": "/images/placeholders/top-used.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "32eb4abb-08ed-80ae-a203-f6a41dae9e3b",
+        "248b4abb-08ed-807a-984e-cb0776367ac9"
+      ]
+    },
+    {
+      "id": "item-35daf7dc3f",
+      "title": "유팡 시그니처 2 젖병 소독기",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리",
+        "🍼수유아이템"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://brand.naver.com/upangkorea/products/10709525973",
+      "partnerLinks": [
+        {
+          "url": "https://brand.naver.com/upangkorea/products/10709525973",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "32eb4abb-08ed-80d6-9e4f-e1f079a14bc2"
+        },
+        {
+          "url": "https://link.coupang.com/a/cHNkIv",
+          "category": "🍼수유아이템",
+          "sourceItemId": "248b4abb-08ed-8059-aad0-dfd6afafeb63"
+        }
+      ],
+      "price": 340920,
+      "priceText": "340920",
+      "displayPrice": "340,920원",
+      "memo": "",
+      "imagePath": "/images/placeholders/top-used.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "32eb4abb-08ed-80d6-9e4f-e1f079a14bc2",
+        "248b4abb-08ed-8059-aad0-dfd6afafeb63"
+      ]
+    },
+    {
+      "id": "item-b74f1aa7c3",
+      "title": "헤이홈 홈캠 x 안전헬퍼 홈캠거치대",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리",
+        "💤수면 아이템"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://bit.ly/4ew9JKZ",
+      "partnerLinks": [
+        {
+          "url": "https://bit.ly/4ew9JKZ",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "32eb4abb-08ed-8018-b124-d4129936ea5f"
+        },
+        {
+          "url": "https://bit.ly/4jmx2HM",
+          "category": "💤수면 아이템",
+          "sourceItemId": "248b4abb-08ed-80e9-94a4-d61b7c6cc61c"
+        }
+      ],
+      "price": 72900,
+      "priceText": "72900",
+      "displayPrice": "72,900원",
+      "memo": "",
+      "imagePath": "/images/placeholders/top-used.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": [
+          {
+            "code": "normalized_partner_link",
+            "severity": "info",
+            "message": "구매 링크 형식을 자동 보정했습니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "32eb4abb-08ed-8018-b124-d4129936ea5f",
+        "248b4abb-08ed-80e9-94a4-d61b7c6cc61c"
+      ]
+    },
+    {
+      "id": "item-8e417128ac",
+      "title": "[꿈비] 클린롤매트 놀이방매트 거실 층간소음 매트",
+      "categories": [
+        "👶거실매트"
+      ],
+      "primaryCategory": "👶거실매트",
+      "partnerLink": "https://bit.ly/4ot5IJ3",
+      "partnerLinks": [
+        {
+          "url": "https://bit.ly/4ot5IJ3",
+          "category": "👶거실매트",
+          "sourceItemId": "2bbb4abb-08ed-8032-b502-cf3563a10204"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/mat.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "mat",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2bbb4abb-08ed-8032-b502-cf3563a10204"
+      ]
+    },
+    {
+      "id": "item-974984208a",
+      "title": "기저귀 가방 (백팩)",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://naver.me/GnRhFEoY",
+      "partnerLinks": [
+        {
+          "url": "https://naver.me/GnRhFEoY",
+          "category": "😎외출 아이템",
+          "sourceItemId": "2c2b4abb-08ed-80c3-87b9-fe5709f2dca1"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/outing.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2c2b4abb-08ed-80c3-87b9-fe5709f2dca1"
+      ]
+    },
+    {
+      "id": "item-67a5ed3e8b",
+      "title": "꿈비 분유쉐이커",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리",
+        "🍼수유아이템",
+        "💩신생아 배앓이 꿀템"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://link.coupang.com/a/cJUtgK",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cJUtgK",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "32eb4abb-08ed-803d-8cf6-f57cfb0b321d"
+        },
+        {
+          "url": "https://link.coupang.com/a/cOIpVt",
+          "category": "💩신생아 배앓이 꿀템",
+          "sourceItemId": "264b4abb-08ed-80e4-98a2-d02cc4bdaf46"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/top-used.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "32eb4abb-08ed-803d-8cf6-f57cfb0b321d",
+        "24cb4abb-08ed-8035-b01c-c8ae382bdc64",
+        "264b4abb-08ed-80e4-98a2-d02cc4bdaf46"
+      ]
+    },
+    {
+      "id": "item-c095ae487b",
+      "title": "롤베이비 방수패드(기저귀갈이대용)",
+      "categories": [
+        "💩배변아이템"
+      ],
+      "primaryCategory": "💩배변아이템",
+      "partnerLink": "https://link.coupang.com/a/cHYbU2",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cHYbU2",
+          "category": "💩배변아이템",
+          "sourceItemId": "248b4abb-08ed-8083-8b05-f318ca827206"
+        }
+      ],
+      "price": 8010,
+      "priceText": "8010",
+      "displayPrice": "8,010원",
+      "memo": "",
+      "imagePath": "/images/placeholders/diaper.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "diaper",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-8083-8b05-f318ca827206"
+      ]
+    },
+    {
+      "id": "item-194c1a1120",
+      "title": "마더케이 디아 젖병 유아 주방세제 무향, 1개, 500ml",
+      "categories": [
+        "🍼젖병 열탕 소독"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://link.coupang.com/a/c0LzoE",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/c0LzoE",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "2bbb4abb-08ed-80e3-a693-dd2713cebab7"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/sterilize.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2bbb4abb-08ed-80e3-a693-dd2713cebab7"
+      ]
+    },
+    {
+      "id": "item-f18d22a984",
+      "title": "마더케이 일회용 젖병 세트(젖꼭지X)",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://link.coupang.com/a/dbMwcg",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/dbMwcg",
+          "category": "😎외출 아이템",
+          "sourceItemId": "2c2b4abb-08ed-8052-b97f-fcaee02d52f9"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/outing.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2c2b4abb-08ed-8052-b97f-fcaee02d52f9"
+      ]
+    },
+    {
+      "id": "item-987cdfc551",
+      "title": "마더케이 젖병 건조대",
+      "categories": [
+        "🍼젖병 열탕 소독"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://link.coupang.com/a/c0Lyqv",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/c0Lyqv",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "2bbb4abb-08ed-8076-a13b-eb08b7402c6a"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/sterilize.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2bbb4abb-08ed-8076-a13b-eb08b7402c6a"
+      ]
+    },
+    {
+      "id": "item-fc1e6655d0",
+      "title": "마더케이 젖병 솔 세트",
+      "categories": [
+        "🍼젖병 열탕 소독"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://link.coupang.com/a/c0LxAR",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/c0LxAR",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "2bbb4abb-08ed-8015-8e79-c83a2d525366"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/sterilize.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2bbb4abb-08ed-8015-8e79-c83a2d525366"
+      ]
+    },
+    {
+      "id": "item-14dd33484e",
+      "title": "마를로뜨 듀라론 쿨매트",
+      "categories": [
+        "💤수면 아이템"
+      ],
+      "primaryCategory": "💤수면 아이템",
+      "partnerLink": "https://link.coupang.com/a/cHNOOQ",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cHNOOQ",
+          "category": "💤수면 아이템",
+          "sourceItemId": "248b4abb-08ed-80cf-af73-eb1f7e7db138"
+        }
+      ],
+      "price": 18900,
+      "priceText": "18900",
+      "displayPrice": "18,900원",
+      "memo": "",
+      "imagePath": "/images/placeholders/sleep.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "sleep",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-80cf-af73-eb1f7e7db138"
+      ]
+    },
+    {
+      "id": "item-9a9c893193",
+      "title": "뮤라(mula)방수패드",
+      "categories": [
+        "💤수면 아이템"
+      ],
+      "primaryCategory": "💤수면 아이템",
+      "partnerLink": "https://bit.ly/4lTTusi",
+      "partnerLinks": [
+        {
+          "url": "https://bit.ly/4lTTusi",
+          "category": "💤수면 아이템",
+          "sourceItemId": "248b4abb-08ed-806d-ad54-d968943ec27c"
+        }
+      ],
+      "price": 42000,
+      "priceText": "42000",
+      "displayPrice": "42,000원",
+      "memo": "",
+      "imagePath": "/images/placeholders/sleep.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "sleep",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-806d-ad54-d968943ec27c"
+      ]
+    },
+    {
+      "id": "item-073cb29318",
+      "title": "바이오 가이아 유산균",
+      "categories": [
+        "💩신생아 배앓이 꿀템"
+      ],
+      "primaryCategory": "💩신생아 배앓이 꿀템",
+      "partnerLink": "https://link.coupang.com/a/cOEBWL",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cOEBWL",
+          "category": "💩신생아 배앓이 꿀템",
+          "sourceItemId": "264b4abb-08ed-802f-bf1d-c2abf0a5711b"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/colic.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "colic",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "264b4abb-08ed-802f-bf1d-c2abf0a5711b"
+      ]
+    },
+    {
+      "id": "item-5b88cc08a4",
+      "title": "베이비 브레짜 분유제조기",
+      "categories": [
+        "🍼수유아이템"
+      ],
+      "primaryCategory": "🍼수유아이템",
+      "partnerLink": "https://link.coupang.com/a/cHNeW5",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cHNeW5",
+          "category": "🍼수유아이템",
+          "sourceItemId": "248b4abb-08ed-805c-9069-cddeda2c6ba4"
+        }
+      ],
+      "price": 309000,
+      "priceText": "309000",
+      "displayPrice": "309,000원",
+      "memo": "",
+      "imagePath": "/images/placeholders/feeding.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "feeding",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-805c-9069-cddeda2c6ba4"
+      ]
+    },
+    {
+      "id": "item-b1bc91e327",
+      "title": "베이비 워터 (아기 생수)",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://link.coupang.com/a/dbMH5T",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/dbMH5T",
+          "category": "😎외출 아이템",
+          "sourceItemId": "2c2b4abb-08ed-8012-b2cf-d8b46b33f3d7"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/outing.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2c2b4abb-08ed-8012-b2cf-d8b46b33f3d7"
+      ]
+    },
+    {
+      "id": "item-382f8e6a2d",
+      "title": "보르르 주전자 단품(현재 품절)",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://brand.naver.com/boleuleu/products/5843367547",
+      "partnerLinks": [
+        {
+          "url": "https://brand.naver.com/boleuleu/products/5843367547",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "32eb4abb-08ed-80a3-9e83-c724bbfc7025"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/top-used.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "32eb4abb-08ed-80a3-9e83-c724bbfc7025"
+      ]
+    },
+    {
+      "id": "item-521efce3f3",
+      "title": "보온 텀블러",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://link.coupang.com/a/dbMWlD",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/dbMWlD",
+          "category": "😎외출 아이템",
+          "sourceItemId": "2c2b4abb-08ed-805c-863a-f54db5e5b8df"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/outing.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2c2b4abb-08ed-805c-863a-f54db5e5b8df"
+      ]
+    },
+    {
+      "id": "item-3573fecd77",
+      "title": "아기 옷걸이",
+      "categories": [
+        "💩배변아이템"
+      ],
+      "primaryCategory": "💩배변아이템",
+      "partnerLink": "https://link.coupang.com/a/cHYcGk",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cHYcGk",
+          "category": "💩배변아이템",
+          "sourceItemId": "248b4abb-08ed-80e8-9214-fd6d4a0d68aa"
+        }
+      ],
+      "price": 9900,
+      "priceText": "9900",
+      "displayPrice": "9,900원",
+      "memo": "",
+      "imagePath": "/images/placeholders/diaper.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "diaper",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-80e8-9214-fd6d4a0d68aa"
+      ]
+    },
+    {
+      "id": "item-b6cc51720e",
+      "title": "아기띠  아이엔젤 올인원 닥터다이얼 폴드 에어 힙시트",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://link.coupang.com/a/dbMLd8",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/dbMLd8",
+          "category": "😎외출 아이템",
+          "sourceItemId": "2c2b4abb-08ed-8059-813d-d0927b0dfd1c"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/outing.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2c2b4abb-08ed-8059-813d-d0927b0dfd1c"
+      ]
+    },
+    {
+      "id": "item-4f18824aa0",
+      "title": "아나파 손목보호대",
+      "categories": [
+        "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)"
+      ],
+      "primaryCategory": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
+      "partnerLink": "https://link.coupang.com/a/dpxqAV",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/dpxqAV",
+          "category": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
+          "sourceItemId": "2e5b4abb-08ed-8055-8086-c6dcf5db20dc"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/caregiver.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "caregiver",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2e5b4abb-08ed-8055-8086-c6dcf5db20dc"
+      ]
+    },
+    {
+      "id": "item-fff2c290f4",
+      "title": "엠베이비 타이니모",
+      "categories": [
+        "🎉놀이아이템"
+      ],
+      "primaryCategory": "🎉놀이아이템",
+      "partnerLink": "https://link.coupang.com/a/cHNxww",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cHNxww",
+          "category": "🎉놀이아이템",
+          "sourceItemId": "248b4abb-08ed-80bd-835d-de0fc03acea3"
+        }
+      ],
+      "price": 128000,
+      "priceText": "128000",
+      "displayPrice": "128,000원",
+      "memo": "",
+      "imagePath": "/images/placeholders/play.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "play",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-80bd-835d-de0fc03acea3"
+      ]
+    },
+    {
+      "id": "item-8e7ce75a58",
+      "title": "올투게더나우 허리보호대",
+      "categories": [
+        "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)"
+      ],
+      "primaryCategory": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
+      "partnerLink": "https://naver.me/xS1COSy7",
+      "partnerLinks": [
+        {
+          "url": "https://naver.me/xS1COSy7",
+          "category": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
+          "sourceItemId": "2e5b4abb-08ed-800c-85e4-ff877fa87716"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/caregiver.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "caregiver",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2e5b4abb-08ed-800c-85e4-ff877fa87716"
+      ]
+    },
+    {
+      "id": "item-e9d15fbf7f",
+      "title": "위틀스토어 바람개비 아기 체육관",
+      "categories": [
+        "🎉놀이아이템"
+      ],
+      "primaryCategory": "🎉놀이아이템",
+      "partnerLink": "https://bit.ly/40FAJ3u",
+      "partnerLinks": [
+        {
+          "url": "https://bit.ly/40FAJ3u",
+          "category": "🎉놀이아이템",
+          "sourceItemId": "248b4abb-08ed-8087-8781-decce27c2cb6"
+        }
+      ],
+      "price": 69900,
+      "priceText": "69900",
+      "displayPrice": "69,900원",
+      "memo": "",
+      "imagePath": "/images/placeholders/play.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "play",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-8087-8781-decce27c2cb6"
+      ]
+    },
+    {
+      "id": "item-f8e90a98ec",
+      "title": "젖병 소독 냄비",
+      "categories": [
+        "🍼젖병 열탕 소독"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://link.coupang.com/a/c9qZEt",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/c9qZEt",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "2bbb4abb-08ed-8077-a1e4-fe4abaa47d58"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/sterilize.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2bbb4abb-08ed-8077-a1e4-fe4abaa47d58"
+      ]
+    },
+    {
+      "id": "item-1ed600be8f",
+      "title": "제이앤제이 역류방지쿠션 오리지널",
+      "categories": [
+        "🎉놀이아이템"
+      ],
+      "primaryCategory": "🎉놀이아이템",
+      "partnerLink": "http://bit.ly/46zoNUx",
+      "partnerLinks": [
+        {
+          "url": "http://bit.ly/46zoNUx",
+          "category": "🎉놀이아이템",
+          "sourceItemId": "248b4abb-08ed-8054-9900-dd2dca624fa0"
+        }
+      ],
+      "price": 79800,
+      "priceText": "79800",
+      "displayPrice": "79,800원",
+      "memo": "최근 가격 변동 확인 필요, 인기 선물 아이템",
+      "imagePath": "/images/placeholders/play.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "play",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-8054-9900-dd2dca624fa0"
+      ]
+    },
+    {
+      "id": "item-5d59feb51f",
+      "title": "줄즈 데이 5 세미 디럭스 유모차",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://link.coupang.com/a/dbMC0K",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/dbMC0K",
+          "category": "😎외출 아이템",
+          "sourceItemId": "2c2b4abb-08ed-806c-b4f6-eba5d588e9c3"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/outing.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2c2b4abb-08ed-806c-b4f6-eba5d588e9c3"
+      ]
+    },
+    {
+      "id": "item-30c64e909c",
+      "title": "코멧 스테인레스 사각 설거지통 10L",
+      "categories": [
+        "🍼젖병 열탕 소독"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://link.coupang.com/a/cFYlhP",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cFYlhP",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "2bbb4abb-08ed-80f0-a404-cd5000501f7e"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/sterilize.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2bbb4abb-08ed-80f0-a404-cd5000501f7e"
+      ]
+    },
+    {
+      "id": "item-ddf2585f1d",
+      "title": "트립베드 히팅 텀블러(발열 텀블러)",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://naver.me/517sAkSi",
+      "partnerLinks": [
+        {
+          "url": "https://naver.me/517sAkSi",
+          "category": "😎외출 아이템",
+          "sourceItemId": "2c2b4abb-08ed-8049-860c-c7010bbbcfcc"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/outing.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2c2b4abb-08ed-8049-860c-c7010bbbcfcc"
+      ]
+    },
+    {
+      "id": "item-08cfcdce92",
+      "title": "포프베베 아기비데",
+      "categories": [
+        "💩배변아이템"
+      ],
+      "primaryCategory": "💩배변아이템",
+      "partnerLink": "https://smartstore.naver.com/ppbb/products/3478201617",
+      "partnerLinks": [
+        {
+          "url": "https://smartstore.naver.com/ppbb/products/3478201617",
+          "category": "💩배변아이템",
+          "sourceItemId": "248b4abb-08ed-8073-9619-fa443f18f0bd"
+        }
+      ],
+      "price": 87200,
+      "priceText": "87200",
+      "displayPrice": "87,200원",
+      "memo": "",
+      "imagePath": "/images/placeholders/diaper.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "diaper",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-8073-9619-fa443f18f0bd"
+      ]
+    },
+    {
+      "id": "item-8c7cbb7c6b",
+      "title": "휴대용 기저귀 매트",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://bit.ly/3KifCPP",
+      "partnerLinks": [
+        {
+          "url": "https://bit.ly/3KifCPP",
+          "category": "😎외출 아이템",
+          "sourceItemId": "2c2b4abb-08ed-80d9-be18-dcdf58e5fc88"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/outing.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "2c2b4abb-08ed-80d9-be18-dcdf58e5fc88"
+      ]
+    },
+    {
+      "id": "item-db73a1a6e6",
+      "title": "휴비딕 온습도계",
+      "categories": [
+        "💤수면 아이템"
+      ],
+      "primaryCategory": "💤수면 아이템",
+      "partnerLink": "https://link.coupang.com/a/cHXYP2",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/cHXYP2",
+          "category": "💤수면 아이템",
+          "sourceItemId": "248b4abb-08ed-8057-a37f-f09b818c83a2"
+        }
+      ],
+      "price": 11900,
+      "priceText": "11900",
+      "displayPrice": "11,900원",
+      "memo": "",
+      "imagePath": "/images/placeholders/sleep.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "sleep",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-8057-a37f-f09b818c83a2"
+      ]
+    },
+    {
+      "id": "item-85289072fa",
+      "title": "LG 휘센 제습기",
+      "categories": [
+        "👶300일간 매일 사용한 육아템 정리"
+      ],
+      "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
+      "partnerLink": "https://link.coupang.com/a/ebtDX0",
+      "partnerLinks": [
+        {
+          "url": "https://link.coupang.com/a/ebtDX0",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "32eb4abb-08ed-80d9-822b-dbc577e5fc0c"
+        }
+      ],
+      "price": null,
+      "priceText": "",
+      "displayPrice": "가격 확인 필요",
+      "memo": "",
+      "imagePath": "/images/placeholders/top-used.svg",
+      "hasOriginalImage": true,
+      "placeholderKey": "top-used",
+      "dataQuality": {
+        "status": "usable_with_warnings",
+        "errorCount": 0,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_price",
+            "severity": "warning",
+            "message": "가격이 비어 있어 화면에 가격 확인 필요로 표시합니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "32eb4abb-08ed-80d9-822b-dbc577e5fc0c"
+      ]
+    },
+    {
+      "id": "item-d0efa36d5c",
+      "title": "리안드림콧 아기침대",
+      "categories": [
+        "💤수면 아이템"
+      ],
+      "primaryCategory": "💤수면 아이템",
+      "partnerLink": "https://bit.ly/3UBoQYK",
+      "partnerLinks": [
+        {
+          "url": "https://bit.ly/3UBoQYK",
+          "category": "💤수면 아이템",
+          "sourceItemId": "248b4abb-08ed-8072-b6dc-e73e08b02eba"
+        }
+      ],
+      "price": 252200,
+      "priceText": "252200",
+      "displayPrice": "252,200원",
+      "memo": "인기 있는 무선 이어폰, 블랙 프라이데이 할인 예정",
+      "imagePath": "/images/placeholders/sleep.svg",
+      "hasOriginalImage": false,
+      "placeholderKey": "sleep",
+      "dataQuality": {
+        "status": "needs_review",
+        "errorCount": 1,
+        "warningCount": 1,
+        "issues": [
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          },
+          {
+            "code": "suspicious_unrelated_memo",
+            "severity": "error",
+            "message": "메모가 육아템 설명과 무관한 문구일 가능성이 있습니다."
+          }
+        ]
+      },
+      "sourceItemIds": [
+        "248b4abb-08ed-8072-b6dc-e73e08b02eba"
+      ]
+    }
+  ]
+}

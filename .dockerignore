@@ -1,0 +1,11 @@
+node_modules
+dist
+.git
+*.log
+.vite-dev*.log
+.serve-dist*.log
+data/items.raw.json
+data/items.normalized.json
+data/items.canonical.json
+data/items.links.json
+data/items.quality.json

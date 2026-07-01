@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.log
+.vite-dev*.err.log
+.vite-dev*.log
+.serve-dist*.err.log
+.serve-dist*.log
+vite.config.js
+vite.config.d.ts
+data/items.*.json
