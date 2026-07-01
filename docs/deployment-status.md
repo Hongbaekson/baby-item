@@ -37,6 +37,10 @@
 - 검증된 `purchaseOffers`가 있으면 상세 화면에서 링크별 가격을 표시하도록 준비 완료
 - DNS `sonleeeun.site` A 레코드가 `134.185.110.26`으로 전파됨
 - Caddy edge 컨테이너로 HTTPS termination과 자동 인증서 갱신을 수행하도록 Compose 설정 준비 완료
+- OCI Security List에 TCP `80`, TCP `443`, UDP `443` ingress 추가 완료
+- Let's Encrypt 인증서 발급 완료
+- `http://sonleeeun.site` -> `https://sonleeeun.site/` 308 redirect 확인 완료
+- `https://sonleeeun.site` HTTP 200 확인 완료
 
 서버 내부 검증:
 
@@ -58,11 +62,10 @@ curl -I https://sonleeeun.site
 - HTML title/description과 asset 경로 확인 완료
 - Nginx 보안 헤더 적용 확인
 - 실제 브라우저 렌더링 후 `이은이 아빠가 준비하는 육아템`, 제품 목록, 카테고리 필터 노출 확인 완료
+- 도메인 HTTPS 응답에서 CSP, HSTS, frame 방어, MIME sniffing 방어, permissions policy 확인 완료
 
 ## 남은 작업
 
-- OCI Security List에 TCP `80`, TCP `443`, 필요 시 UDP `443` ingress 추가
-- `https://sonleeeun.site` 인증서 발급과 외부 HTTP 200 검증
 - SSH ingress를 `0.0.0.0/0`에서 본인 IP로 제한할지 결정
 - 자동 CD를 붙일 때 체크섬과 attestation 검증 후 배포하도록 구성
 
