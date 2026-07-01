@@ -112,3 +112,5 @@ APP_PORT=1206 docker compose up -d --build
 ```text
 http://<OCI_PUBLIC_IP>:1206
 ```
+
+현재 OCI 배포 상태는 `docs/deployment-status.md`에 기록합니다.
