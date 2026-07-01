@@ -72,7 +72,7 @@ https://bedecked-shingle-38a.notion.site/248b4abb08ed803e8825db3d5713f396?v=248b
 - 스타일: CSS Modules 또는 단일 CSS. 초기에는 Tailwind 도입 없이 가볍게 시작
 - 배포: Docker 이미지 안에 빌드 결과물을 넣고 Nginx로 서빙
 - 운영: OCI VM에서 Docker Compose로 실행
-- 접근: `http://<OCI_PUBLIC_IP>` 형태
+- 접근: `http://<OCI_PUBLIC_IP>:1206` 형태
 
 이 방향이 맞는 이유:
 
@@ -208,14 +208,14 @@ MVP에서 제외:
 - Step 6.1: Dockerfile 작성: React build 결과를 Nginx로 서빙
 - Step 6.2: `docker-compose.yml` 작성
 - Step 6.3: OCI VM에 코드 또는 빌드 산출물 배포
-- Step 6.4: OCI Security List 또는 NSG에서 80 포트 ingress 허용
-- Step 6.5: VM 방화벽에서 80 포트 허용
-- Step 6.6: `http://<OCI_PUBLIC_IP>` 접속 확인
+- Step 6.4: OCI Security List 또는 NSG에서 1206 포트 ingress 허용
+- Step 6.5: VM 방화벽에서 1206 포트 허용
+- Step 6.6: `http://<OCI_PUBLIC_IP>:1206` 접속 확인
 - Step 6.7: 컨테이너 재시작 정책 설정
 
 완료 조건:
 
-- 외부 네트워크에서 `http://<OCI_PUBLIC_IP>` 접속 가능
+- 외부 네트워크에서 `http://<OCI_PUBLIC_IP>:1206` 접속 가능
 - 서버 재부팅 후 컨테이너가 자동 복구된다.
 
 ### Phase 7. 운영 개선
@@ -233,9 +233,9 @@ MVP에서 제외:
 
 ## 6. OCI 주의사항
 
-- DNS를 구매하지 않으면 기본 접속 주소는 `http://<public-ip>`가 된다.
+- DNS를 구매하지 않으면 기본 접속 주소는 `http://<public-ip>:1206`이 된다.
 - 일반 사용자용 신뢰 HTTPS는 도메인이 있을 때 훨씬 단순하다. IP만으로 HTTPS를 하려면 인증서 발급/브라우저 신뢰 문제가 생길 수 있으므로 MVP에서는 HTTP 공개를 기준으로 한다.
-- public IP 공개 서버이므로 최소한 80 포트만 열고, SSH는 본인 IP 제한을 권장한다.
+- public IP 공개 서버이므로 서비스용 1206 포트만 열고, SSH는 본인 IP 제한을 권장한다.
 - 앱에는 토큰, Notion 쿠키, 파트너스 비밀키를 넣지 않는다.
 
 ## 7. 현재 완료 상태
@@ -285,7 +285,7 @@ docker compose config
 다음 작업은 **Phase 6 OCI 배포**이다. 실제 서버 작업 전에 아래를 확인한다.
 
 - `ssh oci` 접속 후 이 프로젝트를 `h-log`와 다른 경로에 둔다. 예: `/opt/euni-baby-items`
-- `h-log`가 80 포트를 쓰고 있는지 확인한다.
-- 80 포트가 비어 있으면 `APP_PORT=80`으로 배포한다.
-- 80 포트가 이미 사용 중이면 `APP_PORT=8080` 같은 별도 포트를 열거나, 기존 Nginx reverse proxy에 라우팅을 추가한다.
+- `h-log`와 포트/컨테이너명이 겹치지 않는지 확인한다.
+- `APP_PORT=1206`으로 배포한다.
+- OCI Security List 또는 NSG에서 1206 포트 ingress를 허용한다.
 - OCI Security List 또는 NSG에서 실제 사용할 포트를 열기 전까지는 외부 공개하지 않는다.

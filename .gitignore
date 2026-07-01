@@ -1,6 +1,9 @@
 node_modules/
 dist/
 *.log
+.env
+.env.*
+!.env.example
 .vite-dev*.err.log
 .vite-dev*.log
 .serve-dist*.err.log
