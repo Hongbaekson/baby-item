@@ -107,6 +107,7 @@ function toAppItem(item) {
     displayPrice: getDisplayPrice(item),
     referencePrice: getReferencePrice(item),
     bestOffer: null,
+    purchaseOffers: [],
     offerStatus: DEFAULT_OFFER_STATUS,
     memo: item.memo,
     imagePath: getImagePath(item),

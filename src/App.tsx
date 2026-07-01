@@ -18,6 +18,7 @@ type OfferStatusState = "not_synced" | "available" | "no_available_offer" | "nee
 type BestOffer = {
   url: string;
   imageUrl?: string | null;
+  platform?: string;
   mallName: string;
   price: number;
   shippingFee: number;
@@ -29,6 +30,8 @@ type BestOffer = {
   productName: string | null;
   note: string | null;
 };
+
+type PurchaseOffer = BestOffer;
 
 type Item = {
   id: string;
@@ -45,6 +48,7 @@ type Item = {
   displayPrice: string;
   referencePrice: string | null;
   bestOffer: BestOffer | null;
+  purchaseOffers: PurchaseOffer[];
   offerStatus: {
     state: OfferStatusState;
     syncedAt: string | null;
@@ -150,8 +154,35 @@ function primaryPurchaseUrl(item: Item) {
   return item.bestOffer?.url ?? item.partnerLink;
 }
 
+function hasUnavailableOfferStatus(item: Item) {
+  return item.offerStatus.state === "no_available_offer" && !item.bestOffer;
+}
+
 function productImageUrl(item: Item) {
   return item.bestOffer?.imageUrl ?? item.imagePath;
+}
+
+function availablePurchaseOffers(item: Item) {
+  return (item.purchaseOffers ?? []).filter((offer) => offer.inStock === true);
+}
+
+function formatWon(value: number) {
+  return `${value.toLocaleString("ko-KR")}원`;
+}
+
+function offerPriceLabel(offer: PurchaseOffer) {
+  if (Number.isFinite(offer.totalPrice)) {
+    return formatWon(offer.totalPrice);
+  }
+
+  return `${formatWon(offer.price)}부터`;
+}
+
+function platformLabel(platform: string | undefined, mallName: string) {
+  if (platform === "naver") return "네이버";
+  if (platform === "coupang") return "쿠팡";
+
+  return mallName;
 }
 
 function offerStatusLabel(item: Item) {
@@ -307,6 +338,7 @@ function ProductCard({
   const warningIssues = item.dataQuality.issues.filter((issue) => issue.severity !== "info");
   const purchaseUrl = primaryPurchaseUrl(item);
   const statusLabel = offerStatusLabel(item);
+  const purchaseUnavailable = hasUnavailableOfferStatus(item);
 
   return (
     <article className={`product-card ${categoryTone(item.primaryCategory)}`}>
@@ -348,18 +380,27 @@ function ProductCard({
             <Info size={16} aria-hidden="true" />
             자세히
           </button>
-          <a
-            className="primary-link"
-            href={purchaseUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${item.title} 구매 링크 열기, ${linkHost(purchaseUrl)}`}
-          >
-            <ShoppingBag size={16} aria-hidden="true" />
-            {item.bestOffer ? "최저가 보기" : "보러가기"}
-          </a>
+          {purchaseUnavailable ? (
+            <span className="primary-link disabled" aria-disabled="true">
+              <ShoppingBag size={16} aria-hidden="true" />
+              링크 확인중
+            </span>
+          ) : (
+            <a
+              className="primary-link"
+              href={purchaseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${item.title} 구매 링크 열기, ${linkHost(purchaseUrl)}`}
+            >
+              <ShoppingBag size={16} aria-hidden="true" />
+              {item.bestOffer ? "최저가 보기" : "보러가기"}
+            </a>
+          )}
         </div>
-        <p className="link-domain">보러가기 도메인: {linkHost(purchaseUrl)}</p>
+        <p className="link-domain">
+          {purchaseUnavailable ? "구매 가능 링크 없음" : `보러가기 도메인: ${linkHost(purchaseUrl)}`}
+        </p>
       </div>
     </article>
   );
@@ -369,6 +410,9 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
   const [imageSrc, setImageSrc] = useState(productImageUrl(item));
   const purchaseUrl = primaryPurchaseUrl(item);
   const statusLabel = offerStatusLabel(item);
+  const purchaseOffers = availablePurchaseOffers(item);
+  const showFallbackLinks =
+    purchaseOffers.length === 0 && item.offerStatus.state !== "no_available_offer";
 
   return (
     <div className="modal-backdrop" role="presentation" onMouseDown={onClose}>
@@ -436,25 +480,68 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
             외부 구매 링크는 새 창으로 열립니다. 결제 전 연결 도메인, 최신가, 품절 여부를
             확인하세요.
           </p>
-          <div className="link-list">
-            {item.partnerLinks.map((link, index) => (
-              <a
-                key={`${link.sourceItemId}-${link.url}`}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <ExternalLink size={16} aria-hidden="true" />
-                <span className="link-copy">
-                  <strong>구매 링크 {index + 1}</strong>
-                  <span>
-                    {linkHost(link.url)} · {link.category}
-                  </span>
-                </span>
-                {isShortLink(link.url) && <em>단축 링크</em>}
-              </a>
-            ))}
-          </div>
+          {purchaseOffers.length > 0 && (
+            <section className="purchase-offers" aria-label="구매처별 가격">
+              <h3>구매처별 가격</h3>
+              <div className="offer-list">
+                {purchaseOffers.map((offer, index) => (
+                  <a
+                    key={`${offer.url}-${index}`}
+                    className={index === 0 ? "best" : ""}
+                    href={offer.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="offer-main">
+                      <strong>{platformLabel(offer.platform, offer.mallName)}</strong>
+                      <span>
+                        {offer.mallName} · {linkHost(offer.url)}
+                      </span>
+                    </span>
+                    <span className="offer-price">
+                      <strong>{offerPriceLabel(offer)}</strong>
+                      <span>
+                        {offer.shippingFee > 0
+                          ? `배송비 ${formatWon(offer.shippingFee)} 포함`
+                          : "배송비 없음 또는 무료배송"}
+                      </span>
+                    </span>
+                    {index === 0 && <em>최저가</em>}
+                    <ExternalLink size={16} aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+          {item.offerStatus.state === "no_available_offer" && purchaseOffers.length === 0 && (
+            <p className="best-offer-empty">
+              확인된 구매 가능 링크가 없어 현재는 구매 링크를 숨겼습니다.
+            </p>
+          )}
+          {showFallbackLinks && (
+            <section className="purchase-offers fallback" aria-label="기본 구매 링크">
+              <h3>기본 구매 링크</h3>
+              <div className="link-list">
+                {item.partnerLinks.map((link, index) => (
+                  <a
+                    key={`${link.sourceItemId}-${link.url}`}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink size={16} aria-hidden="true" />
+                    <span className="link-copy">
+                      <strong>구매 링크 {index + 1}</strong>
+                      <span>
+                        {linkHost(link.url)} · 가격 확인 필요 · {link.category}
+                      </span>
+                    </span>
+                    {isShortLink(link.url) && <em>단축 링크</em>}
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
           <p className="modal-disclosure">{data.site.affiliateDisclosure}</p>
           <p className="modal-disclosure">{data.site.priceDisclosure}</p>
         </div>

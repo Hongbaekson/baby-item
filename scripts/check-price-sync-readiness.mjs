@@ -22,6 +22,7 @@ const hosts = new Map();
 const shortLinks = [];
 let itemsWithReferencePrice = 0;
 let itemsWithBestOffer = 0;
+let purchaseOffers = 0;
 let noAvailableOfferItems = 0;
 
 for (const item of items) {
@@ -32,6 +33,8 @@ for (const item of items) {
   if (item.bestOffer) {
     itemsWithBestOffer += 1;
   }
+
+  purchaseOffers += item.purchaseOffers?.length ?? 0;
 
   if (item.offerStatus?.state === "no_available_offer") {
     noAvailableOfferItems += 1;
@@ -49,6 +52,7 @@ for (const item of items) {
 
 const env = {
   naverShoppingApiReady: Boolean(process.env.NAVER_CLIENT_ID && process.env.NAVER_CLIENT_SECRET),
+  coupangApiReady: Boolean(process.env.COUPANG_ACCESS_KEY && process.env.COUPANG_SECRET_KEY),
 };
 
 const summary = {
@@ -56,13 +60,14 @@ const summary = {
   itemsWithReferencePrice,
   itemsWithoutReferencePrice: items.length - itemsWithReferencePrice,
   itemsWithBestOffer,
+  purchaseOffers,
   noAvailableOfferItems,
   partnerLinkHosts: Object.fromEntries([...hosts.entries()].sort(([a], [b]) => a.localeCompare(b))),
   shortLinks: shortLinks.length,
   env,
   nextAction:
-    env.naverShoppingApiReady
-      ? "Run npm run price:collect-naver to collect official search candidates, then enrich stock and shipping data before auto-apply."
+    env.naverShoppingApiReady || env.coupangApiReady
+      ? "Run platform collectors, merge candidates, then apply only verified in-stock offers with shipping-inclusive totals."
       : "Configure official shopping API credentials before enabling automated price candidates.",
 };
 

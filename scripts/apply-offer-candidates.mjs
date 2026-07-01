@@ -156,6 +156,7 @@ function normalizeOffer(raw, fallbackSyncedAt) {
     skipped: false,
     offer: {
       url,
+      platform: String(raw.platform ?? raw.channel ?? "manual"),
       mallName: String(raw.mallName ?? raw.mall ?? raw.seller ?? host),
       price,
       shippingFee,
@@ -172,7 +173,7 @@ function normalizeOffer(raw, fallbackSyncedAt) {
   };
 }
 
-function chooseBestOffer(offers) {
+function sortOffers(offers) {
   return [...offers].sort((a, b) => {
     if (a.totalPrice !== b.totalPrice) {
       return a.totalPrice - b.totalPrice;
@@ -183,7 +184,13 @@ function chooseBestOffer(offers) {
     }
 
     return a.price - b.price;
-  })[0];
+  });
+}
+
+function stripInternalOfferFields(offer) {
+  const { isShortUrl: _isShortUrl, ...offerForApp } = offer;
+
+  return offerForApp;
 }
 
 async function main() {
@@ -221,11 +228,13 @@ async function main() {
       normalizedOffers.push(normalized.offer);
     }
 
-    const bestOffer = chooseBestOffer(normalizedOffers);
+    const sortedOffers = sortOffers(normalizedOffers);
+    const bestOffer = sortedOffers[0];
     const syncedAt = String(entry.syncedAt ?? candidateInput.syncedAt ?? candidateInput.generatedAt ?? new Date().toISOString());
 
     if (!bestOffer) {
       item.bestOffer = null;
+      item.purchaseOffers = [];
       item.offerStatus = {
         state: "no_available_offer",
         syncedAt,
@@ -236,9 +245,10 @@ async function main() {
       continue;
     }
 
-    const { isShortUrl: _isShortUrl, ...offerForApp } = bestOffer;
+    const purchaseOffers = sortedOffers.map(stripInternalOfferFields);
 
-    item.bestOffer = offerForApp;
+    item.bestOffer = purchaseOffers[0];
+    item.purchaseOffers = purchaseOffers;
     item.offerStatus = {
       state: "available",
       syncedAt: bestOffer.syncedAt,
@@ -253,6 +263,10 @@ async function main() {
     candidateFile: candidatesPath,
     appliedAt: new Date().toISOString(),
     applied,
+    purchaseOffers: (appData.items ?? []).reduce(
+      (sum, item) => sum + (item.purchaseOffers?.length ?? 0),
+      0,
+    ),
     noAvailableOffer,
     skipped: skipped.length,
   };
@@ -265,6 +279,10 @@ async function main() {
         candidateFile: candidatesPath,
         applied,
         noAvailableOffer,
+        purchaseOffers: (appData.items ?? []).reduce(
+          (sum, item) => sum + (item.purchaseOffers?.length ?? 0),
+          0,
+        ),
         skipped: skipped.length,
         skipReasons: skipped.reduce((acc, item) => {
           acc[item.reason] = (acc[item.reason] ?? 0) + 1;

@@ -459,9 +459,19 @@ a {
   color: #fff;
 }
 
+.primary-link.disabled {
+  cursor: default;
+  background: #d8cec7;
+  color: #fff;
+}
+
 .primary-link:hover,
 .link-list a:hover {
   background: var(--coral-strong);
+}
+
+.primary-link.disabled:hover {
+  background: #d8cec7;
 }
 
 .link-domain {
@@ -646,6 +656,77 @@ a {
   line-height: 1.5;
 }
 
+.purchase-offers {
+  margin-top: 16px;
+}
+
+.purchase-offers h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.offer-list {
+  display: grid;
+  gap: 8px;
+}
+
+.offer-list a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffaf5;
+  color: var(--ink);
+}
+
+.offer-list a.best {
+  border-color: #bde4cc;
+  background: #effaf3;
+}
+
+.offer-main,
+.offer-price {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.offer-main strong,
+.offer-price strong {
+  font-size: 14px;
+}
+
+.offer-main span,
+.offer-price span {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.offer-price {
+  min-width: 104px;
+  text-align: right;
+}
+
+.offer-list em {
+  padding: 3px 6px;
+  border-radius: 999px;
+  background: #dff4e7;
+  color: #2b7250;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
 .link-list {
   display: grid;
   gap: 8px;
@@ -792,5 +873,18 @@ a {
 
   .modal-body h2 {
     font-size: 22px;
+  }
+
+  .offer-list a {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .offer-price {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .offer-list em {
+    justify-self: start;
   }
 }

@@ -10,7 +10,9 @@
     "serve:dist": "node ./scripts/serve-dist.mjs",
     "data:check": "node ./scripts/check-app-data.mjs",
     "price:check-readiness": "node ./scripts/check-price-sync-readiness.mjs",
+    "price:collect-coupang": "node ./scripts/collect-coupang-price-candidates.mjs",
     "price:collect-naver": "node ./scripts/collect-naver-price-candidates.mjs",
+    "price:merge-candidates": "node ./scripts/merge-price-candidates.mjs",
     "price:apply-candidates": "node ./scripts/apply-offer-candidates.mjs",
     "data:extract": "node ./scripts/extract-notion-items.mjs",
     "data:normalize": "node ./scripts/normalize-items.mjs && node ./scripts/build-canonical-items.mjs && node ./scripts/normalize-links.mjs && node ./scripts/apply-data-quality.mjs && node ./scripts/build-app-data.mjs"

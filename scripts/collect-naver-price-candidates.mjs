@@ -12,6 +12,7 @@ const SAFE_HTTP_UPGRADE_HOSTS = new Set([
   "openapi.naver.com",
   "search.shopping.naver.com",
   "shopping.naver.com",
+  "shopping.phinf.naver.net",
   "smartstore.naver.com",
 ]);
 const STOPWORDS = new Set([
@@ -155,6 +156,7 @@ function normalizeOffer(item, rawOffer, syncedAt) {
   return {
     url,
     imageUrl: normalizeUrl(rawOffer.image),
+    platform: "naver",
     mallName: stripHtml(rawOffer.mallName) || "네이버 쇼핑",
     price: Number.isFinite(price) ? price : null,
     shippingFee: null,

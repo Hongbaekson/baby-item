@@ -3,7 +3,18 @@ import path from 'node:path';
 
 const appDataPath = path.join('src', 'data', 'items.json');
 const allowedRemoteImageHosts = new Set([
+  'image1.coupangcdn.com',
+  'image2.coupangcdn.com',
+  'image3.coupangcdn.com',
+  'image4.coupangcdn.com',
+  'image5.coupangcdn.com',
+  'image6.coupangcdn.com',
+  'image7.coupangcdn.com',
+  'image8.coupangcdn.com',
+  'image9.coupangcdn.com',
+  'image10.coupangcdn.com',
   'thumbnail.coupangcdn.com',
+  'shopping.phinf.naver.net',
   'shopping-phinf.pstatic.net',
   'shop-phinf.pstatic.net',
 ]);
@@ -19,6 +30,52 @@ function remoteImageHost(url) {
     return new URL(url).hostname.replace(/^www\./, '').toLowerCase();
   } catch {
     return '';
+  }
+}
+
+function isAllowedRemoteImageHost(host) {
+  return allowedRemoteImageHosts.has(host);
+}
+
+function validateOffer(item, offer, label) {
+  if (!offer.url?.startsWith('https://')) {
+    failures.push(`${label} must use https: ${item.title} -> ${offer.url}`);
+  }
+
+  if (offer.inStock !== true) {
+    failures.push(`${label} must be in stock: ${item.title}`);
+  }
+
+  if (!Number.isFinite(offer.price) || offer.price <= 0) {
+    failures.push(`${label} has bad price: ${item.title}`);
+  }
+
+  if (!Number.isFinite(offer.totalPrice) || offer.totalPrice <= 0) {
+    failures.push(`${label} has bad total price: ${item.title}`);
+  }
+
+  if (offer.totalPrice < offer.price) {
+    failures.push(`${label} total price is lower than base price: ${item.title}`);
+  }
+
+  if (!Number.isFinite(offer.shippingFee) || offer.shippingFee < 0) {
+    failures.push(`${label} has bad shipping fee: ${item.title}`);
+  }
+
+  if (!offer.syncedAt) {
+    failures.push(`${label} missing syncedAt: ${item.title}`);
+  }
+
+  if (offer.imageUrl) {
+    if (!offer.imageUrl.startsWith('https://')) {
+      failures.push(`${label} image must use https: ${item.title}`);
+    }
+
+    const host = remoteImageHost(offer.imageUrl);
+
+    if (!isAllowedRemoteImageHost(host)) {
+      failures.push(`${label} image host is not allowed: ${item.title} -> ${host}`);
+    }
   }
 }
 
@@ -41,6 +98,10 @@ for (const item of items) {
     failures.push(`bad offer status: ${item.title}`);
   }
 
+  if (!Array.isArray(item.purchaseOffers)) {
+    failures.push(`purchase offers must be an array: ${item.title}`);
+  }
+
   if (item.imagePath?.startsWith('/images/')) {
     const localImagePath = path.join('public', item.imagePath.replace(/^\//, ''));
     if (!existsSync(localImagePath)) {
@@ -49,7 +110,7 @@ for (const item of items) {
   } else if (item.imagePath?.startsWith('https://')) {
     const host = remoteImageHost(item.imagePath);
 
-    if (!allowedRemoteImageHosts.has(host)) {
+    if (!isAllowedRemoteImageHost(host)) {
       failures.push(`remote image host is not allowed: ${item.title} -> ${host}`);
     }
   } else {
@@ -69,45 +130,11 @@ for (const item of items) {
   }
 
   if (item.bestOffer) {
-    if (!item.bestOffer.url?.startsWith('https://')) {
-      failures.push(`best offer must use https: ${item.title} -> ${item.bestOffer.url}`);
-    }
+    validateOffer(item, item.bestOffer, 'best offer');
+  }
 
-    if (item.bestOffer.inStock !== true) {
-      failures.push(`best offer must be in stock: ${item.title}`);
-    }
-
-    if (!Number.isFinite(item.bestOffer.price) || item.bestOffer.price <= 0) {
-      failures.push(`best offer has bad price: ${item.title}`);
-    }
-
-    if (!Number.isFinite(item.bestOffer.totalPrice) || item.bestOffer.totalPrice <= 0) {
-      failures.push(`best offer has bad total price: ${item.title}`);
-    }
-
-    if (item.bestOffer.totalPrice < item.bestOffer.price) {
-      failures.push(`best offer total price is lower than base price: ${item.title}`);
-    }
-
-    if (!Number.isFinite(item.bestOffer.shippingFee) || item.bestOffer.shippingFee < 0) {
-      failures.push(`best offer has bad shipping fee: ${item.title}`);
-    }
-
-    if (!item.bestOffer.syncedAt) {
-      failures.push(`best offer missing syncedAt: ${item.title}`);
-    }
-
-    if (item.bestOffer.imageUrl) {
-      if (!item.bestOffer.imageUrl.startsWith('https://')) {
-        failures.push(`best offer image must use https: ${item.title}`);
-      }
-
-      const host = remoteImageHost(item.bestOffer.imageUrl);
-
-      if (!allowedRemoteImageHosts.has(host)) {
-        failures.push(`best offer image host is not allowed: ${item.title} -> ${host}`);
-      }
-    }
+  for (const [index, offer] of (item.purchaseOffers ?? []).entries()) {
+    validateOffer(item, offer, `purchase offer ${index + 1}`);
   }
 }
 
@@ -118,6 +145,7 @@ const summary = {
   needsReview: items.filter((item) => item.dataQuality?.status === 'needs_review').length,
   shortLinks: warnings.length,
   bestOffers: items.filter((item) => item.bestOffer).length,
+  purchaseOffers: items.reduce((sum, item) => sum + (item.purchaseOffers?.length ?? 0), 0),
   offerSynced: items.filter((item) => item.offerStatus?.state === 'available').length,
   noAvailableOffer: items.filter((item) => item.offerStatus?.state === 'no_available_offer').length,
   failures: failures.length,
