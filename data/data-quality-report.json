@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T00:13:33.876Z",
+  "generatedAt": "2026-07-01T00:36:46.868Z",
   "source": "data\\items.quality.json",
   "summary": {
     "readyItems": 6,
@@ -9,7 +9,7 @@
     "issueCounts": {
       "missing_image": 11,
       "missing_price": 20,
-      "normalized_partner_link": 1,
+      "normalized_partner_link": 2,
       "suspicious_unrelated_memo": 1
     },
     "draftIssueCounts": {
@@ -23,7 +23,7 @@
       "missing_partner_link": 2,
       "missing_price": 22,
       "missing_title": 2,
-      "normalized_partner_link": 1,
+      "normalized_partner_link": 2,
       "suspicious_unrelated_memo": 1
     }
   },

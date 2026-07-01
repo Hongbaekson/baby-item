@@ -32,6 +32,9 @@ jobs:
       - name: Check app data
         run: npm run data:check
 
+      - name: Audit dependencies
+        run: npm audit --audit-level=moderate
+
       - name: Build
         run: npm run build
 

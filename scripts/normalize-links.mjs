@@ -37,7 +37,13 @@ function normalizeExternalUrl(rawUrl) {
   }
 
   try {
-    new URL(url);
+    const parsedUrl = new URL(url);
+
+    if (parsedUrl.protocol === "http:") {
+      parsedUrl.protocol = "https:";
+      url = parsedUrl.toString();
+      reason = reason ? `${reason},upgraded_http_to_https` : "upgraded_http_to_https";
+    }
 
     return {
       url,
@@ -161,7 +167,8 @@ async function main() {
     },
     linkNormalization: {
       rules: [
-        "Keep valid http:// and https:// URLs as-is.",
+        "Keep valid https:// URLs as-is.",
+        "Upgrade http:// URLs to https://.",
         "Prefix protocol-relative URLs with https:.",
         "Prefix domain/path URLs without a protocol with https://.",
       ],

@@ -110,6 +110,18 @@ function issueLabel(code: string) {
   return "정보 확인 필요";
 }
 
+function linkHost(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "외부 링크";
+  }
+}
+
+function isShortLink(url: string) {
+  return ["bit.ly", "naver.me", "tinyurl.com", "t.co", "goo.gl"].includes(linkHost(url));
+}
+
 export function App() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("전체");
@@ -278,11 +290,18 @@ function ProductCard({
             <Info size={16} aria-hidden="true" />
             자세히
           </button>
-          <a className="primary-link" href={item.partnerLink} target="_blank" rel="noreferrer">
+          <a
+            className="primary-link"
+            href={item.partnerLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${item.title} 구매 링크 열기, ${linkHost(item.partnerLink)}`}
+          >
             <ShoppingBag size={16} aria-hidden="true" />
             보러가기
           </a>
         </div>
+        <p className="link-domain">연결 도메인: {linkHost(item.partnerLink)}</p>
       </div>
     </article>
   );
@@ -330,12 +349,25 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
               ))}
             </div>
           )}
+          <p className="link-security-note">
+            외부 구매 링크는 새 창으로 열립니다. 결제 전 연결 도메인을 확인하세요.
+          </p>
           <div className="link-list">
             {item.partnerLinks.map((link, index) => (
-              <a key={`${link.sourceItemId}-${link.url}`} href={link.url} target="_blank" rel="noreferrer">
+              <a
+                key={`${link.sourceItemId}-${link.url}`}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <ExternalLink size={16} aria-hidden="true" />
-                구매 링크 {index + 1}
-                <span>{link.category}</span>
+                <span className="link-copy">
+                  <strong>구매 링크 {index + 1}</strong>
+                  <span>
+                    {linkHost(link.url)} · {link.category}
+                  </span>
+                </span>
+                {isShortLink(link.url) && <em>단축 링크</em>}
               </a>
             ))}
           </div>

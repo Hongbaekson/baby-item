@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T00:13:33.875Z",
+  "generatedAt": "2026-07-01T00:36:46.867Z",
   "site": {
     "name": "이은이 육아템",
     "affiliateDisclosure": "이 페이지의 일부 링크는 제휴 링크이며, 구매 시 일정액의 수수료를 제공받을 수 있습니다."
@@ -1130,10 +1130,10 @@
         "🎉놀이아이템"
       ],
       "primaryCategory": "🎉놀이아이템",
-      "partnerLink": "http://bit.ly/46zoNUx",
+      "partnerLink": "https://bit.ly/46zoNUx",
       "partnerLinks": [
         {
-          "url": "http://bit.ly/46zoNUx",
+          "url": "https://bit.ly/46zoNUx",
           "category": "🎉놀이아이템",
           "sourceItemId": "248b4abb-08ed-8054-9900-dd2dca624fa0"
         }
@@ -1154,6 +1154,11 @@
             "code": "missing_image",
             "severity": "warning",
             "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          },
+          {
+            "code": "normalized_partner_link",
+            "severity": "info",
+            "message": "구매 링크 형식을 자동 보정했습니다."
           }
         ]
       },

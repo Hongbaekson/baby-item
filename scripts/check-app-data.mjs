@@ -5,6 +5,8 @@ const appDataPath = path.join('src', 'data', 'items.json');
 const data = JSON.parse(readFileSync(appDataPath, 'utf8'));
 const items = data.items ?? [];
 const failures = [];
+const warnings = [];
+const shortUrlHosts = new Set(['bit.ly', 'naver.me', 'tinyurl.com', 't.co', 'goo.gl']);
 
 const ids = new Set();
 for (const item of items) {
@@ -31,8 +33,14 @@ for (const item of items) {
   }
 
   for (const link of item.partnerLinks ?? []) {
-    if (!/^https?:\/\//.test(link.url)) {
-      failures.push(`bad partner link: ${item.title} -> ${link.url}`);
+    if (!link.url?.startsWith('https://')) {
+      failures.push(`partner link must use https: ${item.title} -> ${link.url}`);
+      continue;
+    }
+
+    const host = new URL(link.url).hostname.toLowerCase();
+    if (shortUrlHosts.has(host)) {
+      warnings.push(`short partner link: ${item.title} -> ${link.url}`);
     }
   }
 }
@@ -42,6 +50,7 @@ const summary = {
   ready: items.filter((item) => item.dataQuality?.status === 'ready').length,
   usableWithWarnings: items.filter((item) => item.dataQuality?.status === 'usable_with_warnings').length,
   needsReview: items.filter((item) => item.dataQuality?.status === 'needs_review').length,
+  shortLinks: warnings.length,
   failures: failures.length,
 };
 
