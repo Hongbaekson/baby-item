@@ -79,6 +79,7 @@ GitHub Actions:
   - `Referrer-Policy: strict-origin-when-cross-origin`
   - `Permissions-Policy`
   - `Cross-Origin-Opener-Policy`
+- DNS 없이 public IP HTTP로 운영 중이므로 CSP의 `upgrade-insecure-requests`는 적용하지 않는다. 이 지시문은 HTTPS가 없는 현재 배포에서 JS/CSS 요청을 HTTPS로 강제해 React 앱 렌더링을 막는다.
 - Compose 컨테이너 하드닝
   - `read_only: true`
   - `no-new-privileges:true`
