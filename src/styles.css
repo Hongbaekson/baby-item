@@ -402,6 +402,14 @@ a {
   line-height: 1.45;
 }
 
+.best-offer-note {
+  margin: 7px 0 0;
+  color: #2b7250;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
 .issue-row {
   display: flex;
   flex-wrap: wrap;
@@ -553,6 +561,48 @@ a {
 .modal-reference-price {
   margin: -6px 0 14px;
   color: #936b39;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.best-offer-panel {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 0;
+  padding: 12px;
+  border: 1px solid #bde4cc;
+  border-radius: 8px;
+  background: #effaf3;
+  color: #2b7250;
+}
+
+.best-offer-panel span {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.best-offer-panel strong {
+  color: #235b40;
+  font-size: 14px;
+}
+
+.best-offer-panel span span {
+  color: #4d7d61;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.best-offer-empty {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border: 1px solid #f4d89d;
+  border-radius: 8px;
+  background: #fff8dd;
+  color: #8d6413;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.45;

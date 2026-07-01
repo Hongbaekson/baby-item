@@ -47,9 +47,46 @@ LLM, Hermes, Codex 같은 모델은 가격 숫자의 원천이 아니다. 모델
 
 ```bash
 npm run price:check-readiness
+npm run price:apply-candidates
 ```
 
-이 명령은 앱 데이터의 구매 링크 도메인, 기록가 유무, 단축 URL 수, 가격 동기화에 필요한 환경변수 준비 상태를 점검한다.
+`price:check-readiness`는 앱 데이터의 구매 링크 도메인, 기록가 유무, 단축 URL 수, 가격 동기화에 필요한 환경변수 준비 상태를 점검한다.
+
+`price:apply-candidates`는 `data/price-candidates.json`에 수집된 후보 중 아래 조건을 통과한 상품만 `bestOffer`로 반영한다.
+
+- 품절 아님
+- `https://` 상품 URL
+- 가격과 배송비가 유효한 숫자
+- 매칭 신뢰도 `high`
+- 배송비 포함 총액이 가장 낮은 후보
+
+반영된 `bestOffer`가 있으면 앱의 `보러가기` 버튼은 기존 Notion 링크 대신 검증된 최저가 링크로 이동한다.
+
+후보 파일 예시:
+
+```json
+{
+  "generatedAt": "2026-07-01T00:00:00.000Z",
+  "items": [
+    {
+      "itemId": "item-95739902b6",
+      "offers": [
+        {
+          "url": "https://example.com/product/123",
+          "mallName": "예시몰",
+          "price": 32000,
+          "shippingFee": 3000,
+          "inStock": true,
+          "matchConfidence": "high",
+          "source": "official-shopping-api",
+          "syncedAt": "2026-07-01T00:00:00.000Z",
+          "productName": "말랑하니 백색소음기"
+        }
+      ]
+    }
+  ]
+}
+```
 
 ## 자동 반영 보류 조건
 
@@ -66,5 +103,5 @@ npm run price:check-readiness
 3. 공식 API 키 준비
 4. 가격 후보 수집 스크립트 추가
 5. LLM 기반 후보 검토 단계 추가
-6. 검증 통과 후보만 `src/data/items.json`에 반영
+6. 검증 통과 후보만 `bestOffer`로 `src/data/items.json`에 반영
 7. GitHub Actions scheduled workflow 또는 OCI cron으로 매일 실행

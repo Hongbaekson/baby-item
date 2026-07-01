@@ -6,6 +6,11 @@ const APP_DATA_OUTPUT_PATH = path.join("src", "data", "items.json");
 const DATA_REPORT_OUTPUT_PATH = path.join("data", "data-quality-report.json");
 const SITE_NAME = "이은이 아빠가 준비하는 육아템";
 const PRICE_CTA = "구매처에서 최신가 확인";
+const DEFAULT_OFFER_STATUS = {
+  state: "not_synced",
+  syncedAt: null,
+  checkedOffers: 0,
+};
 
 const CATEGORY_PLACEHOLDERS = new Map([
   ["👶300일간 매일 사용한 육아템 정리", "top-used"],
@@ -54,6 +59,8 @@ function toAppItem(item) {
     priceText: item.priceText,
     displayPrice: getDisplayPrice(item),
     referencePrice: getReferencePrice(item),
+    bestOffer: null,
+    offerStatus: DEFAULT_OFFER_STATUS,
     memo: item.memo,
     imagePath: getImagePath(item),
     hasOriginalImage: item.image?.hasImage ?? false,

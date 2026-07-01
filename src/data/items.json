@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T02:03:34.245Z",
+  "generatedAt": "2026-07-01T02:27:11.075Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템",
     "affiliateDisclosure": "이 페이지의 일부 링크는 제휴 링크이며, 구매 시 일정액의 수수료를 제공받을 수 있습니다.",
@@ -74,6 +74,12 @@
       "priceText": "37900",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 37,900원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -114,6 +120,12 @@
       "priceText": "69520",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 69,520원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -149,6 +161,12 @@
       "priceText": "95000",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 95,000원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "-> 물을 100도까지 끓여 염소를 제거한 후 아기의 분유를 타기 좋은 온도인 43도로 물온도를 맞춰줌\n\n-> 분유 탈때마다 물을 끓이고 식히면 너무 힘드니 필요",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -184,6 +202,12 @@
       "priceText": "109800",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 109,800원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -224,6 +248,12 @@
       "priceText": "340920",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 340,920원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -264,6 +294,12 @@
       "priceText": "72900",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 72,900원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -304,6 +340,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/mat.svg",
       "hasOriginalImage": true,
@@ -343,6 +385,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -389,6 +437,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -430,6 +484,12 @@
       "priceText": "8010",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 8,010원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/diaper.svg",
       "hasOriginalImage": false,
@@ -469,6 +529,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -508,6 +574,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -547,6 +619,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -586,6 +664,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -625,6 +709,12 @@
       "priceText": "18900",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 18,900원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/sleep.svg",
       "hasOriginalImage": false,
@@ -664,6 +754,12 @@
       "priceText": "42000",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 42,000원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/sleep.svg",
       "hasOriginalImage": false,
@@ -703,6 +799,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/colic.svg",
       "hasOriginalImage": true,
@@ -742,6 +844,12 @@
       "priceText": "309000",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 309,000원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/feeding.svg",
       "hasOriginalImage": false,
@@ -781,6 +889,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -820,6 +934,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -859,6 +979,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -898,6 +1024,12 @@
       "priceText": "9900",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 9,900원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/diaper.svg",
       "hasOriginalImage": false,
@@ -937,6 +1069,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -976,6 +1114,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/caregiver.svg",
       "hasOriginalImage": true,
@@ -1015,6 +1159,12 @@
       "priceText": "128000",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 128,000원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/play.svg",
       "hasOriginalImage": false,
@@ -1054,6 +1204,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/caregiver.svg",
       "hasOriginalImage": true,
@@ -1093,6 +1249,12 @@
       "priceText": "69900",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 69,900원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/play.svg",
       "hasOriginalImage": false,
@@ -1132,6 +1294,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -1171,6 +1339,12 @@
       "priceText": "79800",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 79,800원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "최근 가격 변동 확인 필요, 인기 선물 아이템",
       "imagePath": "/images/placeholders/play.svg",
       "hasOriginalImage": false,
@@ -1215,6 +1389,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -1254,6 +1434,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/sterilize.svg",
       "hasOriginalImage": true,
@@ -1293,6 +1479,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -1332,6 +1524,12 @@
       "priceText": "87200",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 87,200원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/diaper.svg",
       "hasOriginalImage": false,
@@ -1371,6 +1569,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
       "hasOriginalImage": true,
@@ -1410,6 +1614,12 @@
       "priceText": "11900",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 11,900원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/sleep.svg",
       "hasOriginalImage": false,
@@ -1449,6 +1659,12 @@
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": null,
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "",
       "imagePath": "/images/placeholders/top-used.svg",
       "hasOriginalImage": true,
@@ -1488,6 +1704,12 @@
       "priceText": "252200",
       "displayPrice": "구매처에서 최신가 확인",
       "referencePrice": "기록가 252,200원",
+      "bestOffer": null,
+      "offerStatus": {
+        "state": "not_synced",
+        "syncedAt": null,
+        "checkedOffers": 0
+      },
       "memo": "인기 있는 무선 이어폰, 블랙 프라이데이 할인 예정",
       "imagePath": "/images/placeholders/sleep.svg",
       "hasOriginalImage": false,

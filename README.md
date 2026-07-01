@@ -56,6 +56,14 @@ npm run data:check
 npm run price:check-readiness
 ```
 
+수집된 가격 후보를 앱 데이터에 반영할 때:
+
+```bash
+npm run price:apply-candidates
+```
+
+이 명령은 `data/price-candidates.json`에서 품절이 아니고 매칭 신뢰도가 높은 배송비 포함 최저가만 `bestOffer`로 반영합니다. `bestOffer`가 있으면 `보러가기` 버튼은 기존 링크 대신 검증된 최저가 링크로 이동합니다.
+
 LLM, Hermes, Codex 같은 모델은 제품명 매칭과 이상치 검토에는 사용할 수 있지만, 가격 숫자의 원천으로 사용하지 않습니다. 자세한 운영안은 `docs/price-sync.md`에 정리되어 있습니다.
 
 ## 품질 확인

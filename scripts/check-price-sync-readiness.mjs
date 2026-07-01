@@ -21,10 +21,20 @@ const items = appData.items ?? [];
 const hosts = new Map();
 const shortLinks = [];
 let itemsWithReferencePrice = 0;
+let itemsWithBestOffer = 0;
+let noAvailableOfferItems = 0;
 
 for (const item of items) {
   if (item.referencePrice) {
     itemsWithReferencePrice += 1;
+  }
+
+  if (item.bestOffer) {
+    itemsWithBestOffer += 1;
+  }
+
+  if (item.offerStatus?.state === "no_available_offer") {
+    noAvailableOfferItems += 1;
   }
 
   for (const link of item.partnerLinks ?? []) {
@@ -46,6 +56,8 @@ const summary = {
   totalItems: items.length,
   itemsWithReferencePrice,
   itemsWithoutReferencePrice: items.length - itemsWithReferencePrice,
+  itemsWithBestOffer,
+  noAvailableOfferItems,
   partnerLinkHosts: Object.fromEntries([...hosts.entries()].sort(([a], [b]) => a.localeCompare(b))),
   shortLinks: shortLinks.length,
   env,

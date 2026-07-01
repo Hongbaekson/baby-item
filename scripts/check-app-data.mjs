@@ -7,6 +7,7 @@ const items = data.items ?? [];
 const failures = [];
 const warnings = [];
 const shortUrlHosts = new Set(['bit.ly', 'naver.me', 'tinyurl.com', 't.co', 'goo.gl']);
+const offerStatusStates = new Set(['not_synced', 'available', 'no_available_offer', 'needs_review']);
 
 const ids = new Set();
 for (const item of items) {
@@ -21,6 +22,10 @@ for (const item of items) {
 
   if (!item.title?.trim()) {
     failures.push(`missing title: ${item.id}`);
+  }
+
+  if (!offerStatusStates.has(item.offerStatus?.state)) {
+    failures.push(`bad offer status: ${item.title}`);
   }
 
   if (!item.imagePath?.startsWith('/images/')) {
@@ -43,6 +48,28 @@ for (const item of items) {
       warnings.push(`short partner link: ${item.title} -> ${link.url}`);
     }
   }
+
+  if (item.bestOffer) {
+    if (!item.bestOffer.url?.startsWith('https://')) {
+      failures.push(`best offer must use https: ${item.title} -> ${item.bestOffer.url}`);
+    }
+
+    if (item.bestOffer.inStock !== true) {
+      failures.push(`best offer must be in stock: ${item.title}`);
+    }
+
+    if (!Number.isFinite(item.bestOffer.price) || item.bestOffer.price <= 0) {
+      failures.push(`best offer has bad price: ${item.title}`);
+    }
+
+    if (!Number.isFinite(item.bestOffer.totalPrice) || item.bestOffer.totalPrice <= 0) {
+      failures.push(`best offer has bad total price: ${item.title}`);
+    }
+
+    if (!item.bestOffer.syncedAt) {
+      failures.push(`best offer missing syncedAt: ${item.title}`);
+    }
+  }
 }
 
 const summary = {
@@ -51,6 +78,9 @@ const summary = {
   usableWithWarnings: items.filter((item) => item.dataQuality?.status === 'usable_with_warnings').length,
   needsReview: items.filter((item) => item.dataQuality?.status === 'needs_review').length,
   shortLinks: warnings.length,
+  bestOffers: items.filter((item) => item.bestOffer).length,
+  offerSynced: items.filter((item) => item.offerStatus?.state === 'available').length,
+  noAvailableOffer: items.filter((item) => item.offerStatus?.state === 'no_available_offer').length,
   failures: failures.length,
 };
 

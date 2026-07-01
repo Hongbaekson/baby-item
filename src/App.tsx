@@ -13,6 +13,21 @@ import { useMemo, useState } from "react";
 import appData from "./data/items.json";
 
 type QualityStatus = "ready" | "usable_with_warnings" | "needs_review" | "draft";
+type OfferStatusState = "not_synced" | "available" | "no_available_offer" | "needs_review";
+
+type BestOffer = {
+  url: string;
+  mallName: string;
+  price: number;
+  shippingFee: number;
+  totalPrice: number;
+  inStock: true;
+  source: string;
+  syncedAt: string;
+  matchConfidence: "high" | "medium";
+  productName: string | null;
+  note: string | null;
+};
 
 type Item = {
   id: string;
@@ -28,6 +43,12 @@ type Item = {
   price: number | null;
   displayPrice: string;
   referencePrice: string | null;
+  bestOffer: BestOffer | null;
+  offerStatus: {
+    state: OfferStatusState;
+    syncedAt: string | null;
+    checkedOffers: number;
+  };
   memo: string;
   imagePath: string;
   hasOriginalImage: boolean;
@@ -122,6 +143,27 @@ function linkHost(url: string) {
 
 function isShortLink(url: string) {
   return ["bit.ly", "naver.me", "tinyurl.com", "t.co", "goo.gl"].includes(linkHost(url));
+}
+
+function primaryPurchaseUrl(item: Item) {
+  return item.bestOffer?.url ?? item.partnerLink;
+}
+
+function offerStatusLabel(item: Item) {
+  if (item.bestOffer) {
+    const shipping =
+      item.bestOffer.shippingFee > 0
+        ? `배송비 ${item.bestOffer.shippingFee.toLocaleString("ko-KR")}원 포함`
+        : "무료배송 또는 배송비 없음";
+
+    return `${item.bestOffer.mallName} · ${shipping} · 품절 아님 확인`;
+  }
+
+  if (item.offerStatus.state === "no_available_offer") {
+    return "최근 동기화에서 구매 가능 최저가 후보를 찾지 못했습니다.";
+  }
+
+  return null;
 }
 
 export function App() {
@@ -258,6 +300,8 @@ function ProductCard({
 }) {
   const [imageSrc, setImageSrc] = useState(item.imagePath);
   const warningIssues = item.dataQuality.issues.filter((issue) => issue.severity !== "info");
+  const purchaseUrl = primaryPurchaseUrl(item);
+  const statusLabel = offerStatusLabel(item);
 
   return (
     <article className={`product-card ${categoryTone(item.primaryCategory)}`}>
@@ -286,6 +330,7 @@ function ProductCard({
         {item.referencePrice && (
           <p className="reference-price">{item.referencePrice} · 실제 결제가는 구매처 기준</p>
         )}
+        {statusLabel && <p className="best-offer-note">{statusLabel}</p>}
         {warningIssues.length > 0 && (
           <div className="issue-row" aria-label="확인 상태">
             {warningIssues.slice(0, 2).map((issue) => (
@@ -300,16 +345,16 @@ function ProductCard({
           </button>
           <a
             className="primary-link"
-            href={item.partnerLink}
+            href={purchaseUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${item.title} 구매 링크 열기, ${linkHost(item.partnerLink)}`}
+            aria-label={`${item.title} 구매 링크 열기, ${linkHost(purchaseUrl)}`}
           >
             <ShoppingBag size={16} aria-hidden="true" />
-            보러가기
+            {item.bestOffer ? "최저가 보기" : "보러가기"}
           </a>
         </div>
-        <p className="link-domain">연결 도메인: {linkHost(item.partnerLink)}</p>
+        <p className="link-domain">보러가기 도메인: {linkHost(purchaseUrl)}</p>
       </div>
     </article>
   );
@@ -317,6 +362,8 @@ function ProductCard({
 
 function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
   const [imageSrc, setImageSrc] = useState(item.imagePath);
+  const purchaseUrl = primaryPurchaseUrl(item);
+  const statusLabel = offerStatusLabel(item);
 
   return (
     <div className="modal-backdrop" role="presentation" onMouseDown={onClose}>
@@ -347,6 +394,24 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
             <p className="modal-reference-price">
               {item.referencePrice} · 실제 결제가는 구매처에서 확인하세요.
             </p>
+          )}
+          {item.bestOffer && (
+            <a
+              className="best-offer-panel"
+              href={purchaseUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ShoppingBag size={18} aria-hidden="true" />
+              <span>
+                <strong>검증된 최저가로 이동</strong>
+                <span>{statusLabel}</span>
+              </span>
+              <ExternalLink size={16} aria-hidden="true" />
+            </a>
+          )}
+          {!item.bestOffer && item.offerStatus.state === "no_available_offer" && (
+            <p className="best-offer-empty">{statusLabel}</p>
           )}
           <div className="category-list expanded">
             {item.categories.map((category) => (
