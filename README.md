@@ -1,6 +1,6 @@
 # 이은이 아빠가 준비하는 육아템
 
-공개 Notion 육아템 목록을 정리해 만든 정적 React 사이트입니다. 1차 운영 방식은 DNS 없이 OCI public IP로 접근하는 공개 조회 사이트입니다.
+공개 Notion 육아템 목록을 정리해 만든 정적 React 사이트입니다. OCI에서는 `sonleeeun.site` 도메인과 HTTPS로 공개합니다.
 
 ## 현재 상태
 
@@ -135,11 +135,19 @@ docker compose up -d --build
 http://localhost:1206
 ```
 
-OCI에서도 같은 포트로 공개합니다.
+Compose는 Caddy edge 컨테이너를 함께 띄워 `80/443`을 외부에 열고, 앱 컨테이너는 host loopback의 `1206`에만 바인딩합니다.
 
 ```bash
 APP_PORT=1206 docker compose up -d --build
 ```
+
+OCI 공개 주소:
+
+```text
+https://sonleeeun.site
+```
+
+인증서는 Caddy가 Let's Encrypt로 자동 발급/갱신합니다. OCI Security List에는 TCP `80`, TCP `443`, 필요 시 UDP `443` ingress가 열려 있어야 합니다.
 
 ## 보안 기준
 
@@ -149,17 +157,17 @@ APP_PORT=1206 docker compose up -d --build
 - 앱 화면에 연결 도메인을 표시합니다.
 - 단축 URL은 `단축 링크` 배지로 표시합니다.
 - 가격 동기화 후 품절/삭제로 판단된 구매 링크는 화면에 표시하지 않습니다.
-- Nginx 응답에 CSP, frame 방어, MIME sniffing 방어, permissions policy를 적용합니다.
+- Caddy가 TLS termination과 HSTS를 담당하고, Nginx 응답에 CSP, frame 방어, MIME sniffing 방어, permissions policy를 적용합니다.
 - Docker 컨테이너는 read-only filesystem과 제한된 capability로 실행합니다.
 
 ## OCI 배포 전 주의
 
 기존 OCI 서버에 `h-log` 같은 다른 프로젝트가 있어도 폴더, 컨테이너명, 포트가 겹치지 않으면 같이 둘 수 있습니다. 이 프로젝트는 `/opt/stacks/euni-baby-items` 경로에 두고, 컨테이너명은 `euni-baby-items-web`으로 분리합니다.
 
-접속 주소는 DNS 없이 아래 형식을 기준으로 합니다.
+접속 주소는 도메인 HTTPS 기준입니다.
 
 ```text
-http://<OCI_PUBLIC_IP>:1206
+https://sonleeeun.site
 ```
 
 현재 OCI 배포 상태는 `docs/deployment-status.md`에 기록합니다.

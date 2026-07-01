@@ -12,8 +12,9 @@
 - 배포 경로: `/opt/stacks/euni-baby-items`
 - Git commit: 서버에서 `git rev-parse --short HEAD`로 확인
 - 컨테이너명: `euni-baby-items-web`
-- 공개 주소: `http://134.185.110.26:1206`
-- 앱 포트 설정: `APP_PORT=1206`
+- Edge 컨테이너명: `euni-baby-items-edge`
+- 공개 주소: `https://sonleeeun.site`
+- 내부 앱 포트 설정: `APP_PORT=1206` (`127.0.0.1` loopback 바인딩)
 
 ## 완료된 작업
 
@@ -34,12 +35,15 @@
 - 가격 표시는 구매처 최신가 확인 CTA와 기록가로 분리 준비 완료
 - 검증된 `bestOffer`가 있으면 `보러가기` 버튼이 최저가 링크를 우선 사용하도록 준비 완료
 - 검증된 `purchaseOffers`가 있으면 상세 화면에서 링크별 가격을 표시하도록 준비 완료
+- DNS `sonleeeun.site` A 레코드가 `134.185.110.26`으로 전파됨
+- Caddy edge 컨테이너로 HTTPS termination과 자동 인증서 갱신을 수행하도록 Compose 설정 준비 완료
 
 서버 내부 검증:
 
 ```bash
 curl -I http://127.0.0.1:1206
 curl -I http://10.0.0.44:1206
+curl -I https://sonleeeun.site
 ```
 
 응답 상태:
@@ -57,7 +61,8 @@ curl -I http://10.0.0.44:1206
 
 ## 남은 작업
 
-- 단축 URL을 실제 최종 URL로 교체
+- OCI Security List에 TCP `80`, TCP `443`, 필요 시 UDP `443` ingress 추가
+- `https://sonleeeun.site` 인증서 발급과 외부 HTTP 200 검증
 - SSH ingress를 `0.0.0.0/0`에서 본인 IP로 제한할지 결정
 - 자동 CD를 붙일 때 체크섬과 attestation 검증 후 배포하도록 구성
 
@@ -69,6 +74,7 @@ curl -I http://10.0.0.44:1206
 ssh oci
 cd /opt/stacks/euni-baby-items
 docker compose ps
+docker logs euni-baby-items-edge --tail 100
 docker logs euni-baby-items-web --tail 100
 ```
 

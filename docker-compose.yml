@@ -1,4 +1,27 @@
 services:
+  edge:
+    image: caddy:2-alpine
+    container_name: euni-baby-items-edge
+    restart: unless-stopped
+    depends_on:
+      euni-baby-items:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    pids_limit: 100
+
   euni-baby-items:
     build:
       context: .
@@ -21,9 +44,13 @@ services:
       - /tmp
     pids_limit: 100
     ports:
-      - "${APP_PORT:-1206}:80"
+      - "127.0.0.1:${APP_PORT:-1206}:80"
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://127.0.0.1/ >/dev/null || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 3
+
+volumes:
+  caddy_data:
+  caddy_config:
