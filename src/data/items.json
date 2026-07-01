@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-01T13:37:51.328Z",
+  "generatedAt": "2026-07-01T13:43:31.746Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템"
   },
   "summary": {
-    "totalItems": 23,
+    "totalItems": 24,
     "categories": [
       {
         "name": "👶300일간 매일 사용한 육아템 정리",
@@ -28,7 +28,7 @@
       },
       {
         "name": "🍼젖병 열탕 소독",
-        "count": 5
+        "count": 6
       },
       {
         "name": "😎외출 아이템",
@@ -47,7 +47,7 @@
         "count": 3
       }
     ],
-    "readyItems": 12,
+    "readyItems": 13,
     "usableWithWarningsItems": 11,
     "needsReviewItems": 0
   },
@@ -2749,6 +2749,119 @@
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T13:37:51.328Z"
       }
+    },
+    {
+      "id": "item-4252707619",
+      "title": "벨라쿠진 잼팟 6리터+유리뚜껑 세트 /인덕션 가능",
+      "categories": [
+        "🍼젖병 열탕 소독"
+      ],
+      "primaryCategory": "🍼젖병 열탕 소독",
+      "partnerLink": "https://brand.naver.com/bellacuisine/products/4252707619",
+      "partnerLinks": [
+        {
+          "url": "https://brand.naver.com/bellacuisine/products/4252707619",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "naver-brand-4252707619"
+        }
+      ],
+      "price": 39800,
+      "priceText": "39800",
+      "displayPrice": "최저가 39,800원",
+      "referencePrice": "기록가 39,800원",
+      "bestOffer": {
+        "url": "https://brand.naver.com/bellacuisine/products/4252707619",
+        "platform": "naver",
+        "mallName": "벨라쿠진",
+        "price": 39800,
+        "shippingFee": 0,
+        "totalPrice": 39800,
+        "priceBasis": "shipping_included",
+        "inStock": true,
+        "source": "manual-reviewed",
+        "syncedAt": "2026-07-01T13:43:31.746Z",
+        "matchConfidence": "high",
+        "productName": "벨라쿠진 잼팟 6리터+유리뚜껑 세트 /인덕션 가능",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8179722/81797229182.4.jpg",
+        "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비 포함 여부와 재고는 구매처에서 최종 확인해야 합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://brand.naver.com/bellacuisine/products/4252707619",
+          "platform": "naver",
+          "mallName": "벨라쿠진",
+          "price": 39800,
+          "shippingFee": 0,
+          "totalPrice": 39800,
+          "priceBasis": "shipping_included",
+          "inStock": true,
+          "source": "manual-reviewed",
+          "syncedAt": "2026-07-01T13:43:31.746Z",
+          "matchConfidence": "high",
+          "productName": "벨라쿠진 잼팟 6리터+유리뚜껑 세트 /인덕션 가능",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8179722/81797229182.4.jpg",
+          "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비 포함 여부와 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=971959762&tid=1000000061",
+          "platform": "naver",
+          "mallName": "11번가",
+          "price": 41840,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:43:31.746Z",
+          "matchConfidence": "high",
+          "productName": "벨라쿠진 잼팟 6리터+유리뚜껑 세트 /인덕션 가능",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_1884747/18847475093.348.jpg",
+          "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비 포함 여부와 재고는 구매처에서 최종 확인해야 합니다."
+        },
+        {
+          "url": "https://ohou.se/productions/208428/selling?utm_source=naver_shop&bp_sub_id_2=search&bp_sub_id_3=inorganic&utm_medium=cpc&utm_campaign=208428-1806966&utm_term={query}&utm_content={ad}&bp_adset={network}_{media}",
+          "platform": "naver",
+          "mallName": "오늘의집",
+          "price": 42900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T13:43:31.746Z",
+          "matchConfidence": "high",
+          "productName": "벨라쿠진 잼팟 6리터+유리뚜껑 세트 (인덕션 OK 젖병소독용으로도 추천)",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5854819/58548196456.1.jpg",
+          "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비 포함 여부와 재고는 구매처에서 최종 확인해야 합니다."
+        }
+      ],
+      "offerStatus": {
+        "state": "available",
+        "syncedAt": "2026-07-01T13:43:31.746Z",
+        "checkedOffers": 3
+      },
+      "memo": "",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8179722/81797229182.4.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "sterilize",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "naver-brand-4252707619"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8179722/81797229182.4.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "벨라쿠진",
+        "productName": "벨라쿠진 잼팟 6리터+유리뚜껑 세트 /인덕션 가능",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T13:43:31.746Z"
+      }
     }
   ],
   "imageSync": {
@@ -2769,9 +2882,9 @@
     "skipped": 208
   },
   "manualReview": {
-    "appliedAt": "2026-07-01T13:37:51.328Z",
+    "appliedAt": "2026-07-01T13:43:31.746Z",
     "addedItemCount": 1,
     "deletedItemCount": 0,
-    "note": "사용자 요청으로 마더케이 롱핸들 리필형 스펀지 젖병솔, 젖꼭지솔, 소독집게 세트 항목을 추가했습니다."
+    "note": "사용자 요청으로 벨라쿠진 잼팟 6리터와 유리뚜껑 세트 항목을 추가했습니다."
   }
 }
