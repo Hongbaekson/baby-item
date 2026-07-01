@@ -7,8 +7,8 @@
 - React/Vite 정적 앱 코드
 - 제품 데이터와 외부 구매 링크
 - GitHub Actions CI
-- Docker Compose / Nginx 배포 설정
-- OCI 공개 IP 배포 전 노출면
+- Docker Compose / Caddy / Nginx 배포 설정
+- OCI 도메인 HTTPS 공개 노출면
 
 ## 확인 결과
 
@@ -49,7 +49,9 @@
 - `bestOffer`와 `purchaseOffers` 자동 반영 조건은 HTTPS URL, 품절 아님, 유효한 가격/배송비, 높은 제품 매칭 신뢰도다.
 - 최근 동기화에서 구매 가능한 후보가 없으면 기존 구매 링크를 숨겨 품절/삭제 링크 클릭을 줄인다.
 - 상품 썸네일 외부 도메인은 CSP와 데이터 검증에서 허용 목록으로 제한한다.
-- API 키는 GitHub Secrets 또는 OCI 환경변수로만 관리하고 repo에 커밋하지 않는다.
+- API 키는 GitHub Secrets 또는 OCI 서버 전용 env 파일로만 관리하고 repo에 커밋하지 않는다.
+- OCI 가격 동기화 env 파일은 `/etc/euni-baby-items/price-sync.env`에 두고 권한 `600`으로 제한한다.
+- 네이버 쇼핑 API 키는 OCI 서버 env 파일에 설정 완료했고, 출력/문서/커밋에는 값을 남기지 않는다.
 
 ### 의존성
 
@@ -81,10 +83,13 @@ GitHub Actions:
 - PR은 배포 대상이 아니므로 빌드/체크섬/업로드까지 검증한다.
 - 자동 CD를 붙일 때는 OCI 배포 전에 `sha256sum -c SHA256SUMS`와 attestation 검증을 통과한 산출물만 반영한다.
 
-### Docker / Nginx
+### Docker / Caddy / Nginx
 
 적용한 보호:
 
+- Caddy edge 컨테이너가 TLS termination과 HTTP -> HTTPS redirect를 담당
+- Let's Encrypt 인증서 자동 발급/갱신
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains`
 - Nginx 보안 헤더 추가
   - `Content-Security-Policy`
   - `X-Content-Type-Options: nosniff`
@@ -92,7 +97,6 @@ GitHub Actions:
   - `Referrer-Policy: strict-origin-when-cross-origin`
   - `Permissions-Policy`
   - `Cross-Origin-Opener-Policy`
-- DNS 없이 public IP HTTP로 운영 중이므로 CSP의 `upgrade-insecure-requests`는 적용하지 않는다. 이 지시문은 HTTPS가 없는 현재 배포에서 JS/CSS 요청을 HTTPS로 강제해 React 앱 렌더링을 막는다.
 - Compose 컨테이너 하드닝
   - `read_only: true`
   - `no-new-privileges:true`
@@ -105,14 +109,16 @@ GitHub Actions:
 실행 검증:
 
 - Docker 이미지 빌드 성공
-- 임시 포트 `18080`에서 HTTP 200 확인
 - 컨테이너 healthcheck `healthy` 확인
 - 보안 헤더 응답 확인
+- `http://sonleeeun.site` -> `https://sonleeeun.site/` 308 redirect 확인
+- `https://sonleeeun.site` HTTP 200 확인
 
 ## OCI 배포 보안 기준
 
-- Security List 또는 NSG는 실제 공개 포트 `1206`만 연다.
-- DNS 없이 public IP로 배포하므로 MVP는 HTTP 기준이다.
+- Security List 또는 NSG는 실제 공개 포트 TCP `80`, TCP `443`, UDP `443`을 연다.
+- 앱 컨테이너는 host loopback `127.0.0.1:1206`에만 바인딩하고 외부 직접 공개는 Caddy를 통한다.
+- 공개 접속은 `https://sonleeeun.site` 기준이다.
 - SSH 포트는 가능하면 본인 IP로 제한한다.
 - `h-log`와 같은 기존 프로젝트와 포트/컨테이너명/경로가 겹치지 않게 한다.
 - GitHub Actions CD secret은 수동 배포가 한 번 성공한 뒤 추가한다.
