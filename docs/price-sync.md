@@ -103,6 +103,7 @@ docker run --rm \
 npm run price:check-readiness
 npm run price:collect-coupang
 npm run price:collect-naver
+npm run price:apply-live-offers
 npm run price:merge-candidates
 npm run price:apply-candidates
 ```
@@ -110,6 +111,10 @@ npm run price:apply-candidates
 `price:check-readiness`는 앱 데이터의 구매 링크 도메인, 기록가 유무, 단축 URL 수, 가격 동기화에 필요한 환경변수 준비 상태를 점검한다.
 
 `price:collect-naver`는 네이버 쇼핑 검색 API로 `data/price-candidates.naver.json` 후보 파일을 만든다. 이 후보에는 상품 썸네일이 포함된다. 네이버 쇼핑 검색 API는 배송비와 결제 단계 재고를 명시하지 않으므로 이 후보 파일은 자동 반영 전 보강이 필요하다.
+
+`price:apply-images`는 후보 파일의 상품 썸네일 중 매칭 신뢰도 `high`인 이미지만 플레이스홀더 이미지에 반영한다. 이미지 보강은 가격/품절 검증과 분리해서 처리한다.
+
+`price:apply-live-offers`는 네이버 쇼핑 검색 API 후보 중 매칭 신뢰도 `high`이고 현재 검색 결과에 등록된 상품만 낮은 가격순 최대 4개까지 구매 후보로 반영한다. 배송비와 결제 직전 재고가 API 응답에 없으므로 가격은 `부터`로 표시하고 배송비/품절 여부는 구매처 확인 대상으로 남긴다.
 
 `price:collect-coupang`은 쿠팡 HMAC 서명 방식으로 `data/price-candidates.coupang.json` 후보 파일을 만든다. 기본 검색 path는 환경변수 `COUPANG_SEARCH_PATH`로 바꿀 수 있다.
 
@@ -119,9 +124,11 @@ npm run price:apply-candidates
 
 - 품절 아님
 - `https://` 상품 URL
-- 가격, 배송비, 배송비 포함 총액이 유효한 숫자
+- 가격이 유효한 숫자
+- 엄격 동기화는 배송비와 배송비 포함 총액이 유효한 숫자
+- 네이버 live offer 모드는 배송비 미확인 상태를 유지하고 `부터` 가격으로 표시
 - 매칭 신뢰도 `high`
-- 배송비 포함 총액 기준 정렬
+- 배송비 포함 총액 또는 등록가 기준 낮은 가격순 정렬
 
 반영된 `bestOffer`가 있으면 앱의 `보러가기` 버튼은 기존 Notion 링크 대신 검증된 최저가 링크로 이동한다. 상세 화면은 `purchaseOffers`의 링크별 가격을 표시한다.
 

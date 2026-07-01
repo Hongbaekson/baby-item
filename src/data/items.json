@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T03:39:04.773Z",
+  "generatedAt": "2026-07-01T05:03:36.875Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템"
   },
@@ -47,8 +47,8 @@
         "count": 2
       }
     ],
-    "readyItems": 6,
-    "usableWithWarningsItems": 30,
+    "readyItems": 11,
+    "usableWithWarningsItems": 25,
     "needsReviewItems": 1
   },
   "items": [
@@ -70,18 +70,98 @@
       ],
       "price": 37900,
       "priceText": "37900",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 33,900원부터",
       "referencePrice": "기록가 37,900원",
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7868014366&ctag=7868014366&lptag=I25156966420&itemId=25156966420&vendorItemId=92155138494&spec=10305199",
+        "platform": "naver",
+        "mallName": "쿠팡",
+        "price": 33900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:41.930Z",
+        "matchConfidence": "high",
+        "productName": "유베코 휴대용 아기 신생아 말랑하니 백색소음기 수면교육 수유등  모던화이트",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5933708/59337086026.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7868014366&ctag=7868014366&lptag=I25156966420&itemId=25156966420&vendorItemId=92155138494&spec=10305199",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 33900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:41.930Z",
+          "matchConfidence": "high",
+          "productName": "유베코 휴대용 아기 신생아 말랑하니 백색소음기 수면교육 수유등  모던화이트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5933708/59337086026.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/59842629698",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 34900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:41.930Z",
+          "matchConfidence": "high",
+          "productName": "말랑하니 아기신생아 백색소음기 꿀잠 수면교육 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5984262/59842629698.20260429104551.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/6848838333",
+          "platform": "naver",
+          "mallName": "말랑하니",
+          "price": 34900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:41.930Z",
+          "matchConfidence": "high",
+          "productName": "말랑하니 아기신생아 백색소음기 꿀잠 수면교육",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8439333/84393338655.5.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://malanghoney.com/product/detail.html?product_no=648&cate_no=271&display_group=1&utm_source=naver&utm_medium=shopping&utm_campaign=knowledge_shopping&mkt_in=Y&ghost_mall_id=naver&ref=naver_open",
+          "platform": "naver",
+          "mallName": "말랑하니",
+          "price": 37900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:41.930Z",
+          "matchConfidence": "high",
+          "productName": "아기 백색소음기 3세대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4763234/47632347024.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:41.930Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/top-used.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_4925370/49253707698.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
         "status": "ready",
@@ -92,7 +172,16 @@
       "sourceItemIds": [
         "32eb4abb-08ed-80f4-a319-f79a86a68b1a",
         "248b4abb-08ed-806e-b68d-cde9d15949ff"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4925370/49253707698.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "말랑하니",
+        "productName": "백색소음기 선물쇼핑백",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:41.930Z"
+      }
     },
     {
       "id": "item-2ded103b0e",
@@ -117,18 +206,98 @@
       ],
       "price": 69520,
       "priceText": "69520",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 58,420원부터",
       "referencePrice": "기록가 69,520원",
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://link.gmarket.co.kr/gate/pcs?item-no=2778869527&sub-id=1003&service-code=10000003&lcd=100000014",
+        "platform": "naver",
+        "mallName": "G마켓",
+        "price": 58420,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:42.138Z",
+        "matchConfidence": "high",
+        "productName": "매직캔 (리필증정2개) 매직캔 크롬히포 21L 27L MH250 MH280 기본리필포함 3개리필",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6016900/60169009228.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://link.gmarket.co.kr/gate/pcs?item-no=2778869527&sub-id=1003&service-code=10000003&lcd=100000014",
+          "platform": "naver",
+          "mallName": "G마켓",
+          "price": 58420,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.138Z",
+          "matchConfidence": "high",
+          "productName": "매직캔 (리필증정2개) 매직캔 크롬히포 21L 27L MH250 MH280 기본리필포함 3개리필",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6016900/60169009228.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.auction.co.kr/gate/pcs?item-no=F269669780&sub-id=1&service-code=10000003",
+          "platform": "naver",
+          "mallName": "옥션",
+          "price": 58420,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.138Z",
+          "matchConfidence": "high",
+          "productName": "매직캔 (리필증정2개) 매직캔 크롬히포 21L 27L MH250 MH280 기본리필포함 3개리필",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6016901/60169019396.2.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=6429505953&ctag=6429505953&lptag=I19236842744&itemId=19236842744&vendorItemId=86353210505&spec=10305199",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 60390,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.138Z",
+          "matchConfidence": "high",
+          "productName": "매직캔 크롬히포 (오토실링) 21L 27L MH250 MH280 HIPPO II 듀얼 오픈시스템 신제품  크롬화이트  21L(275 x 235 x 470 mm)",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4160462/41604628626.71.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9572359144&ctag=9572359144&lptag=I28571476029&itemId=28571476029&vendorItemId=85041781355&spec=10305199",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 60800,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.138Z",
+          "matchConfidence": "high",
+          "productName": "[리필증정2개] 매직캔 크롬히포 21L 27L+리필2개 MH250 MH280 신제품 더블락시스템  21L그레이+리필2개 (MH250GCR)",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6024704/60247040433.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:42.138Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/top-used.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_4966997/49669975719.37.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
         "status": "ready",
@@ -139,7 +308,16 @@
       "sourceItemIds": [
         "32eb4abb-08ed-8058-84b6-e36c37f6aa44",
         "248b4abb-08ed-803f-8430-d3652689bb74"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4966997/49669975719.37.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "쿠팡",
+        "productName": "매직캔 크롬히포 (오토실링) 21L 27L MH250 MH280 HIPPO II 듀얼 오픈시스템 신제품  리필_01_250R5G->매직캔히포 21L리필5롤",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:42.138Z"
+      }
     },
     {
       "id": "item-7995e62fc2",
@@ -159,18 +337,98 @@
       ],
       "price": 95000,
       "priceText": "95000",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 89,000원부터",
       "referencePrice": "기록가 95,000원",
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/52507335410",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 89000,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:42.337Z",
+        "matchConfidence": "high",
+        "productName": "아인 보르르 분유포트 화이트",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5250733/52507335410.20250115164204.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/52507335410",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 89000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.337Z",
+          "matchConfidence": "high",
+          "productName": "아인 보르르 분유포트 화이트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5250733/52507335410.20250115164204.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/4770915416",
+          "platform": "naver",
+          "mallName": "보르르",
+          "price": 89000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.337Z",
+          "matchConfidence": "high",
+          "productName": "보르르 분유포트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8231543/82315437473.15.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=6962086794&ctag=6962086794&lptag=I16952940706&itemId=16952940706&vendorItemId=93383260215&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 89000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.337Z",
+          "matchConfidence": "high",
+          "productName": "보르르 분유포트 단일상품",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6000004/60000049426.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9268670469&ctag=9268670469&lptag=l906206142759&itemId=65199020467&vendorItemId=93383260215&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 89000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.337Z",
+          "matchConfidence": "high",
+          "productName": "보르르 분유포트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6011933/60119330637.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:42.337Z",
+        "checkedOffers": 9
       },
       "memo": "-> 물을 100도까지 끓여 염소를 제거한 후 아기의 분유를 타기 좋은 온도인 43도로 물온도를 맞춰줌\n\n-> 분유 탈때마다 물을 끓이고 식히면 너무 힘드니 필요",
-      "imagePath": "/images/placeholders/top-used.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8338786/83387866961.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
         "status": "ready",
@@ -181,7 +439,16 @@
       "sourceItemIds": [
         "32eb4abb-08ed-80d5-9011-f4eab770f1d2",
         "248b4abb-08ed-8095-89c7-c0b2be795034"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8338786/83387866961.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "보르르",
+        "productName": "보르르 분유포트 주전자 단품",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:42.337Z"
+      }
     },
     {
       "id": "item-1d5fa5a493",
@@ -201,18 +468,82 @@
       ],
       "price": 109800,
       "priceText": "109800",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 70,900원부터",
       "referencePrice": "기록가 109,800원",
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/60615306933",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 70900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:42.529Z",
+        "matchConfidence": "high",
+        "productName": "소베맘 2세대 프리미엄 원터치 기저귀교환대 기저귀갈이대",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6061530/60615306933.20260626220403.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/60615306933",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 70900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.529Z",
+          "matchConfidence": "high",
+          "productName": "소베맘 2세대 프리미엄 원터치 기저귀교환대 기저귀갈이대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6061530/60615306933.20260626220403.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/5503949458",
+          "platform": "naver",
+          "mallName": "소베맘",
+          "price": 70900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.529Z",
+          "matchConfidence": "high",
+          "productName": "소베맘 2세대 프리미엄 원터치 기저귀교환대 기저귀갈이대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8304844/83048444762.7.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://ohou.se/productions/817168/selling?utm_source=naver_shop&bp_sub_id_2=search&bp_sub_id_3=inorganic&utm_medium=cpc&utm_campaign=817168-6118039&utm_term={query}&utm_content={ad}&bp_adset={network}_{media}",
+          "platform": "naver",
+          "mallName": "오늘의집",
+          "price": 74900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.529Z",
+          "matchConfidence": "high",
+          "productName": "소베맘 2세대 프리미엄 원터치 기저귀교환대 기저귀갈이대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_3755665/37556652185.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:42.529Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/top-used.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8620336/86203363041.3.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
         "status": "ready",
@@ -223,7 +554,16 @@
       "sourceItemIds": [
         "32eb4abb-08ed-80ae-a203-f6a41dae9e3b",
         "248b4abb-08ed-807a-984e-cb0776367ac9"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8620336/86203363041.3.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "소베맘",
+        "productName": "소베맘 3세대 더 뉴 솔리드 기저귀갈이대 구성품 별도판매 휴지통",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:42.529Z"
+      }
     },
     {
       "id": "item-35daf7dc3f",
@@ -248,18 +588,98 @@
       ],
       "price": 340920,
       "priceText": "340920",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 350,350원부터",
       "referencePrice": "기록가 340,920원",
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/60410357506",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 350350,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:42.719Z",
+        "matchConfidence": "high",
+        "productName": "유팡 시그니처2 플러스 젖병소독기",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6041035/60410357506.20260611212208.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/60410357506",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 350350,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.719Z",
+          "matchConfidence": "high",
+          "productName": "유팡 시그니처2 플러스 젖병소독기",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6041035/60410357506.20260611212208.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=4883310455&ctag=4883310455&lptag=l304338622152&itemId=58263132430&vendorItemId=94963937040&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 350350,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.719Z",
+          "matchConfidence": "high",
+          "productName": "유팡 시그니처2 플러스 젖병 소독기 UP920A",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5994302/59943026578.8.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=8438035154&ctag=8438035154&lptag=I24425263488&itemId=24425263488&vendorItemId=94963937041&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 350350,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.719Z",
+          "matchConfidence": "high",
+          "productName": "유팡 시그니처2 플러스 젖병 소독기 UP920A 밀크화이트 대용량 건조기 출산 선물",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5554873/55548738627.20.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=4883310455&ctag=4883310455&lptag=l423225268484&itemId=42224358684&vendorItemId=94963937041&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 350350,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:42.719Z",
+          "matchConfidence": "high",
+          "productName": "유팡 시그니처2 플러스 젖병 소독기 UP920A",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5580183/55801830138.20.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:42.719Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/top-used.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_6041035/60410357506.20260611212208.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
         "status": "ready",
@@ -270,7 +690,16 @@
       "sourceItemIds": [
         "32eb4abb-08ed-80d6-9e4f-e1f079a14bc2",
         "248b4abb-08ed-8059-aad0-dfd6afafeb63"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6041035/60410357506.20260611212208.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "네이버",
+        "productName": "유팡 시그니처2 플러스 젖병소독기",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:42.719Z"
+      }
     },
     {
       "id": "item-b74f1aa7c3",
@@ -300,8 +729,8 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:42.964Z",
         "checkedOffers": 0
       },
       "memo": "",
@@ -347,9 +776,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:43.181Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "/images/placeholders/mat.svg",
@@ -393,9 +822,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:43.373Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
@@ -441,18 +870,98 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 36,810원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/59483698507",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 36810,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:43.559Z",
+        "matchConfidence": "high",
+        "productName": "꿈비 분유쉐이커 분유포트 분유제조기 1개",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5948369/59483698507.20260619162219.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/59483698507",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 36810,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:43.559Z",
+          "matchConfidence": "high",
+          "productName": "꿈비 분유쉐이커 분유포트 분유제조기 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5948369/59483698507.20260619162219.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/9326964188",
+          "platform": "naver",
+          "mallName": "꿈비스토어",
+          "price": 40900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:43.559Z",
+          "matchConfidence": "high",
+          "productName": "꿈비 분유쉐이커 휴대용 분유 제조기 믹서기",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8687146/86871464511.6.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://ggumbi.com/product/detail.html?product_no=3822&cate_no=189&display_group=1&utm_source=naver&utm_medium=shopping&utm_campaign=knowledge_shopping&mkt_in=Y&ghost_mall_id=naver&ref=naver_open",
+          "platform": "naver",
+          "mallName": "꿈비공식쇼핑몰",
+          "price": 40900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:43.559Z",
+          "matchConfidence": "high",
+          "productName": "[꿈비] 휴대용 무선 분유쉐이커 분유제조기 분유믹서기",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4304676/43046760904.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/58952039080",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 42900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:43.559Z",
+          "matchConfidence": "high",
+          "productName": "꿈비 분유쉐이커",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5895203/58952039080.20260624070818.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:43.559Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/top-used.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_5948369/59483698507.20260619162219.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -470,7 +979,16 @@
         "32eb4abb-08ed-803d-8cf6-f57cfb0b321d",
         "24cb4abb-08ed-8035-b01c-c8ae382bdc64",
         "264b4abb-08ed-80e4-98a2-d02cc4bdaf46"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5948369/59483698507.20260619162219.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "네이버",
+        "productName": "꿈비 분유쉐이커 분유포트 분유제조기 1개",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:43.559Z"
+      }
     },
     {
       "id": "item-c095ae487b",
@@ -494,9 +1012,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:43.822Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "/images/placeholders/diaper.svg",
@@ -535,14 +1053,94 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 9,810원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=7469820501&tid=1000000061",
+        "platform": "naver",
+        "mallName": "11번가",
+        "price": 9810,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:44.072Z",
+        "matchConfidence": "high",
+        "productName": "마더케이 디아 젖병 유아 주방세제 무향, 1개, 500ml",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5753689/57536898079.3.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=7469820501&tid=1000000061",
+          "platform": "naver",
+          "mallName": "11번가",
+          "price": 9810,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.072Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 디아 젖병 유아 주방세제 무향, 1개, 500ml",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5753689/57536898079.3.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11776634074",
+          "platform": "naver",
+          "mallName": "하이앙쥬",
+          "price": 19980,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.072Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 디아 젖병 유아 주방세제 무향, 500ml, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8932114/89321144661.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.auction.co.kr/gate/pcs?item-no=F521908220&sub-id=1&service-code=10000003",
+          "platform": "naver",
+          "mallName": "옥션",
+          "price": 24040,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.072Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 디아 젖병 유아 주방세제 무향 500ml 1개 4524195",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5948456/59484562279.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.gmarket.co.kr/gate/pcs?item-no=4715520733&sub-id=1003&service-code=10000003&lcd=100000006",
+          "platform": "naver",
+          "mallName": "G마켓",
+          "price": 24050,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.072Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 디아 젖병 유아 주방세제 무향 500ml 1개 4524195",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5948804/59488049391.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:44.072Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/1025_amir_coupang_oct_80k/ff2e/6fb4f374a0d15675ac79bf713d01d421dbc2db68d67fd447f563433e7089.jpg",
@@ -586,8 +1184,8 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:44.256Z",
         "checkedOffers": 0
       },
       "memo": "",
@@ -627,14 +1225,94 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 15,390원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9594032263&ctag=9594032263&lptag=I28640190562&itemId=28640190562&vendorItemId=95582939673&spec=10305199",
+        "platform": "naver",
+        "mallName": "쿠팡",
+        "price": 15390,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:44.500Z",
+        "matchConfidence": "high",
+        "productName": "마더케이 프리미엄 젖병 건조대",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6041273/60412734641.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9594032263&ctag=9594032263&lptag=I28640190562&itemId=28640190562&vendorItemId=95582939673&spec=10305199",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 15390,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.500Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 프리미엄 젖병 건조대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6041273/60412734641.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9594040291&ctag=9594040291&lptag=I28640218626&itemId=28640218626&vendorItemId=95582967224&spec=10305199",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 15390,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.500Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 프리미엄 젖병 건조대 베이지",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6041340/60413409085.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=8233730233&tid=1000000061",
+          "platform": "naver",
+          "mallName": "11번가",
+          "price": 15590,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.500Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 젖병 건조대_네이비",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5467518/54675180594.2.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/22646470921",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 17310,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.500Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 젖병 건조대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_2264647/22646470921.20260401152532.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:44.500Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/377360215634252-c4b5a9ce-04be-4137-9906-2f8bd3f027cc.jpg",
@@ -673,14 +1351,94 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 5,200원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/main/products/12025697194",
+        "platform": "naver",
+        "mallName": "마더케이",
+        "price": 5200,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:44.690Z",
+        "matchConfidence": "high",
+        "productName": "마더케이 빨대세척솔 2종 세트 1개",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8957020/89570207885.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/12025697194",
+          "platform": "naver",
+          "mallName": "마더케이",
+          "price": 5200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.690Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 빨대세척솔 2종 세트 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8957020/89570207885.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/53601538041",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 5273,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.690Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 빨대세척솔 2종 세트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5360153/53601538041.20250318001605.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=1763739321&tid=1000000061",
+          "platform": "naver",
+          "mallName": "11번가",
+          "price": 5380,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.690Z",
+          "matchConfidence": "high",
+          "productName": "[마더케이]빨대세척솔 2종 세트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6053048/60530485783.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.gmarket.co.kr/gate/pcs?item-no=851215384&sub-id=1003&service-code=10000003&lcd=100000006",
+          "platform": "naver",
+          "mallName": "G마켓",
+          "price": 5380,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:44.690Z",
+          "matchConfidence": "high",
+          "productName": "마더케이 빨대세척솔 2종 세트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4869177/48691775827.2.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:44.690Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/3708843053205848-20b54150-82ba-4a6a-9a19-57bfb7e85a9e.jpg",
@@ -724,9 +1482,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:44.947Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "/images/placeholders/sleep.svg",
@@ -770,9 +1528,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:45.172Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "/images/placeholders/sleep.svg",
@@ -811,18 +1569,66 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 27,740원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/59013875746",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 27740,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:45.364Z",
+        "matchConfidence": "high",
+        "productName": "바이오가이아 프로텍티스 베이비 드롭 어린이유산균 5ml, 1개",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5901387/59013875746.20260223113501.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/59013875746",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 27740,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:45.364Z",
+          "matchConfidence": "high",
+          "productName": "바이오가이아 프로텍티스 베이비 드롭 어린이유산균 5ml, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5901387/59013875746.20260223113501.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/13627360526",
+          "platform": "naver",
+          "mallName": "sell it",
+          "price": 27740,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:45.364Z",
+          "matchConfidence": "high",
+          "productName": "바이오가이아 프로텍티스 베이비 드롭 어린이유산균 5ml 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9117187/91171871135.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:45.364Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/colic.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_5821551/58215513010.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "colic",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -838,7 +1644,16 @@
       },
       "sourceItemIds": [
         "264b4abb-08ed-802f-bf1d-c2abf0a5711b"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5821551/58215513010.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "피플팜",
+        "productName": "웰러스 클린앤화이트 구강유산균 30포 입냄새 구취 제거 입마름 관리 바이오가이아 종근당",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:45.364Z"
+      }
     },
     {
       "id": "item-5b88cc08a4",
@@ -862,29 +1677,32 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:45.565Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/feeding.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_9119171/91191719958.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "feeding",
       "dataQuality": {
-        "status": "usable_with_warnings",
+        "status": "ready",
         "errorCount": 0,
-        "warningCount": 1,
-        "issues": [
-          {
-            "code": "missing_image",
-            "severity": "warning",
-            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
-          }
-        ]
+        "warningCount": 0,
+        "issues": []
       },
       "sourceItemIds": [
         "248b4abb-08ed-805c-9069-cddeda2c6ba4"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9119171/91191719958.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "잡다한잡동사니",
+        "productName": "호환 Marsui 베이비브레짜 분유제조기 브레짜 깔대기 육아용품 파란색 DIY 5피스",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:45.565Z"
+      }
     },
     {
       "id": "item-b1bc91e327",
@@ -908,9 +1726,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:45.774Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
@@ -949,18 +1767,50 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 30,000원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/main/products/5843367547",
+        "platform": "naver",
+        "mallName": "보르르",
+        "price": 30000,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:46.022Z",
+        "matchConfidence": "high",
+        "productName": "보르르 분유포트 주전자 단품",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8338786/83387866961.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/5843367547",
+          "platform": "naver",
+          "mallName": "보르르",
+          "price": 30000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.022Z",
+          "matchConfidence": "high",
+          "productName": "보르르 분유포트 주전자 단품",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8338786/83387866961.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:46.022Z",
+        "checkedOffers": 9
       },
       "memo": "",
-      "imagePath": "/images/placeholders/top-used.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8338786/83387866961.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -976,7 +1826,16 @@
       },
       "sourceItemIds": [
         "32eb4abb-08ed-80a3-9e83-c724bbfc7025"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8338786/83387866961.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "보르르",
+        "productName": "보르르 분유포트 주전자 단품",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:46.022Z"
+      }
     },
     {
       "id": "item-521efce3f3",
@@ -995,18 +1854,98 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 100원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/main/products/5038609783",
+        "platform": "naver",
+        "mallName": "신풍산업",
+        "price": 100,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:46.213Z",
+        "matchConfidence": "high",
+        "productName": "브리사 온도 조절 분유 보온병 아기 신생아 텀블러",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8258313/82583130843.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/5038609783",
+          "platform": "naver",
+          "mallName": "신풍산업",
+          "price": 100,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.213Z",
+          "matchConfidence": "high",
+          "productName": "브리사 온도 조절 분유 보온병 아기 신생아 텀블러",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8258313/82583130843.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://www.skstoa.com/display/goods/60235128?mediaCode=EP05&utm_source=naver&utm_medium=affiliate&utm_campaign=shopping",
+          "platform": "naver",
+          "mallName": "SK스토아",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.213Z",
+          "matchConfidence": "high",
+          "productName": "패션플러스 [HS라이프] 텀블러 보온 보냉 물병 17cm 얇은 손목 스트랩 끈5컬러",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5907309/59073090773.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.gmarket.co.kr/gate/pcs?item-no=3856751901&sub-id=1003&service-code=10000003&lcd=100000085",
+          "platform": "naver",
+          "mallName": "G마켓",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.213Z",
+          "matchConfidence": "high",
+          "productName": "(HS라이프)텀블러 보온 보냉 물병 17cm 얇은 손목 스트랩 끈5컬러",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6057647/60576477439.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://www.hnsmall.com/channel/channel.do?goods_code=46217376&channel_code=20005&utm_source=Naver&utm_medium=AF&utm_campaign=MC_Kichen_46217376&trackingarea=60000016^8005618^1389595",
+          "platform": "naver",
+          "mallName": "홈앤쇼핑",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.213Z",
+          "matchConfidence": "high",
+          "productName": "텀블러 보온 보냉 물병 17cm 얇은 손목 스트랩 끈5컬러",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4817479/48174790046.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:46.213Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/outing.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8258313/82583130843.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "outing",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -1022,7 +1961,16 @@
       },
       "sourceItemIds": [
         "2c2b4abb-08ed-805c-863a-f54db5e5b8df"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8258313/82583130843.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "신풍산업",
+        "productName": "브리사 온도 조절 분유 보온병 아기 신생아 텀블러",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:46.213Z"
+      }
     },
     {
       "id": "item-3573fecd77",
@@ -1046,29 +1994,32 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:46.406Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/diaper.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8897034/88970340236.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "diaper",
       "dataQuality": {
-        "status": "usable_with_warnings",
+        "status": "ready",
         "errorCount": 0,
-        "warningCount": 1,
-        "issues": [
-          {
-            "code": "missing_image",
-            "severity": "warning",
-            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
-          }
-        ]
+        "warningCount": 0,
+        "issues": []
       },
       "sourceItemIds": [
         "248b4abb-08ed-80e8-9214-fd6d4a0d68aa"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8897034/88970340236.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "드림 릴라이즈",
+        "productName": "착한 못 핀후크 아기 모자 걸이 벽지 핀 소형 유아 가방 못대신 책가방 앞치마 벽 고정 액자 거치대 옷걸이 차키 벽면 벽걸이 벽에 걸기 시계 고리 열쇠 옷 핸드백 타공 행거 다용도",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:46.406Z"
+      }
     },
     {
       "id": "item-b6cc51720e",
@@ -1087,18 +2038,98 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 304,000원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9167185706&ctag=9167185706&lptag=I27821762678&itemId=27821762678&vendorItemId=93128422214&spec=10305197",
+        "platform": "naver",
+        "mallName": "쿠팡",
+        "price": 304000,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:46.631Z",
+        "matchConfidence": "high",
+        "productName": "아이엔젤 닥터다이얼 폴드에어 아기띠 힙시트 베이지 FREE 올인원 신생아용품 베이비용품",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5890276/58902766550.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9167185706&ctag=9167185706&lptag=I27821762678&itemId=27821762678&vendorItemId=93128422214&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 304000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.631Z",
+          "matchConfidence": "high",
+          "productName": "아이엔젤 닥터다이얼 폴드에어 아기띠 힙시트 베이지 FREE 올인원 신생아용품 베이비용품",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5890276/58902766550.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9167185706&ctag=9167185706&lptag=I27821767054&itemId=27821767054&vendorItemId=93128422206&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 304000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.631Z",
+          "matchConfidence": "high",
+          "productName": "아이엔젤 닥터다이얼 폴드에어 아기띠 힙시트 올인원 아이보리 FREE  신생아용품 베이비용품",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5905906/59059066602.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9280551009&ctag=9280551009&lptag=l244822126113&itemId=64241283112&vendorItemId=93127910203&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 348000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.631Z",
+          "matchConfidence": "high",
+          "productName": "아이엔젤 올인원 닥터다이얼 폴드 에어 힙시트 아기띠",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5770039/57700393542.6.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9280551009&ctag=9280551009&lptag=l227416157819&itemId=64281171975&vendorItemId=93127910239&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 348000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.631Z",
+          "matchConfidence": "high",
+          "productName": "아이엔젤 올인원 닥터다이얼 폴드 에어 힙시트 아기띠",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5807064/58070643252.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:46.631Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/outing.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_5890276/58902766550.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "outing",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -1114,7 +2145,16 @@
       },
       "sourceItemIds": [
         "2c2b4abb-08ed-8059-813d-d0927b0dfd1c"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5890276/58902766550.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "쿠팡",
+        "productName": "아이엔젤 닥터다이얼 폴드에어 아기띠 힙시트 베이지 FREE 올인원 신생아용품 베이비용품",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:46.631Z"
+      }
     },
     {
       "id": "item-4f18824aa0",
@@ -1133,18 +2173,50 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 6,900원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://anapakorea.co.kr/product/detail.html?product_no=113&cate_no=68&display_group=1&utm_source=naver&utm_medium=shopping&utm_campaign=knowledge_shopping&mkt_in=Y&ghost_mall_id=naver&ref=naver_open",
+        "platform": "naver",
+        "mallName": "아나파코리아",
+        "price": 6900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:46.832Z",
+        "matchConfidence": "high",
+        "productName": "아나파 손목보호대 소프트",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4049797/40497973717.1.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://anapakorea.co.kr/product/detail.html?product_no=113&cate_no=68&display_group=1&utm_source=naver&utm_medium=shopping&utm_campaign=knowledge_shopping&mkt_in=Y&ghost_mall_id=naver&ref=naver_open",
+          "platform": "naver",
+          "mallName": "아나파코리아",
+          "price": 6900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:46.832Z",
+          "matchConfidence": "high",
+          "productName": "아나파 손목보호대 소프트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4049797/40497973717.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:46.832Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/caregiver.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_4049797/40497973717.1.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "caregiver",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -1160,7 +2232,16 @@
       },
       "sourceItemIds": [
         "2e5b4abb-08ed-8055-8086-c6dcf5db20dc"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4049797/40497973717.1.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "아나파코리아",
+        "productName": "아나파 손목보호대 소프트",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:46.832Z"
+      }
     },
     {
       "id": "item-fff2c290f4",
@@ -1184,8 +2265,8 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:47.057Z",
         "checkedOffers": 0
       },
       "memo": "",
@@ -1225,18 +2306,98 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 12,400원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/41013582042",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 12400,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:47.249Z",
+        "matchConfidence": "high",
+        "productName": "물리치료사가 판매하는 올투게더나우 다이어트 복부 스웨트 벨트",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4101358/41013582042.20230705193359.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/41013582042",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 12400,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.249Z",
+          "matchConfidence": "high",
+          "productName": "물리치료사가 판매하는 올투게더나우 다이어트 복부 스웨트 벨트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4101358/41013582042.20230705193359.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://ohou.se/productions/2060884/selling?utm_source=naver_shop&bp_sub_id_2=search&bp_sub_id_3=inorganic&utm_medium=cpc&utm_campaign=2060884-16650775&utm_term={query}&utm_content={ad}&bp_adset={network}_{media}",
+          "platform": "naver",
+          "mallName": "오늘의집",
+          "price": 12400,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.249Z",
+          "matchConfidence": "high",
+          "productName": "올투게더나우 물리치료사가 판매하는 다이어트 복부 스웻 벨트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_3986019/39860199760.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11192125210",
+          "platform": "naver",
+          "mallName": "솔저맘파파",
+          "price": 15700,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.249Z",
+          "matchConfidence": "high",
+          "productName": "가벼운 허리 보호대 허리복대 복부 복대 의료용 허리지지대 헬스 코어 허리벨트-당일출고",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8873663/88736635532.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/41067307356",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 16110,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.249Z",
+          "matchConfidence": "high",
+          "productName": "올투게더나우 물리치료사가 판매하는 얇은 허리 보호대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4106730/41067307356.20230709190922.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:47.249Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/caregiver.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_4101358/41013582042.20230705193359.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "caregiver",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -1252,7 +2413,16 @@
       },
       "sourceItemIds": [
         "2e5b4abb-08ed-800c-85e4-ff877fa87716"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4101358/41013582042.20230705193359.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "네이버",
+        "productName": "물리치료사가 판매하는 올투게더나우 다이어트 복부 스웨트 벨트",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:47.249Z"
+      }
     },
     {
       "id": "item-e9d15fbf7f",
@@ -1271,34 +2441,117 @@
       ],
       "price": 69900,
       "priceText": "69900",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 71,900원부터",
       "referencePrice": "기록가 69,900원",
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/main/products/7868911204",
+        "platform": "naver",
+        "mallName": "위틀스토어",
+        "price": 71900,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:47.481Z",
+        "matchConfidence": "high",
+        "productName": "하베브릭스 바람개비 아기체육관 신생아선물",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8541341/85413411527.7.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/7868911204",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 71900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.481Z",
+          "matchConfidence": "high",
+          "productName": "하베브릭스 바람개비 아기체육관 신생아선물",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8541341/85413411527.7.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://www.whittlestore.com/views/shop/shopview?pack_content_id=5926&TR_REF=naver_open",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 71900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.481Z",
+          "matchConfidence": "high",
+          "productName": "하베브릭스 바람개비 아기체육관^(신생아선물)",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5747426/57474262688.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/12901150396",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 87000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.481Z",
+          "matchConfidence": "high",
+          "productName": "하베브릭스 바람개비 아기체육관+회전 링쌓기 링끼우기 소근육 발달 신생아 아기 장난감",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9044566/90445661388.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/12385960170",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 182000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.481Z",
+          "matchConfidence": "high",
+          "productName": "하베브릭스 신생아 아기 모빌 양방향 흑백 컬러 인형 거치대 풀세트+바람개비 아기 체육관",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8993047/89930470895.28.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:47.481Z",
+        "checkedOffers": 8
       },
       "memo": "",
-      "imagePath": "/images/placeholders/play.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8541341/85413411527.7.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "play",
       "dataQuality": {
-        "status": "usable_with_warnings",
+        "status": "ready",
         "errorCount": 0,
-        "warningCount": 1,
-        "issues": [
-          {
-            "code": "missing_image",
-            "severity": "warning",
-            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
-          }
-        ]
+        "warningCount": 0,
+        "issues": []
       },
       "sourceItemIds": [
         "248b4abb-08ed-8087-8781-decce27c2cb6"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8541341/85413411527.7.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "위틀스토어",
+        "productName": "하베브릭스 바람개비 아기체육관 신생아선물",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:47.481Z"
+      }
     },
     {
       "id": "item-f8e90a98ec",
@@ -1322,9 +2575,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:47.677Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/a882/723c791f92f897f7be38e6521ceee0215b6602d141e0d93e50205ab61b97.jpg",
@@ -1368,9 +2621,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:47.922Z",
+        "checkedOffers": 10
       },
       "memo": "최근 가격 변동 확인 필요, 인기 선물 아이템",
       "imagePath": "/images/placeholders/play.svg",
@@ -1414,18 +2667,98 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 1,396,000원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670983&itemId=21866670983&vendorItemId=88914853528&spec=10305197",
+        "platform": "naver",
+        "mallName": "쿠팡",
+        "price": 1396000,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:48.156Z",
+        "matchConfidence": "high",
+        "productName": "줄즈 데이5 세미디럭스형 유모차 세이지 그린 JOOLZ  디럭스 유아동 외출용품 아기 베이비 키즈 줄즈데이 줄즈디럭스 줄즈유모차 애기 영아 아가 BABEE Babies",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4760482/47604824403.1.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670983&itemId=21866670983&vendorItemId=88914853528&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 1396000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.156Z",
+          "matchConfidence": "high",
+          "productName": "줄즈 데이5 세미디럭스형 유모차 세이지 그린 JOOLZ  디럭스 유아동 외출용품 아기 베이비 키즈 줄즈데이 줄즈디럭스 줄즈유모차 애기 영아 아가 BABEE Babies",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4760482/47604824403.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670976&itemId=21866670976&vendorItemId=88914853487&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 1470000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.156Z",
+          "matchConfidence": "high",
+          "productName": "줄즈 데이5 세미디럭스형 유모차 스페이스 블랙  JOOLZ 데이5 디럭스유모차 외출용품",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4631346/46313467081.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670980&itemId=21866670980&vendorItemId=88914853505&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 1470000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.156Z",
+          "matchConfidence": "high",
+          "productName": "줄즈 데이5 세미디럭스형 유모차 샌디 타프 JOOLZ  디럭스 유아동 외출용품 아기 베이비 키즈 신생아 영아 아가",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5090534/50905344971.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7940046972&ctag=7940046972&lptag=I21866670974&itemId=21866670974&vendorItemId=88914853462&spec=10305197",
+          "platform": "naver",
+          "mallName": "쿠팡",
+          "price": 1470000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.156Z",
+          "matchConfidence": "high",
+          "productName": "줄즈 데이5 세미디럭스형 유모차 포레스트 그린 JOOLZ 디럭스유모차 아기 베이비 외출용품  줄즈데이 줄즈디럭스 유아동 키즈 영아 아가",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4631344/46313447201.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:48.156Z",
+        "checkedOffers": 4
       },
       "memo": "",
-      "imagePath": "/images/placeholders/outing.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_4760482/47604824403.1.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "outing",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -1441,7 +2774,16 @@
       },
       "sourceItemIds": [
         "2c2b4abb-08ed-806c-b4f6-eba5d588e9c3"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_4760482/47604824403.1.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "쿠팡",
+        "productName": "줄즈 데이5 세미디럭스형 유모차 세이지 그린 JOOLZ  디럭스 유아동 외출용품 아기 베이비 키즈 줄즈데이 줄즈디럭스 줄즈유모차 애기 영아 아가 BABEE Babies",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:48.156Z"
+      }
     },
     {
       "id": "item-30c64e909c",
@@ -1460,14 +2802,94 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 15,880원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://search.shopping.naver.com/catalog/59647524144",
+        "platform": "naver",
+        "mallName": "네이버",
+        "price": 15880,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:48.362Z",
+        "matchConfidence": "high",
+        "productName": "코멧 스테인레스 사각 설거지통 10L",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5964752/59647524144.20260413195758.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/59647524144",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 15880,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.362Z",
+          "matchConfidence": "high",
+          "productName": "코멧 스테인레스 사각 설거지통 10L",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5964752/59647524144.20260413195758.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/12154456310",
+          "platform": "naver",
+          "mallName": "노 워리스",
+          "price": 17680,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.362Z",
+          "matchConfidence": "high",
+          "productName": "코멧 스테인레스 사각 설거지통 10L",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8969896/89698967015.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/10610037481",
+          "platform": "naver",
+          "mallName": "떨이천국",
+          "price": 17680,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.362Z",
+          "matchConfidence": "high",
+          "productName": "코멧 스테인레스 사각 설거지통 10L",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8815454/88154543071.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/13355303001",
+          "platform": "naver",
+          "mallName": "실버픽마켓",
+          "price": 17900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.362Z",
+          "matchConfidence": "high",
+          "productName": "코멧 스테인레스 사각 설거지통 10L 실버 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9089981/90899813333.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:48.362Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/1025_amir_coupang_oct_80k/2e89/1944fdd309b84eebebf793930c502c56a127706b64e89d097045705615f3.jpg",
@@ -1511,9 +2933,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:48.601Z",
+        "checkedOffers": 10
       },
       "memo": "",
       "imagePath": "/images/placeholders/outing.svg",
@@ -1557,29 +2979,32 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:48.795Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/diaper.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8871916/88719164741.2.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "diaper",
       "dataQuality": {
-        "status": "usable_with_warnings",
+        "status": "ready",
         "errorCount": 0,
-        "warningCount": 1,
-        "issues": [
-          {
-            "code": "missing_image",
-            "severity": "warning",
-            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
-          }
-        ]
+        "warningCount": 0,
+        "issues": []
       },
       "sourceItemIds": [
         "248b4abb-08ed-8073-9619-fa443f18f0bd"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8871916/88719164741.2.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "포프베베",
+        "productName": "포프베베 다기능 아기비데 부속품 (3) bolt body (2ea)",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:48.795Z"
+      }
     },
     {
       "id": "item-8c7cbb7c6b",
@@ -1598,18 +3023,98 @@
       ],
       "price": null,
       "priceText": "",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 690원부터",
       "referencePrice": null,
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://smartstore.naver.com/main/products/13252192797",
+        "platform": "naver",
+        "mallName": "이백프로200",
+        "price": 690,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:48.984Z",
+        "matchConfidence": "high",
+        "productName": "긴급 1p 일회용 휴대용 소변 봉투 기 캠핑 차량용 가정용 패드 응고",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9079670/90796703129.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/13252192797",
+          "platform": "naver",
+          "mallName": "이백프로200",
+          "price": 690,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.984Z",
+          "matchConfidence": "high",
+          "productName": "긴급 1p 일회용 휴대용 소변 봉투 기 캠핑 차량용 가정용 패드 응고",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9079670/90796703129.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/13279898183",
+          "platform": "naver",
+          "mallName": "디커샵",
+          "price": 910,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.984Z",
+          "matchConfidence": "high",
+          "productName": "1p 긴급 일회용 휴대용 소변봉투 소변기 캠핑 차량용",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9082440/90824408515.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/13339436101",
+          "platform": "naver",
+          "mallName": "클린한생활연구소",
+          "price": 1510,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.984Z",
+          "matchConfidence": "high",
+          "productName": "접이식 돋보기 독서용확대경 휴대용현미경 독서돋보기 확대독서기",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9088394/90883946433.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/12884101067",
+          "platform": "naver",
+          "mallName": "제이원mall",
+          "price": 2010,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:48.984Z",
+          "matchConfidence": "high",
+          "productName": "휴대용 병원 요강 간이 소변기 소변통",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9042861/90428612059.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:48.984Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/outing.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_9079670/90796703129.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "outing",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -1625,7 +3130,16 @@
       },
       "sourceItemIds": [
         "2c2b4abb-08ed-80d9-be18-dcdf58e5fc88"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_9079670/90796703129.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "이백프로200",
+        "productName": "긴급 1p 일회용 휴대용 소변 봉투 기 캠핑 차량용 가정용 패드 응고",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:48.984Z"
+      }
     },
     {
       "id": "item-db73a1a6e6",
@@ -1644,34 +3158,117 @@
       ],
       "price": 11900,
       "priceText": "11900",
-      "displayPrice": "구매처에서 최신가 확인",
+      "displayPrice": "최저가 6,570원부터",
       "referencePrice": "기록가 11,900원",
-      "bestOffer": null,
-      "purchaseOffers": [],
+      "bestOffer": {
+        "url": "https://link.auction.co.kr/gate/pcs?item-no=F556902126&sub-id=1&service-code=10000003",
+        "platform": "naver",
+        "mallName": "옥션",
+        "price": 6570,
+        "shippingFee": null,
+        "totalPrice": null,
+        "priceBasis": "listed_price",
+        "inStock": true,
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:49.168Z",
+        "matchConfidence": "high",
+        "productName": "MONGF 테이블 온습도계 온도측정기 온도계습도계 휴비딕온습도계 출산용품",
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_5997138/59971382730.jpg",
+        "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+      },
+      "purchaseOffers": [
+        {
+          "url": "https://link.auction.co.kr/gate/pcs?item-no=F556902126&sub-id=1&service-code=10000003",
+          "platform": "naver",
+          "mallName": "옥션",
+          "price": 6570,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:49.168Z",
+          "matchConfidence": "high",
+          "productName": "MONGF 테이블 온습도계 온도측정기 온도계습도계 휴비딕온습도계 출산용품",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5997138/59971382730.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://link.auction.co.kr/gate/pcs?item-no=F549154442&sub-id=1&service-code=10000003",
+          "platform": "naver",
+          "mallName": "옥션",
+          "price": 6730,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:49.168Z",
+          "matchConfidence": "high",
+          "productName": "나으리네 디지털 온습도계 실내온습도계 온도습도계 휴비딕온습도계 디지털온도계",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5984432/59844329473.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/60325168031",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 7900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:49.168Z",
+          "matchConfidence": "high",
+          "productName": "휴비딕 디지털 미니 온습도계 HT-7 mini",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6032516/60325168031.20260619163618.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/9946344496",
+          "platform": "naver",
+          "mallName": "휴비딕",
+          "price": 7900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:49.168Z",
+          "matchConfidence": "high",
+          "productName": "휴비딕 디지털 온습도계 HT-7 mini",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8749084/87490846769.2.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다."
+        }
+      ],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "available",
+        "syncedAt": "2026-07-01T04:53:49.168Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/sleep.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8984064/89840644739.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "sleep",
       "dataQuality": {
-        "status": "usable_with_warnings",
+        "status": "ready",
         "errorCount": 0,
-        "warningCount": 1,
-        "issues": [
-          {
-            "code": "missing_image",
-            "severity": "warning",
-            "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
-          }
-        ]
+        "warningCount": 0,
+        "issues": []
       },
       "sourceItemIds": [
         "248b4abb-08ed-8057-a37f-f09b818c83a2"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8984064/89840644739.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "섬세한잡화점",
+        "productName": "따뜻한잡화점 온도계 습도계 화이트 휴비딕 온습도계 온도습도계 온습도계",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:49.168Z"
+      }
     },
     {
       "id": "item-85289072fa",
@@ -1695,13 +3292,13 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:49.361Z",
+        "checkedOffers": 10
       },
       "memo": "",
-      "imagePath": "/images/placeholders/top-used.svg",
-      "hasOriginalImage": false,
+      "imagePath": "https://shopping-phinf.pstatic.net/main_6034678/60346783177.jpg",
+      "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
         "status": "usable_with_warnings",
@@ -1717,7 +3314,16 @@
       },
       "sourceItemIds": [
         "32eb4abb-08ed-80d9-822b-dbc577e5fc0c"
-      ]
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_6034678/60346783177.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "11번가",
+        "productName": "[플룬드]LG 휘센 제습기 LD-159DDY.AKOR 호환 집진 필터 1개",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-01T04:53:49.361Z"
+      }
     },
     {
       "id": "item-d0efa36d5c",
@@ -1741,9 +3347,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "not_synced",
-        "syncedAt": null,
-        "checkedOffers": 0
+        "state": "no_available_offer",
+        "syncedAt": "2026-07-01T04:53:49.555Z",
+        "checkedOffers": 10
       },
       "memo": "인기 있는 무선 이어폰, 블랙 프라이데이 할인 예정",
       "imagePath": "/images/placeholders/sleep.svg",
@@ -1770,5 +3376,22 @@
         "248b4abb-08ed-8072-b6dc-e73e08b02eba"
       ]
     }
-  ]
+  ],
+  "imageSync": {
+    "candidateFile": "data\\price-candidates.naver.json",
+    "appliedAt": "2026-07-01T04:54:07.356Z",
+    "applied": 20,
+    "allowMediumConfidence": false,
+    "overwriteExisting": false,
+    "skippedExistingImage": 5,
+    "skippedNoCandidate": 12
+  },
+  "offerSync": {
+    "candidateFile": "data/price-candidates.naver.json",
+    "appliedAt": "2026-07-01T05:03:36.876Z",
+    "applied": 20,
+    "purchaseOffers": 71,
+    "noAvailableOffer": 17,
+    "skipped": 208
+  }
 }

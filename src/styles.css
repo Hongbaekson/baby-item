@@ -61,7 +61,7 @@ a {
 .app-shell {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 24px 0 32px;
+  padding: 24px 0 0;
 }
 
 .topbar {
@@ -681,6 +681,18 @@ a {
   white-space: nowrap;
 }
 
+.site-footer {
+  width: 100vw;
+  margin: 40px 0 0 calc(50% - 50vw);
+  padding: 42px 16px;
+  border-top: 1px solid rgba(148, 163, 184, 0.22);
+  background: #111827;
+  color: #9ec4f4;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .offer-price {
   min-width: 104px;
   text-align: right;
@@ -840,5 +852,11 @@ a {
 
   .offer-list em {
     justify-self: start;
+  }
+
+  .site-footer {
+    margin-top: 28px;
+    padding: 34px 14px;
+    font-size: 15px;
   }
 }

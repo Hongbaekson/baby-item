@@ -75,6 +75,18 @@ npm run price:collect-coupang
 npm run price:merge-candidates
 ```
 
+후보 파일의 상품 썸네일로 누락 이미지만 보강할 때:
+
+```bash
+npm run price:apply-images
+```
+
+네이버 쇼핑에 현재 등록된 후보를 낮은 가격순 최대 4개까지 구매 링크로 반영할 때:
+
+```bash
+npm run price:apply-live-offers
+```
+
 수집된 가격 후보를 앱 데이터에 반영할 때:
 
 ```bash
@@ -82,6 +94,10 @@ npm run price:apply-candidates
 ```
 
 `price:collect-naver`는 `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`이 있을 때 `data/price-candidates.naver.json`을 생성합니다. 네이버 쇼핑 검색 API는 상품 썸네일을 제공하지만 배송비와 결제 단계 재고를 명시하지 않으므로, 이 파일은 후보 수집용입니다.
+
+`price:apply-images`는 후보 파일의 `high` 매칭 썸네일만 플레이스홀더 이미지에 반영합니다. 가격/구매 링크는 배송비와 재고 검증을 통과한 후보만 별도로 반영합니다.
+
+`price:apply-live-offers`는 네이버 쇼핑 검색 API 후보 중 매칭 신뢰도 `high`이고 현재 검색 결과에 등록된 상품만 낮은 가격순 최대 4개까지 `purchaseOffers`에 반영합니다. 네이버 API가 배송비와 결제 직전 재고를 제공하지 않으므로 가격은 `부터`로 표시하고, 배송비/품절 여부는 구매처 확인 대상으로 표시합니다.
 
 `price:collect-coupang`은 `COUPANG_ACCESS_KEY`, `COUPANG_SECRET_KEY`가 있을 때 쿠팡 HMAC 서명 방식으로 후보를 수집합니다. 실제 계정에서 사용하는 상품 검색 API path가 다르면 `COUPANG_SEARCH_PATH`로 바꿉니다.
 

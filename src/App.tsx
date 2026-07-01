@@ -21,8 +21,9 @@ type BestOffer = {
   platform?: string;
   mallName: string;
   price: number;
-  shippingFee: number;
-  totalPrice: number;
+  shippingFee: number | null;
+  totalPrice: number | null;
+  priceBasis?: "shipping_included" | "listed_price";
   inStock: true;
   source: string;
   syncedAt: string;
@@ -170,10 +171,22 @@ function formatWon(value: number) {
 
 function offerPriceLabel(offer: PurchaseOffer) {
   if (Number.isFinite(offer.totalPrice)) {
-    return formatWon(offer.totalPrice);
+    return formatWon(offer.totalPrice as number);
   }
 
   return `${formatWon(offer.price)}부터`;
+}
+
+function offerShippingLabel(offer: PurchaseOffer) {
+  if (offer.shippingFee === null || offer.totalPrice === null) {
+    return "배송비/품절 여부 구매처 확인";
+  }
+
+  if (offer.shippingFee > 0) {
+    return `배송비 ${formatWon(offer.shippingFee)} 포함`;
+  }
+
+  return "무료배송 또는 배송비 없음";
 }
 
 function platformLabel(platform: string | undefined, mallName: string) {
@@ -185,12 +198,7 @@ function platformLabel(platform: string | undefined, mallName: string) {
 
 function offerStatusLabel(item: Item) {
   if (item.bestOffer) {
-    const shipping =
-      item.bestOffer.shippingFee > 0
-        ? `배송비 ${item.bestOffer.shippingFee.toLocaleString("ko-KR")}원 포함`
-        : "무료배송 또는 배송비 없음";
-
-    return `${item.bestOffer.mallName} · ${shipping} · 구매 가능 후보`;
+    return `${item.bestOffer.mallName} · ${offerShippingLabel(item.bestOffer)} · 구매 가능 후보`;
   }
 
   if (item.offerStatus.state === "no_available_offer") {
@@ -310,6 +318,8 @@ export function App() {
           </section>
         )}
       </main>
+
+      <footer className="site-footer">© 2026 손홍백. All rights reserved.</footer>
 
       {selectedItem && <ProductModal item={selectedItem} onClose={() => setSelectedItem(null)} />}
     </div>
@@ -442,7 +452,7 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
             >
               <ShoppingBag size={18} aria-hidden="true" />
               <span>
-                <strong>검증된 최저가로 이동</strong>
+                <strong>최저가 후보로 이동</strong>
                 <span>{statusLabel}</span>
               </span>
               <ExternalLink size={16} aria-hidden="true" />
@@ -486,14 +496,11 @@ function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
                       <span>
                         {offer.mallName} · {linkHost(offer.url)}
                       </span>
+                      {offer.productName && <span>{offer.productName}</span>}
                     </span>
                     <span className="offer-price">
                       <strong>{offerPriceLabel(offer)}</strong>
-                      <span>
-                        {offer.shippingFee > 0
-                          ? `배송비 ${formatWon(offer.shippingFee)} 포함`
-                          : "배송비 없음 또는 무료배송"}
-                      </span>
+                      <span>{offerShippingLabel(offer)}</span>
                     </span>
                     {index === 0 && <em>최저가</em>}
                     <ExternalLink size={16} aria-hidden="true" />

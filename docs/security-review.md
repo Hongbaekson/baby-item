@@ -71,7 +71,7 @@ GitHub Actions:
 
 - `permissions: contents: read`, `id-token: write`, `attestations: write`, `artifact-metadata: write`
 - `pull_request_target` 미사용
-- 현재 secret 사용 없음
+- 가격 후보 수집 secret은 repo에 두지 않고 OCI의 `/etc/euni-baby-items/price-sync.env` 또는 GitHub Secrets에서만 주입
 - CI에 `npm audit --audit-level=moderate` 포함
 - CI에 `npm run data:check`, `npm run build`, `docker compose config` 포함
 - 빌드 산출물 tarball과 `SHA256SUMS` 생성

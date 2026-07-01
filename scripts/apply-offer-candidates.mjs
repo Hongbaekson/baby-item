@@ -5,11 +5,34 @@ const APP_DATA_PATH = path.join("src", "data", "items.json");
 const DEFAULT_CANDIDATES_PATH = path.join("data", "price-candidates.json");
 const PRICE_CTA = "구매처에서 최신가 확인";
 const SHORT_URL_HOSTS = new Set(["bit.ly", "naver.me", "tinyurl.com", "t.co", "goo.gl"]);
+const MIN_REFERENCE_PRICE_RATIO = 0.45;
+const NON_MAIN_PRODUCT_RULES = [
+  { pattern: /쇼핑백|선물\s*쇼핑백/i },
+  { pattern: /어댑터|충전기/i, allowedTitlePattern: /어댑터|충전기/i },
+  { pattern: /호환/i, allowedTitlePattern: /호환/i },
+  { pattern: /대여|렌탈/i },
+  { pattern: /별도\s*판매|별도판매|구성품/i },
+  { pattern: /케이스|커버/i, allowedTitlePattern: /케이스|커버/i },
+];
 
 const args = process.argv.slice(2);
 const candidatesPath = args.find((arg) => !arg.startsWith("--")) ?? DEFAULT_CANDIDATES_PATH;
 const allowMediumConfidence = args.includes("--allow-medium");
 const allowUnknownShipping = args.includes("--allow-unknown-shipping");
+const maxOffers = getArgNumber("--max-offers", 0);
+
+function getArgNumber(name, fallback) {
+  const prefix = `${name}=`;
+  const arg = args.find((value) => value.startsWith(prefix));
+
+  if (!arg) {
+    return fallback;
+  }
+
+  const value = Number(arg.slice(prefix.length));
+
+  return Number.isFinite(value) ? value : fallback;
+}
 
 function formatWon(value) {
   return `${value.toLocaleString("ko-KR")}원`;
@@ -45,6 +68,28 @@ function optionalHttpsUrl(value) {
   const url = String(value ?? "");
 
   return isHttpsUrl(url) ? url : null;
+}
+
+function isTooLowComparedWithReference(item, price) {
+  const referencePrice = toNumber(item.price);
+
+  return (
+    referencePrice !== null &&
+    referencePrice > 0 &&
+    price < referencePrice * MIN_REFERENCE_PRICE_RATIO
+  );
+}
+
+function isLikelyNonMainProduct(itemTitle, raw) {
+  const candidateName = String(raw.productName ?? raw.name ?? raw.title ?? "");
+
+  return NON_MAIN_PRODUCT_RULES.some((rule) => {
+    if (!rule.pattern.test(candidateName)) {
+      return false;
+    }
+
+    return !rule.allowedTitlePattern?.test(itemTitle);
+  });
 }
 
 function isInStock(candidate) {
@@ -108,7 +153,7 @@ function flattenCandidateInput(input) {
   throw new Error("Candidate file must contain an items[] or offers[] array.");
 }
 
-function normalizeOffer(raw, fallbackSyncedAt) {
+function normalizeOffer(raw, fallbackSyncedAt, item) {
   const url = String(raw.url ?? raw.productUrl ?? raw.link ?? "");
   const price = toNumber(raw.price ?? raw.salePrice ?? raw.lprice);
   const rawShippingFee = raw.shippingFee ?? raw.deliveryFee ?? raw.shipping;
@@ -119,11 +164,9 @@ function normalizeOffer(raw, fallbackSyncedAt) {
     shippingFee = explicitTotalPrice - price;
   }
 
-  if (shippingFee === null && allowUnknownShipping) {
-    shippingFee = 0;
-  }
-
-  const totalPrice = explicitTotalPrice ?? (price === null || shippingFee === null ? null : price + shippingFee);
+  const hasUnknownShipping = shippingFee === null && allowUnknownShipping;
+  const totalPrice =
+    explicitTotalPrice ?? (price === null || shippingFee === null ? null : price + shippingFee);
   const matchConfidence = normalizeConfidence(raw.matchConfidence ?? raw.confidence);
 
   if (!isHttpsUrl(url)) {
@@ -134,11 +177,19 @@ function normalizeOffer(raw, fallbackSyncedAt) {
     return { skipped: true, reason: "bad_price", url };
   }
 
-  if (shippingFee === null || shippingFee < 0) {
+  if (isTooLowComparedWithReference(item, price)) {
+    return { skipped: true, reason: "price_too_low_vs_reference", url };
+  }
+
+  if (isLikelyNonMainProduct(item.title, raw)) {
+    return { skipped: true, reason: "likely_non_main_product", url };
+  }
+
+  if (!hasUnknownShipping && (shippingFee === null || shippingFee < 0)) {
     return { skipped: true, reason: "missing_shipping_fee", url };
   }
 
-  if (totalPrice === null || totalPrice <= 0 || totalPrice < price) {
+  if (!hasUnknownShipping && (totalPrice === null || totalPrice <= 0 || totalPrice < price)) {
     return { skipped: true, reason: "bad_total_price", url };
   }
 
@@ -161,6 +212,7 @@ function normalizeOffer(raw, fallbackSyncedAt) {
       price,
       shippingFee,
       totalPrice,
+      priceBasis: hasUnknownShipping ? "listed_price" : "shipping_included",
       inStock: true,
       source: String(raw.source ?? "manual-candidate"),
       syncedAt: String(raw.syncedAt ?? fallbackSyncedAt ?? new Date().toISOString()),
@@ -175,8 +227,11 @@ function normalizeOffer(raw, fallbackSyncedAt) {
 
 function sortOffers(offers) {
   return [...offers].sort((a, b) => {
-    if (a.totalPrice !== b.totalPrice) {
-      return a.totalPrice - b.totalPrice;
+    const aSortPrice = a.totalPrice ?? a.price;
+    const bSortPrice = b.totalPrice ?? b.price;
+
+    if (aSortPrice !== bSortPrice) {
+      return aSortPrice - bSortPrice;
     }
 
     if (a.isShortUrl !== b.isShortUrl) {
@@ -191,6 +246,22 @@ function stripInternalOfferFields(offer) {
   const { isShortUrl: _isShortUrl, ...offerForApp } = offer;
 
   return offerForApp;
+}
+
+function dedupeOffersByUrl(offers) {
+  const seen = new Set();
+  const deduped = [];
+
+  for (const offer of offers) {
+    if (seen.has(offer.url)) {
+      continue;
+    }
+
+    seen.add(offer.url);
+    deduped.push(offer);
+  }
+
+  return deduped;
 }
 
 async function main() {
@@ -213,7 +284,7 @@ async function main() {
     const normalizedOffers = [];
 
     for (const rawOffer of entry.offers ?? []) {
-      const normalized = normalizeOffer(rawOffer, entry.syncedAt);
+      const normalized = normalizeOffer(rawOffer, entry.syncedAt, item);
 
       if (normalized.skipped) {
         skipped.push({
@@ -228,7 +299,7 @@ async function main() {
       normalizedOffers.push(normalized.offer);
     }
 
-    const sortedOffers = sortOffers(normalizedOffers);
+    const sortedOffers = dedupeOffersByUrl(sortOffers(normalizedOffers));
     const bestOffer = sortedOffers[0];
     const syncedAt = String(entry.syncedAt ?? candidateInput.syncedAt ?? candidateInput.generatedAt ?? new Date().toISOString());
 
@@ -245,7 +316,9 @@ async function main() {
       continue;
     }
 
-    const purchaseOffers = sortedOffers.map(stripInternalOfferFields);
+    const purchaseOffers = sortedOffers
+      .slice(0, maxOffers > 0 ? maxOffers : undefined)
+      .map(stripInternalOfferFields);
 
     item.bestOffer = purchaseOffers[0];
     item.purchaseOffers = purchaseOffers;
@@ -254,7 +327,9 @@ async function main() {
       syncedAt: bestOffer.syncedAt,
       checkedOffers: (entry.offers ?? []).length,
     };
-    item.displayPrice = `최저가 ${formatWon(bestOffer.totalPrice)}`;
+    item.displayPrice = `최저가 ${formatWon(bestOffer.totalPrice ?? bestOffer.price)}${
+      bestOffer.totalPrice === null ? "부터" : ""
+    }`;
     applied += 1;
   }
 

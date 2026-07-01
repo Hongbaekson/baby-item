@@ -12,6 +12,8 @@
     "price:check-readiness": "node ./scripts/check-price-sync-readiness.mjs",
     "price:collect-coupang": "node ./scripts/collect-coupang-price-candidates.mjs",
     "price:collect-naver": "node ./scripts/collect-naver-price-candidates.mjs",
+    "price:apply-images": "node ./scripts/apply-candidate-images.mjs",
+    "price:apply-live-offers": "node ./scripts/apply-offer-candidates.mjs data/price-candidates.naver.json --allow-unknown-shipping --max-offers=4",
     "price:merge-candidates": "node ./scripts/merge-price-candidates.mjs",
     "price:apply-candidates": "node ./scripts/apply-offer-candidates.mjs",
     "data:extract": "node ./scripts/extract-notion-items.mjs",

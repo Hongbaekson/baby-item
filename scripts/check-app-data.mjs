@@ -50,15 +50,22 @@ function validateOffer(item, offer, label) {
     failures.push(`${label} has bad price: ${item.title}`);
   }
 
-  if (!Number.isFinite(offer.totalPrice) || offer.totalPrice <= 0) {
+  const hasKnownTotalPrice = Number.isFinite(offer.totalPrice) && offer.totalPrice > 0;
+  const hasUnknownShipping =
+    offer.priceBasis === 'listed_price' && offer.shippingFee === null && offer.totalPrice === null;
+
+  if (!hasKnownTotalPrice && !hasUnknownShipping) {
     failures.push(`${label} has bad total price: ${item.title}`);
   }
 
-  if (offer.totalPrice < offer.price) {
+  if (hasKnownTotalPrice && offer.totalPrice < offer.price) {
     failures.push(`${label} total price is lower than base price: ${item.title}`);
   }
 
-  if (!Number.isFinite(offer.shippingFee) || offer.shippingFee < 0) {
+  if (
+    !hasUnknownShipping &&
+    (!Number.isFinite(offer.shippingFee) || offer.shippingFee < 0)
+  ) {
     failures.push(`${label} has bad shipping fee: ${item.title}`);
   }
 
@@ -135,6 +142,10 @@ for (const item of items) {
 
   for (const [index, offer] of (item.purchaseOffers ?? []).entries()) {
     validateOffer(item, offer, `purchase offer ${index + 1}`);
+  }
+
+  if ((item.purchaseOffers ?? []).length > 4) {
+    failures.push(`too many purchase offers: ${item.title}`);
   }
 }
 
