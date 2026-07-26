@@ -1,47 +1,91 @@
 # 이은이 아빠가 준비하는 육아템
 
-공개 Notion 육아템 목록을 정리해 만든 정적 React 사이트입니다. OCI에서는 `sonleeeun.site` 도메인과 HTTPS로 공개합니다.
+공개 Notion 육아템 목록을 검수 가능한 정적 데이터로 정리해 보여 주는 React 사이트입니다. 운영 주소는 `https://sonleeeun.site`이며, OCI에서 Caddy와 Nginx로 제공합니다.
 
-## 현재 상태
+## 현재 데이터 상태
 
-- 제품 데이터: 37개 canonical 제품
-- 원본 중복 병합: 7개 그룹
-- 빈 제목 draft: 2개 숨김
-- 이미지: 사용 가능한 상품 썸네일 URL을 우선 표시하고, 없으면 카테고리별 로컬 SVG placeholder 사용
-- 링크: `https://` 형식 검증 완료
-- 가격: 화면에는 구매처 최신가 확인 CTA를 노출하고, Notion 기준 가격은 `기록가`로만 표시
-- 구매처별 가격: 검증된 후보가 있으면 상세 화면에서 네이버/쿠팡 등 링크별 가격을 비교 표시
-- 검수 필요: 1개 제품의 원본 메모가 육아템과 무관한 내용일 가능성이 있어 배지로 표시
+- 노출 제품 31개: 정상 20개, 가격 기록 누락 경고 11개, 데이터 검수 오류 0개
+- 구매처 링크는 HTTPS와 신뢰 도메인 허용 목록을 모두 통과해야 함
+- 단축 URL 0개
+- 배송비 포함 총액까지 검증된 가격 3개는 모두 48시간을 지나 `가격 다시 확인`으로 표시
+- 배송비 미확인 후보 60개는 참고 정보로만 표시
+- 상품명 불일치·소비기한 임박 등 차단 후보 23개는 구매 링크로 사용하지 않음
+
+수치는 `src/data/items.json`에서 생성한 `data/data-quality-report.json`과 `npm run data:check` 결과를 기준으로 합니다.
+
+## 사용자 기능
+
+- 제품명 검색, 카테고리 필터, 추천순·이름순·기록가순 정렬
+- 한 번에 9개씩 보는 `육아템 더 보기`
+- 브라우저에 저장되는 찜 목록과 `내 찜`만 보기
+- 검색·카테고리·정렬·찜 필터를 URL에 보존하는 공유 가능한 화면
+- 상품 상세 URL과 브라우저 뒤로 가기로 닫히는 키보드 접근 가능 모달
+- 모바일 가로형 제품 카드와 화면 하단에 고정되는 최신가 확인 버튼
 
 ## 로컬 실행
 
+Node.js 24 LTS를 사용합니다.
+
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-개발 서버 기본 주소:
-
-```text
-http://localhost:5173
-```
-
-프로덕션 빌드 결과를 로컬에서 확인할 때:
+기본 주소는 `http://localhost:5173`입니다. 프로덕션 결과는 다음과 같이 확인합니다.
 
 ```bash
 npm run build
 npm run serve:dist
 ```
 
-정적 서버 기본 주소:
+## 검증
 
-```text
-http://localhost:4173
+```bash
+npm run data:report
+npm run data:check
+npm run price:check-strict
+npm run format:check
+npm run lint
+npm test
+npm run build
+npm run test:e2e
+docker compose config
+docker build -t euni-baby-items:local .
 ```
 
-## 데이터 갱신
+검증 범위에는 가격 정책 단위 테스트, 데이터 정합성, 검색·찜·더 보기·URL 상태, 키보드 모달 조작, 자동 접근성 검사, 데스크톱·모바일 반응형 검사가 포함됩니다.
 
-Notion 데이터를 다시 가져와 앱 데이터를 재생성할 때:
+## 가격 데이터 갱신
+
+가격은 다음 세 단계로 분리합니다.
+
+1. `purchaseOffers`: 재고와 배송비 포함 총액이 확인된 구매 정보
+2. `candidateOffers`: 상품명은 맞지만 배송비 또는 결제 단계 재고가 확인되지 않은 참고 후보
+3. `rejectedOffers`: 상품 불일치, 소비기한 임박, 중고·렌탈·액세서리 등 검토 사유가 있는 차단 후보
+
+신선도 기준은 48시간입니다. 이 시간이 지난 숫자는 최저가로 표시하지 않으며, 기본 CTA는 사용자가 구매처에서 가격을 다시 확인하도록 안내합니다.
+
+```bash
+npm run price:check-readiness
+npm run price:collect-naver
+npm run price:collect-coupang
+npm run price:merge-candidates
+npm run price:apply-candidates
+npm run data:report
+npm run data:check
+```
+
+네이버 쇼핑 검색 API는 배송비와 결제 직전 재고를 제공하지 않으므로 다음 명령은 결과를 `candidateOffers`로만 반영합니다.
+
+```bash
+npm run price:apply-live-offers
+```
+
+매일 03:17 KST에 실행되는 `price-candidates.yml`은 GitHub Secrets의 `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`을 사용해 검토용 artifact를 만듭니다. 가격을 자동 게시하거나 저장소에 커밋하지 않으므로, artifact 검토 후 승인된 데이터만 반영해야 합니다.
+
+자세한 정책은 `docs/price-sync.md`에 있습니다.
+
+## 데이터 재생성
 
 ```bash
 npm run data:extract
@@ -49,141 +93,22 @@ npm run data:normalize
 npm run data:check
 ```
 
-`data:extract`는 원본 Notion 공개 API 응답에 의존합니다. Notion 페이지 공개 설정이 바뀌면 실패할 수 있습니다.
+`data:normalize`는 이전의 가격 계층과 동기화된 이미지·직접 링크를 보존하고, 마지막에 품질 보고서도 다시 생성합니다. 원본 Notion 공개 설정이 바뀌면 `data:extract`는 실패할 수 있습니다.
 
-가격/품절/최저가 자동 갱신은 공식 쇼핑 API 또는 허용된 판매처 피드가 준비된 뒤 활성화합니다. 현재 준비 상태 점검:
-
-```bash
-npm run price:check-readiness
-```
-
-네이버 쇼핑 검색 API로 가격 후보를 수집할 때:
-
-```bash
-npm run price:collect-naver
-```
-
-쿠팡 API로 가격 후보를 수집할 때:
-
-```bash
-npm run price:collect-coupang
-```
-
-플랫폼별 후보 파일을 합칠 때:
-
-```bash
-npm run price:merge-candidates
-```
-
-후보 파일의 상품 썸네일로 누락 이미지만 보강할 때:
-
-```bash
-npm run price:apply-images
-```
-
-네이버 쇼핑에 현재 등록된 후보를 낮은 가격순 최대 4개까지 구매 링크로 반영할 때:
-
-```bash
-npm run price:apply-live-offers
-```
-
-수집된 가격 후보를 앱 데이터에 반영할 때:
-
-```bash
-npm run price:apply-candidates
-```
-
-`price:collect-naver`는 `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`이 있을 때 `data/price-candidates.naver.json`을 생성합니다. 네이버 쇼핑 검색 API는 상품 썸네일을 제공하지만 배송비와 결제 단계 재고를 명시하지 않으므로, 이 파일은 후보 수집용입니다.
-
-`price:apply-images`는 후보 파일의 `high` 매칭 썸네일만 플레이스홀더 이미지에 반영합니다. 가격/구매 링크는 배송비와 재고 검증을 통과한 후보만 별도로 반영합니다.
-
-`price:apply-live-offers`는 네이버 쇼핑 검색 API 후보 중 매칭 신뢰도 `high`이고 현재 검색 결과에 등록된 상품만 낮은 가격순 최대 4개까지 `purchaseOffers`에 반영합니다. 네이버 API가 배송비와 결제 직전 재고를 제공하지 않으므로 가격은 `부터`로 표시하고, 배송비/품절 여부는 구매처 확인 대상으로 표시합니다.
-
-`price:collect-coupang`은 `COUPANG_ACCESS_KEY`, `COUPANG_SECRET_KEY`가 있을 때 쿠팡 HMAC 서명 방식으로 후보를 수집합니다. 실제 계정에서 사용하는 상품 검색 API path가 다르면 `COUPANG_SEARCH_PATH`로 바꿉니다.
-
-`price:merge-candidates`는 `data/price-candidates.coupang.json`, `data/price-candidates.naver.json`을 `data/price-candidates.json`으로 합칩니다.
-
-`price:apply-candidates`는 `data/price-candidates.json`에서 품절이 아니고, 배송비 포함 총액이 있으며, 매칭 신뢰도가 높은 후보만 `bestOffer`와 `purchaseOffers`로 반영합니다. `bestOffer`가 있으면 `보러가기` 버튼은 기존 링크 대신 검증된 최저가 링크로 이동하고, 상세 화면에는 링크별 가격을 표시합니다. 최근 동기화에서 구매 가능한 후보가 없으면 해당 제품의 구매 링크는 숨깁니다.
-
-가격 갱신은 Hermes/LLM 없이 공식 API와 규칙 기반 검증으로 운영합니다. 자세한 운영안은 `docs/price-sync.md`에 정리되어 있습니다.
-
-## 품질 확인
-
-배포 전 최소 확인:
-
-```bash
-npm run data:check
-npm audit --audit-level=moderate
-npm run build
-```
-
-현재 `data:check`는 다음을 확인합니다.
-
-- 제품 ID 중복 여부
-- 제목 누락 여부
-- 파트너스 링크 프로토콜 형식
-- 로컬 이미지 파일 존재 여부
-- 품질 상태별 제품 수
-
-## CI 산출물 무결성
-
-GitHub Actions는 빌드 결과를 `euni-baby-items-<commit-sha>.tar.gz`로 패키징하고 `SHA256SUMS`를 생성합니다. `main` push 산출물에는 GitHub artifact attestation을 발급합니다.
-
-상세 기준과 CD 적용 순서는 `docs/cicd-integrity.md`에 정리되어 있습니다.
-
-## Docker 로컬 준비
-
-Docker Compose 설정 확인:
+## Docker와 배포
 
 ```bash
 docker compose config
-```
-
-로컬 Docker 실행:
-
-```bash
-docker compose up -d --build
-```
-
-기본 포트는 OCI 공개 기준에 맞춰 `1206`입니다.
-
-```text
-http://localhost:1206
-```
-
-Compose는 Caddy edge 컨테이너를 함께 띄워 `80/443`을 외부에 열고, 앱 컨테이너는 host loopback의 `1206`에만 바인딩합니다.
-
-```bash
 APP_PORT=1206 docker compose up -d --build
 ```
 
-OCI 공개 주소:
+- Caddy가 80/443에서 HTTPS 종료와 인증서 갱신을 담당합니다.
+- 앱의 Nginx 포트는 `127.0.0.1:1206`에만 바인딩됩니다.
+- 컨테이너는 read-only filesystem, 최소 capability, PID 제한을 사용합니다.
+- Node, Nginx, Caddy 이미지는 digest로 고정하고 Dependabot으로 갱신합니다.
 
-```text
-https://sonleeeun.site
-```
+운영 상태와 재배포 절차는 `docs/deployment-status.md`, CI 산출물 정책은 `docs/cicd-integrity.md`를 참고합니다.
 
-인증서는 Caddy가 Let's Encrypt로 자동 발급/갱신합니다. OCI Security List에는 TCP `80`, TCP `443`, 필요 시 UDP `443` ingress가 열려 있어야 합니다.
+## 제휴 링크 고지
 
-## 보안 기준
-
-상세 점검 기록은 `docs/security-review.md`에 정리되어 있습니다.
-
-- 외부 구매 링크는 `https://`만 허용합니다.
-- 앱 화면에 연결 도메인을 표시합니다.
-- 단축 URL은 `단축 링크` 배지로 표시합니다.
-- 가격 동기화 후 품절/삭제로 판단된 구매 링크는 화면에 표시하지 않습니다.
-- Caddy가 TLS termination과 HSTS를 담당하고, Nginx 응답에 CSP, frame 방어, MIME sniffing 방어, permissions policy를 적용합니다.
-- Docker 컨테이너는 read-only filesystem과 제한된 capability로 실행합니다.
-
-## OCI 배포 전 주의
-
-기존 OCI 서버에 `h-log` 같은 다른 프로젝트가 있어도 폴더, 컨테이너명, 포트가 겹치지 않으면 같이 둘 수 있습니다. 이 프로젝트는 `/opt/stacks/euni-baby-items` 경로에 두고, 컨테이너명은 `euni-baby-items-web`으로 분리합니다.
-
-접속 주소는 도메인 HTTPS 기준입니다.
-
-```text
-https://sonleeeun.site
-```
-
-현재 OCI 배포 상태는 `docs/deployment-status.md`에 기록합니다.
+일부 링크는 제휴 링크일 수 있습니다. 링크를 통한 구매 시 운영자에게 수수료가 지급될 수 있지만 구매 가격에는 영향을 주지 않습니다. 같은 문구를 사이트 푸터와 상품 상세에도 표시합니다.

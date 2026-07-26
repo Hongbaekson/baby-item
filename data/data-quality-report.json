@@ -1,109 +1,199 @@
 {
-  "generatedAt": "2026-07-01T03:20:01.782Z",
-  "source": "data\\items.quality.json",
+  "generatedAt": "2026-07-01T14:06:58.926Z",
+  "source": "src/data/items.json",
   "summary": {
-    "readyItems": 6,
-    "usableWithWarningsItems": 30,
-    "needsReviewItems": 1,
-    "draftItems": 2,
+    "totalItems": 31,
+    "readyItems": 20,
+    "usableWithWarningsItems": 11,
+    "needsReviewItems": 0,
     "issueCounts": {
-      "missing_image": 11,
-      "missing_price": 20,
-      "normalized_partner_link": 2,
-      "suspicious_unrelated_memo": 1
-    },
-    "draftIssueCounts": {
-      "missing_image": 2,
-      "missing_partner_link": 2,
-      "missing_price": 2,
-      "missing_title": 2
-    },
-    "allIssueCounts": {
-      "missing_image": 13,
-      "missing_partner_link": 2,
-      "missing_price": 22,
-      "missing_title": 2,
-      "normalized_partner_link": 2,
-      "suspicious_unrelated_memo": 1
+      "missing_price": 11
+    }
+  },
+  "pricing": {
+    "freshnessHours": 48,
+    "verifiedOffers": 3,
+    "candidateOffers": 60,
+    "rejectedOffers": 23,
+    "offerStates": {
+      "available": 0,
+      "stale": 3,
+      "candidates_available": 25,
+      "needs_review": 2,
+      "no_available_offer": 1,
+      "not_synced": 0
     }
   },
   "needsReviewItems": [
     {
-      "id": "item-d0efa36d5c",
-      "title": "리안드림콧 아기침대",
-      "issues": [
-        {
-          "code": "missing_image",
-          "severity": "warning",
-          "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
-        },
-        {
-          "code": "suspicious_unrelated_memo",
-          "severity": "error",
-          "message": "메모가 육아템 설명과 무관한 문구일 가능성이 있습니다.",
-          "memo": "인기 있는 무선 이어폰, 블랙 프라이데이 할인 예정"
-        }
-      ]
-    }
-  ],
-  "draftItems": [
-    {
-      "id": "2b1b4abb-08ed-809e-b3ee-c1c6973edade",
-      "title": "",
-      "category": "💩신생아 배앓이 꿀템",
-      "draftReasons": [
-        "empty_title"
-      ],
-      "issues": [
-        {
-          "code": "missing_title",
-          "severity": "error",
-          "message": "제품명이 비어 있습니다."
-        },
+      "id": "item-8e7ce75a58",
+      "title": "올투게더나우 허리보호대",
+      "dataIssues": [
         {
           "code": "missing_price",
           "severity": "warning",
           "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+        }
+      ],
+      "rejectedOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/41013582042",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 12400,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.249Z",
+          "matchConfidence": "high",
+          "productName": "물리치료사가 판매하는 올투게더나우 다이어트 복부 스웨트 벨트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4101358/41013582042.20230705193359.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch"
+          ]
         },
         {
-          "code": "missing_image",
-          "severity": "warning",
-          "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          "url": "https://ohou.se/productions/2060884/selling?utm_source=naver_shop&bp_sub_id_2=search&bp_sub_id_3=inorganic&utm_medium=cpc&utm_campaign=2060884-16650775&utm_term={query}&utm_content={ad}&bp_adset={network}_{media}",
+          "platform": "naver",
+          "mallName": "오늘의집",
+          "price": 12400,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.249Z",
+          "matchConfidence": "high",
+          "productName": "올투게더나우 물리치료사가 판매하는 다이어트 복부 스웻 벨트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_3986019/39860199760.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch"
+          ]
         },
         {
-          "code": "missing_partner_link",
-          "severity": "error",
-          "message": "대표 구매 링크가 비어 있습니다."
+          "url": "https://smartstore.naver.com/main/products/11192125210",
+          "platform": "naver",
+          "mallName": "솔저맘파파",
+          "price": 15700,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.249Z",
+          "matchConfidence": "high",
+          "productName": "가벼운 허리 보호대 허리복대 복부 복대 의료용 허리지지대 헬스 코어 허리벨트-당일출고",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8873663/88736635532.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch"
+          ]
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/41067307356",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 16110,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.249Z",
+          "matchConfidence": "high",
+          "productName": "올투게더나우 물리치료사가 판매하는 얇은 허리 보호대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4106730/41067307356.20230709190922.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch"
+          ]
         }
       ]
     },
     {
-      "id": "248b4abb-08ed-802e-93df-f90081dfabe6",
-      "title": "",
-      "category": "🎉놀이아이템",
-      "draftReasons": [
-        "empty_title"
-      ],
-      "issues": [
+      "id": "item-e9d15fbf7f",
+      "title": "위틀스토어 바람개비 아기 체육관",
+      "dataIssues": [],
+      "rejectedOffers": [
         {
-          "code": "missing_title",
-          "severity": "error",
-          "message": "제품명이 비어 있습니다."
+          "url": "https://smartstore.naver.com/main/products/7868911204",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 71900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.481Z",
+          "matchConfidence": "high",
+          "productName": "하베브릭스 바람개비 아기체육관 신생아선물",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8541341/85413411527.7.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch"
+          ]
         },
         {
-          "code": "missing_price",
-          "severity": "warning",
-          "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          "url": "https://www.whittlestore.com/views/shop/shopview?pack_content_id=5926&TR_REF=naver_open",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 71900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.481Z",
+          "matchConfidence": "high",
+          "productName": "하베브릭스 바람개비 아기체육관^(신생아선물)",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5747426/57474262688.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch"
+          ]
         },
         {
-          "code": "missing_image",
-          "severity": "warning",
-          "message": "제품 이미지가 없어 기본 이미지를 사용해야 합니다."
+          "url": "https://smartstore.naver.com/main/products/12901150396",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 87000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.481Z",
+          "matchConfidence": "high",
+          "productName": "하베브릭스 바람개비 아기체육관+회전 링쌓기 링끼우기 소근육 발달 신생아 아기 장난감",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9044566/90445661388.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch"
+          ]
         },
         {
-          "code": "missing_partner_link",
-          "severity": "error",
-          "message": "대표 구매 링크가 비어 있습니다."
+          "url": "https://smartstore.naver.com/main/products/12385960170",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 182000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-01T04:53:47.481Z",
+          "matchConfidence": "high",
+          "productName": "하베브릭스 신생아 아기 모빌 양방향 흑백 컬러 인형 거치대 풀세트+바람개비 아기 체육관",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8993047/89930470895.28.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch"
+          ]
         }
       ]
     }

@@ -28,35 +28,54 @@ function collectLinkIssues(item) {
 
   if (!item.partnerLink) {
     issues.push(
-      createIssue("missing_partner_link", "error", "대표 구매 링크가 비어 있습니다."),
+      createIssue(
+        "missing_partner_link",
+        "error",
+        "대표 구매 링크가 비어 있습니다.",
+      ),
     );
   } else if (primaryStatus && primaryStatus !== "valid") {
     issues.push(
-      createIssue("invalid_partner_link", "error", "대표 구매 링크 형식이 올바르지 않습니다.", {
-        url: item.partnerLink,
-        linkStatus: primaryStatus,
-      }),
+      createIssue(
+        "invalid_partner_link",
+        "error",
+        "대표 구매 링크 형식이 올바르지 않습니다.",
+        {
+          url: item.partnerLink,
+          linkStatus: primaryStatus,
+        },
+      ),
     );
   }
 
   for (const link of item.partnerLinks ?? []) {
     if (link.linkStatus && link.linkStatus !== "valid") {
       issues.push(
-        createIssue("invalid_partner_link", "error", "구매 링크 형식이 올바르지 않습니다.", {
-          url: link.url,
-          sourceItemId: link.sourceItemId,
-          linkStatus: link.linkStatus,
-        }),
+        createIssue(
+          "invalid_partner_link",
+          "error",
+          "구매 링크 형식이 올바르지 않습니다.",
+          {
+            url: link.url,
+            sourceItemId: link.sourceItemId,
+            linkStatus: link.linkStatus,
+          },
+        ),
       );
     }
 
     if (link.wasNormalized) {
       issues.push(
-        createIssue("normalized_partner_link", "info", "구매 링크 형식을 자동 보정했습니다.", {
-          originalUrl: link.originalUrl,
-          normalizedUrl: link.url,
-          reason: link.normalizationReason,
-        }),
+        createIssue(
+          "normalized_partner_link",
+          "info",
+          "구매 링크 형식을 자동 보정했습니다.",
+          {
+            originalUrl: link.originalUrl,
+            normalizedUrl: link.url,
+            reason: link.normalizationReason,
+          },
+        ),
       );
     }
   }
@@ -85,18 +104,28 @@ function collectItemIssues(item) {
   const issues = [];
 
   if (!item.title) {
-    issues.push(createIssue("missing_title", "error", "제품명이 비어 있습니다."));
+    issues.push(
+      createIssue("missing_title", "error", "제품명이 비어 있습니다."),
+    );
   }
 
   if (item.price === null) {
     issues.push(
-      createIssue("missing_price", "warning", "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."),
+      createIssue(
+        "missing_price",
+        "warning",
+        "가격이 비어 있어 화면에 기록가 없음으로 표시합니다.",
+      ),
     );
   }
 
   if (!item.image?.hasImage) {
     issues.push(
-      createIssue("missing_image", "warning", "제품 이미지가 없어 기본 이미지를 사용해야 합니다."),
+      createIssue(
+        "missing_image",
+        "warning",
+        "제품 이미지가 없어 기본 이미지를 사용해야 합니다.",
+      ),
     );
   }
 
@@ -153,7 +182,9 @@ function getIssueCounts(items) {
     }
   }
 
-  return Object.fromEntries([...counts.entries()].sort(([a], [b]) => a.localeCompare(b)));
+  return Object.fromEntries(
+    [...counts.entries()].sort(([a], [b]) => a.localeCompare(b)),
+  );
 }
 
 async function main() {
@@ -179,12 +210,14 @@ async function main() {
   });
 
   const qualitySummary = {
-    readyItems: items.filter((item) => item.dataQuality.status === "ready").length,
+    readyItems: items.filter((item) => item.dataQuality.status === "ready")
+      .length,
     usableWithWarningsItems: items.filter(
       (item) => item.dataQuality.status === "usable_with_warnings",
     ).length,
-    needsReviewItems: items.filter((item) => item.dataQuality.status === "needs_review")
-      .length,
+    needsReviewItems: items.filter(
+      (item) => item.dataQuality.status === "needs_review",
+    ).length,
     draftItems: draftItems.length,
     issueCounts: getIssueCounts(items),
     draftIssueCounts: getIssueCounts(draftItems),
@@ -206,7 +239,11 @@ async function main() {
     draftItems,
   };
 
-  await writeFile(QUALITY_OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+  await writeFile(
+    QUALITY_OUTPUT_PATH,
+    `${JSON.stringify(output, null, 2)}\n`,
+    "utf8",
+  );
 
   console.log(`Wrote ${QUALITY_OUTPUT_PATH}`);
   console.log(JSON.stringify(qualitySummary, null, 2));

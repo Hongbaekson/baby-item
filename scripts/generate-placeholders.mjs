@@ -4,17 +4,77 @@ import path from "node:path";
 const OUTPUT_DIR = path.join("public", "images", "placeholders");
 
 const PLACEHOLDERS = [
-  { slug: "top-used", label: "BEST", icon: "♥", color: "#FFD2C2", accent: "#FF8A7A" },
-  { slug: "sleep", label: "SLEEP", icon: "☾", color: "#BFDDF7", accent: "#6C8FD6" },
-  { slug: "outing", label: "OUT", icon: "◠", color: "#BFEAD9", accent: "#4EAA83" },
-  { slug: "sterilize", label: "CLEAN", icon: "✦", color: "#D9CDFB", accent: "#8A70D6" },
-  { slug: "feeding", label: "MILK", icon: "◡", color: "#FFE8A8", accent: "#D89B2B" },
-  { slug: "colic", label: "CARE", icon: "+", color: "#FFD7E5", accent: "#D56E9C" },
-  { slug: "play", label: "PLAY", icon: "★", color: "#C8D3FF", accent: "#6E7CD5" },
-  { slug: "diaper", label: "DAILY", icon: "□", color: "#D7EDB9", accent: "#74A944" },
+  {
+    slug: "top-used",
+    label: "BEST",
+    icon: "♥",
+    color: "#FFD2C2",
+    accent: "#FF8A7A",
+  },
+  {
+    slug: "sleep",
+    label: "SLEEP",
+    icon: "☾",
+    color: "#BFDDF7",
+    accent: "#6C8FD6",
+  },
+  {
+    slug: "outing",
+    label: "OUT",
+    icon: "◠",
+    color: "#BFEAD9",
+    accent: "#4EAA83",
+  },
+  {
+    slug: "sterilize",
+    label: "CLEAN",
+    icon: "✦",
+    color: "#D9CDFB",
+    accent: "#8A70D6",
+  },
+  {
+    slug: "feeding",
+    label: "MILK",
+    icon: "◡",
+    color: "#FFE8A8",
+    accent: "#D89B2B",
+  },
+  {
+    slug: "colic",
+    label: "CARE",
+    icon: "+",
+    color: "#FFD7E5",
+    accent: "#D56E9C",
+  },
+  {
+    slug: "play",
+    label: "PLAY",
+    icon: "★",
+    color: "#C8D3FF",
+    accent: "#6E7CD5",
+  },
+  {
+    slug: "diaper",
+    label: "DAILY",
+    icon: "□",
+    color: "#D7EDB9",
+    accent: "#74A944",
+  },
   { slug: "mat", label: "MAT", icon: "▤", color: "#BFEAD9", accent: "#4EAA83" },
-  { slug: "caregiver", label: "HELP", icon: "♡", color: "#FFD2C2", accent: "#FF8A7A" },
-  { slug: "default", label: "ITEM", icon: "•", color: "#FFF0C6", accent: "#C98B28" },
+  {
+    slug: "caregiver",
+    label: "HELP",
+    icon: "♡",
+    color: "#FFD2C2",
+    accent: "#FF8A7A",
+  },
+  {
+    slug: "default",
+    label: "ITEM",
+    icon: "•",
+    color: "#FFF0C6",
+    accent: "#C98B28",
+  },
 ];
 
 function svg({ label, icon, color, accent }) {
@@ -35,7 +95,11 @@ async function main() {
   await mkdir(OUTPUT_DIR, { recursive: true });
 
   for (const placeholder of PLACEHOLDERS) {
-    await writeFile(path.join(OUTPUT_DIR, `${placeholder.slug}.svg`), svg(placeholder), "utf8");
+    await writeFile(
+      path.join(OUTPUT_DIR, `${placeholder.slug}.svg`),
+      svg(placeholder),
+      "utf8",
+    );
   }
 
   console.log(`Wrote ${PLACEHOLDERS.length} placeholders to ${OUTPUT_DIR}`);

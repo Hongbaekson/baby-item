@@ -172,7 +172,9 @@ async function queryCollection() {
 
 async function main() {
   const result = await queryCollection();
-  const collectionRecord = unwrapRecord(result.recordMap?.collection?.[COLLECTION_ID]);
+  const collectionRecord = unwrapRecord(
+    result.recordMap?.collection?.[COLLECTION_ID],
+  );
 
   if (!collectionRecord) {
     throw new Error("Collection record was not found in Notion response.");
@@ -194,7 +196,9 @@ async function main() {
     .map(([blockId, block]) => extractItem(blockId, block, schema, groupOrder))
     .sort((a, b) => {
       if (a.originalOrder === null && b.originalOrder === null) {
-        return String(a.notion.createdTime).localeCompare(String(b.notion.createdTime));
+        return String(a.notion.createdTime).localeCompare(
+          String(b.notion.createdTime),
+        );
       }
 
       if (a.originalOrder === null) return 1;
@@ -225,17 +229,26 @@ async function main() {
     summary: {
       totalItems: pageBlocks.length,
       totalCategories: categories.length,
-      emptyTitleItems: pageBlocks.filter((item) => !item.extracted.title).length,
-      missingPartnerLinkItems: pageBlocks.filter((item) => !item.extracted.partnerLink).length,
-      missingPriceItems: pageBlocks.filter((item) => !item.extracted.price).length,
-      itemsWithImage: pageBlocks.filter((item) => item.extracted.image.hasImage).length,
+      emptyTitleItems: pageBlocks.filter((item) => !item.extracted.title)
+        .length,
+      missingPartnerLinkItems: pageBlocks.filter(
+        (item) => !item.extracted.partnerLink,
+      ).length,
+      missingPriceItems: pageBlocks.filter((item) => !item.extracted.price)
+        .length,
+      itemsWithImage: pageBlocks.filter((item) => item.extracted.image.hasImage)
+        .length,
     },
     categories,
     items: pageBlocks,
   };
 
   await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
-  await writeFile(`${OUTPUT_PATH}`, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+  await writeFile(
+    `${OUTPUT_PATH}`,
+    `${JSON.stringify(output, null, 2)}\n`,
+    "utf8",
+  );
 
   console.log(`Wrote ${OUTPUT_PATH}`);
   console.log(JSON.stringify(output.summary, null, 2));

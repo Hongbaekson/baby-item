@@ -1,0 +1,60 @@
+{
+  "freshnessHours": 48,
+  "maxOffersPerItem": 4,
+  "trustedPurchaseHosts": [
+    "11st.co.kr",
+    "29cm.co.kr",
+    "anapakorea.co.kr",
+    "brand.naver.com",
+    "coupang.com",
+    "direct.maeil.com",
+    "link.auction.co.kr",
+    "link.coupang.com",
+    "link.gmarket.co.kr",
+    "malanghoney.com",
+    "ohou.se",
+    "product.29cm.co.kr",
+    "search.shopping.naver.com",
+    "smartstore.naver.com",
+    "whittlestore.com"
+  ],
+  "trustedImageHosts": [
+    "image1.coupangcdn.com",
+    "image2.coupangcdn.com",
+    "image3.coupangcdn.com",
+    "image4.coupangcdn.com",
+    "image5.coupangcdn.com",
+    "image6.coupangcdn.com",
+    "image7.coupangcdn.com",
+    "image8.coupangcdn.com",
+    "image9.coupangcdn.com",
+    "image10.coupangcdn.com",
+    "thumbnail.coupangcdn.com",
+    "shopping.phinf.naver.net",
+    "shopping-phinf.pstatic.net",
+    "shop-phinf.pstatic.net"
+  ],
+  "shortUrlHosts": ["bit.ly", "goo.gl", "naver.me", "t.co", "tinyurl.com"],
+  "reviewTerms": {
+    "expiry_risk": [
+      "소비기한 임박",
+      "유통기한 임박",
+      "소비기한임박",
+      "유통기한임박"
+    ],
+    "used_or_refurbished": ["리퍼", "리퍼비시", "중고", "전시상품"],
+    "rental_mismatch": ["대여", "렌탈"],
+    "accessory_mismatch": [
+      "쇼핑백",
+      "선물 쇼핑백",
+      "별도 판매",
+      "별도판매",
+      "구성품",
+      "호환",
+      "케이스",
+      "커버",
+      "어댑터",
+      "충전기"
+    ]
+  }
+}

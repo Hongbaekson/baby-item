@@ -118,7 +118,9 @@ async function main() {
     }
   }
 
-  const items = [...byItemId.values()].sort((a, b) => a.itemId.localeCompare(b.itemId));
+  const items = [...byItemId.values()].sort((a, b) =>
+    a.itemId.localeCompare(b.itemId),
+  );
   const output = {
     generatedAt: new Date().toISOString(),
     source: "merged-price-candidates",

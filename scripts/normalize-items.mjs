@@ -55,7 +55,9 @@ function normalizeItem(item) {
 async function main() {
   const raw = JSON.parse(await readFile(RAW_INPUT_PATH, "utf8"));
   const items = raw.items.map(normalizeItem);
-  const publishedItems = items.filter((item) => item.publicationStatus === "published");
+  const publishedItems = items.filter(
+    (item) => item.publicationStatus === "published",
+  );
   const draftItems = items.filter((item) => item.publicationStatus === "draft");
 
   const output = {
@@ -80,7 +82,11 @@ async function main() {
     items,
   };
 
-  await writeFile(NORMALIZED_OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+  await writeFile(
+    NORMALIZED_OUTPUT_PATH,
+    `${JSON.stringify(output, null, 2)}\n`,
+    "utf8",
+  );
 
   console.log(`Wrote ${NORMALIZED_OUTPUT_PATH}`);
   console.log(JSON.stringify(output.summary, null, 2));

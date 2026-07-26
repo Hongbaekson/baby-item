@@ -1,0 +1,61 @@
+name: Refresh price candidates
+
+on:
+  schedule:
+    - cron: "17 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: price-candidate-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    name: Build reviewable candidate data
+    runs-on: ubuntu-latest
+    env:
+      NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+      NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Require Naver Shopping secrets
+        run: |
+          if [ -z "${NAVER_CLIENT_ID}" ] || [ -z "${NAVER_CLIENT_SECRET}" ]; then
+            echo "::error::NAVER_CLIENT_ID and NAVER_CLIENT_SECRET repository secrets are required."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Collect Naver Shopping candidates
+        run: npm run price:collect-naver
+
+      - name: Build review proposal
+        run: |
+          npm run price:apply-live-offers
+          npm run data:report
+          npm run data:check
+          npm run price:check-strict
+
+      - name: Upload candidate proposal
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          name: price-candidate-proposal-${{ github.run_id }}
+          path: |
+            data/price-candidates.naver.json
+            data/data-quality-report.json
+            src/data/items.json
+          retention-days: 7

@@ -1,6 +1,13 @@
 node_modules
 dist
 .git
+.github
+coverage
+docs
+e2e
+playwright-report
+test-results
+tests
 *.log
 .vite-dev*.log
 .serve-dist*.log

@@ -2,7 +2,10 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const APP_DATA_PATH = path.join("src", "data", "items.json");
-const DEFAULT_CANDIDATES_PATH = path.join("data", "price-candidates.naver.json");
+const DEFAULT_CANDIDATES_PATH = path.join(
+  "data",
+  "price-candidates.naver.json",
+);
 const ALLOWED_IMAGE_HOSTS = new Set([
   "image1.coupangcdn.com",
   "image2.coupangcdn.com",
@@ -21,7 +24,8 @@ const ALLOWED_IMAGE_HOSTS = new Set([
 ]);
 
 const args = process.argv.slice(2);
-const candidatesPath = args.find((arg) => !arg.startsWith("--")) ?? DEFAULT_CANDIDATES_PATH;
+const candidatesPath =
+  args.find((arg) => !arg.startsWith("--")) ?? DEFAULT_CANDIDATES_PATH;
 const allowMediumConfidence = args.includes("--allow-medium");
 const overwriteExisting = args.includes("--overwrite");
 
@@ -99,15 +103,22 @@ function flattenCandidateInput(input) {
 }
 
 function normalizeImageCandidate(rawOffer, fallbackSyncedAt) {
-  const imageUrl = normalizeHttpsUrl(rawOffer.imageUrl ?? rawOffer.image ?? rawOffer.thumbnail);
+  const imageUrl = normalizeHttpsUrl(
+    rawOffer.imageUrl ?? rawOffer.image ?? rawOffer.thumbnail,
+  );
 
   if (!imageUrl) {
     return null;
   }
 
-  const matchConfidence = normalizeConfidence(rawOffer.matchConfidence ?? rawOffer.confidence);
+  const matchConfidence = normalizeConfidence(
+    rawOffer.matchConfidence ?? rawOffer.confidence,
+  );
 
-  if (matchConfidence !== "high" && !(allowMediumConfidence && matchConfidence === "medium")) {
+  if (
+    matchConfidence !== "high" &&
+    !(allowMediumConfidence && matchConfidence === "medium")
+  ) {
     return null;
   }
 
@@ -116,7 +127,8 @@ function normalizeImageCandidate(rawOffer, fallbackSyncedAt) {
     matchConfidence,
     platform: rawOffer.platform ?? rawOffer.channel ?? null,
     mallName: rawOffer.mallName ?? rawOffer.mall ?? rawOffer.seller ?? null,
-    productName: rawOffer.productName ?? rawOffer.name ?? rawOffer.title ?? null,
+    productName:
+      rawOffer.productName ?? rawOffer.name ?? rawOffer.title ?? null,
     source: rawOffer.source ?? "price-candidate",
     syncedAt: rawOffer.syncedAt ?? fallbackSyncedAt ?? null,
   };
@@ -126,25 +138,36 @@ function sortImageCandidates(candidates) {
   return [...candidates].sort((a, b) => {
     const confidenceRank = { high: 0, medium: 1, low: 2 };
     const confidenceDiff =
-      (confidenceRank[a.matchConfidence] ?? 99) - (confidenceRank[b.matchConfidence] ?? 99);
+      (confidenceRank[a.matchConfidence] ?? 99) -
+      (confidenceRank[b.matchConfidence] ?? 99);
 
     if (confidenceDiff !== 0) {
       return confidenceDiff;
     }
 
-    return remoteImageHost(a.imageUrl).localeCompare(remoteImageHost(b.imageUrl));
+    return remoteImageHost(a.imageUrl).localeCompare(
+      remoteImageHost(b.imageUrl),
+    );
   });
 }
 
 function recalculateStatus(dataQuality) {
   const issues = dataQuality.issues ?? [];
-  const errorCount = issues.filter((issue) => issue.severity === "error").length;
-  const warningCount = issues.filter((issue) => issue.severity === "warning").length;
+  const errorCount = issues.filter(
+    (issue) => issue.severity === "error",
+  ).length;
+  const warningCount = issues.filter(
+    (issue) => issue.severity === "warning",
+  ).length;
 
   return {
     ...dataQuality,
     status:
-      errorCount > 0 ? "needs_review" : warningCount > 0 ? "usable_with_warnings" : "ready",
+      errorCount > 0
+        ? "needs_review"
+        : warningCount > 0
+          ? "usable_with_warnings"
+          : "ready",
     errorCount,
     warningCount,
     issues,
@@ -156,11 +179,14 @@ function recalculateSummary(appData) {
 
   appData.summary = {
     ...appData.summary,
-    readyItems: items.filter((item) => item.dataQuality?.status === "ready").length,
+    readyItems: items.filter((item) => item.dataQuality?.status === "ready")
+      .length,
     usableWithWarningsItems: items.filter(
       (item) => item.dataQuality?.status === "usable_with_warnings",
     ).length,
-    needsReviewItems: items.filter((item) => item.dataQuality?.status === "needs_review").length,
+    needsReviewItems: items.filter(
+      (item) => item.dataQuality?.status === "needs_review",
+    ).length,
   };
 }
 
@@ -168,7 +194,9 @@ async function main() {
   const appData = JSON.parse(await readFile(APP_DATA_PATH, "utf8"));
   const candidateInput = JSON.parse(await readFile(candidatesPath, "utf8"));
   const candidateEntries = flattenCandidateInput(candidateInput);
-  const itemsById = new Map((appData.items ?? []).map((item) => [item.id, item]));
+  const itemsById = new Map(
+    (appData.items ?? []).map((item) => [item.id, item]),
+  );
   let applied = 0;
   let skippedExistingImage = 0;
   let skippedNoCandidate = 0;
@@ -224,7 +252,11 @@ async function main() {
 
   recalculateSummary(appData);
 
-  await writeFile(APP_DATA_PATH, `${JSON.stringify(appData, null, 2)}\n`, "utf8");
+  await writeFile(
+    APP_DATA_PATH,
+    `${JSON.stringify(appData, null, 2)}\n`,
+    "utf8",
+  );
 
   console.log(
     JSON.stringify(

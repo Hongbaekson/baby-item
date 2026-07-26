@@ -1,25 +1,27 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import {
+  collectOfferReviewFlags,
+  hostFrom,
+  isFreshOffer,
+  isHttpsUrl,
+  isTrustedImageUrl,
+  isVerifiedOffer,
+  sortOffersByEffectivePrice,
+} from "./lib/offer-policy.mjs";
 
 const APP_DATA_PATH = path.join("src", "data", "items.json");
 const DEFAULT_CANDIDATES_PATH = path.join("data", "price-candidates.json");
 const PRICE_CTA = "구매처에서 최신가 확인";
-const SHORT_URL_HOSTS = new Set(["bit.ly", "naver.me", "tinyurl.com", "t.co", "goo.gl"]);
 const MIN_REFERENCE_PRICE_RATIO = 0.45;
-const NON_MAIN_PRODUCT_RULES = [
-  { pattern: /쇼핑백|선물\s*쇼핑백/i },
-  { pattern: /어댑터|충전기/i, allowedTitlePattern: /어댑터|충전기/i },
-  { pattern: /호환/i, allowedTitlePattern: /호환/i },
-  { pattern: /대여|렌탈/i },
-  { pattern: /별도\s*판매|별도판매|구성품/i },
-  { pattern: /케이스|커버/i, allowedTitlePattern: /케이스|커버/i },
-];
-
+const MAX_REFERENCE_PRICE_RATIO = 2.5;
 const args = process.argv.slice(2);
-const candidatesPath = args.find((arg) => !arg.startsWith("--")) ?? DEFAULT_CANDIDATES_PATH;
-const allowMediumConfidence = args.includes("--allow-medium");
-const allowUnknownShipping = args.includes("--allow-unknown-shipping");
-const maxOffers = getArgNumber("--max-offers", 0);
+const candidatesPath =
+  args.find((arg) => !arg.startsWith("--")) ?? DEFAULT_CANDIDATES_PATH;
+const includeReferenceCandidates = args.includes(
+  "--include-reference-candidates",
+);
+const maxOffers = getArgNumber("--max-offers", 4);
 
 function getArgNumber(name, fallback) {
   const prefix = `${name}=`;
@@ -30,12 +32,7 @@ function getArgNumber(name, fallback) {
   }
 
   const value = Number(arg.slice(prefix.length));
-
-  return Number.isFinite(value) ? value : fallback;
-}
-
-function formatWon(value) {
-  return `${value.toLocaleString("ko-KR")}원`;
+  return Number.isFinite(value) && value > 0 ? value : fallback;
 }
 
 function toNumber(value) {
@@ -44,83 +41,66 @@ function toNumber(value) {
   }
 
   const number = Number(value);
-
   return Number.isFinite(number) ? number : null;
 }
 
-function hostFrom(url) {
-  try {
-    return new URL(url).hostname.replace(/^www\./, "").toLowerCase();
-  } catch {
-    return "";
-  }
-}
-
-function isHttpsUrl(url) {
-  try {
-    return new URL(url).protocol === "https:";
-  } catch {
-    return false;
-  }
-}
-
-function optionalHttpsUrl(value) {
+function optionalTrustedImageUrl(value) {
   const url = String(value ?? "");
-
-  return isHttpsUrl(url) ? url : null;
+  return isTrustedImageUrl(url) ? url : null;
 }
 
-function isTooLowComparedWithReference(item, price) {
+function referencePriceReviewFlag(item, price) {
   const referencePrice = toNumber(item.price);
 
-  return (
-    referencePrice !== null &&
-    referencePrice > 0 &&
-    price < referencePrice * MIN_REFERENCE_PRICE_RATIO
-  );
-}
+  if (referencePrice === null || referencePrice <= 0) {
+    return null;
+  }
 
-function isLikelyNonMainProduct(itemTitle, raw) {
-  const candidateName = String(raw.productName ?? raw.name ?? raw.title ?? "");
+  if (price < referencePrice * MIN_REFERENCE_PRICE_RATIO) {
+    return "price_too_low_vs_reference";
+  }
 
-  return NON_MAIN_PRODUCT_RULES.some((rule) => {
-    if (!rule.pattern.test(candidateName)) {
-      return false;
-    }
+  if (price > referencePrice * MAX_REFERENCE_PRICE_RATIO) {
+    return "price_too_high_vs_reference";
+  }
 
-    return !rule.allowedTitlePattern?.test(itemTitle);
-  });
+  return null;
 }
 
 function isInStock(candidate) {
-  if (candidate.soldOut === true || candidate.inStock === false || candidate.available === false) {
+  if (
+    candidate.soldOut === true ||
+    candidate.inStock === false ||
+    candidate.available === false
+  ) {
     return false;
   }
 
-  if (candidate.inStock === true || candidate.available === true || candidate.soldOut === false) {
+  if (
+    candidate.inStock === true ||
+    candidate.available === true ||
+    candidate.soldOut === false
+  ) {
     return true;
   }
 
-  const status = String(candidate.stockStatus ?? candidate.status ?? "").toLowerCase();
-
-  return ["in_stock", "available", "on_sale", "판매중", "재고있음"].includes(status);
+  const status = String(
+    candidate.stockStatus ?? candidate.status ?? "",
+  ).toLowerCase();
+  return ["in_stock", "available", "on_sale", "판매중", "재고있음"].includes(
+    status,
+  );
 }
 
 function normalizeConfidence(value) {
   const confidence = String(value ?? "low").toLowerCase();
-
-  if (confidence === "high" || confidence === "medium") {
-    return confidence;
-  }
-
-  return "low";
+  return confidence === "high" || confidence === "medium" ? confidence : "low";
 }
 
 function flattenCandidateInput(input) {
   if (Array.isArray(input.items)) {
     return input.items.map((entry) => ({
       itemId: entry.itemId ?? entry.id,
-      title: entry.title,
       syncedAt: entry.syncedAt ?? input.syncedAt ?? input.generatedAt ?? null,
       offers: entry.offers ?? entry.candidates ?? [],
     }));
@@ -131,18 +111,13 @@ function flattenCandidateInput(input) {
 
     for (const offer of input.offers) {
       const itemId = offer.itemId ?? offer.id;
-
-      if (!itemId) {
-        continue;
-      }
+      if (!itemId) continue;
 
       const entry = byItemId.get(itemId) ?? {
         itemId,
-        title: offer.title,
         syncedAt: offer.syncedAt ?? input.syncedAt ?? input.generatedAt ?? null,
         offers: [],
       };
-
       entry.offers.push(offer);
       byItemId.set(itemId, entry);
     }
@@ -160,118 +135,93 @@ function normalizeOffer(raw, fallbackSyncedAt, item) {
   const explicitTotalPrice = toNumber(raw.totalPrice ?? raw.total);
   let shippingFee = toNumber(rawShippingFee);
 
-  if (shippingFee === null && explicitTotalPrice !== null && price !== null && explicitTotalPrice >= price) {
+  if (
+    shippingFee === null &&
+    explicitTotalPrice !== null &&
+    price !== null &&
+    explicitTotalPrice >= price
+  ) {
     shippingFee = explicitTotalPrice - price;
   }
 
-  const hasUnknownShipping = shippingFee === null && allowUnknownShipping;
   const totalPrice =
-    explicitTotalPrice ?? (price === null || shippingFee === null ? null : price + shippingFee);
-  const matchConfidence = normalizeConfidence(raw.matchConfidence ?? raw.confidence);
+    explicitTotalPrice ??
+    (price === null || shippingFee === null ? null : price + shippingFee);
+  const matchConfidence = normalizeConfidence(
+    raw.matchConfidence ?? raw.confidence,
+  );
 
   if (!isHttpsUrl(url)) {
-    return { skipped: true, reason: "non_https_url", url };
+    return { accepted: false, reason: "non_https_url", url };
   }
 
   if (price === null || price <= 0) {
-    return { skipped: true, reason: "bad_price", url };
-  }
-
-  if (isTooLowComparedWithReference(item, price)) {
-    return { skipped: true, reason: "price_too_low_vs_reference", url };
-  }
-
-  if (isLikelyNonMainProduct(item.title, raw)) {
-    return { skipped: true, reason: "likely_non_main_product", url };
-  }
-
-  if (!hasUnknownShipping && (shippingFee === null || shippingFee < 0)) {
-    return { skipped: true, reason: "missing_shipping_fee", url };
-  }
-
-  if (!hasUnknownShipping && (totalPrice === null || totalPrice <= 0 || totalPrice < price)) {
-    return { skipped: true, reason: "bad_total_price", url };
+    return { accepted: false, reason: "bad_price", url };
   }
 
   if (!isInStock(raw)) {
-    return { skipped: true, reason: "not_in_stock", url };
+    return { accepted: false, reason: "not_in_stock", url };
   }
 
-  if (matchConfidence !== "high" && !(allowMediumConfidence && matchConfidence === "medium")) {
-    return { skipped: true, reason: "low_match_confidence", url };
-  }
-
-  const host = hostFrom(url);
-
-  return {
-    skipped: false,
-    offer: {
-      url,
-      platform: String(raw.platform ?? raw.channel ?? "manual"),
-      mallName: String(raw.mallName ?? raw.mall ?? raw.seller ?? host),
-      price,
-      shippingFee,
-      totalPrice,
-      priceBasis: hasUnknownShipping ? "listed_price" : "shipping_included",
-      inStock: true,
-      source: String(raw.source ?? "manual-candidate"),
-      syncedAt: String(raw.syncedAt ?? fallbackSyncedAt ?? new Date().toISOString()),
-      matchConfidence,
-      productName: raw.productName ?? raw.name ?? null,
-      imageUrl: optionalHttpsUrl(raw.imageUrl ?? raw.image ?? raw.thumbnail),
-      note: raw.note ?? null,
-      isShortUrl: SHORT_URL_HOSTS.has(host),
-    },
-  };
-}
-
-function sortOffers(offers) {
-  return [...offers].sort((a, b) => {
-    const aSortPrice = a.totalPrice ?? a.price;
-    const bSortPrice = b.totalPrice ?? b.price;
-
-    if (aSortPrice !== bSortPrice) {
-      return aSortPrice - bSortPrice;
-    }
-
-    if (a.isShortUrl !== b.isShortUrl) {
-      return a.isShortUrl ? 1 : -1;
-    }
-
-    return a.price - b.price;
+  const reviewFlags = collectOfferReviewFlags(item.title, {
+    ...raw,
+    url,
   });
-}
+  const priceFlag = referencePriceReviewFlag(item, price);
+  if (priceFlag) reviewFlags.push(priceFlag);
+  if (matchConfidence !== "high") reviewFlags.push("low_match_confidence");
 
-function stripInternalOfferFields(offer) {
-  const { isShortUrl: _isShortUrl, ...offerForApp } = offer;
+  const offer = {
+    url,
+    platform: String(raw.platform ?? raw.channel ?? "manual"),
+    mallName: String(raw.mallName ?? raw.mall ?? raw.seller ?? hostFrom(url)),
+    price,
+    shippingFee,
+    totalPrice,
+    priceBasis:
+      shippingFee === null || totalPrice === null
+        ? "listed_price"
+        : "shipping_included",
+    inStock: true,
+    source: String(raw.source ?? "manual-candidate"),
+    syncedAt: String(
+      raw.syncedAt ?? fallbackSyncedAt ?? new Date().toISOString(),
+    ),
+    matchConfidence,
+    productName: raw.productName ?? raw.name ?? raw.title ?? null,
+    imageUrl: optionalTrustedImageUrl(
+      raw.imageUrl ?? raw.image ?? raw.thumbnail,
+    ),
+    note: raw.note ?? null,
+    reviewFlags: [...new Set(reviewFlags)],
+  };
 
-  return offerForApp;
+  return { accepted: true, offer };
 }
 
 function dedupeOffersByUrl(offers) {
-  const seen = new Set();
-  const deduped = [];
+  return [...new Map(offers.map((offer) => [offer.url, offer])).values()];
+}
 
-  for (const offer of offers) {
-    if (seen.has(offer.url)) {
-      continue;
-    }
-
-    seen.add(offer.url);
-    deduped.push(offer);
+function offerStatusFor(verifiedOffers, candidateOffers, rejectedOffers) {
+  if (verifiedOffers.length > 0) {
+    return isFreshOffer(verifiedOffers[0]) ? "available" : "stale";
   }
 
-  return deduped;
+  if (candidateOffers.length > 0) return "candidates_available";
+  if (rejectedOffers.length > 0) return "needs_review";
+  return "no_available_offer";
 }
 
 async function main() {
   const appData = JSON.parse(await readFile(APP_DATA_PATH, "utf8"));
   const candidateInput = JSON.parse(await readFile(candidatesPath, "utf8"));
   const candidateEntries = flattenCandidateInput(candidateInput);
-  const itemsById = new Map((appData.items ?? []).map((item) => [item.id, item]));
+  const itemsById = new Map(
+    (appData.items ?? []).map((item) => [item.id, item]),
+  );
   const skipped = [];
   let applied = 0;
-  let noAvailableOffer = 0;
 
   for (const entry of candidateEntries) {
     const item = itemsById.get(entry.itemId);
@@ -284,90 +234,92 @@ async function main() {
     const normalizedOffers = [];
 
     for (const rawOffer of entry.offers ?? []) {
-      const normalized = normalizeOffer(rawOffer, entry.syncedAt, item);
-
-      if (normalized.skipped) {
+      const result = normalizeOffer(rawOffer, entry.syncedAt, item);
+      if (!result.accepted) {
         skipped.push({
           itemId: item.id,
           title: item.title,
-          reason: normalized.reason,
-          url: normalized.url,
+          reason: result.reason,
+          url: result.url,
         });
         continue;
       }
-
-      normalizedOffers.push(normalized.offer);
+      normalizedOffers.push(result.offer);
     }
 
-    const sortedOffers = dedupeOffersByUrl(sortOffers(normalizedOffers));
-    const bestOffer = sortedOffers[0];
-    const syncedAt = String(entry.syncedAt ?? candidateInput.syncedAt ?? candidateInput.generatedAt ?? new Date().toISOString());
+    const sortedOffers = dedupeOffersByUrl(
+      sortOffersByEffectivePrice(normalizedOffers),
+    );
+    const rejectedOffers = sortedOffers.filter(
+      (offer) => offer.reviewFlags.length > 0,
+    );
+    const acceptedOffers = sortedOffers.filter(
+      (offer) => offer.reviewFlags.length === 0,
+    );
+    const verifiedOffers = acceptedOffers
+      .filter(isVerifiedOffer)
+      .slice(0, maxOffers);
+    const candidateOffers = includeReferenceCandidates
+      ? acceptedOffers
+          .filter((offer) => !isVerifiedOffer(offer))
+          .slice(0, maxOffers)
+      : [];
+    const state = offerStatusFor(
+      verifiedOffers,
+      candidateOffers,
+      rejectedOffers,
+    );
+    const syncedAt =
+      verifiedOffers[0]?.syncedAt ??
+      candidateOffers[0]?.syncedAt ??
+      rejectedOffers[0]?.syncedAt ??
+      entry.syncedAt ??
+      candidateInput.generatedAt ??
+      new Date().toISOString();
 
-    if (!bestOffer) {
-      item.bestOffer = null;
-      item.purchaseOffers = [];
-      item.offerStatus = {
-        state: "no_available_offer",
-        syncedAt,
-        checkedOffers: (entry.offers ?? []).length,
-      };
-      item.displayPrice = PRICE_CTA;
-      noAvailableOffer += 1;
-      continue;
-    }
-
-    const purchaseOffers = sortedOffers
-      .slice(0, maxOffers > 0 ? maxOffers : undefined)
-      .map(stripInternalOfferFields);
-
-    item.bestOffer = purchaseOffers[0];
-    item.purchaseOffers = purchaseOffers;
+    item.bestOffer = verifiedOffers[0] ?? null;
+    item.purchaseOffers = verifiedOffers;
+    item.candidateOffers = candidateOffers;
+    item.rejectedOffers = rejectedOffers;
     item.offerStatus = {
-      state: "available",
-      syncedAt: bestOffer.syncedAt,
+      state,
+      syncedAt: String(syncedAt),
       checkedOffers: (entry.offers ?? []).length,
     };
-    item.displayPrice = `최저가 ${formatWon(bestOffer.totalPrice ?? bestOffer.price)}${
-      bestOffer.totalPrice === null ? "부터" : ""
-    }`;
+    item.displayPrice =
+      state === "available" && item.bestOffer
+        ? `최저가 ${item.bestOffer.totalPrice.toLocaleString("ko-KR")}원`
+        : PRICE_CTA;
     applied += 1;
   }
 
-  appData.generatedAt = new Date().toISOString();
+  const appliedAt = new Date().toISOString();
+  appData.generatedAt = appliedAt;
   appData.offerSync = {
     candidateFile: candidatesPath,
-    appliedAt: new Date().toISOString(),
+    appliedAt,
     applied,
-    purchaseOffers: (appData.items ?? []).reduce(
+    verifiedOffers: (appData.items ?? []).reduce(
       (sum, item) => sum + (item.purchaseOffers?.length ?? 0),
       0,
     ),
-    noAvailableOffer,
+    candidateOffers: (appData.items ?? []).reduce(
+      (sum, item) => sum + (item.candidateOffers?.length ?? 0),
+      0,
+    ),
+    rejectedOffers: (appData.items ?? []).reduce(
+      (sum, item) => sum + (item.rejectedOffers?.length ?? 0),
+      0,
+    ),
     skipped: skipped.length,
   };
 
-  await writeFile(APP_DATA_PATH, `${JSON.stringify(appData, null, 2)}\n`, "utf8");
-
-  console.log(
-    JSON.stringify(
-      {
-        candidateFile: candidatesPath,
-        applied,
-        noAvailableOffer,
-        purchaseOffers: (appData.items ?? []).reduce(
-          (sum, item) => sum + (item.purchaseOffers?.length ?? 0),
-          0,
-        ),
-        skipped: skipped.length,
-        skipReasons: skipped.reduce((acc, item) => {
-          acc[item.reason] = (acc[item.reason] ?? 0) + 1;
-          return acc;
-        }, {}),
-      },
-      null,
-      2,
-    ),
+  await writeFile(
+    APP_DATA_PATH,
+    `${JSON.stringify(appData, null, 2)}\n`,
+    "utf8",
   );
+  console.log(JSON.stringify(appData.offerSync, null, 2));
 }
 
 main().catch((error) => {

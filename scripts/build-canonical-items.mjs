@@ -102,11 +102,13 @@ function selectPrice(sourceItems) {
 function selectImage(sourceItems) {
   const withImage = firstBy(sourceItems, (item) => item.image?.hasImage);
 
-  return withImage?.image ?? {
-    hasImage: false,
-    filePropertyRaw: null,
-    socialMediaImagePreviewUrl: "",
-  };
+  return (
+    withImage?.image ?? {
+      hasImage: false,
+      filePropertyRaw: null,
+      socialMediaImagePreviewUrl: "",
+    }
+  );
 }
 
 function selectMemo(sourceItems) {
@@ -117,7 +119,8 @@ function selectMemo(sourceItems) {
 
 function buildCanonicalItem(group) {
   const sourceItems = [...group.items].sort(
-    (a, b) => (a.source.originalOrder ?? 9999) - (b.source.originalOrder ?? 9999),
+    (a, b) =>
+      (a.source.originalOrder ?? 9999) - (b.source.originalOrder ?? 9999),
   );
   const categories = uniqueBy(
     sourceItems.flatMap((item) => item.categories),
@@ -170,7 +173,9 @@ async function main() {
   const publishedItems = normalized.items.filter(
     (item) => item.publicationStatus === "published",
   );
-  const draftItems = normalized.items.filter((item) => item.publicationStatus === "draft");
+  const draftItems = normalized.items.filter(
+    (item) => item.publicationStatus === "draft",
+  );
 
   for (const item of publishedItems) {
     const normalizedTitle = normalizeTitle(item.title);
@@ -193,13 +198,19 @@ async function main() {
   const canonicalItems = Array.from(groups.values())
     .map(buildCanonicalItem)
     .sort((a, b) => {
-      const firstA = Math.min(...a.sourceItems.map((item) => item.originalOrder ?? 9999));
-      const firstB = Math.min(...b.sourceItems.map((item) => item.originalOrder ?? 9999));
+      const firstA = Math.min(
+        ...a.sourceItems.map((item) => item.originalOrder ?? 9999),
+      );
+      const firstB = Math.min(
+        ...b.sourceItems.map((item) => item.originalOrder ?? 9999),
+      );
 
       return firstA - firstB;
     });
 
-  const duplicateGroups = canonicalItems.filter((item) => item.sourceItemIds.length > 1);
+  const duplicateGroups = canonicalItems.filter(
+    (item) => item.sourceItemIds.length > 1,
+  );
   const output = {
     canonicalizedAt: new Date().toISOString(),
     source: {
@@ -216,9 +227,13 @@ async function main() {
       ),
       draftItems: draftItems.length,
       totalCategories: normalized.categories.length,
-      missingPrimaryPartnerLinkItems: canonicalItems.filter((item) => !item.partnerLink).length,
-      missingPriceItems: canonicalItems.filter((item) => item.price === null).length,
-      itemsWithImage: canonicalItems.filter((item) => item.image.hasImage).length,
+      missingPrimaryPartnerLinkItems: canonicalItems.filter(
+        (item) => !item.partnerLink,
+      ).length,
+      missingPriceItems: canonicalItems.filter((item) => item.price === null)
+        .length,
+      itemsWithImage: canonicalItems.filter((item) => item.image.hasImage)
+        .length,
     },
     canonicalRules: {
       automatic: "same normalized title",
@@ -229,7 +244,11 @@ async function main() {
     draftItems,
   };
 
-  await writeFile(CANONICAL_OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+  await writeFile(
+    CANONICAL_OUTPUT_PATH,
+    `${JSON.stringify(output, null, 2)}\n`,
+    "utf8",
+  );
 
   console.log(`Wrote ${CANONICAL_OUTPUT_PATH}`);
   console.log(JSON.stringify(output.summary, null, 2));

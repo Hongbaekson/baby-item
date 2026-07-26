@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { titleMatch } from "./lib/offer-policy.mjs";
 
 const APP_DATA_PATH = path.join("src", "data", "items.json");
 const DEFAULT_OUTPUT_PATH = path.join("data", "price-candidates.naver.json");
@@ -15,24 +16,31 @@ const SAFE_HTTP_UPGRADE_HOSTS = new Set([
   "shopping.phinf.naver.net",
   "smartstore.naver.com",
 ]);
-const STOPWORDS = new Set([
-  "현재",
-  "품절",
-  "단품",
-  "정품",
-  "공식",
-  "전용",
-  "세트",
-  "개",
-  "용",
-]);
-
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
-const outputPath = getArgValue("--output") ?? process.env.PRICE_CANDIDATE_OUTPUT ?? DEFAULT_OUTPUT_PATH;
-const display = clampNumber(getArgNumber("--display", Number(process.env.NAVER_PRICE_DISPLAY) || DEFAULT_DISPLAY), 1, 100);
-const limit = getArgNumber("--limit", Number(process.env.PRICE_SYNC_LIMIT) || 0);
-const delayMs = Math.max(0, getArgNumber("--delay-ms", Number(process.env.NAVER_PRICE_DELAY_MS) || DEFAULT_DELAY_MS));
+const outputPath =
+  getArgValue("--output") ??
+  process.env.PRICE_CANDIDATE_OUTPUT ??
+  DEFAULT_OUTPUT_PATH;
+const display = clampNumber(
+  getArgNumber(
+    "--display",
+    Number(process.env.NAVER_PRICE_DISPLAY) || DEFAULT_DISPLAY,
+  ),
+  1,
+  100,
+);
+const limit = getArgNumber(
+  "--limit",
+  Number(process.env.PRICE_SYNC_LIMIT) || 0,
+);
+const delayMs = Math.max(
+  0,
+  getArgNumber(
+    "--delay-ms",
+    Number(process.env.NAVER_PRICE_DELAY_MS) || DEFAULT_DELAY_MS,
+  ),
+);
 
 function getArgValue(name) {
   const prefix = `${name}=`;
@@ -85,45 +93,8 @@ function normalizeText(value) {
     .trim();
 }
 
-function significantTokens(value) {
-  return normalizeText(value)
-    .split(" ")
-    .map((token) => token.trim())
-    .filter((token) => token.length >= 2 && !STOPWORDS.has(token));
-}
-
 function matchConfidence(itemTitle, candidate) {
-  const tokens = significantTokens(itemTitle);
-  const candidateText = normalizeText(
-    [
-      candidate.title,
-      candidate.brand,
-      candidate.maker,
-      candidate.mallName,
-      candidate.category1,
-      candidate.category2,
-      candidate.category3,
-      candidate.category4,
-    ].join(" "),
-  );
-
-  if (tokens.length === 0 || candidateText.length === 0) {
-    return "low";
-  }
-
-  const matched = tokens.filter((token) => candidateText.includes(token));
-  const coverage = matched.length / tokens.length;
-  const hasDistinctiveToken = matched.some((token) => token.length >= 3 || /[0-9]/.test(token));
-
-  if (coverage === 1 && hasDistinctiveToken) {
-    return "high";
-  }
-
-  if (coverage >= 0.6 && hasDistinctiveToken) {
-    return "medium";
-  }
-
-  return "low";
+  return titleMatch(itemTitle, stripHtml(candidate.title)).confidence;
 }
 
 function normalizeUrl(value) {
@@ -162,7 +133,9 @@ function normalizeOffer(item, rawOffer, syncedAt) {
     shippingFee: null,
     totalPrice: null,
     inStock: activeProduct,
-    stockStatus: activeProduct ? "listed_by_naver_search" : "not_active_product_type",
+    stockStatus: activeProduct
+      ? "listed_by_naver_search"
+      : "not_active_product_type",
     source: "naver-shopping-search-api",
     syncedAt,
     matchConfidence: matchConfidence(item.title, rawOffer),
@@ -170,7 +143,12 @@ function normalizeOffer(item, rawOffer, syncedAt) {
     productId: String(rawOffer.productId ?? ""),
     brand: stripHtml(rawOffer.brand),
     maker: stripHtml(rawOffer.maker),
-    categoryPath: [rawOffer.category1, rawOffer.category2, rawOffer.category3, rawOffer.category4]
+    categoryPath: [
+      rawOffer.category1,
+      rawOffer.category2,
+      rawOffer.category3,
+      rawOffer.category4,
+    ]
       .map(stripHtml)
       .filter(Boolean),
     note: "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
@@ -200,7 +178,9 @@ async function fetchNaverOffers(item, clientId, clientSecret) {
 
   if (!response.ok) {
     const body = await response.text();
-    throw new Error(`Naver shopping API failed for ${item.id}: ${response.status} ${body}`);
+    throw new Error(
+      `Naver shopping API failed for ${item.id}: ${response.status} ${body}`,
+    );
   }
 
   const payload = await response.json();
@@ -211,7 +191,9 @@ async function fetchNaverOffers(item, clientId, clientSecret) {
     title: item.title,
     query,
     syncedAt,
-    offers: (payload.items ?? []).map((offer) => normalizeOffer(item, offer, syncedAt)),
+    offers: (payload.items ?? []).map((offer) =>
+      normalizeOffer(item, offer, syncedAt),
+    ),
   };
 }
 
@@ -227,7 +209,11 @@ async function main() {
           outputPath,
           display,
           itemCount: items.length,
-          queries: items.map((item) => ({ itemId: item.id, title: item.title, query: normalizeText(item.title) })),
+          queries: items.map((item) => ({
+            itemId: item.id,
+            title: item.title,
+            query: normalizeText(item.title),
+          })),
         },
         null,
         2,
@@ -268,7 +254,10 @@ async function main() {
       {
         outputPath,
         items: candidateItems.length,
-        offers: candidateItems.reduce((sum, item) => sum + item.offers.length, 0),
+        offers: candidateItems.reduce(
+          (sum, item) => sum + item.offers.length,
+          0,
+        ),
         note: "Naver Search API candidates need shipping fee and stock verification before strict auto-apply.",
       },
       null,

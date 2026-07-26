@@ -1,31 +1,40 @@
 import crypto from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { titleMatch } from "./lib/offer-policy.mjs";
 
 const APP_DATA_PATH = path.join("src", "data", "items.json");
 const DEFAULT_OUTPUT_PATH = path.join("data", "price-candidates.coupang.json");
 const DEFAULT_API_HOST = "api-gateway.coupang.com";
-const DEFAULT_SEARCH_PATH = "/v2/providers/affiliate_open_api/apis/openapi/v1/products/search";
+const DEFAULT_SEARCH_PATH =
+  "/v2/providers/affiliate_open_api/apis/openapi/v1/products/search";
 const DEFAULT_DISPLAY = 10;
 const DEFAULT_DELAY_MS = 180;
-const STOPWORDS = new Set([
-  "현재",
-  "품절",
-  "단품",
-  "정품",
-  "공식",
-  "전용",
-  "세트",
-  "개",
-  "용",
-]);
-
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
-const outputPath = getArgValue("--output") ?? process.env.PRICE_CANDIDATE_OUTPUT ?? DEFAULT_OUTPUT_PATH;
-const display = clampNumber(getArgNumber("--display", Number(process.env.COUPANG_PRICE_DISPLAY) || DEFAULT_DISPLAY), 1, 100);
-const limit = getArgNumber("--limit", Number(process.env.PRICE_SYNC_LIMIT) || 0);
-const delayMs = Math.max(0, getArgNumber("--delay-ms", Number(process.env.COUPANG_PRICE_DELAY_MS) || DEFAULT_DELAY_MS));
+const outputPath =
+  getArgValue("--output") ??
+  process.env.PRICE_CANDIDATE_OUTPUT ??
+  DEFAULT_OUTPUT_PATH;
+const display = clampNumber(
+  getArgNumber(
+    "--display",
+    Number(process.env.COUPANG_PRICE_DISPLAY) || DEFAULT_DISPLAY,
+  ),
+  1,
+  100,
+);
+const limit = getArgNumber(
+  "--limit",
+  Number(process.env.PRICE_SYNC_LIMIT) || 0,
+);
+const delayMs = Math.max(
+  0,
+  getArgNumber(
+    "--delay-ms",
+    Number(process.env.COUPANG_PRICE_DELAY_MS) || DEFAULT_DELAY_MS,
+  ),
+);
 
 function getArgValue(name) {
   const prefix = `${name}=`;
@@ -78,47 +87,13 @@ function normalizeText(value) {
     .trim();
 }
 
-function significantTokens(value) {
-  return normalizeText(value)
-    .split(" ")
-    .map((token) => token.trim())
-    .filter((token) => token.length >= 2 && !STOPWORDS.has(token));
-}
-
 function matchConfidence(itemTitle, candidate) {
-  const tokens = significantTokens(itemTitle);
-  const candidateText = normalizeText(
-    [
-      candidate.title,
-      candidate.productName,
-      candidate.brand,
-      candidate.maker,
-      candidate.mallName,
-      candidate.categoryName,
-      candidate.category1,
-      candidate.category2,
-      candidate.category3,
-      candidate.category4,
-    ].join(" "),
-  );
-
-  if (tokens.length === 0 || candidateText.length === 0) {
-    return "low";
-  }
-
-  const matched = tokens.filter((token) => candidateText.includes(token));
-  const coverage = matched.length / tokens.length;
-  const hasDistinctiveToken = matched.some((token) => token.length >= 3 || /[0-9]/.test(token));
-
-  if (coverage === 1 && hasDistinctiveToken) {
-    return "high";
-  }
-
-  if (coverage >= 0.6 && hasDistinctiveToken) {
-    return "medium";
-  }
-
-  return "low";
+  const candidateTitle =
+    candidate.productName ??
+    candidate.displayProductName ??
+    candidate.sellerProductName ??
+    candidate.title;
+  return titleMatch(itemTitle, stripHtml(candidateTitle)).confidence;
 }
 
 function toNumber(value) {
@@ -132,7 +107,9 @@ function toNumber(value) {
 }
 
 function firstValue(...values) {
-  return values.find((value) => value !== null && value !== undefined && value !== "");
+  return values.find(
+    (value) => value !== null && value !== undefined && value !== "",
+  );
 }
 
 function normalizeUrl(value) {
@@ -146,7 +123,10 @@ function normalizeUrl(value) {
     const url = new URL(raw.startsWith("//") ? `https:${raw}` : raw);
     const host = url.hostname.replace(/^www\./, "").toLowerCase();
 
-    if (url.protocol === "http:" && (host.endsWith("coupang.com") || host.endsWith("coupangcdn.com"))) {
+    if (
+      url.protocol === "http:" &&
+      (host.endsWith("coupang.com") || host.endsWith("coupangcdn.com"))
+    ) {
       url.protocol = "https:";
     }
 
@@ -165,7 +145,9 @@ function createEndpointUrl(query) {
     DEFAULT_SEARCH_PATH;
   const endpoint = pathOrUrl.startsWith("https://")
     ? new URL(pathOrUrl)
-    : new URL(`https://${host}${pathOrUrl.startsWith("/") ? "" : "/"}${pathOrUrl}`);
+    : new URL(
+        `https://${host}${pathOrUrl.startsWith("/") ? "" : "/"}${pathOrUrl}`,
+      );
 
   endpoint.searchParams.set("keyword", query);
   endpoint.searchParams.set("limit", String(display));
@@ -195,7 +177,10 @@ function createAuthorization(method, endpoint, accessKey, secretKey) {
   const date = signedDate();
   const queryString = endpoint.searchParams.toString();
   const message = `${date}${method}${endpoint.pathname}${queryString}`;
-  const signature = crypto.createHmac("sha256", secretKey).update(message).digest("hex");
+  const signature = crypto
+    .createHmac("sha256", secretKey)
+    .update(message)
+    .digest("hex");
 
   return `CEA algorithm=HmacSHA256, access-key=${accessKey}, signed-date=${date}, signature=${signature}`;
 }
@@ -209,10 +194,22 @@ function extractOfferNodes(payload) {
       return false;
     }
 
-    const hasName = Boolean(value.productName ?? value.displayProductName ?? value.sellerProductName ?? value.title);
-    const hasPrice = Boolean(value.productPrice ?? value.salePrice ?? value.price ?? value.finalPrice);
-    const hasUrl = Boolean(value.productUrl ?? value.url ?? value.link ?? value.landingUrl);
-    const hasStockSignal = value.isOutOfStock !== undefined || value.inStock !== undefined || value.maximumBuyCount !== undefined;
+    const hasName = Boolean(
+      value.productName ??
+      value.displayProductName ??
+      value.sellerProductName ??
+      value.title,
+    );
+    const hasPrice = Boolean(
+      value.productPrice ?? value.salePrice ?? value.price ?? value.finalPrice,
+    );
+    const hasUrl = Boolean(
+      value.productUrl ?? value.url ?? value.link ?? value.landingUrl,
+    );
+    const hasStockSignal =
+      value.isOutOfStock !== undefined ||
+      value.inStock !== undefined ||
+      value.maximumBuyCount !== undefined;
 
     return hasName && (hasPrice || hasUrl || hasStockSignal);
   }
@@ -261,21 +258,30 @@ function extractOfferNodes(payload) {
 
 function getShippingFee(rawOffer, price) {
   const explicitShipping = toNumber(
-    firstValue(rawOffer.shippingFee, rawOffer.deliveryFee, rawOffer.deliveryCharge, rawOffer.shipping),
+    firstValue(
+      rawOffer.shippingFee,
+      rawOffer.deliveryFee,
+      rawOffer.deliveryCharge,
+      rawOffer.shipping,
+    ),
   );
 
   if (explicitShipping !== null) {
     return explicitShipping;
   }
 
-  const deliveryChargeType = String(rawOffer.deliveryChargeType ?? "").toUpperCase();
+  const deliveryChargeType = String(
+    rawOffer.deliveryChargeType ?? "",
+  ).toUpperCase();
   const freeShipOverAmount = toNumber(rawOffer.freeShipOverAmount);
 
   if (
     rawOffer.isFreeShipping === true ||
     rawOffer.freeShipping === true ||
     deliveryChargeType === "FREE" ||
-    (freeShipOverAmount !== null && price !== null && price >= freeShipOverAmount)
+    (freeShipOverAmount !== null &&
+      price !== null &&
+      price >= freeShipOverAmount)
   ) {
     return 0;
   }
@@ -284,19 +290,33 @@ function getShippingFee(rawOffer, price) {
 }
 
 function isInStock(rawOffer, price, url) {
-  if (rawOffer.isOutOfStock === true || rawOffer.soldOut === true || rawOffer.inStock === false) {
+  if (
+    rawOffer.isOutOfStock === true ||
+    rawOffer.soldOut === true ||
+    rawOffer.inStock === false
+  ) {
     return false;
   }
 
   const quantity = toNumber(
-    firstValue(rawOffer.maximumBuyCount, rawOffer.stockQuantity, rawOffer.quantity, rawOffer.inventoryQuantity),
+    firstValue(
+      rawOffer.maximumBuyCount,
+      rawOffer.stockQuantity,
+      rawOffer.quantity,
+      rawOffer.inventoryQuantity,
+    ),
   );
 
   if (quantity === 0) {
     return false;
   }
 
-  if (rawOffer.isOutOfStock === false || rawOffer.inStock === true || quantity === null || quantity > 0) {
+  if (
+    rawOffer.isOutOfStock === false ||
+    rawOffer.inStock === true ||
+    quantity === null ||
+    quantity > 0
+  ) {
     const statusText = normalizeText(
       [
         rawOffer.status,
@@ -306,13 +326,27 @@ function isInStock(rawOffer, price, url) {
         rawOffer.displayStatus,
       ].join(" "),
     );
-    const unavailable = ["품절", "판매중지", "상품삭제", "삭제", "종료", "반려", "soldout", "unavailable", "out of stock"];
+    const unavailable = [
+      "품절",
+      "판매중지",
+      "상품삭제",
+      "삭제",
+      "종료",
+      "반려",
+      "soldout",
+      "unavailable",
+      "out of stock",
+    ];
 
     if (unavailable.some((token) => statusText.includes(token))) {
       return false;
     }
 
-    if (rawOffer.isOutOfStock === false || rawOffer.inStock === true || quantity > 0) {
+    if (
+      rawOffer.isOutOfStock === false ||
+      rawOffer.inStock === true ||
+      quantity > 0
+    ) {
       return true;
     }
 
@@ -324,23 +358,51 @@ function isInStock(rawOffer, price, url) {
 
 function normalizeOffer(item, rawOffer, syncedAt) {
   const productName = stripHtml(
-    firstValue(rawOffer.productName, rawOffer.displayProductName, rawOffer.sellerProductName, rawOffer.title),
+    firstValue(
+      rawOffer.productName,
+      rawOffer.displayProductName,
+      rawOffer.sellerProductName,
+      rawOffer.title,
+    ),
   );
   const url = normalizeUrl(
-    firstValue(rawOffer.productUrl, rawOffer.url, rawOffer.link, rawOffer.landingUrl, rawOffer.mobileUrl),
+    firstValue(
+      rawOffer.productUrl,
+      rawOffer.url,
+      rawOffer.link,
+      rawOffer.landingUrl,
+      rawOffer.mobileUrl,
+    ),
   );
   const imageUrl = normalizeUrl(
-    firstValue(rawOffer.productImage, rawOffer.imageUrl, rawOffer.image, rawOffer.thumbnail, rawOffer.cdnPath),
+    firstValue(
+      rawOffer.productImage,
+      rawOffer.imageUrl,
+      rawOffer.image,
+      rawOffer.thumbnail,
+      rawOffer.cdnPath,
+    ),
   );
-  const price = toNumber(firstValue(rawOffer.productPrice, rawOffer.salePrice, rawOffer.price, rawOffer.finalPrice));
+  const price = toNumber(
+    firstValue(
+      rawOffer.productPrice,
+      rawOffer.salePrice,
+      rawOffer.price,
+      rawOffer.finalPrice,
+    ),
+  );
   const shippingFee = getShippingFee(rawOffer, price);
-  const totalPrice = price === null || shippingFee === null ? null : price + shippingFee;
+  const totalPrice =
+    price === null || shippingFee === null ? null : price + shippingFee;
 
   return {
     url,
     imageUrl,
     platform: "coupang",
-    mallName: stripHtml(firstValue(rawOffer.mallName, rawOffer.vendorName, rawOffer.sellerName)) || "쿠팡",
+    mallName:
+      stripHtml(
+        firstValue(rawOffer.mallName, rawOffer.vendorName, rawOffer.sellerName),
+      ) || "쿠팡",
     price,
     shippingFee,
     totalPrice,
@@ -357,10 +419,22 @@ function normalizeOffer(item, rawOffer, syncedAt) {
       mallName: "쿠팡",
     }),
     productName,
-    productId: String(firstValue(rawOffer.productId, rawOffer.vendorItemId, rawOffer.sellerProductId) ?? ""),
+    productId: String(
+      firstValue(
+        rawOffer.productId,
+        rawOffer.vendorItemId,
+        rawOffer.sellerProductId,
+      ) ?? "",
+    ),
     brand: stripHtml(rawOffer.brand),
     maker: stripHtml(rawOffer.maker),
-    categoryPath: [rawOffer.categoryName, rawOffer.category1, rawOffer.category2, rawOffer.category3, rawOffer.category4]
+    categoryPath: [
+      rawOffer.categoryName,
+      rawOffer.category1,
+      rawOffer.category2,
+      rawOffer.category3,
+      rawOffer.category4,
+    ]
       .map(stripHtml)
       .filter(Boolean),
     note:
@@ -374,7 +448,12 @@ function normalizeOffer(item, rawOffer, syncedAt) {
 async function fetchCoupangOffers(item, accessKey, secretKey) {
   const query = normalizeText(item.title);
   const endpoint = createEndpointUrl(query);
-  const authorization = createAuthorization("GET", endpoint, accessKey, secretKey);
+  const authorization = createAuthorization(
+    "GET",
+    endpoint,
+    accessKey,
+    secretKey,
+  );
   const response = await fetch(endpoint, {
     headers: {
       Authorization: authorization,
@@ -384,7 +463,9 @@ async function fetchCoupangOffers(item, accessKey, secretKey) {
 
   if (!response.ok) {
     const body = await response.text();
-    throw new Error(`Coupang API failed for ${item.id}: ${response.status} ${body}`);
+    throw new Error(
+      `Coupang API failed for ${item.id}: ${response.status} ${body}`,
+    );
   }
 
   const payload = await response.json();
@@ -395,7 +476,9 @@ async function fetchCoupangOffers(item, accessKey, secretKey) {
     title: item.title,
     query,
     syncedAt,
-    offers: extractOfferNodes(payload).map((offer) => normalizeOffer(item, offer, syncedAt)),
+    offers: extractOfferNodes(payload).map((offer) =>
+      normalizeOffer(item, offer, syncedAt),
+    ),
   };
 }
 
@@ -414,7 +497,11 @@ async function main() {
           endpointHost: endpoint.hostname,
           endpointPath: endpoint.pathname,
           itemCount: items.length,
-          queries: items.map((item) => ({ itemId: item.id, title: item.title, query: normalizeText(item.title) })),
+          queries: items.map((item) => ({
+            itemId: item.id,
+            title: item.title,
+            query: normalizeText(item.title),
+          })),
         },
         null,
         2,
@@ -456,7 +543,10 @@ async function main() {
       {
         outputPath,
         items: candidateItems.length,
-        offers: candidateItems.reduce((sum, item) => sum + item.offers.length, 0),
+        offers: candidateItems.reduce(
+          (sum, item) => sum + item.offers.length,
+          0,
+        ),
       },
       null,
       2,

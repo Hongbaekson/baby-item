@@ -1,8 +1,9 @@
 services:
   edge:
-    image: caddy:2-alpine
+    image: caddy:2-alpine@sha256:5f5c8640aae01df9654968d946d8f1a56c497f1dd5c5cda4cf95ab7c14d58648
     container_name: euni-baby-items-edge
     restart: unless-stopped
+    read_only: true
     depends_on:
       euni-baby-items:
         condition: service_healthy
@@ -14,6 +15,8 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
       - caddy_config:/config
+    tmpfs:
+      - /tmp
     security_opt:
       - no-new-privileges:true
     cap_drop:

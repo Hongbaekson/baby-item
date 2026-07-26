@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { isShortUrl } from "./lib/offer-policy.mjs";
 
 const QUALITY_INPUT_PATH = path.join("data", "items.quality.json");
 const APP_DATA_OUTPUT_PATH = path.join("src", "data", "items.json");
@@ -85,34 +86,65 @@ function getImagePath(item) {
     return remoteImageUrl;
   }
 
-  const placeholderSlug = CATEGORY_PLACEHOLDERS.get(item.primaryCategory) ?? "default";
+  const placeholderSlug =
+    CATEGORY_PLACEHOLDERS.get(item.primaryCategory) ?? "default";
 
   return `/images/placeholders/${placeholderSlug}.svg`;
 }
 
-function toAppItem(item) {
+function shouldPreserveDirectLink(item, previousItem) {
+  return Boolean(
+    previousItem?.partnerLink &&
+    !isShortUrl(previousItem.partnerLink) &&
+    isShortUrl(item.partnerLink),
+  );
+}
+
+function toAppItem(item, previousItem) {
+  const preserveDirectLink = shouldPreserveDirectLink(item, previousItem);
+  const partnerLink = preserveDirectLink
+    ? previousItem.partnerLink
+    : item.partnerLink;
+  const partnerLinks = item.partnerLinks.map((link) => {
+    const previousLink = previousItem?.partnerLinks?.find(
+      (candidate) => candidate.sourceItemId === link.sourceItemId,
+    );
+
+    return {
+      url:
+        previousLink && !isShortUrl(previousLink.url) && isShortUrl(link.url)
+          ? previousLink.url
+          : link.url,
+      category: link.category,
+      sourceItemId: link.sourceItemId,
+    };
+  });
+  const syncedImage =
+    previousItem?.imageSource?.imageUrl ??
+    previousItem?.bestOffer?.imageUrl ??
+    null;
+
   return {
     id: item.id,
     title: item.title,
     categories: item.categories,
     primaryCategory: item.primaryCategory,
-    partnerLink: item.partnerLink,
-    partnerLinks: item.partnerLinks.map((link) => ({
-      url: link.url,
-      category: link.category,
-      sourceItemId: link.sourceItemId,
-    })),
+    partnerLink,
+    partnerLinks,
     price: item.price,
     priceText: item.priceText,
-    displayPrice: getDisplayPrice(item),
+    displayPrice: previousItem?.displayPrice ?? getDisplayPrice(item),
     referencePrice: getReferencePrice(item),
-    bestOffer: null,
-    purchaseOffers: [],
-    offerStatus: DEFAULT_OFFER_STATUS,
+    bestOffer: previousItem?.bestOffer ?? null,
+    purchaseOffers: previousItem?.purchaseOffers ?? [],
+    candidateOffers: previousItem?.candidateOffers ?? [],
+    rejectedOffers: previousItem?.rejectedOffers ?? [],
+    offerStatus: previousItem?.offerStatus ?? { ...DEFAULT_OFFER_STATUS },
     memo: item.memo,
-    imagePath: getImagePath(item),
-    hasOriginalImage: Boolean(getRemoteImageUrl(item)),
-    placeholderKey: CATEGORY_PLACEHOLDERS.get(item.primaryCategory) ?? "default",
+    imagePath: syncedImage ?? getImagePath(item),
+    hasOriginalImage: Boolean(syncedImage ?? getRemoteImageUrl(item)),
+    placeholderKey:
+      CATEGORY_PLACEHOLDERS.get(item.primaryCategory) ?? "default",
     dataQuality: {
       status: item.dataQuality.status,
       errorCount: item.dataQuality.errorCount,
@@ -124,6 +156,9 @@ function toAppItem(item) {
       })),
     },
     sourceItemIds: item.sourceItemIds,
+    ...(previousItem?.imageSource
+      ? { imageSource: previousItem.imageSource }
+      : {}),
   };
 }
 
@@ -137,7 +172,8 @@ function sortItems(items) {
     };
 
     const qualityDiff =
-      (qualityRank[a.dataQuality.status] ?? 99) - (qualityRank[b.dataQuality.status] ?? 99);
+      (qualityRank[a.dataQuality.status] ?? 99) -
+      (qualityRank[b.dataQuality.status] ?? 99);
 
     if (qualityDiff !== 0) {
       return qualityDiff;
@@ -156,10 +192,16 @@ function buildCategoryStats(items, categories) {
 
 async function main() {
   const quality = JSON.parse(await readFile(QUALITY_INPUT_PATH, "utf8"));
+  const previousAppData = await readFile(APP_DATA_OUTPUT_PATH, "utf8")
+    .then((content) => JSON.parse(content))
+    .catch(() => ({ items: [] }));
+  const previousItemsById = new Map(
+    (previousAppData.items ?? []).map((item) => [item.id, item]),
+  );
   const appItems = sortItems(
     quality.items
       .filter((item) => item.publicationStatus === "published")
-      .map(toAppItem),
+      .map((item) => toAppItem(item, previousItemsById.get(item.id))),
   );
   const categoryStats = buildCategoryStats(appItems, quality.categories);
 
@@ -171,21 +213,53 @@ async function main() {
     summary: {
       totalItems: appItems.length,
       categories: categoryStats,
-      readyItems: appItems.filter((item) => item.dataQuality.status === "ready").length,
+      readyItems: appItems.filter((item) => item.dataQuality.status === "ready")
+        .length,
       usableWithWarningsItems: appItems.filter(
         (item) => item.dataQuality.status === "usable_with_warnings",
       ).length,
-      needsReviewItems: appItems.filter((item) => item.dataQuality.status === "needs_review")
-        .length,
+      needsReviewItems: appItems.filter(
+        (item) => item.dataQuality.status === "needs_review",
+      ).length,
     },
     items: appItems,
+    ...(previousAppData.offerPolicy
+      ? { offerPolicy: previousAppData.offerPolicy }
+      : {}),
+    ...(previousAppData.offerSync
+      ? { offerSync: previousAppData.offerSync }
+      : {}),
+    ...(previousAppData.imageSync
+      ? { imageSync: previousAppData.imageSync }
+      : {}),
   };
 
   const report = {
     generatedAt: new Date().toISOString(),
     source: QUALITY_INPUT_PATH,
-    summary: quality.summary.dataQuality,
-    needsReviewItems: quality.items
+    summary: {
+      ...appData.summary,
+      draftItems: quality.draftItems.length,
+      issueCounts: appItems.reduce((counts, item) => {
+        for (const issue of item.dataQuality.issues) {
+          counts[issue.code] = (counts[issue.code] ?? 0) + 1;
+        }
+        return counts;
+      }, {}),
+      verifiedOffers: appItems.reduce(
+        (sum, item) => sum + (item.purchaseOffers?.length ?? 0),
+        0,
+      ),
+      candidateOffers: appItems.reduce(
+        (sum, item) => sum + (item.candidateOffers?.length ?? 0),
+        0,
+      ),
+      rejectedOffers: appItems.reduce(
+        (sum, item) => sum + (item.rejectedOffers?.length ?? 0),
+        0,
+      ),
+    },
+    needsReviewItems: appItems
       .filter((item) => item.dataQuality.status === "needs_review")
       .map((item) => ({
         id: item.id,
@@ -202,8 +276,16 @@ async function main() {
   };
 
   await mkdir(path.dirname(APP_DATA_OUTPUT_PATH), { recursive: true });
-  await writeFile(APP_DATA_OUTPUT_PATH, `${JSON.stringify(appData, null, 2)}\n`, "utf8");
-  await writeFile(DATA_REPORT_OUTPUT_PATH, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  await writeFile(
+    APP_DATA_OUTPUT_PATH,
+    `${JSON.stringify(appData, null, 2)}\n`,
+    "utf8",
+  );
+  await writeFile(
+    DATA_REPORT_OUTPUT_PATH,
+    `${JSON.stringify(report, null, 2)}\n`,
+    "utf8",
+  );
 
   console.log(`Wrote ${APP_DATA_OUTPUT_PATH}`);
   console.log(`Wrote ${DATA_REPORT_OUTPUT_PATH}`);

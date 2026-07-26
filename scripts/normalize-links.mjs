@@ -42,7 +42,9 @@ function normalizeExternalUrl(rawUrl) {
     if (parsedUrl.protocol === "http:") {
       parsedUrl.protocol = "https:";
       url = parsedUrl.toString();
-      reason = reason ? `${reason},upgraded_http_to_https` : "upgraded_http_to_https";
+      reason = reason
+        ? `${reason},upgraded_http_to_https`
+        : "upgraded_http_to_https";
     }
 
     return {
@@ -178,7 +180,11 @@ async function main() {
     items,
   };
 
-  await writeFile(LINKS_OUTPUT_PATH, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+  await writeFile(
+    LINKS_OUTPUT_PATH,
+    `${JSON.stringify(output, null, 2)}\n`,
+    "utf8",
+  );
 
   console.log(`Wrote ${LINKS_OUTPUT_PATH}`);
   console.log(JSON.stringify(output.summary.linkNormalization, null, 2));

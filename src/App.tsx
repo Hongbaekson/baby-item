@@ -1,590 +1,509 @@
 import {
   Baby,
   Check,
-  ExternalLink,
+  ChevronDown,
   Heart,
-  Info,
   Moon,
   Search,
-  ShoppingBag,
   Sparkles,
   Sun,
   X,
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
-import appData from "./data/items.json";
-
-type QualityStatus = "ready" | "usable_with_warnings" | "needs_review" | "draft";
-type OfferStatusState = "not_synced" | "available" | "no_available_offer" | "needs_review";
-type ThemeMode = "light" | "dark";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ProductCard } from "./components/ProductCard";
+import { ProductModal } from "./components/ProductModal";
+import { categoryLabel, categoryTone } from "./lib/categories";
+import { data } from "./lib/app-data";
+import { isDailyPick } from "./lib/products";
+import type { Item, ThemeMode } from "./types";
 
 const THEME_STORAGE_KEY = "euni-baby-items-theme";
+const FAVORITES_STORAGE_KEY = "euni-baby-items-favorites";
+const PAGE_SIZE = 9;
+const ALL_CATEGORY = "전체";
+const validCategories = new Set([
+  ALL_CATEGORY,
+  ...data.summary.categories.map((category) => category.name),
+]);
 
-type BestOffer = {
-  url: string;
-  imageUrl?: string | null;
-  platform?: string;
-  mallName: string;
-  price: number;
-  shippingFee: number | null;
-  totalPrice: number | null;
-  priceBasis?: "shipping_included" | "listed_price";
-  inStock: true;
-  source: string;
-  syncedAt: string;
-  matchConfidence: "high" | "medium";
-  productName: string | null;
-  note: string | null;
-};
+type SortMode = "recommended" | "name" | "reference-price";
 
-type PurchaseOffer = BestOffer;
+function currentUrl() {
+  return new URL(window.location.href);
+}
 
-type Item = {
-  id: string;
-  title: string;
-  categories: string[];
-  primaryCategory: string;
-  partnerLink: string;
-  partnerLinks: Array<{
-    url: string;
-    category: string;
-    sourceItemId: string;
-  }>;
-  price: number | null;
-  displayPrice: string;
-  referencePrice: string | null;
-  bestOffer: BestOffer | null;
-  purchaseOffers: PurchaseOffer[];
-  offerStatus: {
-    state: OfferStatusState;
-    syncedAt: string | null;
-    checkedOffers: number;
-  };
-  memo: string;
-  imagePath: string;
-  hasOriginalImage: boolean;
-  dataQuality: {
-    status: QualityStatus;
-    errorCount: number;
-    warningCount: number;
-    issues: Array<{
-      code: string;
-      severity: "error" | "warning" | "info";
-      message: string;
-    }>;
-  };
-};
+function initialQuery() {
+  return typeof window === "undefined"
+    ? ""
+    : (currentUrl().searchParams.get("q") ?? "");
+}
 
-const data = appData as {
-  site: {
-    name: string;
-  };
-  summary: {
-    totalItems: number;
-    categories: Array<{ name: string; count: number }>;
-    readyItems: number;
-    usableWithWarningsItems: number;
-    needsReviewItems: number;
-  };
-  items: Item[];
-};
+function initialCategory() {
+  if (typeof window === "undefined") return ALL_CATEGORY;
+  const value = currentUrl().searchParams.get("category") ?? ALL_CATEGORY;
+  return validCategories.has(value) ? value : ALL_CATEGORY;
+}
+
+function initialSort(): SortMode {
+  if (typeof window === "undefined") return "recommended";
+  const value = currentUrl().searchParams.get("sort");
+  return value === "name" || value === "reference-price"
+    ? value
+    : "recommended";
+}
+
+function initialFavoriteOnly() {
+  return (
+    typeof window !== "undefined" &&
+    currentUrl().searchParams.get("favorites") === "1"
+  );
+}
+
+function initialSelectedItem() {
+  if (typeof window === "undefined") return null;
+  const itemId = currentUrl().searchParams.get("item");
+  return data.items.find((item) => item.id === itemId) ?? null;
+}
 
 function getInitialTheme(): ThemeMode {
   if (typeof window === "undefined") return "light";
 
   try {
     const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
-
-    if (storedTheme === "dark" || storedTheme === "light") {
-      return storedTheme;
-    }
+    if (storedTheme === "dark" || storedTheme === "light") return storedTheme;
   } catch {
-    return "light";
+    // System preference remains available when storage is blocked.
   }
 
-  return window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
-const CATEGORY_TONES = [
-  "mint",
-  "sky",
-  "peach",
-  "butter",
-  "lavender",
-  "rose",
-  "leaf",
-  "coral",
-  "blueberry",
-  "cream",
-] as const;
+function getInitialFavorites() {
+  if (typeof window === "undefined") return new Set<string>();
 
-function categoryTone(category: string) {
-  const index = data.summary.categories.findIndex((item) => item.name === category);
-
-  return CATEGORY_TONES[Math.max(index, 0) % CATEGORY_TONES.length];
-}
-
-const CATEGORY_PLACEHOLDERS = new Map([
-  ["👶300일간 매일 사용한 육아템 정리", "top-used"],
-  ["💤수면 아이템", "sleep"],
-  ["😎외출 아이템", "outing"],
-  ["🍼젖병 열탕 소독", "sterilize"],
-  ["🍼수유아이템", "feeding"],
-  ["💩신생아 배앓이 꿀템", "colic"],
-  ["🎉놀이아이템", "play"],
-  ["💩배변아이템", "diaper"],
-  ["👶거실매트", "mat"],
-  ["🧑‍🍼손목&허리보호대(양육자를 위한 아이템)", "caregiver"],
-]);
-
-function placeholderFor(category: string) {
-  return `/images/placeholders/${CATEGORY_PLACEHOLDERS.get(category) ?? "default"}.svg`;
-}
-
-function qualityLabel(status: QualityStatus) {
-  if (status === "ready") return "확인 완료";
-  if (status === "needs_review") return "정보 확인 중";
-  if (status === "draft") return "비공개";
-
-  return "일부 확인 필요";
-}
-
-function issueLabel(code: string) {
-  if (code === "missing_price") return "기록가 없음";
-  if (code === "missing_image") return "기본 이미지 사용";
-  if (code === "suspicious_unrelated_memo") return "메모 확인 필요";
-  if (code === "normalized_partner_link") return "링크 보정됨";
-
-  return "정보 확인 필요";
-}
-
-function linkHost(url: string) {
   try {
-    return new URL(url).hostname.replace(/^www\./, "");
+    const stored = JSON.parse(
+      window.localStorage.getItem(FAVORITES_STORAGE_KEY) ?? "[]",
+    );
+    return new Set<string>(
+      Array.isArray(stored)
+        ? stored.filter((value): value is string => typeof value === "string")
+        : [],
+    );
   } catch {
-    return "외부 링크";
+    return new Set<string>();
   }
 }
 
-function isShortLink(url: string) {
-  return ["bit.ly", "naver.me", "tinyurl.com", "t.co", "goo.gl"].includes(linkHost(url));
-}
+function updateUrl(
+  values: {
+    query: string;
+    category: string;
+    sort: SortMode;
+    favoriteOnly: boolean;
+  },
+  mode: "replace" | "push" = "replace",
+  itemId?: string | null,
+) {
+  const url = currentUrl();
+  const trimmedQuery = values.query.trim();
 
-function primaryPurchaseUrl(item: Item) {
-  return item.bestOffer?.url ?? item.partnerLink;
-}
+  if (trimmedQuery) url.searchParams.set("q", trimmedQuery);
+  else url.searchParams.delete("q");
+  if (values.category !== ALL_CATEGORY)
+    url.searchParams.set("category", values.category);
+  else url.searchParams.delete("category");
+  if (values.sort !== "recommended") url.searchParams.set("sort", values.sort);
+  else url.searchParams.delete("sort");
+  if (values.favoriteOnly) url.searchParams.set("favorites", "1");
+  else url.searchParams.delete("favorites");
 
-function hasUnavailableOfferStatus(item: Item) {
-  return item.offerStatus.state === "no_available_offer" && !item.bestOffer;
-}
+  if (itemId) url.searchParams.set("item", itemId);
+  else if (itemId === null) url.searchParams.delete("item");
 
-function productImageUrl(item: Item) {
-  return item.bestOffer?.imageUrl ?? item.imagePath;
-}
-
-function availablePurchaseOffers(item: Item) {
-  return (item.purchaseOffers ?? []).filter((offer) => offer.inStock === true);
-}
-
-function formatWon(value: number) {
-  return `${value.toLocaleString("ko-KR")}원`;
-}
-
-function offerPriceLabel(offer: PurchaseOffer) {
-  if (Number.isFinite(offer.totalPrice)) {
-    return formatWon(offer.totalPrice as number);
-  }
-
-  return `${formatWon(offer.price)}부터`;
-}
-
-function offerShippingLabel(offer: PurchaseOffer) {
-  if (offer.shippingFee === null || offer.totalPrice === null) {
-    return "배송비/품절 여부 구매처 확인";
-  }
-
-  if (offer.shippingFee > 0) {
-    return `배송비 ${formatWon(offer.shippingFee)} 포함`;
-  }
-
-  return "무료배송 또는 배송비 없음";
-}
-
-function platformLabel(platform: string | undefined, mallName: string) {
-  if (platform === "naver") return "네이버";
-  if (platform === "coupang") return "쿠팡";
-
-  return mallName;
-}
-
-function offerStatusLabel(item: Item) {
-  if (item.bestOffer) {
-    return `${item.bestOffer.mallName} · ${offerShippingLabel(item.bestOffer)} · 구매 가능 후보`;
-  }
-
-  if (item.offerStatus.state === "no_available_offer") {
-    return "최근 동기화에서 구매 가능 최저가 후보를 찾지 못했습니다.";
-  }
-
-  return null;
+  const state = itemId
+    ? { ...window.history.state, productModal: true }
+    : window.history.state;
+  window.history[mode === "push" ? "pushState" : "replaceState"](
+    state,
+    "",
+    url,
+  );
 }
 
 export function App() {
-  const [query, setQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState("전체");
-  const [selectedItem, setSelectedItem] = useState<Item | null>(null);
+  const [query, setQuery] = useState(initialQuery);
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
+  const [sort, setSort] = useState<SortMode>(initialSort);
+  const [favoriteOnly, setFavoriteOnly] = useState(initialFavoriteOnly);
+  const [selectedItem, setSelectedItem] = useState<Item | null>(
+    initialSelectedItem,
+  );
+  const [favoriteIds, setFavoriteIds] = useState(getInitialFavorites);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [theme, setTheme] = useState<ThemeMode>(getInitialTheme);
+  const resultHeadingRef = useRef<HTMLElement>(null);
   const nextTheme = theme === "dark" ? "light" : "dark";
+
+  const urlValues = useMemo(
+    () => ({ query, category: activeCategory, sort, favoriteOnly }),
+    [activeCategory, favoriteOnly, query, sort],
+  );
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
 
     try {
       window.localStorage.setItem(THEME_STORAGE_KEY, theme);
     } catch {
-      // Theme persistence is a convenience; the UI still works without storage access.
+      // Theme persistence is optional.
     }
   }, [theme]);
 
-  const filteredItems = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(
+        FAVORITES_STORAGE_KEY,
+        JSON.stringify([...favoriteIds]),
+      );
+    } catch {
+      // Favorite persistence is optional.
+    }
+  }, [favoriteIds]);
 
-    return data.items.filter((item) => {
+  useEffect(() => {
+    updateUrl(urlValues);
+  }, [urlValues]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const url = currentUrl();
+      const category = url.searchParams.get("category") ?? ALL_CATEGORY;
+      const sortValue = url.searchParams.get("sort");
+      setQuery(url.searchParams.get("q") ?? "");
+      setActiveCategory(
+        validCategories.has(category) ? category : ALL_CATEGORY,
+      );
+      setSort(
+        sortValue === "name" || sortValue === "reference-price"
+          ? sortValue
+          : "recommended",
+      );
+      setFavoriteOnly(url.searchParams.get("favorites") === "1");
+      setVisibleCount(PAGE_SIZE);
+      setSelectedItem(
+        data.items.find((item) => item.id === url.searchParams.get("item")) ??
+          null,
+      );
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const filteredItems = useMemo(() => {
+    const normalizedQuery = query.trim().toLocaleLowerCase("ko-KR");
+    const sourceIndexes = new Map(
+      data.items.map((item, index) => [item.id, index]),
+    );
+    const items = data.items.filter((item) => {
       const matchesCategory =
-        activeCategory === "전체" || item.categories.includes(activeCategory);
+        activeCategory === ALL_CATEGORY ||
+        item.categories.includes(activeCategory);
       const matchesQuery =
         !normalizedQuery ||
         [item.title, item.memo, item.categories.join(" ")]
           .join(" ")
-          .toLowerCase()
+          .toLocaleLowerCase("ko-KR")
           .includes(normalizedQuery);
-
-      return matchesCategory && matchesQuery;
+      return (
+        matchesCategory &&
+        matchesQuery &&
+        (!favoriteOnly || favoriteIds.has(item.id))
+      );
     });
-  }, [activeCategory, query]);
+
+    return items.sort((a, b) => {
+      if (sort === "name") return a.title.localeCompare(b.title, "ko");
+      if (sort === "reference-price") {
+        return (
+          (a.price ?? Number.POSITIVE_INFINITY) -
+            (b.price ?? Number.POSITIVE_INFINITY) ||
+          a.title.localeCompare(b.title, "ko")
+        );
+      }
+
+      return (
+        Number(isDailyPick(b)) - Number(isDailyPick(a)) ||
+        (sourceIndexes.get(a.id) ?? 0) - (sourceIndexes.get(b.id) ?? 0)
+      );
+    });
+  }, [activeCategory, favoriteIds, favoriteOnly, query, sort]);
+
+  const visibleItems = filteredItems.slice(0, visibleCount);
+
+  const openModal = useCallback(
+    (item: Item) => {
+      updateUrl(urlValues, "push", item.id);
+      setSelectedItem(item);
+    },
+    [urlValues],
+  );
+
+  const closeModal = useCallback(() => {
+    const url = currentUrl();
+    if (window.history.state?.productModal && url.searchParams.has("item")) {
+      setSelectedItem(null);
+      window.history.back();
+      return;
+    }
+
+    updateUrl(urlValues, "replace", null);
+    setSelectedItem(null);
+  }, [urlValues]);
+
+  const toggleFavorite = useCallback((itemId: string) => {
+    setFavoriteIds((current) => {
+      const next = new Set(current);
+      if (next.has(itemId)) next.delete(itemId);
+      else next.add(itemId);
+      return next;
+    });
+  }, []);
+
+  function selectCategory(category: string) {
+    setActiveCategory(category);
+    setVisibleCount(PAGE_SIZE);
+    requestAnimationFrame(() => {
+      resultHeadingRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
+
+  function resetFilters() {
+    setQuery("");
+    setActiveCategory(ALL_CATEGORY);
+    setFavoriteOnly(false);
+    setSort("recommended");
+    setVisibleCount(PAGE_SIZE);
+  }
 
   return (
     <div className="app-shell">
-      <header className="topbar">
-        <div className="brand-block">
-          <span className="brand-mark" aria-hidden="true">
-            <Baby size={24} />
-          </span>
-          <div>
-            <h1>{data.site.name}</h1>
-            <p>아빠가 직접 고르고 정리한 수유, 수면, 외출, 배변 육아템</p>
+      <a className="skip-link" href="#product-results">
+        제품 목록으로 바로가기
+      </a>
+      <div className="app-shell-content">
+        <header className="topbar">
+          <div className="brand-block">
+            <span className="brand-mark" aria-hidden="true">
+              <Baby size={24} />
+            </span>
+            <div>
+              <h1>{data.site.name}</h1>
+              <p>아빠가 직접 고르고 정리한 실사용 중심 육아템</p>
+            </div>
           </div>
-        </div>
-        <div className="topbar-actions">
-          <div className="summary-strip" aria-label="제품 요약">
-            <span>
-              <strong>{data.summary.totalItems}</strong>
-              제품
-            </span>
-            <span>
-              <strong>{data.summary.categories.length}</strong>
-              카테고리
-            </span>
-            <span>
-              <strong>{data.summary.needsReviewItems}</strong>
-              확인중
-            </span>
-          </div>
-          <button
-            type="button"
-            className="icon-button theme-toggle"
-            onClick={() => setTheme(nextTheme)}
-            aria-label={theme === "dark" ? "라이트 모드로 전환" : "다크 모드로 전환"}
-            aria-pressed={theme === "dark"}
-            title={theme === "dark" ? "라이트 모드" : "다크 모드"}
-          >
-            {theme === "dark" ? <Sun size={19} aria-hidden="true" /> : <Moon size={19} aria-hidden="true" />}
-          </button>
-        </div>
-      </header>
-
-      <main>
-        <section className="toolbar" aria-label="제품 검색과 카테고리 필터">
-          <label className="search-box">
-            <Search size={18} aria-hidden="true" />
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="제품명, 카테고리 검색"
-            />
-          </label>
-
-          <div className="category-row" aria-label="카테고리">
+          <div className="topbar-actions">
             <button
               type="button"
-              className={`category-chip all ${activeCategory === "전체" ? "active" : ""}`}
-              onClick={() => setActiveCategory("전체")}
+              className="favorite-filter-button"
+              onClick={() => {
+                setFavoriteOnly((value) => !value);
+                setVisibleCount(PAGE_SIZE);
+              }}
+              aria-pressed={favoriteOnly}
             >
-              {activeCategory === "전체" && <Check size={14} aria-hidden="true" />}
-              전체 {data.summary.totalItems}
+              <Heart
+                size={18}
+                aria-hidden="true"
+                fill={favoriteOnly ? "currentColor" : "none"}
+              />
+              내 찜 <strong>{favoriteIds.size}</strong>
             </button>
-            {data.summary.categories.map((category) => (
+            <button
+              type="button"
+              className="icon-button theme-toggle"
+              onClick={() => setTheme(nextTheme)}
+              aria-label={
+                theme === "dark" ? "라이트 모드로 전환" : "다크 모드로 전환"
+              }
+              aria-pressed={theme === "dark"}
+              title={theme === "dark" ? "라이트 모드" : "다크 모드"}
+            >
+              {theme === "dark" ? (
+                <Sun size={19} aria-hidden="true" />
+              ) : (
+                <Moon size={19} aria-hidden="true" />
+              )}
+            </button>
+          </div>
+        </header>
+
+        <main>
+          <section className="toolbar" aria-label="제품 검색과 카테고리 필터">
+            <label className="search-box">
+              <Search size={18} aria-hidden="true" />
+              <span className="sr-only">제품명 또는 카테고리 검색</span>
+              <input
+                type="search"
+                value={query}
+                onChange={(event) => {
+                  setQuery(event.target.value);
+                  setVisibleCount(PAGE_SIZE);
+                }}
+                placeholder="제품명, 카테고리 검색"
+                aria-label="제품명 또는 카테고리 검색"
+              />
+              {query && (
+                <button
+                  type="button"
+                  className="search-clear"
+                  onClick={() => {
+                    setQuery("");
+                    setVisibleCount(PAGE_SIZE);
+                  }}
+                  aria-label="검색어 지우기"
+                >
+                  <X size={17} aria-hidden="true" />
+                </button>
+              )}
+            </label>
+
+            <div className="category-scroller">
+              <div className="category-row" aria-label="카테고리 필터">
+                <button
+                  type="button"
+                  className={`category-chip all ${
+                    activeCategory === ALL_CATEGORY ? "active" : ""
+                  }`}
+                  onClick={() => selectCategory(ALL_CATEGORY)}
+                  aria-pressed={activeCategory === ALL_CATEGORY}
+                >
+                  {activeCategory === ALL_CATEGORY && (
+                    <Check size={14} aria-hidden="true" />
+                  )}
+                  전체 {data.summary.totalItems}
+                </button>
+                {data.summary.categories.map((category) => (
+                  <button
+                    type="button"
+                    key={category.name}
+                    className={`category-chip ${categoryTone(category.name)} ${
+                      activeCategory === category.name ? "active" : ""
+                    }`}
+                    onClick={() => selectCategory(category.name)}
+                    aria-pressed={activeCategory === category.name}
+                    title={category.name}
+                  >
+                    {activeCategory === category.name && (
+                      <Check size={14} aria-hidden="true" />
+                    )}
+                    {categoryLabel(category.name)} {category.count}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section
+            ref={resultHeadingRef}
+            id="product-results"
+            className="result-heading"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <div>
+              <p className="eyebrow">
+                <Sparkles size={15} aria-hidden="true" />
+                {favoriteOnly
+                  ? "내가 찜한 제품"
+                  : categoryLabel(activeCategory)}
+              </p>
+              <h2>{filteredItems.length}개의 육아템</h2>
+            </div>
+            <label className="sort-control">
+              <span>정렬</span>
+              <select
+                value={sort}
+                onChange={(event) => {
+                  setSort(event.target.value as SortMode);
+                  setVisibleCount(PAGE_SIZE);
+                }}
+                aria-label="제품 정렬"
+              >
+                <option value="recommended">추천순</option>
+                <option value="name">이름순</option>
+                <option value="reference-price">기록가 낮은순</option>
+              </select>
+              <ChevronDown size={16} aria-hidden="true" />
+            </label>
+          </section>
+
+          <section className="product-grid" aria-label="제품 목록">
+            {visibleItems.map((item) => (
+              <ProductCard
+                key={item.id}
+                item={item}
+                isFavorite={favoriteIds.has(item.id)}
+                onSelect={openModal}
+                onToggleFavorite={toggleFavorite}
+              />
+            ))}
+          </section>
+
+          {visibleCount < filteredItems.length && (
+            <div className="load-more-wrap">
               <button
                 type="button"
-                key={category.name}
-                className={`category-chip ${categoryTone(category.name)} ${
-                  activeCategory === category.name ? "active" : ""
-                }`}
-                onClick={() => setActiveCategory(category.name)}
+                className="load-more-button"
+                onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
               >
-                {activeCategory === category.name && <Check size={14} aria-hidden="true" />}
-                {category.name} {category.count}
+                육아템 더 보기
+                <span>
+                  {Math.min(PAGE_SIZE, filteredItems.length - visibleCount)}개
+                </span>
               </button>
-            ))}
-          </div>
-        </section>
-
-        <section className="result-heading" aria-live="polite">
-          <div>
-            <p className="eyebrow">
-              <Sparkles size={15} aria-hidden="true" />
-              {activeCategory}
-            </p>
-            <h2>{filteredItems.length}개의 육아템</h2>
-          </div>
-        </section>
-
-        <section className="product-grid" aria-label="제품 목록">
-          {filteredItems.map((item) => (
-            <ProductCard key={item.id} item={item} onSelect={setSelectedItem} />
-          ))}
-        </section>
-
-        {filteredItems.length === 0 && (
-          <section className="empty-state">
-            <Heart size={28} aria-hidden="true" />
-            <p>조건에 맞는 제품이 없습니다.</p>
-          </section>
-        )}
-      </main>
-
-      <footer className="site-footer">© 2026 손홍백. All rights reserved.</footer>
-
-      {selectedItem && <ProductModal item={selectedItem} onClose={() => setSelectedItem(null)} />}
-    </div>
-  );
-}
-
-function ProductCard({
-  item,
-  onSelect,
-}: {
-  item: Item;
-  onSelect: (item: Item) => void;
-}) {
-  const [imageSrc, setImageSrc] = useState(productImageUrl(item));
-  const warningIssues = item.dataQuality.issues.filter((issue) => issue.severity !== "info");
-  const purchaseUrl = primaryPurchaseUrl(item);
-  const statusLabel = offerStatusLabel(item);
-  const purchaseUnavailable = hasUnavailableOfferStatus(item);
-
-  return (
-    <article className={`product-card ${categoryTone(item.primaryCategory)}`}>
-      <button type="button" className="image-button" onClick={() => onSelect(item)}>
-        <img
-          src={imageSrc}
-          alt=""
-          loading="lazy"
-          onError={() => setImageSrc(placeholderFor(item.primaryCategory))}
-        />
-      </button>
-      <div className="card-content">
-        <div className="card-meta">
-          <span className={`quality-badge ${item.dataQuality.status}`}>
-            {qualityLabel(item.dataQuality.status)}
-          </span>
-          <span className="price-pill">{item.displayPrice}</span>
-        </div>
-        <h3>{item.title}</h3>
-        <div className="category-list" aria-label="포함 카테고리">
-          {item.categories.slice(0, 3).map((category) => (
-            <span key={category}>{category}</span>
-          ))}
-        </div>
-        {item.memo && <p className="memo">{item.memo}</p>}
-        {item.referencePrice && (
-          <p className="reference-price">{item.referencePrice} · 실제 결제가는 구매처 기준</p>
-        )}
-        {statusLabel && <p className="best-offer-note">{statusLabel}</p>}
-        {warningIssues.length > 0 && (
-          <div className="issue-row" aria-label="확인 상태">
-            {warningIssues.slice(0, 2).map((issue) => (
-              <span key={issue.code}>{issueLabel(issue.code)}</span>
-            ))}
-          </div>
-        )}
-        <div className="card-actions">
-          <button type="button" className="secondary-button" onClick={() => onSelect(item)}>
-            <Info size={16} aria-hidden="true" />
-            자세히
-          </button>
-          {purchaseUnavailable ? (
-            <span className="primary-link disabled" aria-disabled="true">
-              <ShoppingBag size={16} aria-hidden="true" />
-              링크 확인중
-            </span>
-          ) : (
-            <a
-              className="primary-link"
-              href={purchaseUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${item.title} 구매 링크 열기, ${linkHost(purchaseUrl)}`}
-            >
-              <ShoppingBag size={16} aria-hidden="true" />
-              {item.bestOffer ? "최저가 보기" : "보러가기"}
-            </a>
-          )}
-        </div>
-        <p className="link-domain">
-          {purchaseUnavailable ? "구매 가능 링크 없음" : `보러가기 도메인: ${linkHost(purchaseUrl)}`}
-        </p>
-      </div>
-    </article>
-  );
-}
-
-function ProductModal({ item, onClose }: { item: Item; onClose: () => void }) {
-  const [imageSrc, setImageSrc] = useState(productImageUrl(item));
-  const purchaseUrl = primaryPurchaseUrl(item);
-  const statusLabel = offerStatusLabel(item);
-  const purchaseOffers = availablePurchaseOffers(item);
-  const showFallbackLinks =
-    purchaseOffers.length === 0 && item.offerStatus.state !== "no_available_offer";
-
-  return (
-    <div className="modal-backdrop" role="presentation" onMouseDown={onClose}>
-      <section
-        className="product-modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title"
-        onMouseDown={(event) => event.stopPropagation()}
-      >
-        <button type="button" className="icon-button close-button" onClick={onClose} aria-label="닫기">
-          <X size={20} aria-hidden="true" />
-        </button>
-        <div className="modal-media">
-          <img
-            src={imageSrc}
-            alt=""
-            onError={() => setImageSrc(placeholderFor(item.primaryCategory))}
-          />
-        </div>
-        <div className="modal-body">
-          <span className={`quality-badge ${item.dataQuality.status}`}>
-            {qualityLabel(item.dataQuality.status)}
-          </span>
-          <h2 id="modal-title">{item.title}</h2>
-          <p className="modal-price">{item.displayPrice}</p>
-          {item.referencePrice && (
-            <p className="modal-reference-price">
-              {item.referencePrice} · 실제 결제가는 구매처에서 확인하세요.
-            </p>
-          )}
-          {item.bestOffer && (
-            <a
-              className="best-offer-panel"
-              href={purchaseUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ShoppingBag size={18} aria-hidden="true" />
-              <span>
-                <strong>최저가 후보로 이동</strong>
-                <span>{statusLabel}</span>
-              </span>
-              <ExternalLink size={16} aria-hidden="true" />
-            </a>
-          )}
-          {!item.bestOffer && item.offerStatus.state === "no_available_offer" && (
-            <p className="best-offer-empty">{statusLabel}</p>
-          )}
-          <div className="category-list expanded">
-            {item.categories.map((category) => (
-              <span key={category}>{category}</span>
-            ))}
-          </div>
-          {item.memo && <p className="modal-memo">{item.memo}</p>}
-          {item.dataQuality.issues.length > 0 && (
-            <div className="quality-panel">
-              <h3>확인 상태</h3>
-              {item.dataQuality.issues.map((issue, index) => (
-                <p key={`${issue.code}-${index}`}>{issueLabel(issue.code)}</p>
-              ))}
             </div>
           )}
-          <p className="link-security-note">
-            외부 구매 링크는 새 창으로 열립니다. 결제 전 연결 도메인, 최신가, 품절 여부를
-            확인하세요.
+
+          {filteredItems.length === 0 && (
+            <section className="empty-state" aria-live="polite">
+              <Heart size={28} aria-hidden="true" />
+              <p>
+                {favoriteOnly
+                  ? "아직 찜한 제품이 없습니다."
+                  : "조건에 맞는 제품이 없습니다."}
+              </p>
+              <button type="button" onClick={resetFilters}>
+                전체 제품 보기
+              </button>
+            </section>
+          )}
+        </main>
+
+        <footer className="site-footer">
+          <p>© 2026 손홍백. All rights reserved.</p>
+          <p className="affiliate-notice">
+            일부 구매 링크는 제휴 링크일 수 있으며, 구매 시 운영자에게 수수료가
+            지급될 수 있습니다. 구매 가격에는 영향을 주지 않습니다.
           </p>
-          {purchaseOffers.length > 0 && (
-            <section className="purchase-offers" aria-label="구매처별 가격">
-              <h3>구매처별 가격</h3>
-              <div className="offer-list">
-                {purchaseOffers.map((offer, index) => (
-                  <a
-                    key={`${offer.url}-${index}`}
-                    className={index === 0 ? "best" : ""}
-                    href={offer.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="offer-main">
-                      <strong>{platformLabel(offer.platform, offer.mallName)}</strong>
-                      <span>
-                        {offer.mallName} · {linkHost(offer.url)}
-                      </span>
-                      {offer.productName && <span>{offer.productName}</span>}
-                    </span>
-                    <span className="offer-price">
-                      <strong>{offerPriceLabel(offer)}</strong>
-                      <span>{offerShippingLabel(offer)}</span>
-                    </span>
-                    {index === 0 && <em>최저가</em>}
-                    <ExternalLink size={16} aria-hidden="true" />
-                  </a>
-                ))}
-              </div>
-            </section>
-          )}
-          {item.offerStatus.state === "no_available_offer" && purchaseOffers.length === 0 && (
-            <p className="best-offer-empty">
-              확인된 구매 가능 링크가 없어 현재는 구매 링크를 숨겼습니다.
-            </p>
-          )}
-          {showFallbackLinks && (
-            <section className="purchase-offers fallback" aria-label="기본 구매 링크">
-              <h3>기본 구매 링크</h3>
-              <div className="link-list">
-                {item.partnerLinks.map((link, index) => (
-                  <a
-                    key={`${link.sourceItemId}-${link.url}`}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink size={16} aria-hidden="true" />
-                    <span className="link-copy">
-                      <strong>구매 링크 {index + 1}</strong>
-                      <span>
-                        {linkHost(link.url)} · 가격 확인 필요 · {link.category}
-                      </span>
-                    </span>
-                    {isShortLink(link.url) && <em>단축 링크</em>}
-                  </a>
-                ))}
-              </div>
-            </section>
-          )}
-        </div>
-      </section>
+        </footer>
+      </div>
+
+      {selectedItem && (
+        <ProductModal
+          item={selectedItem}
+          isFavorite={favoriteIds.has(selectedItem.id)}
+          onClose={closeModal}
+          onToggleFavorite={toggleFavorite}
+        />
+      )}
     </div>
   );
 }

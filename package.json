@@ -3,21 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=24 <27"
+  },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc -b && vite build",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"scripts/**/*.mjs\" \"tests/**/*.mjs\" \"e2e/**/*.ts\" \"*.config.{ts,js}\" \"config/*.json\" package.json",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\" \"scripts/**/*.mjs\" \"tests/**/*.mjs\" \"e2e/**/*.ts\" \"*.config.{ts,js}\" \"config/*.json\" package.json",
+    "test": "node --test tests/*.test.mjs && vitest run",
+    "test:e2e": "playwright test",
     "preview": "vite preview --host 0.0.0.0",
     "serve:dist": "node ./scripts/serve-dist.mjs",
     "data:check": "node ./scripts/check-app-data.mjs",
+    "data:report": "node ./scripts/build-data-quality-report.mjs",
     "price:check-readiness": "node ./scripts/check-price-sync-readiness.mjs",
+    "price:check-strict": "node ./scripts/check-price-sync-readiness.mjs --strict",
     "price:collect-coupang": "node ./scripts/collect-coupang-price-candidates.mjs",
     "price:collect-naver": "node ./scripts/collect-naver-price-candidates.mjs",
     "price:apply-images": "node ./scripts/apply-candidate-images.mjs",
-    "price:apply-live-offers": "node ./scripts/apply-offer-candidates.mjs data/price-candidates.naver.json --allow-unknown-shipping --max-offers=4",
+    "price:apply-live-offers": "node ./scripts/apply-offer-candidates.mjs data/price-candidates.naver.json --include-reference-candidates --max-offers=4",
     "price:merge-candidates": "node ./scripts/merge-price-candidates.mjs",
     "price:apply-candidates": "node ./scripts/apply-offer-candidates.mjs",
     "data:extract": "node ./scripts/extract-notion-items.mjs",
-    "data:normalize": "node ./scripts/normalize-items.mjs && node ./scripts/build-canonical-items.mjs && node ./scripts/normalize-links.mjs && node ./scripts/apply-data-quality.mjs && node ./scripts/build-app-data.mjs"
+    "data:normalize": "node ./scripts/normalize-items.mjs && node ./scripts/build-canonical-items.mjs && node ./scripts/normalize-links.mjs && node ./scripts/apply-data-quality.mjs && node ./scripts/build-app-data.mjs && node ./scripts/build-data-quality-report.mjs",
+    "data:migrate-offer-policy": "node ./scripts/migrate-offer-policy.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
@@ -27,8 +38,22 @@
     "vite": "^6.0.5"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.62.0",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "typescript": "^5.7.2"
+    "eslint": "^10.8.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.9.6",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.65.0",
+    "vitest": "^4.1.10"
   }
 }

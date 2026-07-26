@@ -1,170 +1,252 @@
-import { existsSync, readFileSync } from 'node:fs';
-import path from 'node:path';
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
+import {
+  isFreshOffer,
+  isShortUrl,
+  isTrustedImageUrl,
+  isTrustedPurchaseUrl,
+  isVerifiedOffer,
+  offerAgeHours,
+  offerPolicy,
+} from "./lib/offer-policy.mjs";
 
-const appDataPath = path.join('src', 'data', 'items.json');
-const allowedRemoteImageHosts = new Set([
-  'image1.coupangcdn.com',
-  'image2.coupangcdn.com',
-  'image3.coupangcdn.com',
-  'image4.coupangcdn.com',
-  'image5.coupangcdn.com',
-  'image6.coupangcdn.com',
-  'image7.coupangcdn.com',
-  'image8.coupangcdn.com',
-  'image9.coupangcdn.com',
-  'image10.coupangcdn.com',
-  'thumbnail.coupangcdn.com',
-  'shopping.phinf.naver.net',
-  'shopping-phinf.pstatic.net',
-  'shop-phinf.pstatic.net',
-]);
-const data = JSON.parse(readFileSync(appDataPath, 'utf8'));
+const APP_DATA_PATH = path.join("src", "data", "items.json");
+const data = JSON.parse(readFileSync(APP_DATA_PATH, "utf8"));
 const items = data.items ?? [];
 const failures = [];
 const warnings = [];
-const shortUrlHosts = new Set(['bit.ly', 'naver.me', 'tinyurl.com', 't.co', 'goo.gl']);
-const offerStatusStates = new Set(['not_synced', 'available', 'no_available_offer', 'needs_review']);
+const OFFER_STATES = new Set([
+  "not_synced",
+  "available",
+  "stale",
+  "candidates_available",
+  "no_available_offer",
+  "needs_review",
+]);
 
-function remoteImageHost(url) {
-  try {
-    return new URL(url).hostname.replace(/^www\./, '').toLowerCase();
-  } catch {
-    return '';
+function fail(message) {
+  failures.push(message);
+}
+
+function warn(message) {
+  warnings.push(message);
+}
+
+function validateTimestamp(value, label) {
+  if (!value || !Number.isFinite(Date.parse(String(value)))) {
+    fail(`${label} has invalid syncedAt: ${value}`);
   }
 }
 
-function isAllowedRemoteImageHost(host) {
-  return allowedRemoteImageHosts.has(host);
-}
-
-function validateOffer(item, offer, label) {
-  if (!offer.url?.startsWith('https://')) {
-    failures.push(`${label} must use https: ${item.title} -> ${offer.url}`);
+function validateBaseOffer(item, offer, label) {
+  if (!isTrustedPurchaseUrl(offer.url)) {
+    fail(`${label} has untrusted purchase URL: ${item.title} -> ${offer.url}`);
   }
 
   if (offer.inStock !== true) {
-    failures.push(`${label} must be in stock: ${item.title}`);
+    fail(`${label} must be in stock: ${item.title}`);
   }
 
   if (!Number.isFinite(offer.price) || offer.price <= 0) {
-    failures.push(`${label} has bad price: ${item.title}`);
+    fail(`${label} has bad price: ${item.title}`);
   }
 
-  const hasKnownTotalPrice = Number.isFinite(offer.totalPrice) && offer.totalPrice > 0;
-  const hasUnknownShipping =
-    offer.priceBasis === 'listed_price' && offer.shippingFee === null && offer.totalPrice === null;
-
-  if (!hasKnownTotalPrice && !hasUnknownShipping) {
-    failures.push(`${label} has bad total price: ${item.title}`);
+  if (offer.imageUrl && !isTrustedImageUrl(offer.imageUrl)) {
+    fail(
+      `${label} image host is not trusted: ${item.title} -> ${offer.imageUrl}`,
+    );
   }
 
-  if (hasKnownTotalPrice && offer.totalPrice < offer.price) {
-    failures.push(`${label} total price is lower than base price: ${item.title}`);
+  validateTimestamp(offer.syncedAt, `${label} for ${item.title}`);
+}
+
+function validateVerifiedOffer(item, offer, label) {
+  validateBaseOffer(item, offer, label);
+  if (!isVerifiedOffer(offer)) {
+    fail(`${label} is not a shipping-included verified offer: ${item.title}`);
   }
+}
 
-  if (
-    !hasUnknownShipping &&
-    (!Number.isFinite(offer.shippingFee) || offer.shippingFee < 0)
-  ) {
-    failures.push(`${label} has bad shipping fee: ${item.title}`);
+function validateCandidateOffer(item, offer, label) {
+  validateBaseOffer(item, offer, label);
+  if (isVerifiedOffer(offer)) {
+    fail(`${label} belongs in purchaseOffers: ${item.title}`);
   }
-
-  if (!offer.syncedAt) {
-    failures.push(`${label} missing syncedAt: ${item.title}`);
+  if ((offer.reviewFlags?.length ?? 0) > 0) {
+    fail(`${label} contains review flags: ${item.title}`);
   }
+}
 
-  if (offer.imageUrl) {
-    if (!offer.imageUrl.startsWith('https://')) {
-      failures.push(`${label} image must use https: ${item.title}`);
-    }
-
-    const host = remoteImageHost(offer.imageUrl);
-
-    if (!isAllowedRemoteImageHost(host)) {
-      failures.push(`${label} image host is not allowed: ${item.title} -> ${host}`);
-    }
+function validateRejectedOffer(item, offer, label) {
+  if ((offer.reviewFlags?.length ?? 0) === 0) {
+    fail(`${label} must explain why it was rejected: ${item.title}`);
   }
+  validateTimestamp(offer.syncedAt, `${label} for ${item.title}`);
+}
+
+function expectedOfferState(item) {
+  if (item.bestOffer) {
+    return isFreshOffer(item.bestOffer) ? "available" : "stale";
+  }
+  if ((item.candidateOffers?.length ?? 0) > 0) return "candidates_available";
+  if ((item.rejectedOffers?.length ?? 0) > 0) return "needs_review";
+  if (item.offerStatus?.state === "not_synced") return "not_synced";
+  return "no_available_offer";
 }
 
 const ids = new Set();
 for (const item of items) {
-  if (!item.id) {
-    failures.push(`missing id: ${item.title || '(untitled)'}`);
-  }
-
-  if (ids.has(item.id)) {
-    failures.push(`duplicate id: ${item.id}`);
-  }
+  if (!item.id) fail(`missing id: ${item.title || "(untitled)"}`);
+  if (ids.has(item.id)) fail(`duplicate id: ${item.id}`);
   ids.add(item.id);
 
-  if (!item.title?.trim()) {
-    failures.push(`missing title: ${item.id}`);
+  if (!item.title?.trim()) fail(`missing title: ${item.id}`);
+  if (!Array.isArray(item.categories) || item.categories.length === 0) {
+    fail(`missing categories: ${item.title}`);
+  }
+  if (!item.categories?.includes(item.primaryCategory)) {
+    fail(`primary category is not included in categories: ${item.title}`);
+  }
+  if (!OFFER_STATES.has(item.offerStatus?.state)) {
+    fail(`bad offer status: ${item.title} -> ${item.offerStatus?.state}`);
   }
 
-  if (!offerStatusStates.has(item.offerStatus?.state)) {
-    failures.push(`bad offer status: ${item.title}`);
+  for (const [label, value] of [
+    ["purchaseOffers", item.purchaseOffers],
+    ["candidateOffers", item.candidateOffers],
+    ["rejectedOffers", item.rejectedOffers],
+    ["partnerLinks", item.partnerLinks],
+  ]) {
+    if (!Array.isArray(value)) fail(`${label} must be an array: ${item.title}`);
   }
 
-  if (!Array.isArray(item.purchaseOffers)) {
-    failures.push(`purchase offers must be an array: ${item.title}`);
+  if (item.imagePath?.startsWith("/images/")) {
+    const localImagePath = path.join(
+      "public",
+      item.imagePath.replace(/^\//, ""),
+    );
+    if (!existsSync(localImagePath))
+      fail(`missing image file: ${item.imagePath}`);
+  } else if (!isTrustedImageUrl(item.imagePath)) {
+    fail(`bad or untrusted image path: ${item.title} -> ${item.imagePath}`);
   }
 
-  if (item.imagePath?.startsWith('/images/')) {
-    const localImagePath = path.join('public', item.imagePath.replace(/^\//, ''));
-    if (!existsSync(localImagePath)) {
-      failures.push(`missing image file: ${item.imagePath}`);
-    }
-  } else if (item.imagePath?.startsWith('https://')) {
-    const host = remoteImageHost(item.imagePath);
-
-    if (!isAllowedRemoteImageHost(host)) {
-      failures.push(`remote image host is not allowed: ${item.title} -> ${host}`);
-    }
-  } else {
-    failures.push(`bad image path: ${item.title}`);
+  if (!isTrustedPurchaseUrl(item.partnerLink)) {
+    fail(
+      `untrusted primary partner link: ${item.title} -> ${item.partnerLink}`,
+    );
   }
 
   for (const link of item.partnerLinks ?? []) {
-    if (!link.url?.startsWith('https://')) {
-      failures.push(`partner link must use https: ${item.title} -> ${link.url}`);
-      continue;
+    if (!isTrustedPurchaseUrl(link.url)) {
+      fail(`untrusted partner link: ${item.title} -> ${link.url}`);
     }
-
-    const host = new URL(link.url).hostname.toLowerCase();
-    if (shortUrlHosts.has(host)) {
-      warnings.push(`short partner link: ${item.title} -> ${link.url}`);
+    if (isShortUrl(link.url)) {
+      fail(`short partner link must be resolved: ${item.title} -> ${link.url}`);
     }
   }
 
   if (item.bestOffer) {
-    validateOffer(item, item.bestOffer, 'best offer');
+    validateVerifiedOffer(item, item.bestOffer, "bestOffer");
+    if (item.bestOffer.url !== item.purchaseOffers?.[0]?.url) {
+      fail(`bestOffer must equal purchaseOffers[0]: ${item.title}`);
+    }
   }
 
   for (const [index, offer] of (item.purchaseOffers ?? []).entries()) {
-    validateOffer(item, offer, `purchase offer ${index + 1}`);
+    validateVerifiedOffer(item, offer, `purchaseOffers[${index}]`);
+  }
+  for (const [index, offer] of (item.candidateOffers ?? []).entries()) {
+    validateCandidateOffer(item, offer, `candidateOffers[${index}]`);
+  }
+  for (const [index, offer] of (item.rejectedOffers ?? []).entries()) {
+    validateRejectedOffer(item, offer, `rejectedOffers[${index}]`);
   }
 
-  if ((item.purchaseOffers ?? []).length > 4) {
-    failures.push(`too many purchase offers: ${item.title}`);
+  for (const key of ["purchaseOffers", "candidateOffers"]) {
+    if ((item[key]?.length ?? 0) > offerPolicy.maxOffersPerItem) {
+      fail(`too many ${key}: ${item.title}`);
+    }
+  }
+
+  const allVisibleUrls = [
+    ...(item.purchaseOffers ?? []),
+    ...(item.candidateOffers ?? []),
+  ].map((offer) => offer.url);
+  if (new Set(allVisibleUrls).size !== allVisibleUrls.length) {
+    fail(`duplicate visible offer URL: ${item.title}`);
+  }
+
+  const expectedState = expectedOfferState(item);
+  if (item.offerStatus?.state !== expectedState) {
+    fail(
+      `offer state mismatch: ${item.title} -> ${item.offerStatus?.state}, expected ${expectedState}`,
+    );
+  }
+
+  if (item.bestOffer && !isFreshOffer(item.bestOffer)) {
+    warn(
+      `stale verified offer (${Math.floor(offerAgeHours(item.bestOffer) / 24)}d): ${item.title}`,
+    );
+  }
+}
+
+const computedSummary = {
+  totalItems: items.length,
+  readyItems: items.filter((item) => item.dataQuality?.status === "ready")
+    .length,
+  usableWithWarningsItems: items.filter(
+    (item) => item.dataQuality?.status === "usable_with_warnings",
+  ).length,
+  needsReviewItems: items.filter(
+    (item) => item.dataQuality?.status === "needs_review",
+  ).length,
+};
+
+for (const [key, expected] of Object.entries(computedSummary)) {
+  if (data.summary?.[key] !== expected) {
+    fail(`summary.${key} is ${data.summary?.[key]}, expected ${expected}`);
+  }
+}
+
+for (const category of data.summary?.categories ?? []) {
+  const expectedCount = items.filter((item) =>
+    item.categories.includes(category.name),
+  ).length;
+  if (category.count !== expectedCount) {
+    fail(
+      `category count mismatch: ${category.name} -> ${category.count}, expected ${expectedCount}`,
+    );
   }
 }
 
 const summary = {
   items: items.length,
-  ready: items.filter((item) => item.dataQuality?.status === 'ready').length,
-  usableWithWarnings: items.filter((item) => item.dataQuality?.status === 'usable_with_warnings').length,
-  needsReview: items.filter((item) => item.dataQuality?.status === 'needs_review').length,
-  shortLinks: warnings.length,
-  bestOffers: items.filter((item) => item.bestOffer).length,
-  purchaseOffers: items.reduce((sum, item) => sum + (item.purchaseOffers?.length ?? 0), 0),
-  offerSynced: items.filter((item) => item.offerStatus?.state === 'available').length,
-  noAvailableOffer: items.filter((item) => item.offerStatus?.state === 'no_available_offer').length,
+  ready: computedSummary.readyItems,
+  usableWithWarnings: computedSummary.usableWithWarningsItems,
+  needsReview: computedSummary.needsReviewItems,
+  verifiedOffers: items.reduce(
+    (sum, item) => sum + (item.purchaseOffers?.length ?? 0),
+    0,
+  ),
+  candidateOffers: items.reduce(
+    (sum, item) => sum + (item.candidateOffers?.length ?? 0),
+    0,
+  ),
+  rejectedOffers: items.reduce(
+    (sum, item) => sum + (item.rejectedOffers?.length ?? 0),
+    0,
+  ),
+  staleItems: items.filter((item) => item.offerStatus?.state === "stale")
+    .length,
+  warnings: warnings.length,
   failures: failures.length,
 };
 
 console.log(JSON.stringify(summary, null, 2));
+for (const message of warnings) console.warn(message);
 
 if (failures.length > 0) {
-  console.error(failures.join('\n'));
+  console.error(failures.join("\n"));
   process.exit(1);
 }
