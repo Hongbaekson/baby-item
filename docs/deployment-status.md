@@ -2,7 +2,7 @@
 
 업데이트: 2026-07-26 (KST)
 
-> 2026-07-26에 가격 신뢰성, UI·접근성, CI, 컨테이너 변경을 OCI에 배포하고 운영 URL에서 재확인했다.
+> 2026-07-26에 가격 신뢰성, 운영 신뢰 UX, UI·접근성, CI, 컨테이너 변경을 OCI에 배포하고 운영 URL에서 재확인했다.
 
 ## 배포 정보
 
@@ -12,14 +12,30 @@
 - 인스턴스 표시 이름: `prod-app-01`
 - VM private IP: `10.0.0.44`
 - 배포 경로: `/opt/stacks/euni-baby-items`
-- 배포 Git commit: `4bbd795`
-- 직전 롤백 commit: `7a6e997`
+- 배포 Git commit: `e3287fa`
+- 직전 롤백 commit: `4bbd795`
 - 컨테이너명: `euni-baby-items-web`
 - Edge 컨테이너명: `euni-baby-items-edge`
 - 공개 주소: `https://sonleeeun.site`
 - 내부 앱 포트 설정: `APP_PORT=1206` (`127.0.0.1` loopback 바인딩)
 
-## 2026-07-26 배포 결과
+## 2026-07-26 운영 신뢰 UX 배포 결과
+
+- 운영 신뢰 UX 커밋 `e3287fa` 배포 완료
+- 새 웹 이미지: `sha256:e01770ce65d69fa5bec2afb4a7b9868a2812025def4e372253513494b85c70e1`
+- 직전 웹 이미지: `sha256:9637c85303688079f97dd107273a781101172e8bb63c3a3b32a74e5c4c2a3428`
+- GitHub CI run `30193924727`의 전체 검증, build artifact와 attestation 성공
+- 화면을 여는 시점의 30일 만료 기준으로 판매 근거 `29/31`, 숨김 `2개`, 최근 점검일을 표시
+- 검증 원칙, 상품 고정 URL 공유, 상품별 사전 작성 오류 신고, 브라우저 저장·제휴 안내 반영
+- 매시 17분과 47분에 공개 URL·HTTPS 전환·보안 헤더·정적 자산을 확인하는 `production-smoke.yml` 추가
+- 운영 smoke 16개 검사 통과: HTTP 200, HTTPS 308 전환, 보안 헤더, 새 JS/CSS, robots, sitemap, 필수 이미지
+- 데스크톱과 390×844 모바일 브라우저에서 새 운영 UI와 상품 상세 확인
+- 운영 브라우저에서 쿠팡 anchor 0개, 쿠팡 resource 요청 0개, 콘솔 오류 0개
+- `euni-baby-items-web` 상태 `running`, healthcheck `healthy`
+- 외부 `https://sonleeeun.site/`와 `https://issuebot.sonleeeun.site/healthz` 모두 HTTP 200
+- 운영 Caddyfile의 기존 IssueBot 라우팅 수정과 백업 파일을 그대로 보존
+
+## 2026-07-26 구매 링크 검증 배포 결과
 
 - 구매 링크 검증 최종 커밋 `4bbd795` 배포 완료
 - 새 웹 이미지: `sha256:9637c85303688079f97dd107273a781101172e8bb63c3a3b32a74e5c4c2a3428`
