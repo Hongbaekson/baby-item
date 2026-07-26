@@ -7,7 +7,7 @@ const dataReport = JSON.parse(
   await readFile("data/data-quality-report.json", "utf8"),
 );
 const html = await readFile("index.html", "utf8");
-const appSource = await readFile("src/App.tsx", "utf8");
+const footerSource = await readFile("src/components/SiteFooter.tsx", "utf8");
 
 test("summary and category counts are derived from the item collection", () => {
   assert.equal(appData.summary.totalItems, appData.items.length);
@@ -116,6 +116,6 @@ test("public metadata uses the production HTTPS origin", () => {
 });
 
 test("the application includes an affiliate disclosure", () => {
-  assert.match(appSource, /제휴 링크/);
-  assert.match(appSource, /구매 가격에는 영향을 주지 않습니다/);
+  assert.match(footerSource, /제휴 링크/);
+  assert.match(footerSource, /구매 가격에는 영향을 주지 않습니다/);
 });

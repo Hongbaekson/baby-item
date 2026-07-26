@@ -12,6 +12,8 @@ import {
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ProductCard } from "./components/ProductCard";
 import { ProductModal } from "./components/ProductModal";
+import { ServiceStatus } from "./components/ServiceStatus";
+import { SiteFooter } from "./components/SiteFooter";
 import { categoryLabel, categoryTone } from "./lib/categories";
 import { data } from "./lib/app-data";
 import { isDailyPick } from "./lib/products";
@@ -346,6 +348,8 @@ export function App() {
         </header>
 
         <main>
+          <ServiceStatus />
+
           <section className="toolbar" aria-label="제품 검색과 카테고리 필터">
             <label className="search-box">
               <Search size={18} aria-hidden="true" />
@@ -487,13 +491,7 @@ export function App() {
           )}
         </main>
 
-        <footer className="site-footer">
-          <p>© 2026 손홍백. All rights reserved.</p>
-          <p className="affiliate-notice">
-            일부 구매 링크는 제휴 링크일 수 있으며, 구매 시 운영자에게 수수료가
-            지급될 수 있습니다. 구매 가격에는 영향을 주지 않습니다.
-          </p>
-        </footer>
+        <SiteFooter />
       </div>
 
       {selectedItem && (

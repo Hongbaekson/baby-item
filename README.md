@@ -22,7 +22,10 @@
 - 브라우저에 저장되는 찜 목록과 `내 찜`만 보기
 - 검색·카테고리·정렬·찜 필터를 URL에 보존하는 공유 가능한 화면
 - 상품 상세 URL과 브라우저 뒤로 가기로 닫히는 키보드 접근 가능 모달
+- 30일 판매 근거를 기준으로 계산한 운영 상태와 공개 검증 원칙
+- 상품별 고정 URL 공유, 사전 작성된 링크·상품 정보 오류 신고
 - 모바일 가로형 제품 카드와 검증된 판매 페이지만 여는 하단 고정 버튼
+- 회원가입 없이 찜·테마를 현재 브라우저에만 저장하는 개인정보 안내
 
 ## 로컬 실행
 
@@ -52,11 +55,12 @@ npm run lint
 npm test
 npm run build
 npm run test:e2e
+npm run monitor:production
 docker compose config
 docker build -t euni-baby-items:local .
 ```
 
-검증 범위에는 가격 정책 단위 테스트, 데이터 정합성, 검색·찜·더 보기·URL 상태, 키보드 모달 조작, 자동 접근성 검사, 데스크톱·모바일 반응형 검사가 포함됩니다.
+검증 범위에는 가격 정책 단위 테스트, 데이터 정합성, 검색·찜·더 보기·URL 상태, 키보드 모달 조작, 자동 접근성 검사, 데스크톱·모바일 반응형 검사가 포함됩니다. `monitor:production`은 운영 홈페이지와 정적 자산, HTTPS 전환, 보안 헤더, robots·sitemap, 필수 이미지를 실제 공개 주소에서 확인합니다.
 
 ## 가격 데이터 갱신
 
@@ -81,6 +85,8 @@ npm run data:check
 네이버 쇼핑 검색 API는 배송비와 결제 직전 재고를 제공하지 않으므로 결과를 `candidateOffers`로만 반영합니다. 공개 CTA도 오류가 잦은 직접 상품 URL 대신 정확한 상품명을 넣은 네이버 쇼핑 검색으로 연결합니다. 쿠팡 수집과 구매 링크는 사용하지 않습니다.
 
 매일 03:17 KST에 실행되는 `price-candidates.yml`은 GitHub Secrets의 `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`을 사용해 네이버 후보, 공식몰 실응답, 구매 링크 만료 여부를 검사한 검토용 artifact를 만듭니다. 가격을 자동 게시하거나 저장소에 커밋하지 않으므로, artifact 검토 후 승인된 데이터만 반영해야 합니다.
+
+`production-smoke.yml`은 매시 17분과 47분에 운영 URL의 응답, 핵심 정적 파일, HTTPS 전환, 보안 헤더를 확인합니다. 실패는 GitHub Actions 실행 결과로 남으며 같은 검사는 `npm run monitor:production`으로 수동 재현할 수 있습니다.
 
 자세한 정책은 `docs/price-sync.md`에 있습니다.
 

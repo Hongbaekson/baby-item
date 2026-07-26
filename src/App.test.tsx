@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import { App } from "./App";
 
 describe("App", () => {
@@ -19,6 +19,24 @@ describe("App", () => {
     expect(screen.getAllByRole("button", { name: /상세 보기$/ })).toHaveLength(
       18,
     );
+  });
+
+  it("shows the current operating status and verification policy", () => {
+    render(<App />);
+    const status = screen.getByRole("region", {
+      name: "판매 정보 운영 상태",
+    });
+    expect(
+      within(status).getByText("판매 근거 확인 29/31"),
+    ).toBeInTheDocument();
+    expect(
+      within(status).getByText(/최근 점검 2026\. 7\. 26\./),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        name: "가격보다 판매 페이지를 먼저 확인합니다",
+      }),
+    ).toBeInTheDocument();
   });
 
   it("filters products through the named search input", async () => {
@@ -97,6 +115,47 @@ describe("App", () => {
         /일부 구매 링크는 제휴 링크일 수 있으며/,
       ),
     ).toBeInTheDocument();
+    expect(
+      within(screen.getByRole("contentinfo")).getByText(
+        /찜 목록과 화면 테마는 현재 브라우저에만 저장/,
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("copies a stable product share URL and provides a prefilled report link", async () => {
+    const user = userEvent.setup();
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, "share", {
+      configurable: true,
+      value: undefined,
+    });
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: { writeText },
+    });
+    render(<App />);
+
+    await user.click(
+      screen.getByRole("button", {
+        name: "말랑하니 백색소음기 상세 보기",
+      }),
+    );
+    await user.click(screen.getByRole("button", { name: "공유" }));
+
+    expect(writeText).toHaveBeenCalledWith(
+      "https://sonleeeun.site/?item=item-95739902b6",
+    );
+    expect(
+      await screen.findByText("상품 링크를 복사했습니다."),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /링크·상품 정보 오류 신고/ }),
+    ).toHaveAttribute(
+      "href",
+      expect.stringMatching(
+        /^https:\/\/github\.com\/Hongbaekson\/baby-item\/issues\/new\?/,
+      ),
+    );
   });
 
   it("stores favorites and filters the list to the saved products", async () => {

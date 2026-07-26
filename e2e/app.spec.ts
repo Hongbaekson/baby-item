@@ -5,6 +5,14 @@ test("has no automatically detectable accessibility violations", async ({
   page,
 }) => {
   await page.goto("/");
+  await expect(
+    page.getByRole("region", { name: "판매 정보 운영 상태" }),
+  ).toContainText("판매 근거 확인 29/31");
+  await expect(
+    page.getByRole("heading", {
+      name: "가격보다 판매 페이지를 먼저 확인합니다",
+    }),
+  ).toBeVisible();
   const results = await new AxeBuilder({ page }).analyze();
   expect(results.violations).toEqual([]);
 });
@@ -27,6 +35,14 @@ test("opens and closes product details with the keyboard", async ({ page }) => {
       .getByRole("link", { name: /네이버에서 판매 상품 찾기/ })
       .first(),
   ).toBeVisible();
+  await expect(
+    page
+      .getByRole("dialog")
+      .getByRole("link", { name: /링크·상품 정보 오류 신고/ }),
+  ).toHaveAttribute("href", /github\.com\/Hongbaekson\/baby-item\/issues\/new/);
+  await expect(
+    page.getByRole("dialog").getByRole("button", { name: "공유" }),
+  ).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog")).toBeHidden();
   await expect(trigger).toBeFocused();
@@ -48,9 +64,12 @@ test("saves a favorite and filters to the saved list", async ({ page }) => {
 
 test("shows products in smaller pages", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("article")).toHaveCount(9);
+  const products = page
+    .getByRole("region", { name: "제품 목록" })
+    .getByRole("article");
+  await expect(products).toHaveCount(9);
   await page.getByRole("button", { name: /육아템 더 보기/ }).click();
-  await expect(page.getByRole("article")).toHaveCount(18);
+  await expect(products).toHaveCount(18);
 });
 
 test("publishes no Coupang purchase links and hides unverified CTAs", async ({
@@ -63,7 +82,9 @@ test("publishes no Coupang purchase links and hides unverified CTAs", async ({
   await page
     .getByRole("searchbox", { name: "제품명 또는 카테고리 검색" })
     .fill("젖병 소독 냄비");
-  const card = page.getByRole("article");
+  const card = page
+    .getByRole("region", { name: "제품 목록" })
+    .getByRole("article");
   await expect(card.getByText("현재 판매 링크 확인 중")).toBeVisible();
   await expect(card.getByRole("link")).toHaveCount(0);
 });
@@ -83,7 +104,10 @@ test.describe("mobile layout", () => {
     }));
     expect(sizes.scrollWidth).toBeGreaterThan(sizes.clientWidth);
 
-    const card = page.getByRole("article").first();
+    const card = page
+      .getByRole("region", { name: "제품 목록" })
+      .getByRole("article")
+      .first();
     await expect(card).not.toHaveCSS("grid-template-columns", "none");
   });
 });

@@ -16,6 +16,7 @@
     "test:e2e": "playwright test",
     "preview": "vite preview --host 0.0.0.0",
     "serve:dist": "node ./scripts/serve-dist.mjs",
+    "monitor:production": "node ./scripts/smoke-production.mjs",
     "data:check": "node ./scripts/check-app-data.mjs",
     "data:report": "node ./scripts/build-data-quality-report.mjs",
     "links:apply-policy": "node ./scripts/apply-purchase-link-policy.mjs",

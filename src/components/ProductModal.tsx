@@ -2,6 +2,8 @@ import {
   ChevronDown,
   ExternalLink,
   Heart,
+  MessageCircleWarning,
+  Share2,
   ShoppingBag,
   Sparkles,
   X,
@@ -27,10 +29,12 @@ import {
   primaryActionLabel,
   primaryPurchaseUrl,
   productImageUrl,
+  purchaseLinkStatusLabel,
   referenceOffers,
   reviewFlagLabel,
 } from "../lib/offers";
 import { displayTitle, isDailyPick, productSummary } from "../lib/products";
+import { itemShareUrl, reportIssueUrl } from "../lib/site";
 import type { Item, Offer } from "../types";
 
 const FOCUSABLE_SELECTOR =
@@ -80,6 +84,7 @@ export function ProductModal({
 }) {
   const fallbackImage = placeholderFor(item.primaryCategory);
   const [imageSrc, setImageSrc] = useState(productImageUrl(item));
+  const [shareStatus, setShareStatus] = useState("");
   const dialogRef = useRef<HTMLElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const titleId = useId();
@@ -111,6 +116,60 @@ export function ProductModal({
       previouslyFocused?.focus();
     };
   }, [onClose]);
+
+  useEffect(() => {
+    if (!shareStatus) return;
+    const timeout = window.setTimeout(() => setShareStatus(""), 3_000);
+    return () => window.clearTimeout(timeout);
+  }, [shareStatus]);
+
+  async function copyShareUrl(url: string) {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(url);
+      return true;
+    }
+
+    const textarea = document.createElement("textarea");
+    textarea.value = url;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.append(textarea);
+    textarea.select();
+    const copied = document.execCommand?.("copy") ?? false;
+    textarea.remove();
+    return copied;
+  }
+
+  async function shareItem() {
+    const url = itemShareUrl(item.id);
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title,
+          text: `${title} 육아템 정보`,
+          url,
+        });
+        setShareStatus("공유 화면을 열었습니다.");
+        return;
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError")
+          return;
+      }
+    }
+
+    try {
+      const copied = await copyShareUrl(url);
+      setShareStatus(
+        copied
+          ? "상품 링크를 복사했습니다."
+          : "주소창의 상품 링크를 복사해 주세요.",
+      );
+    } catch {
+      setShareStatus("주소창의 상품 링크를 복사해 주세요.");
+    }
+  }
 
   function trapFocus(event: KeyboardEvent<HTMLElement>) {
     if (event.key !== "Tab") return;
@@ -180,20 +239,33 @@ export function ProductModal({
                 매일 쓰는 추천
               </span>
             )}
-            <button
-              type="button"
-              className={`modal-favorite-button ${isFavorite ? "active" : ""}`}
-              onClick={() => onToggleFavorite(item.id)}
-              aria-pressed={isFavorite}
-            >
-              <Heart
-                size={17}
-                aria-hidden="true"
-                fill={isFavorite ? "currentColor" : "none"}
-              />
-              {isFavorite ? "찜 해제" : "찜하기"}
-            </button>
+            <div className="modal-quick-actions">
+              <button
+                type="button"
+                className="modal-action-button"
+                onClick={shareItem}
+              >
+                <Share2 size={16} aria-hidden="true" />
+                공유
+              </button>
+              <button
+                type="button"
+                className={`modal-favorite-button ${isFavorite ? "active" : ""}`}
+                onClick={() => onToggleFavorite(item.id)}
+                aria-pressed={isFavorite}
+              >
+                <Heart
+                  size={17}
+                  aria-hidden="true"
+                  fill={isFavorite ? "currentColor" : "none"}
+                />
+                {isFavorite ? "찜 해제" : "찜하기"}
+              </button>
+            </div>
           </div>
+          <p className="share-status" aria-live="polite">
+            {shareStatus}
+          </p>
 
           <h2 id={titleId}>{title}</h2>
           {summary && <p className="modal-summary">{summary}</p>}
@@ -214,7 +286,9 @@ export function ProductModal({
               <ShoppingBag size={19} aria-hidden="true" />
               <span>
                 <strong>{purchaseLabel}</strong>
-                <span>{linkHost(purchaseUrl)}</span>
+                <span>
+                  {linkHost(purchaseUrl)} · {purchaseLinkStatusLabel(item)}
+                </span>
               </span>
               <ExternalLink size={17} aria-hidden="true" />
             </a>
@@ -331,6 +405,16 @@ export function ProductModal({
             외부 구매처는 새 창으로 열립니다. 결제 전 도메인, 최신가, 배송비와
             품절 여부를 확인하세요.
           </p>
+          <a
+            className="report-link"
+            href={reportIssueUrl(item)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircleWarning size={15} aria-hidden="true" />
+            링크·상품 정보 오류 신고
+            <ExternalLink size={13} aria-hidden="true" />
+          </a>
           <p className="affiliate-notice">
             일부 구매 링크는 제휴 링크일 수 있으며, 구매 시 운영자에게 수수료가
             지급될 수 있습니다. 구매 가격에는 영향을 주지 않습니다.

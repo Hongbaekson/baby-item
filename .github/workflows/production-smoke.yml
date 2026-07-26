@@ -1,0 +1,33 @@
+name: Production smoke
+
+on:
+  schedule:
+    - cron: "17,47 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-smoke
+  cancel-in-progress: true
+
+jobs:
+  smoke:
+    name: Check public site
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      PRODUCTION_BASE_URL: https://sonleeeun.site
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+
+      - name: Check HTTPS, headers, and public assets
+        run: npm run monitor:production

@@ -88,6 +88,16 @@ export function formatOfferDate(offer: Offer) {
   }).format(date);
 }
 
+export function formatCheckedDate(value: string | null | undefined) {
+  const date = new Date(String(value ?? ""));
+  if (!Number.isFinite(date.getTime())) return "확인 중";
+  return new Intl.DateTimeFormat("ko-KR", {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+  }).format(date);
+}
+
 export function currentVerifiedOffers(item: Item) {
   return (item.purchaseOffers ?? []).filter((offer) => isFreshOffer(offer));
 }
@@ -166,8 +176,8 @@ export function purchaseLinkStatusLabel(item: Item) {
     return "현재 확인된 판매 페이지가 없어 링크를 숨겼습니다.";
   }
   return item.purchaseLink.kind === "naver_search"
-    ? "최근 검색 결과가 확인된 상품만 네이버에서 보여줍니다."
-    : "실제 상품 페이지 응답과 상품명을 확인했습니다.";
+    ? `${formatCheckedDate(item.purchaseLink.checkedAt)} 네이버 판매 결과 확인`
+    : `${formatCheckedDate(item.purchaseLink.checkedAt)} 공식 판매 페이지 확인`;
 }
 
 export function productImageUrl(item: Item) {
