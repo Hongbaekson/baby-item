@@ -2,7 +2,7 @@
 
 업데이트: 2026-07-26 (KST)
 
-> 아래 완료 내역은 2026-07-01 운영 확인 기록이다. 2026-07-26의 가격 신뢰성, 접근성, CI, 컨테이너 변경은 로컬에서 검증 중이며 아직 OCI에 배포하거나 운영 URL에서 재확인하지 않았다.
+> 2026-07-26에 가격 신뢰성, UI·접근성, CI, 컨테이너 변경을 OCI에 배포하고 운영 URL에서 재확인했다.
 
 ## 배포 정보
 
@@ -12,11 +12,27 @@
 - 인스턴스 표시 이름: `prod-app-01`
 - VM private IP: `10.0.0.44`
 - 배포 경로: `/opt/stacks/euni-baby-items`
-- Git commit: 서버에서 `git rev-parse --short HEAD`로 확인
+- 배포 Git commit: `935bb36`
+- 직전 롤백 commit: `6eda920`
 - 컨테이너명: `euni-baby-items-web`
 - Edge 컨테이너명: `euni-baby-items-edge`
 - 공개 주소: `https://sonleeeun.site`
 - 내부 앱 포트 설정: `APP_PORT=1206` (`127.0.0.1` loopback 바인딩)
+
+## 2026-07-26 배포 결과
+
+- `origin/main`의 `935bb36`으로 fast-forward한 뒤 `docker compose up -d --build` 완료
+- 새 웹 이미지: `sha256:f8c80cc3a19175898d21197365e65e59ae95dae4fa1147236f2ca93544411b59`
+- 직전 웹 이미지: `sha256:20fb9d874c604ff7b3a57ef8210e73bd6da3138efc12c98adb11cdea45014a08`
+- `euni-baby-items-web` 상태 `running`, healthcheck `healthy`
+- 내부 `http://127.0.0.1:1206/`와 외부 `https://sonleeeun.site/` 모두 HTTP 200
+- CSP, HSTS, frame 방어, MIME sniffing 방어, referrer policy, permissions policy, COOP 확인
+- 외부 브라우저에서 검색·카테고리·정렬·찜·9개 더 보기와 상세 URL 렌더링 확인
+- 모바일 390×844에서 상세 모달과 하단 고정 최신가 확인 CTA 확인
+- 공유 edge 재생성 후 `https://issuebot.sonleeeun.site/healthz` HTTP 200 확인
+- 운영 Caddyfile의 잘못된 `"n"issuebot...` 접두사를 `issuebot...`으로 교정하고 무중단 reload
+- 교정 전 Caddyfile 백업: `/opt/stacks/euni-baby-items/Caddyfile.pre-baby-item-deploy-935bb36`
+- Caddy 교정 후 두 공개 도메인 HTTP 200, 신규 edge 오류 로그 없음
 
 ## 완료된 작업
 
@@ -68,9 +84,9 @@ curl -I https://sonleeeun.site
 
 ## 남은 작업
 
-- 2026-07-26 변경을 검증된 artifact로 배포하고 HTTPS 응답, 보안 헤더, healthcheck 재확인
 - SSH ingress를 `0.0.0.0/0`에서 본인 IP로 제한할지 결정
 - 자동 CD를 붙일 때 체크섬과 attestation 검증 후 배포하도록 구성
+- IssueBot site block을 서버의 추적되지 않은 Caddyfile 수정이 아닌 별도 운영 구성으로 영구 관리
 
 ## 운영 명령
 
