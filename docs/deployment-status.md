@@ -12,8 +12,8 @@
 - 인스턴스 표시 이름: `prod-app-01`
 - VM private IP: `10.0.0.44`
 - 배포 경로: `/opt/stacks/euni-baby-items`
-- 배포 Git commit: `935bb36`
-- 직전 롤백 commit: `6eda920`
+- 배포 Git commit: `4bbd795`
+- 직전 롤백 commit: `7a6e997`
 - 컨테이너명: `euni-baby-items-web`
 - Edge 컨테이너명: `euni-baby-items-edge`
 - 공개 주소: `https://sonleeeun.site`
@@ -21,9 +21,24 @@
 
 ## 2026-07-26 배포 결과
 
+- 구매 링크 검증 최종 커밋 `4bbd795` 배포 완료
+- 새 웹 이미지: `sha256:9637c85303688079f97dd107273a781101172e8bb63c3a3b32a74e5c4c2a3428`
+- 직전 웹 이미지: `sha256:7ac85b62c194972298c845ac087f9470c8d445b63af128bc9bf0e40f2fcb0675`
+- GitHub CI run `30193243831`의 전체 검증과 artifact attestation 성공
+- 운영 데이터 기준 구매 링크 29개: 네이버 검색 27개, 실응답 확인 공식몰 2개
+- 판매 근거가 없는 2개 상품은 CTA를 숨기고 `판매 링크 확인 중` 상태로 표시
+- 운영 브라우저에서 쿠팡 anchor 0개, 쿠팡 resource 요청 0개 확인
+- `젖병 소독 냄비`는 구매 링크 없이 로컬 카테고리 기본 이미지 사용 확인
+- CSP에서 쿠팡 이미지 CDN 허용 제거 확인
+- `euni-baby-items-web` 상태 `running`, healthcheck `healthy`
+- 외부 `https://sonleeeun.site/`와 `https://issuebot.sonleeeun.site/healthz` 모두 HTTP 200
+- 운영 Caddyfile의 기존 IssueBot 라우팅 수정과 백업 파일을 그대로 보존
+- 운영 브라우저 콘솔 오류 0개
+
+이전 가격 신뢰성·UI 배포:
+
 - `origin/main`의 `935bb36`으로 fast-forward한 뒤 `docker compose up -d --build` 완료
-- 새 웹 이미지: `sha256:f8c80cc3a19175898d21197365e65e59ae95dae4fa1147236f2ca93544411b59`
-- 직전 웹 이미지: `sha256:20fb9d874c604ff7b3a57ef8210e73bd6da3138efc12c98adb11cdea45014a08`
+- 당시 웹 이미지: `sha256:f8c80cc3a19175898d21197365e65e59ae95dae4fa1147236f2ca93544411b59`
 - `euni-baby-items-web` 상태 `running`, healthcheck `healthy`
 - 내부 `http://127.0.0.1:1206/`와 외부 `https://sonleeeun.site/` 모두 HTTP 200
 - CSP, HSTS, frame 방어, MIME sniffing 방어, referrer policy, permissions policy, COOP 확인
