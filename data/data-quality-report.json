@@ -8,7 +8,8 @@
     "needsReviewItems": 0,
     "issueCounts": {
       "missing_price": 11,
-      "no_verified_purchase_link": 2
+      "no_verified_purchase_link": 2,
+      "missing_image": 1
     }
   },
   "pricing": {

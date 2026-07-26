@@ -99,6 +99,17 @@ test("dead direct product pages are not exposed as purchase CTAs", () => {
   );
 });
 
+test("published product images do not request Coupang CDN", () => {
+  for (const item of appData.items) {
+    assert.doesNotMatch(item.imagePath, /coupangcdn\.com/i, item.title);
+    assert.doesNotMatch(
+      item.imageSource?.imageUrl ?? "",
+      /coupangcdn\.com/i,
+      item.title,
+    );
+  }
+});
+
 test("public metadata uses the production HTTPS origin", () => {
   assert.match(html, /https:\/\/sonleeeun\.site\//);
   assert.doesNotMatch(html, /134\.185\.110\.26|http:\/\/sonleeeun\.site/);

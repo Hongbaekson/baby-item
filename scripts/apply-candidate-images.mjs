@@ -7,17 +7,6 @@ const DEFAULT_CANDIDATES_PATH = path.join(
   "price-candidates.naver.json",
 );
 const ALLOWED_IMAGE_HOSTS = new Set([
-  "image1.coupangcdn.com",
-  "image2.coupangcdn.com",
-  "image3.coupangcdn.com",
-  "image4.coupangcdn.com",
-  "image5.coupangcdn.com",
-  "image6.coupangcdn.com",
-  "image7.coupangcdn.com",
-  "image8.coupangcdn.com",
-  "image9.coupangcdn.com",
-  "image10.coupangcdn.com",
-  "thumbnail.coupangcdn.com",
   "shopping.phinf.naver.net",
   "shopping-phinf.pstatic.net",
   "shop-phinf.pstatic.net",

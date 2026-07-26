@@ -1406,13 +1406,13 @@
         "checkedOffers": 0
       },
       "memo": "",
-      "imagePath": "https://thumbnail.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/a882/723c791f92f897f7be38e6521ceee0215b6602d141e0d93e50205ab61b97.jpg",
-      "hasOriginalImage": true,
+      "imagePath": "/images/placeholders/sterilize.svg",
+      "hasOriginalImage": false,
       "placeholderKey": "sterilize",
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 2,
+        "warningCount": 3,
         "infoCount": 0,
         "issues": [
           {
@@ -1424,6 +1424,11 @@
             "code": "no_verified_purchase_link",
             "severity": "warning",
             "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+          },
+          {
+            "code": "missing_image",
+            "severity": "warning",
+            "message": "쿠팡 외부 이미지를 제거하고 기본 이미지를 사용합니다."
           }
         ]
       },
@@ -3263,6 +3268,19 @@
     "blockedPurchaseHosts": [
       "coupang.com",
       "link.coupang.com"
+    ],
+    "blockedImageHosts": [
+      "image1.coupangcdn.com",
+      "image2.coupangcdn.com",
+      "image3.coupangcdn.com",
+      "image4.coupangcdn.com",
+      "image5.coupangcdn.com",
+      "image6.coupangcdn.com",
+      "image7.coupangcdn.com",
+      "image8.coupangcdn.com",
+      "image9.coupangcdn.com",
+      "image10.coupangcdn.com",
+      "thumbnail.coupangcdn.com"
     ]
   },
   "purchaseLinkPolicy": {
@@ -3271,6 +3289,7 @@
     "hiddenPurchaseLinks": 2,
     "naverSearchLinks": 27,
     "officialLinks": 2,
-    "remainingBlockedPurchaseEntries": 0
+    "remainingBlockedPurchaseEntries": 0,
+    "remainingBlockedImages": 0
   }
 }

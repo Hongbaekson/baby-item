@@ -8,6 +8,7 @@ const POLICY_PATH = fileURLToPath(
 export const offerPolicy = JSON.parse(readFileSync(POLICY_PATH, "utf8"));
 export const trustedPurchaseHosts = new Set(offerPolicy.trustedPurchaseHosts);
 export const blockedPurchaseHosts = new Set(offerPolicy.blockedPurchaseHosts);
+export const blockedImageHosts = new Set(offerPolicy.blockedImageHosts);
 export const trustedImageHosts = new Set(offerPolicy.trustedImageHosts);
 export const shortUrlHosts = new Set(offerPolicy.shortUrlHosts);
 
@@ -83,6 +84,10 @@ export function isBlockedPurchaseUrl(value) {
 export function isTrustedImageUrl(value) {
   const host = hostFrom(value);
   return isHttpsUrl(value) && trustedImageHosts.has(host);
+}
+
+export function isBlockedImageUrl(value) {
+  return blockedImageHosts.has(hostFrom(value));
 }
 
 export function isShortUrl(value) {

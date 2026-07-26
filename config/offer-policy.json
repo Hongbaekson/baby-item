@@ -19,7 +19,7 @@
     "whittlestore.com"
   ],
   "blockedPurchaseHosts": ["coupang.com", "link.coupang.com"],
-  "trustedImageHosts": [
+  "blockedImageHosts": [
     "image1.coupangcdn.com",
     "image2.coupangcdn.com",
     "image3.coupangcdn.com",
@@ -30,7 +30,9 @@
     "image8.coupangcdn.com",
     "image9.coupangcdn.com",
     "image10.coupangcdn.com",
-    "thumbnail.coupangcdn.com",
+    "thumbnail.coupangcdn.com"
+  ],
+  "trustedImageHosts": [
     "shopping.phinf.naver.net",
     "shopping-phinf.pstatic.net",
     "shop-phinf.pstatic.net"

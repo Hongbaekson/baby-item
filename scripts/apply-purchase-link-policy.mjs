@@ -1,6 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import {
+  isBlockedImageUrl,
   isBlockedPurchaseUrl,
   isCurrentPurchaseEvidence,
   isFreshOffer,
@@ -63,10 +64,11 @@ function latestOfferTimestamp(item) {
     .sort((a, b) => Date.parse(b) - Date.parse(a))[0];
 }
 
-function applyPurchaseQuality(item, hasVerifiedLink) {
+function applyPurchaseQuality(item, hasVerifiedLink, replacedBlockedImage) {
   const issues = (item.dataQuality?.issues ?? []).filter(
     (issue) =>
       ![
+        ...(replacedBlockedImage ? ["missing_image"] : []),
         "missing_partner_link",
         "invalid_partner_link",
         "no_verified_purchase_link",
@@ -78,6 +80,14 @@ function applyPurchaseQuality(item, hasVerifiedLink) {
       code: "no_verified_purchase_link",
       severity: "warning",
       message: "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다.",
+    });
+  }
+
+  if (replacedBlockedImage) {
+    issues.push({
+      code: "missing_image",
+      severity: "warning",
+      message: "쿠팡 외부 이미지를 제거하고 기본 이미지를 사용합니다.",
     });
   }
 
@@ -101,6 +111,7 @@ function applyPurchaseQuality(item, hasVerifiedLink) {
 }
 
 function applyToItem(item, officialLinks) {
+  const replacedBlockedImage = isBlockedImageUrl(item.imagePath);
   const purchaseOffers = withoutCoupang(item.purchaseOffers);
   const candidateOffers = withoutCoupang(item.candidateOffers);
   const rejectedOffers = withoutCoupang(item.rejectedOffers);
@@ -111,7 +122,14 @@ function applyToItem(item, officialLinks) {
     purchaseOffers,
     candidateOffers,
     rejectedOffers,
+    imagePath: replacedBlockedImage
+      ? `/images/placeholders/${item.placeholderKey ?? "default"}.svg`
+      : item.imagePath,
+    hasOriginalImage: replacedBlockedImage ? false : item.hasOriginalImage,
   };
+  if (isBlockedImageUrl(filteredItem.imageSource?.imageUrl)) {
+    delete filteredItem.imageSource;
+  }
   const official = officialLinks.get(item.id);
   const evidence = validEvidenceOffers(filteredItem)[0];
   const currentOfficial =
@@ -158,7 +176,11 @@ function applyToItem(item, officialLinks) {
         ]
       : [],
     purchaseLink,
-    dataQuality: applyPurchaseQuality(item, hasVerifiedLink),
+    dataQuality: applyPurchaseQuality(
+      item,
+      hasVerifiedLink,
+      replacedBlockedImage,
+    ),
   };
   const syncedAt = latestOfferTimestamp(next);
 
@@ -200,6 +222,11 @@ function summarize(items) {
         ].filter(isCoupangEntry).length,
       0,
     ),
+    remainingBlockedImages: items.filter(
+      (item) =>
+        isBlockedImageUrl(item.imagePath) ||
+        isBlockedImageUrl(item.imageSource?.imageUrl),
+    ).length,
   };
 }
 
@@ -239,6 +266,7 @@ async function main() {
     freshnessHours: offerPolicy.freshnessHours,
     purchaseLinkFreshnessHours: offerPolicy.purchaseLinkFreshnessHours,
     blockedPurchaseHosts: offerPolicy.blockedPurchaseHosts,
+    blockedImageHosts: offerPolicy.blockedImageHosts,
     verifiedOffers: items.reduce(
       (count, item) => count + item.purchaseOffers.length,
       0,
