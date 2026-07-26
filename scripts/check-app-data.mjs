@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import {
+  isBlockedPurchaseUrl,
   isFreshOffer,
   isShortUrl,
   isTrustedImageUrl,
@@ -131,10 +132,20 @@ for (const item of items) {
     fail(`bad or untrusted image path: ${item.title} -> ${item.imagePath}`);
   }
 
-  if (!isTrustedPurchaseUrl(item.partnerLink)) {
-    fail(
-      `untrusted primary partner link: ${item.title} -> ${item.partnerLink}`,
-    );
+  if (item.purchaseLink?.status === "verified") {
+    if (
+      !item.partnerLink ||
+      item.purchaseLink.url !== item.partnerLink ||
+      !isTrustedPurchaseUrl(item.partnerLink)
+    ) {
+      fail(`invalid verified primary partner link: ${item.title}`);
+    }
+  } else if (item.purchaseLink?.status === "unavailable") {
+    if (item.partnerLink || item.partnerLinks.length > 0) {
+      fail(`unavailable item exposes a partner link: ${item.title}`);
+    }
+  } else {
+    fail(`bad purchase link status: ${item.title}`);
   }
 
   for (const link of item.partnerLinks ?? []) {
@@ -143,6 +154,9 @@ for (const item of items) {
     }
     if (isShortUrl(link.url)) {
       fail(`short partner link must be resolved: ${item.title} -> ${link.url}`);
+    }
+    if (isBlockedPurchaseUrl(link.url)) {
+      fail(`blocked partner link: ${item.title} -> ${link.url}`);
     }
   }
 
@@ -154,12 +168,21 @@ for (const item of items) {
   }
 
   for (const [index, offer] of (item.purchaseOffers ?? []).entries()) {
+    if (isBlockedPurchaseUrl(offer.url)) {
+      fail(`blocked purchase offer: ${item.title} -> ${offer.url}`);
+    }
     validateVerifiedOffer(item, offer, `purchaseOffers[${index}]`);
   }
   for (const [index, offer] of (item.candidateOffers ?? []).entries()) {
+    if (isBlockedPurchaseUrl(offer.url)) {
+      fail(`blocked candidate offer: ${item.title} -> ${offer.url}`);
+    }
     validateCandidateOffer(item, offer, `candidateOffers[${index}]`);
   }
   for (const [index, offer] of (item.rejectedOffers ?? []).entries()) {
+    if (isBlockedPurchaseUrl(offer.url)) {
+      fail(`blocked rejected offer: ${item.title} -> ${offer.url}`);
+    }
     validateRejectedOffer(item, offer, `rejectedOffers[${index}]`);
   }
 

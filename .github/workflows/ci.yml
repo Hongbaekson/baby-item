@@ -32,6 +32,9 @@ jobs:
       - name: Check app data
         run: npm run data:check
 
+      - name: Check published purchase links
+        run: npm run links:check
+
       - name: Check strict price data readiness
         run: npm run price:check-strict
 

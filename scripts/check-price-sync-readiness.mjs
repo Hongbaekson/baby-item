@@ -43,9 +43,6 @@ const env = {
   naverShoppingApiReady: Boolean(
     process.env.NAVER_CLIENT_ID && process.env.NAVER_CLIENT_SECRET,
   ),
-  coupangApiReady: Boolean(
-    process.env.COUPANG_ACCESS_KEY && process.env.COUPANG_SECRET_KEY,
-  ),
 };
 const verifiedOffers = items.flatMap((item) => item.purchaseOffers ?? []);
 const candidateOffers = items.flatMap((item) => item.candidateOffers ?? []);
@@ -65,8 +62,8 @@ if (shortLinks.length > 0)
 if (untrustedLinks.length > 0) {
   failures.push(`${untrustedLinks.length} untrusted partner links remain`);
 }
-if (requireApi && !env.naverShoppingApiReady && !env.coupangApiReady) {
-  failures.push("no official shopping API credentials are configured");
+if (requireApi && !env.naverShoppingApiReady) {
+  failures.push("Naver Shopping API credentials are not configured");
 }
 
 const summary = {

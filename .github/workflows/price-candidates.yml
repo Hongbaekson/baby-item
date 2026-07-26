@@ -43,9 +43,13 @@ jobs:
       - name: Collect Naver Shopping candidates
         run: npm run price:collect-naver
 
+      - name: Verify official product pages
+        run: npm run links:probe-official -- --update-config
+
       - name: Build review proposal
         run: |
           npm run price:apply-live-offers
+          npm run links:check
           npm run data:report
           npm run data:check
           npm run price:check-strict
@@ -57,5 +61,7 @@ jobs:
           path: |
             data/price-candidates.naver.json
             data/data-quality-report.json
+            data/purchase-link-live-report.json
+            config/official-purchase-links.json
             src/data/items.json
           retention-days: 7

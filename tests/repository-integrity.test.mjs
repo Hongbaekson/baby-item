@@ -29,6 +29,11 @@ test("the generated data report describes the current app data", () => {
     dataReport.pricing.verifiedOffers,
     appData.items.reduce((sum, item) => sum + item.purchaseOffers.length, 0),
   );
+  assert.equal(
+    dataReport.purchaseLinks.verified,
+    appData.items.filter((item) => item.purchaseLink.status === "verified")
+      .length,
+  );
 });
 
 test("every current offer state matches its data tier", () => {
@@ -48,6 +53,50 @@ test("every current offer state matches its data tier", () => {
       assert.ok(item.rejectedOffers.length > 0, item.title);
     }
   }
+});
+
+test("only verified non-Coupang purchase links are published", () => {
+  const blockedHost = (value) => {
+    try {
+      const host = new URL(value).hostname.replace(/^www\./, "");
+      return host === "coupang.com" || host === "link.coupang.com";
+    } catch {
+      return false;
+    }
+  };
+
+  for (const item of appData.items) {
+    const purchaseEntries = [
+      ...(item.partnerLinks ?? []),
+      ...(item.purchaseOffers ?? []),
+      ...(item.candidateOffers ?? []),
+      ...(item.rejectedOffers ?? []),
+    ];
+    assert.equal(
+      purchaseEntries.some((entry) => blockedHost(entry.url)),
+      false,
+      item.title,
+    );
+
+    if (item.purchaseLink.status === "verified") {
+      assert.equal(item.partnerLink, item.purchaseLink.url, item.title);
+      assert.equal(item.partnerLinks.length, 1, item.title);
+    } else {
+      assert.equal(item.partnerLink, "", item.title);
+      assert.equal(item.partnerLinks.length, 0, item.title);
+    }
+  }
+});
+
+test("dead direct product pages are not exposed as purchase CTAs", () => {
+  const publishedUrls = appData.items.flatMap((item) => [
+    item.partnerLink,
+    ...(item.partnerLinks ?? []).map((link) => link.url),
+  ]);
+  assert.equal(
+    publishedUrls.some((url) => url?.includes("product.29cm.co.kr")),
+    false,
+  );
 });
 
 test("public metadata uses the production HTTPS origin", () => {

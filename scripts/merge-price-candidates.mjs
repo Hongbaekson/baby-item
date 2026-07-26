@@ -2,10 +2,7 @@ import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const DEFAULT_INPUT_PATHS = [
-  path.join("data", "price-candidates.coupang.json"),
-  path.join("data", "price-candidates.naver.json"),
-];
+const DEFAULT_INPUT_PATHS = [path.join("data", "price-candidates.naver.json")];
 const DEFAULT_OUTPUT_PATH = path.join("data", "price-candidates.json");
 const args = process.argv.slice(2);
 const outputPath = getArgValue("--output") ?? DEFAULT_OUTPUT_PATH;

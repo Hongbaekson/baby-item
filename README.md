@@ -5,11 +5,13 @@
 ## 현재 데이터 상태
 
 - 노출 제품 31개: 정상 20개, 가격 기록 누락 경고 11개, 데이터 검수 오류 0개
-- 구매처 링크는 HTTPS와 신뢰 도메인 허용 목록을 모두 통과해야 함
+- 구매 링크 29개: 네이버 쇼핑 검색 27개, 실응답을 확인한 공식몰 2개
+- 판매 근거가 없는 2개 상품은 링크를 숨기며, 쿠팡 구매 링크는 0개
+- 구매처 링크는 HTTPS·신뢰 도메인·30일 이내 판매 근거를 모두 통과해야 함
 - 단축 URL 0개
 - 배송비 포함 총액까지 검증된 가격 3개는 모두 48시간을 지나 `가격 다시 확인`으로 표시
-- 배송비 미확인 후보 60개는 참고 정보로만 표시
-- 상품명 불일치·소비기한 임박 등 차단 후보 23개는 구매 링크로 사용하지 않음
+- 배송비 미확인 후보 44개는 비클릭 참고 정보로만 표시
+- 상품명 불일치·소비기한 임박 등 차단 후보 21개는 구매 링크로 사용하지 않음
 
 수치는 `src/data/items.json`에서 생성한 `data/data-quality-report.json`과 `npm run data:check` 결과를 기준으로 합니다.
 
@@ -20,7 +22,7 @@
 - 브라우저에 저장되는 찜 목록과 `내 찜`만 보기
 - 검색·카테고리·정렬·찜 필터를 URL에 보존하는 공유 가능한 화면
 - 상품 상세 URL과 브라우저 뒤로 가기로 닫히는 키보드 접근 가능 모달
-- 모바일 가로형 제품 카드와 화면 하단에 고정되는 최신가 확인 버튼
+- 모바일 가로형 제품 카드와 검증된 판매 페이지만 여는 하단 고정 버튼
 
 ## 로컬 실행
 
@@ -43,6 +45,7 @@ npm run serve:dist
 ```bash
 npm run data:report
 npm run data:check
+npm run links:check
 npm run price:check-strict
 npm run format:check
 npm run lint
@@ -63,25 +66,21 @@ docker build -t euni-baby-items:local .
 2. `candidateOffers`: 상품명은 맞지만 배송비 또는 결제 단계 재고가 확인되지 않은 참고 후보
 3. `rejectedOffers`: 상품 불일치, 소비기한 임박, 중고·렌탈·액세서리 등 검토 사유가 있는 차단 후보
 
-신선도 기준은 48시간입니다. 이 시간이 지난 숫자는 최저가로 표시하지 않으며, 기본 CTA는 사용자가 구매처에서 가격을 다시 확인하도록 안내합니다.
+가격 신선도 기준은 48시간입니다. 이 시간이 지난 숫자는 최저가로 표시하지 않습니다. 구매 링크는 별도로 30일 안에 확인된 네이버 판매 근거나 공식몰 실응답이 있어야 하며, 근거가 없거나 만료되면 CTA를 노출하지 않습니다.
 
 ```bash
 npm run price:check-readiness
 npm run price:collect-naver
-npm run price:collect-coupang
-npm run price:merge-candidates
-npm run price:apply-candidates
+npm run links:probe-official -- --update-config
+npm run price:apply-live-offers
+npm run links:check
 npm run data:report
 npm run data:check
 ```
 
-네이버 쇼핑 검색 API는 배송비와 결제 직전 재고를 제공하지 않으므로 다음 명령은 결과를 `candidateOffers`로만 반영합니다.
+네이버 쇼핑 검색 API는 배송비와 결제 직전 재고를 제공하지 않으므로 결과를 `candidateOffers`로만 반영합니다. 공개 CTA도 오류가 잦은 직접 상품 URL 대신 정확한 상품명을 넣은 네이버 쇼핑 검색으로 연결합니다. 쿠팡 수집과 구매 링크는 사용하지 않습니다.
 
-```bash
-npm run price:apply-live-offers
-```
-
-매일 03:17 KST에 실행되는 `price-candidates.yml`은 GitHub Secrets의 `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`을 사용해 검토용 artifact를 만듭니다. 가격을 자동 게시하거나 저장소에 커밋하지 않으므로, artifact 검토 후 승인된 데이터만 반영해야 합니다.
+매일 03:17 KST에 실행되는 `price-candidates.yml`은 GitHub Secrets의 `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`을 사용해 네이버 후보, 공식몰 실응답, 구매 링크 만료 여부를 검사한 검토용 artifact를 만듭니다. 가격을 자동 게시하거나 저장소에 커밋하지 않으므로, artifact 검토 후 승인된 데이터만 반영해야 합니다.
 
 자세한 정책은 `docs/price-sync.md`에 있습니다.
 

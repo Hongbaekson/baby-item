@@ -11,6 +11,14 @@ export type OfferStatusState =
 
 export type ThemeMode = "light" | "dark";
 
+export type PurchaseLink = {
+  status: "verified" | "unavailable";
+  kind: "naver_search" | "official" | "none";
+  url: string | null;
+  checkedAt: string | null;
+  source: string;
+};
+
 export type Offer = {
   url: string;
   imageUrl?: string | null;
@@ -40,6 +48,7 @@ export type Item = {
     category: string;
     sourceItemId: string;
   }>;
+  purchaseLink: PurchaseLink;
   price: number | null;
   displayPrice: string;
   referencePrice: string | null;

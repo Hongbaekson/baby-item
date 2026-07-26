@@ -9,8 +9,12 @@
 - 검증 가격도 수집 후 48시간이 지나면 `최저가`라고 부르지 않고 `가격 다시 확인`으로 표시한다.
 - 배송비 또는 결제 단계 재고가 확인되지 않은 검색 API 결과는 `참고 후보`다.
 - 차단 후보는 사유를 보여 줄 수 있지만 클릭 가능한 구매 링크나 대표 CTA로 사용하지 않는다.
+- 가격 후보 행은 참고 정보로만 표시하고 직접 상품 페이지 링크를 제공하지 않는다.
+- 대표 CTA는 30일 안에 확인된 네이버 판매 근거나 공식몰 실응답이 있을 때만 노출한다.
+- 쿠팡 도메인은 구매 링크와 모든 가격 후보 계층에서 차단한다.
+- 검증 근거가 없거나 만료된 상품은 버튼 대신 `판매 링크 확인 중` 상태를 표시한다.
 
-정책의 단일 기준 파일은 `config/offer-policy.json`, 공통 판정 코드는 `scripts/lib/offer-policy.mjs`다.
+정책의 단일 기준 파일은 `config/offer-policy.json`, 검증한 공식몰 목록은 `config/official-purchase-links.json`, 공통 판정 코드는 `scripts/lib/offer-policy.mjs`다.
 
 ## 데이터 계층
 
@@ -22,17 +26,30 @@
 
 현재 검토 플래그는 상품명 불일치, 신뢰하지 않는 도메인, 소비기한 임박, 중고·리퍼, 렌탈, 액세서리 불일치를 포함한다.
 
+## 구매 링크 계층
+
+| 상태 | 조건 | 사용자 동작 |
+| --- | --- | --- |
+| `naver_search` | 30일 이내 네이버 검색 API 또는 수동 검토 근거, 상품명 high match | 정확한 제품명으로 네이버 쇼핑 검색 |
+| `official` | 허용 도메인, HTTP 성공, 판매 중지 문구 없음, 상품명 일치, 30일 이내 확인 | 검증한 공식 상품 페이지 열기 |
+| `unavailable` | 현재 판매 근거 없음 또는 근거 만료 | 링크를 만들지 않고 확인 중 상태 표시 |
+
+네이버의 개별 상품 URL은 자동 요청을 제한하거나 판매자가 페이지를 교체할 수 있어 대표 CTA로 사용하지 않는다. 대신 검증 시점에 상품 검색 결과가 있었던 제품만 네이버 쇼핑의 정확한 상품명 검색으로 연결한다.
+
 ## 현재 상태
 
 `2026-07-01` 수집분 기준:
 
 - 검증 가격 3개, 모두 48시간 초과
-- 참고 후보 60개
-- 차단 후보 23개
+- 참고 후보 44개
+- 차단 후보 21개
 - 단축 URL 0개
 - 신뢰하지 않는 구매 도메인 0개
+- 구매 링크 29개: 네이버 검색 27개, 검증 공식몰 2개
+- 판매 근거가 없어 숨긴 링크 2개
+- 쿠팡 구매 링크·가격 후보 0개
 
-따라서 현재 UI에 신선한 최저가는 없으며 모든 대표 CTA는 가격 재확인을 요구한다.
+현재 UI에 신선한 최저가는 없다. 대표 CTA는 가격 보장이 아니라 검증된 판매 경로이며, 최신 가격·배송비·재고는 네이버 또는 공식몰에서 다시 확인해야 한다.
 
 ## 수동 갱신
 
@@ -41,30 +58,25 @@
 ```bash
 npm run price:check-readiness
 npm run price:collect-naver
-npm run price:collect-coupang
-npm run price:merge-candidates
-npm run price:apply-candidates
+npm run links:probe-official -- --update-config
+npm run price:apply-live-offers
+npm run links:check
 npm run data:report
 npm run data:check
 npm run price:check-strict
 ```
 
-네이버 검색 결과를 배송비 미확인 참고 후보로 반영할 때:
-
-```bash
-npm run price:apply-live-offers
-```
-
-`price:apply-candidates`는 배송비 포함 총액이 있는 후보만 검증 가격으로 승격한다. `--include-reference-candidates`를 명시할 때만 배송비 미확인 결과를 참고 후보로 보존한다.
+`price:apply-live-offers`는 네이버 결과를 배송비 미확인 참고 후보로 반영한 뒤 구매 링크 정책도 다시 적용한다. `links:probe-official -- --update-config`는 등록된 공식몰의 HTTP 상태, 판매 중지 문구, 상품명 일치를 확인한 경우에만 확인 시각을 갱신한다.
 
 ## 자동 수집
 
 `.github/workflows/price-candidates.yml`은 매일 03:17 KST와 수동 실행에서 다음을 수행한다.
 
 1. 네이버 쇼핑 후보 수집
-2. 검토용 `candidateOffers` 반영
-3. 품질 보고서와 엄격 데이터 검사
-4. 후보 원본, 제안 앱 데이터, 보고서를 7일 보관 artifact로 업로드
+2. 등록된 공식몰 상품 페이지 실응답 검사
+3. 검토용 `candidateOffers`와 구매 링크 정책 반영
+4. 쿠팡 재유입, 링크 근거 만료, 데이터 품질 엄격 검사
+5. 후보 원본, 제안 앱 데이터, 링크 보고서를 7일 보관 artifact로 업로드
 
 자동 커밋이나 자동 배포는 하지 않는다. 배송비와 결제 단계 재고가 없는 데이터를 현재 최저가로 게시하지 않기 위한 승인 경계다. GitHub Secrets가 없으면 워크플로는 명시적으로 실패한다.
 
@@ -88,6 +100,5 @@ docker run --rm \
 - 소비기한 임박, 중고·리퍼, 렌탈 또는 액세서리 상품
 - 신뢰 목록에 없는 구매·이미지 도메인
 - 단축 URL
+- 쿠팡 구매 도메인 또는 쿠팡 가격 후보
 - 기존 기록가 대비 하한·상한을 벗어난 급격한 가격 변동
-
-쿠팡은 판매자/제휴 검색 권한과 실제 API path가 준비된 경우에만 사용한다. 일반 seller 상품 조회 API를 공개 상품 최저가 검색으로 간주하지 않는다.

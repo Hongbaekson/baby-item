@@ -7,6 +7,8 @@
 - `dangerouslySetInnerHTML`, `innerHTML`, `eval`, `new Function`을 사용하지 않는다.
 - 검색 문자열과 JSON 데이터는 React escaping 경로로만 렌더링한다.
 - 외부 구매 링크는 HTTPS와 `config/offer-policy.json`의 신뢰 도메인을 모두 통과해야 한다.
+- 쿠팡 구매 도메인은 차단 목록으로 관리하며 대표·후보·제외 링크 재유입을 CI에서 실패시킨다.
+- 구매 링크는 30일 이내 판매 근거가 있어야 하며 만료 시 런타임에서도 CTA를 숨긴다.
 - 새 창 링크는 `rel="noopener noreferrer sponsored"`를 사용한다.
 - 단축 URL은 0개이며 readiness와 데이터 검사에서 재유입을 실패로 처리한다.
 - 외부 상품 이미지도 CSP와 데이터 검사의 도메인 허용 목록을 모두 통과해야 한다.
@@ -18,6 +20,7 @@
 - 배송비 포함 총액과 재고가 확인된 후보만 검증 가격이다.
 - 검증 가격의 신선도는 48시간이며 오래된 가격을 최저가로 표시하지 않는다.
 - 배송비 미확인 후보는 참고 정보, 불일치·위험 후보는 비클릭 검토 정보다.
+- 직접 상품 페이지 후보는 클릭할 수 없고, 공개 CTA는 네이버 정확한 상품명 검색 또는 실응답을 확인한 공식몰만 사용한다.
 - 상품명 매칭은 후보 제목만 대상으로 하며 판매처명이나 카테고리 문자열로 점수를 부풀리지 않는다.
 - API 키는 GitHub Secrets 또는 OCI의 repo 외부 env 파일에서만 주입한다.
 
@@ -38,7 +41,7 @@
 - 기본 workflow 권한은 `contents: read`다.
 - attestation job만 `id-token`, `attestations`, `artifact-metadata` 쓰기 권한을 가진다.
 - `pull_request_target`을 사용하지 않는다.
-- 검증 job은 데이터, 가격 정책, 포맷, lint, 단위/컴포넌트/E2E, 접근성, build, Docker Compose와 이미지 build를 검사한다.
+- 검증 job은 데이터, 가격 정책, 쿠팡 차단·구매 링크 만료, 포맷, lint, 단위/컴포넌트/E2E, 접근성, build, Docker Compose와 이미지 build를 검사한다.
 - `main` push artifact에 SHA256 체크섬과 GitHub attestation을 붙인다.
 - 가격 후보 scheduled workflow는 읽기 권한만 가지며 자동 커밋·배포하지 않는다.
 
@@ -61,4 +64,4 @@
 ## 남은 운영 보안 항목
 
 1. SSH ingress를 운영자 IP로 제한할지 결정한다.
-2. 이번 이미지를 OCI에 배포한 뒤 실제 HTTPS 헤더와 healthcheck를 재검증한다.
+2. 네이버 API scheduled workflow의 첫 성공 artifact를 확인한다.

@@ -29,9 +29,9 @@ function collectLinkIssues(item) {
   if (!item.partnerLink) {
     issues.push(
       createIssue(
-        "missing_partner_link",
-        "error",
-        "대표 구매 링크가 비어 있습니다.",
+        "no_verified_purchase_link",
+        "warning",
+        "확인된 판매 페이지가 없어 구매 링크를 공개하지 않습니다.",
       ),
     );
   } else if (primaryStatus && primaryStatus !== "valid") {

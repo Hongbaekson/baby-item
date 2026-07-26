@@ -7,22 +7,30 @@
     "usableWithWarningsItems": 11,
     "needsReviewItems": 0,
     "issueCounts": {
-      "missing_price": 11
+      "missing_price": 11,
+      "no_verified_purchase_link": 2
     }
   },
   "pricing": {
     "freshnessHours": 48,
     "verifiedOffers": 3,
-    "candidateOffers": 60,
-    "rejectedOffers": 23,
+    "candidateOffers": 44,
+    "rejectedOffers": 21,
     "offerStates": {
       "available": 0,
       "stale": 3,
-      "candidates_available": 25,
+      "candidates_available": 24,
       "needs_review": 2,
-      "no_available_offer": 1,
+      "no_available_offer": 2,
       "not_synced": 0
     }
+  },
+  "purchaseLinks": {
+    "freshnessHours": 720,
+    "verified": 29,
+    "hidden": 2,
+    "naverSearch": 27,
+    "official": 2
   },
   "needsReviewItems": [
     {
@@ -33,6 +41,11 @@
           "code": "missing_price",
           "severity": "warning",
           "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+        },
+        {
+          "code": "no_verified_purchase_link",
+          "severity": "warning",
+          "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
         }
       ],
       "rejectedOffers": [

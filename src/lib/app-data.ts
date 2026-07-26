@@ -26,6 +26,10 @@ function validateItem(item: unknown, index: number): asserts item is Item {
     typeof candidate.partnerLink === "string",
     `items[${index}].partnerLink`,
   );
+  assert(
+    typeof candidate.purchaseLink?.status === "string",
+    `items[${index}].purchaseLink`,
+  );
   assert(Array.isArray(candidate.partnerLinks), `items[${index}].partnerLinks`);
   assert(
     Array.isArray(candidate.purchaseOffers),

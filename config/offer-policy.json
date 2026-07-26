@@ -1,15 +1,15 @@
 {
   "freshnessHours": 48,
   "maxOffersPerItem": 4,
+  "purchaseLinkFreshnessHours": 720,
   "trustedPurchaseHosts": [
     "11st.co.kr",
     "29cm.co.kr",
     "anapakorea.co.kr",
     "brand.naver.com",
-    "coupang.com",
     "direct.maeil.com",
+    "i-angel.co.kr",
     "link.auction.co.kr",
-    "link.coupang.com",
     "link.gmarket.co.kr",
     "malanghoney.com",
     "ohou.se",
@@ -18,6 +18,7 @@
     "smartstore.naver.com",
     "whittlestore.com"
   ],
+  "blockedPurchaseHosts": ["coupang.com", "link.coupang.com"],
   "trustedImageHosts": [
     "image1.coupangcdn.com",
     "image2.coupangcdn.com",
@@ -35,6 +36,18 @@
     "shop-phinf.pstatic.net"
   ],
   "shortUrlHosts": ["bit.ly", "goo.gl", "naver.me", "t.co", "tinyurl.com"],
+  "unavailablePageMarkers": [
+    "페이지를 찾을 수 없습니다",
+    "상품을 찾을 수 없습니다",
+    "존재하지 않는 상품",
+    "상품이 존재하지 않습니다",
+    "판매가 종료",
+    "판매 중지",
+    "판매중지",
+    "삭제된 상품",
+    "현재 판매중인 상품이 아닙니다",
+    "없는 페이지"
+  ],
   "reviewTerms": {
     "expiry_risk": [
       "소비기한 임박",

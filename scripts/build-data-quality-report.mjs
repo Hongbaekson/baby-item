@@ -52,6 +52,18 @@ const report = {
     rejectedOffers: countOffers("rejectedOffers"),
     offerStates,
   },
+  purchaseLinks: {
+    freshnessHours: appData.offerPolicy?.purchaseLinkFreshnessHours ?? null,
+    verified: items.filter((item) => item.purchaseLink?.status === "verified")
+      .length,
+    hidden: items.filter((item) => item.purchaseLink?.status !== "verified")
+      .length,
+    naverSearch: items.filter(
+      (item) => item.purchaseLink?.kind === "naver_search",
+    ).length,
+    official: items.filter((item) => item.purchaseLink?.kind === "official")
+      .length,
+  },
   needsReviewItems: items
     .filter(
       (item) =>

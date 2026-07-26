@@ -24,6 +24,7 @@ import {
   offerPriceLabel,
   offerShippingLabel,
   platformLabel,
+  primaryActionLabel,
   primaryPurchaseUrl,
   productImageUrl,
   referenceOffers,
@@ -45,13 +46,9 @@ function OfferList({
   return (
     <div className="offer-list">
       {offers.map((offer, index) => (
-        <a
+        <div
           key={offer.url}
-          className={verified && index === 0 ? "best" : ""}
-          href={offer.url}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          aria-label={`${offer.mallName} 상품 페이지 열기, ${offerPriceLabel(offer)}`}
+          className={`offer-row ${verified && index === 0 ? "best" : ""}`}
         >
           <span className="offer-main">
             <strong>{platformLabel(offer.platform, offer.mallName)}</strong>
@@ -64,8 +61,7 @@ function OfferList({
           </span>
           {verified && index === 0 && <em>최저가</em>}
           {!verified && <em>참고</em>}
-          <ExternalLink size={16} aria-hidden="true" />
-        </a>
+        </div>
       ))}
     </div>
   );
@@ -93,7 +89,6 @@ export function ProductModal({
   const purchaseUrl = primaryPurchaseUrl(item);
   const title = displayTitle(item);
   const summary = productSummary(item);
-  const hasFreshPrice = verifiedOffers.length > 0;
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
@@ -137,9 +132,7 @@ export function ProductModal({
     }
   }
 
-  const purchaseLabel = hasFreshPrice
-    ? "배송비 포함 최저가 보기"
-    : "구매처에서 최신가 확인";
+  const purchaseLabel = primaryActionLabel(item);
 
   return (
     <div
@@ -211,19 +204,29 @@ export function ProductModal({
             ))}
           </div>
 
-          <a
-            className="best-offer-panel"
-            href={purchaseUrl}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-          >
-            <ShoppingBag size={19} aria-hidden="true" />
-            <span>
-              <strong>{purchaseLabel}</strong>
-              <span>{linkHost(purchaseUrl)}</span>
-            </span>
-            <ExternalLink size={17} aria-hidden="true" />
-          </a>
+          {purchaseUrl ? (
+            <a
+              className="best-offer-panel"
+              href={purchaseUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+            >
+              <ShoppingBag size={19} aria-hidden="true" />
+              <span>
+                <strong>{purchaseLabel}</strong>
+                <span>{linkHost(purchaseUrl)}</span>
+              </span>
+              <ExternalLink size={17} aria-hidden="true" />
+            </a>
+          ) : (
+            <div className="best-offer-panel disabled" role="status">
+              <ShoppingBag size={19} aria-hidden="true" />
+              <span>
+                <strong>현재 판매 링크 확인 중</strong>
+                <span>존재가 확인된 페이지가 없어 링크를 숨겼습니다.</span>
+              </span>
+            </div>
+          )}
 
           <div className="modal-price-panel">
             <p className="modal-price">
@@ -254,7 +257,8 @@ export function ProductModal({
               </summary>
               <p className="section-help">
                 오래되었거나 배송비·결제 단계 재고가 확인되지 않은 검색
-                결과입니다. 결제 전 구매처에서 확인하세요.
+                결과입니다. 잘못된 페이지 이동을 막기 위해 참고 정보만
+                표시합니다.
               </p>
               <OfferList offers={candidates} verified={false} />
             </details>
@@ -333,19 +337,29 @@ export function ProductModal({
           </p>
         </div>
 
-        <a
-          className="modal-mobile-cta"
-          href={purchaseUrl}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-        >
-          <ShoppingBag size={18} aria-hidden="true" />
-          <span>
-            <strong>{purchaseLabel}</strong>
-            <small>{linkHost(purchaseUrl)}</small>
-          </span>
-          <ExternalLink size={16} aria-hidden="true" />
-        </a>
+        {purchaseUrl ? (
+          <a
+            className="modal-mobile-cta"
+            href={purchaseUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            <ShoppingBag size={18} aria-hidden="true" />
+            <span>
+              <strong>{purchaseLabel}</strong>
+              <small>{linkHost(purchaseUrl)}</small>
+            </span>
+            <ExternalLink size={16} aria-hidden="true" />
+          </a>
+        ) : (
+          <div className="modal-mobile-cta disabled" role="status">
+            <ShoppingBag size={18} aria-hidden="true" />
+            <span>
+              <strong>판매 링크 확인 중</strong>
+              <small>검증된 페이지가 없습니다</small>
+            </span>
+          </div>
+        )}
       </section>
     </div>
   );

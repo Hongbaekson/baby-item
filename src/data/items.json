@@ -60,12 +60,12 @@
         "💤수면 아이템"
       ],
       "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
-      "partnerLink": "https://malanghoney.com/product/detail.html?product_no=648&cate_no=271&display_group=1",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A7%90%EB%9E%91%ED%95%98%EB%8B%88+%EB%B0%B1%EC%83%89%EC%86%8C%EC%9D%8C%EA%B8%B0",
       "partnerLinks": [
         {
-          "url": "https://malanghoney.com/product/detail.html?product_no=648&cate_no=271&display_group=1",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%90%EB%9E%91%ED%95%98%EB%8B%88+%EB%B0%B1%EC%83%89%EC%86%8C%EC%9D%8C%EA%B8%B0",
           "category": "👶300일간 매일 사용한 육아템 정리",
-          "sourceItemId": "32eb4abb-08ed-80f4-a319-f79a86a68b1a"
+          "sourceItemId": "purchase-policy:item-95739902b6"
         }
       ],
       "price": 37900,
@@ -77,7 +77,7 @@
       "offerStatus": {
         "state": "candidates_available",
         "syncedAt": "2026-07-01T04:53:41.930Z",
-        "checkedOffers": 4
+        "checkedOffers": 3
       },
       "memo": "",
       "imagePath": "https://shopping-phinf.pstatic.net/main_5933708/59337086026.jpg",
@@ -87,6 +87,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -103,23 +104,6 @@
         "syncedAt": "2026-07-01T04:53:41.930Z"
       },
       "candidateOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7868014366&ctag=7868014366&lptag=I25156966420&itemId=25156966420&vendorItemId=92155138494&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 33900,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:41.930Z",
-          "matchConfidence": "high",
-          "productName": "유베코 휴대용 아기 신생아 말랑하니 백색소음기 수면교육 수유등  모던화이트",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5933708/59337086026.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        },
         {
           "url": "https://search.shopping.naver.com/catalog/59842629698",
           "platform": "naver",
@@ -175,7 +159,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%90%EB%9E%91%ED%95%98%EB%8B%88+%EB%B0%B1%EC%83%89%EC%86%8C%EC%9D%8C%EA%B8%B0",
+        "checkedAt": "2026-07-01T04:53:41.930Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-7995e62fc2",
@@ -185,12 +176,12 @@
         "🍼수유아이템"
       ],
       "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
-      "partnerLink": "https://link.coupang.com/a/cHM8Zm",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%B3%B4%EB%A5%B4%EB%A5%B4+%EB%B6%84%EC%9C%A0%ED%8F%AC%ED%8A%B8",
       "partnerLinks": [
         {
-          "url": "https://link.coupang.com/a/cHM8Zm",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%B3%B4%EB%A5%B4%EB%A5%B4+%EB%B6%84%EC%9C%A0%ED%8F%AC%ED%8A%B8",
           "category": "👶300일간 매일 사용한 육아템 정리",
-          "sourceItemId": "32eb4abb-08ed-80d5-9011-f4eab770f1d2"
+          "sourceItemId": "purchase-policy:item-7995e62fc2"
         }
       ],
       "price": 95000,
@@ -202,7 +193,7 @@
       "offerStatus": {
         "state": "candidates_available",
         "syncedAt": "2026-07-01T04:53:42.337Z",
-        "checkedOffers": 4
+        "checkedOffers": 2
       },
       "memo": "-> 물을 100도까지 끓여 염소를 제거한 후 아기의 분유를 타기 좋은 온도인 43도로 물온도를 맞춰줌\n\n-> 분유 탈때마다 물을 끓이고 식히면 너무 힘드니 필요",
       "imagePath": "https://shopping-phinf.pstatic.net/main_6000004/60000049426.1.jpg",
@@ -212,6 +203,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -228,40 +220,6 @@
         "syncedAt": "2026-07-01T04:53:42.337Z"
       },
       "candidateOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=6962086794&ctag=6962086794&lptag=I16952940706&itemId=16952940706&vendorItemId=93383260215&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 89000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:42.337Z",
-          "matchConfidence": "high",
-          "productName": "보르르 분유포트 단일상품",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6000004/60000049426.1.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9268670469&ctag=9268670469&lptag=l906206142759&itemId=65199020467&vendorItemId=93383260215&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 89000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:42.337Z",
-          "matchConfidence": "high",
-          "productName": "보르르 분유포트",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6011933/60119330637.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        },
         {
           "url": "https://search.shopping.naver.com/catalog/52507335410",
           "platform": "naver",
@@ -297,7 +255,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%B3%B4%EB%A5%B4%EB%A5%B4+%EB%B6%84%EC%9C%A0%ED%8F%AC%ED%8A%B8",
+        "checkedAt": "2026-07-01T04:53:42.337Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-35daf7dc3f",
@@ -307,17 +272,12 @@
         "🍼수유아이템"
       ],
       "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
-      "partnerLink": "https://brand.naver.com/upangkorea/products/10709525973",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%9C%A0%ED%8C%A1+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+2+%EC%A0%96%EB%B3%91+%EC%86%8C%EB%8F%85%EA%B8%B0",
       "partnerLinks": [
         {
-          "url": "https://brand.naver.com/upangkorea/products/10709525973",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%9C%A0%ED%8C%A1+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+2+%EC%A0%96%EB%B3%91+%EC%86%8C%EB%8F%85%EA%B8%B0",
           "category": "👶300일간 매일 사용한 육아템 정리",
-          "sourceItemId": "32eb4abb-08ed-80d6-9e4f-e1f079a14bc2"
-        },
-        {
-          "url": "https://link.coupang.com/a/cHNkIv",
-          "category": "🍼수유아이템",
-          "sourceItemId": "248b4abb-08ed-8059-aad0-dfd6afafeb63"
+          "sourceItemId": "purchase-policy:item-35daf7dc3f"
         }
       ],
       "price": 340920,
@@ -329,7 +289,7 @@
       "offerStatus": {
         "state": "candidates_available",
         "syncedAt": "2026-07-01T04:53:42.719Z",
-        "checkedOffers": 4
+        "checkedOffers": 1
       },
       "memo": "",
       "imagePath": "https://shopping-phinf.pstatic.net/main_5994302/59943026578.8.jpg",
@@ -339,6 +299,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -355,57 +316,6 @@
         "syncedAt": "2026-07-01T04:53:42.719Z"
       },
       "candidateOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=4883310455&ctag=4883310455&lptag=l304338622152&itemId=58263132430&vendorItemId=94963937040&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 350350,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:42.719Z",
-          "matchConfidence": "high",
-          "productName": "유팡 시그니처2 플러스 젖병 소독기 UP920A",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5994302/59943026578.8.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=4883310455&ctag=4883310455&lptag=l423225268484&itemId=42224358684&vendorItemId=94963937041&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 350350,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:42.719Z",
-          "matchConfidence": "high",
-          "productName": "유팡 시그니처2 플러스 젖병 소독기 UP920A",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5580183/55801830138.20.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=8438035154&ctag=8438035154&lptag=I24425263488&itemId=24425263488&vendorItemId=94963937041&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 350350,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:42.719Z",
-          "matchConfidence": "high",
-          "productName": "유팡 시그니처2 플러스 젖병 소독기 UP920A 밀크화이트 대용량 건조기 출산 선물",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5554873/55548738627.20.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        },
         {
           "url": "https://search.shopping.naver.com/catalog/60410357506",
           "platform": "naver",
@@ -424,7 +334,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%9C%A0%ED%8C%A1+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+2+%EC%A0%96%EB%B3%91+%EC%86%8C%EB%8F%85%EA%B8%B0",
+        "checkedAt": "2026-07-01T04:53:42.719Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-b74f1aa7c3",
@@ -433,12 +350,12 @@
         "👶300일간 매일 사용한 육아템 정리"
       ],
       "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
-      "partnerLink": "https://smartstore.naver.com/sckingdom/products/12146326609",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%ED%97%A4%EC%9D%B4%ED%99%88+%ED%94%84%EB%A1%9C+%ED%99%88%EC%BA%A0+%EA%B0%80%EC%A0%95%EC%9A%A9+CCTV+%ED%8E%AB+%EB%B2%A0%EC%9D%B4%EB%B9%84%EC%BA%A0+%ED%99%88%EC%B9%B4%EB%A9%94%EB%9D%BC",
       "partnerLinks": [
         {
-          "url": "https://smartstore.naver.com/sckingdom/products/12146326609",
+          "url": "https://search.shopping.naver.com/search/all?query=%ED%97%A4%EC%9D%B4%ED%99%88+%ED%94%84%EB%A1%9C+%ED%99%88%EC%BA%A0+%EA%B0%80%EC%A0%95%EC%9A%A9+CCTV+%ED%8E%AB+%EB%B2%A0%EC%9D%B4%EB%B9%84%EC%BA%A0+%ED%99%88%EC%B9%B4%EB%A9%94%EB%9D%BC",
           "category": "👶300일간 매일 사용한 육아템 정리",
-          "sourceItemId": "32eb4abb-08ed-8018-b124-d4129936ea5f"
+          "sourceItemId": "purchase-policy:item-b74f1aa7c3"
         }
       ],
       "price": 72900,
@@ -460,6 +377,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -493,7 +411,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%ED%97%A4%EC%9D%B4%ED%99%88+%ED%94%84%EB%A1%9C+%ED%99%88%EC%BA%A0+%EA%B0%80%EC%A0%95%EC%9A%A9+CCTV+%ED%8E%AB+%EB%B2%A0%EC%9D%B4%EB%B9%84%EC%BA%A0+%ED%99%88%EC%B9%B4%EB%A9%94%EB%9D%BC",
+        "checkedAt": "2026-07-01T05:38:47.919Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-c31a58fcb7",
@@ -502,12 +427,12 @@
         "💤수면 아이템"
       ],
       "primaryCategory": "💤수면 아이템",
-      "partnerLink": "https://smartstore.naver.com/sckingdom/products/10803710483",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%95%88%EC%A0%84%ED%97%AC%ED%8D%BC+%ED%99%88%EC%BA%A0+%EA%B1%B0%EC%B9%98%EB%8C%80",
       "partnerLinks": [
         {
-          "url": "https://smartstore.naver.com/sckingdom/products/10803710483",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%95%88%EC%A0%84%ED%97%AC%ED%8D%BC+%ED%99%88%EC%BA%A0+%EA%B1%B0%EC%B9%98%EB%8C%80",
           "category": "💤수면 아이템",
-          "sourceItemId": "248b4abb-08ed-80e9-94a4-d61b7c6cc61c"
+          "sourceItemId": "purchase-policy:item-c31a58fcb7"
         }
       ],
       "price": 9900,
@@ -529,6 +454,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -562,7 +488,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%95%88%EC%A0%84%ED%97%AC%ED%8D%BC+%ED%99%88%EC%BA%A0+%EA%B1%B0%EC%B9%98%EB%8C%80",
+        "checkedAt": "2026-07-01T05:52:44.458Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-c095ae487b",
@@ -571,12 +504,12 @@
         "💩배변아이템"
       ],
       "primaryCategory": "💩배변아이템",
-      "partnerLink": "https://www.coupang.com/vp/products/8750121895?itemId=17216419488",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A1%A4%EB%B2%A0%EC%9D%B4%EB%B9%84+%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
       "partnerLinks": [
         {
-          "url": "https://www.coupang.com/vp/products/8750121895?itemId=17216419488",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%A1%A4%EB%B2%A0%EC%9D%B4%EB%B9%84+%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
           "category": "💩배변아이템",
-          "sourceItemId": "248b4abb-08ed-8009-b8bc-f222d83bb2d1"
+          "sourceItemId": "purchase-policy:item-c095ae487b"
         }
       ],
       "price": 8900,
@@ -588,7 +521,7 @@
       "offerStatus": {
         "state": "candidates_available",
         "syncedAt": "2026-07-01T05:38:47.919Z",
-        "checkedOffers": 4
+        "checkedOffers": 2
       },
       "memo": "",
       "imagePath": "https://shopping-phinf.pstatic.net/main_5977528/59775288113.jpg",
@@ -598,6 +531,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -614,23 +548,6 @@
       },
       "candidateOffers": [
         {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=8589805943&ctag=8589805943&lptag=V86158873717&itemId=19034890335&vendorItemId=86158873717&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 8900,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "롤베이비 착한 무형광 방수패드 신생아 아기 유아 방수요 아이보리 S 1개",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5977528/59775288113.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다.",
-          "reviewFlags": []
-        },
-        {
           "url": "https://search.shopping.naver.com/catalog/59809530158",
           "platform": "naver",
           "mallName": "네이버",
@@ -643,23 +560,6 @@
           "syncedAt": "2026-07-01T05:38:47.919Z",
           "matchConfidence": "high",
           "productName": "롤베이비 착한 무형광 방수패드",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5980953/59809530158.20260628071738.jpg",
-          "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다.",
-          "reviewFlags": []
-        },
-        {
-          "url": "https://www.coupang.com/vp/products/8750121895?itemId=17216419488",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 8900,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "manual-reviewed",
-          "syncedAt": "2026-07-01T05:38:47.919Z",
-          "matchConfidence": "high",
-          "productName": "롤베이비 방수패드",
           "imageUrl": "https://shopping-phinf.pstatic.net/main_5980953/59809530158.20260628071738.jpg",
           "note": "수동 검토로 확정한 구매 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다.",
           "reviewFlags": []
@@ -682,7 +582,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%A1%A4%EB%B2%A0%EC%9D%B4%EB%B9%84+%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
+        "checkedAt": "2026-07-01T05:38:47.919Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-194c1a1120",
@@ -691,12 +598,12 @@
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://link.coupang.com/a/c0LzoE",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%94%94%EC%95%84+%EC%A0%96%EB%B3%91+%EC%9C%A0%EC%95%84+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5%2C+1%EA%B0%9C%2C+500ml",
       "partnerLinks": [
         {
-          "url": "https://link.coupang.com/a/c0LzoE",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%94%94%EC%95%84+%EC%A0%96%EB%B3%91+%EC%9C%A0%EC%95%84+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5%2C+1%EA%B0%9C%2C+500ml",
           "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "2bbb4abb-08ed-80e3-a693-dd2713cebab7"
+          "sourceItemId": "purchase-policy:item-194c1a1120"
         }
       ],
       "price": null,
@@ -718,6 +625,7 @@
         "status": "usable_with_warnings",
         "errorCount": 0,
         "warningCount": 1,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
@@ -808,6 +716,13 @@
         "productName": "마더케이 디아 젖병 유아 주방세제 무향, 1개, 500ml",
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T04:53:44.072Z"
+      },
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%94%94%EC%95%84+%EC%A0%96%EB%B3%91+%EC%9C%A0%EC%95%84+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5%2C+1%EA%B0%9C%2C+500ml",
+        "checkedAt": "2026-07-01T04:53:44.072Z",
+        "source": "naver-shopping-search-api"
       }
     },
     {
@@ -817,12 +732,12 @@
         "💤수면 아이템"
       ],
       "primaryCategory": "💤수면 아이템",
-      "partnerLink": "https://smartstore.naver.com/andbaby/products/8771207812",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%AE%A4%EB%9D%BC%28mula%29%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
       "partnerLinks": [
         {
-          "url": "https://smartstore.naver.com/andbaby/products/8771207812",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%AE%A4%EB%9D%BC%28mula%29%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
           "category": "💤수면 아이템",
-          "sourceItemId": "248b4abb-08ed-806d-ad54-d968943ec27c"
+          "sourceItemId": "purchase-policy:item-9a9c893193"
         }
       ],
       "price": 42000,
@@ -844,6 +759,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -935,7 +851,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%AE%A4%EB%9D%BC%28mula%29%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
+        "checkedAt": "2026-07-01T05:38:47.919Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-073cb29318",
@@ -944,12 +867,12 @@
         "💩신생아 배앓이 꿀템"
       ],
       "primaryCategory": "💩신생아 배앓이 꿀템",
-      "partnerLink": "https://link.coupang.com/a/cOEBWL",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%B0%94%EC%9D%B4%EC%98%A4+%EA%B0%80%EC%9D%B4%EC%95%84+%EC%9C%A0%EC%82%B0%EA%B7%A0",
       "partnerLinks": [
         {
-          "url": "https://link.coupang.com/a/cOEBWL",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%B0%94%EC%9D%B4%EC%98%A4+%EA%B0%80%EC%9D%B4%EC%95%84+%EC%9C%A0%EC%82%B0%EA%B7%A0",
           "category": "💩신생아 배앓이 꿀템",
-          "sourceItemId": "264b4abb-08ed-802f-bf1d-c2abf0a5711b"
+          "sourceItemId": "purchase-policy:item-073cb29318"
         }
       ],
       "price": null,
@@ -971,6 +894,7 @@
         "status": "usable_with_warnings",
         "errorCount": 0,
         "warningCount": 1,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
@@ -1027,7 +951,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%B0%94%EC%9D%B4%EC%98%A4+%EA%B0%80%EC%9D%B4%EC%95%84+%EC%9C%A0%EC%82%B0%EA%B7%A0",
+        "checkedAt": "2026-07-01T04:53:45.364Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-b6cc51720e",
@@ -1036,12 +967,12 @@
         "😎외출 아이템"
       ],
       "primaryCategory": "😎외출 아이템",
-      "partnerLink": "https://link.coupang.com/a/dbMLd8",
+      "partnerLink": "https://www.i-angel.co.kr/product/%EB%8B%A5%ED%84%B0%EB%8B%A4%EC%9D%B4%EC%96%BC-%ED%8F%B4%EB%93%9C%EC%97%90%EC%96%B4-%EC%98%AC%EC%9D%B8%EC%9B%90-%ED%9E%99%EC%8B%9C%ED%8A%B8-%EC%95%84%EA%B8%B0%EB%9D%A0/",
       "partnerLinks": [
         {
-          "url": "https://link.coupang.com/a/dbMLd8",
+          "url": "https://www.i-angel.co.kr/product/%EB%8B%A5%ED%84%B0%EB%8B%A4%EC%9D%B4%EC%96%BC-%ED%8F%B4%EB%93%9C%EC%97%90%EC%96%B4-%EC%98%AC%EC%9D%B8%EC%9B%90-%ED%9E%99%EC%8B%9C%ED%8A%B8-%EC%95%84%EA%B8%B0%EB%9D%A0/",
           "category": "😎외출 아이템",
-          "sourceItemId": "2c2b4abb-08ed-8059-813d-d0927b0dfd1c"
+          "sourceItemId": "purchase-policy:item-b6cc51720e"
         }
       ],
       "price": null,
@@ -1051,9 +982,9 @@
       "bestOffer": null,
       "purchaseOffers": [],
       "offerStatus": {
-        "state": "candidates_available",
-        "syncedAt": "2026-07-01T04:53:46.631Z",
-        "checkedOffers": 4
+        "state": "no_available_offer",
+        "syncedAt": null,
+        "checkedOffers": 0
       },
       "memo": "",
       "imagePath": "https://shopping-phinf.pstatic.net/main_5890276/58902766550.jpg",
@@ -1063,6 +994,7 @@
         "status": "usable_with_warnings",
         "errorCount": 0,
         "warningCount": 1,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
@@ -1083,77 +1015,15 @@
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T04:53:46.631Z"
       },
-      "candidateOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9167185706&ctag=9167185706&lptag=I27821762678&itemId=27821762678&vendorItemId=93128422214&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 304000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:46.631Z",
-          "matchConfidence": "high",
-          "productName": "아이엔젤 닥터다이얼 폴드에어 아기띠 힙시트 베이지 FREE 올인원 신생아용품 베이비용품",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5890276/58902766550.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9167185706&ctag=9167185706&lptag=I27821767054&itemId=27821767054&vendorItemId=93128422206&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 304000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:46.631Z",
-          "matchConfidence": "high",
-          "productName": "아이엔젤 닥터다이얼 폴드에어 아기띠 힙시트 올인원 아이보리 FREE  신생아용품 베이비용품",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5905906/59059066602.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9280551009&ctag=9280551009&lptag=l227416157819&itemId=64281171975&vendorItemId=93127910239&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 348000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:46.631Z",
-          "matchConfidence": "high",
-          "productName": "아이엔젤 올인원 닥터다이얼 폴드 에어 힙시트 아기띠",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5807064/58070643252.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=9280551009&ctag=9280551009&lptag=l244822126113&itemId=64241283112&vendorItemId=93127910203&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 348000,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:46.631Z",
-          "matchConfidence": "high",
-          "productName": "아이엔젤 올인원 닥터다이얼 폴드 에어 힙시트 아기띠",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5770039/57700393542.6.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": []
-        }
-      ],
-      "rejectedOffers": []
+      "candidateOffers": [],
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "official",
+        "url": "https://www.i-angel.co.kr/product/%EB%8B%A5%ED%84%B0%EB%8B%A4%EC%9D%B4%EC%96%BC-%ED%8F%B4%EB%93%9C%EC%97%90%EC%96%B4-%EC%98%AC%EC%9D%B8%EC%9B%90-%ED%9E%99%EC%8B%9C%ED%8A%B8-%EC%95%84%EA%B8%B0%EB%9D%A0/",
+        "checkedAt": "2026-07-26T07:30:12.911Z",
+        "source": "live-http"
+      }
     },
     {
       "id": "item-4f18824aa0",
@@ -1162,12 +1032,12 @@
         "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)"
       ],
       "primaryCategory": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
-      "partnerLink": "https://link.coupang.com/a/dpxqAV",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%95%84%EB%82%98%ED%8C%8C+%EC%86%90%EB%AA%A9%EB%B3%B4%ED%98%B8%EB%8C%80",
       "partnerLinks": [
         {
-          "url": "https://link.coupang.com/a/dpxqAV",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%95%84%EB%82%98%ED%8C%8C+%EC%86%90%EB%AA%A9%EB%B3%B4%ED%98%B8%EB%8C%80",
           "category": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
-          "sourceItemId": "2e5b4abb-08ed-8055-8086-c6dcf5db20dc"
+          "sourceItemId": "purchase-policy:item-4f18824aa0"
         }
       ],
       "price": null,
@@ -1189,6 +1059,7 @@
         "status": "usable_with_warnings",
         "errorCount": 0,
         "warningCount": 1,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
@@ -1228,7 +1099,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%95%84%EB%82%98%ED%8C%8C+%EC%86%90%EB%AA%A9%EB%B3%B4%ED%98%B8%EB%8C%80",
+        "checkedAt": "2026-07-01T04:53:46.832Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-8e7ce75a58",
@@ -1237,14 +1115,8 @@
         "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)"
       ],
       "primaryCategory": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
-      "partnerLink": "https://search.shopping.naver.com/catalog/41067307356",
-      "partnerLinks": [
-        {
-          "url": "https://search.shopping.naver.com/catalog/41067307356",
-          "category": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
-          "sourceItemId": "2e5b4abb-08ed-800c-85e4-ff877fa87716"
-        }
-      ],
+      "partnerLink": "",
+      "partnerLinks": [],
       "price": null,
       "priceText": "",
       "displayPrice": "가격 정보 확인 중",
@@ -1263,12 +1135,18 @@
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 1,
+        "warningCount": 2,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
             "severity": "warning",
             "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          },
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
           }
         ]
       },
@@ -1362,7 +1240,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "unavailable",
+        "kind": "none",
+        "url": null,
+        "checkedAt": null,
+        "source": "no-current-non-coupang-evidence"
+      }
     },
     {
       "id": "item-e9d15fbf7f",
@@ -1376,7 +1261,7 @@
         {
           "url": "https://www.whittlestore.com/views/shop/shopview?pack_content_id=5926",
           "category": "🎉놀이아이템",
-          "sourceItemId": "248b4abb-08ed-8087-8781-decce27c2cb6"
+          "sourceItemId": "purchase-policy:item-e9d15fbf7f"
         }
       ],
       "price": 69900,
@@ -1398,6 +1283,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -1490,7 +1376,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "official",
+        "url": "https://www.whittlestore.com/views/shop/shopview?pack_content_id=5926",
+        "checkedAt": "2026-07-26T07:30:12.911Z",
+        "source": "live-http"
+      }
     },
     {
       "id": "item-f8e90a98ec",
@@ -1499,14 +1392,8 @@
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://link.coupang.com/a/c9qZEt",
-      "partnerLinks": [
-        {
-          "url": "https://link.coupang.com/a/c9qZEt",
-          "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "2bbb4abb-08ed-8077-a1e4-fe4abaa47d58"
-        }
-      ],
+      "partnerLink": "",
+      "partnerLinks": [],
       "price": null,
       "priceText": "",
       "displayPrice": "가격 정보 확인 중",
@@ -1515,7 +1402,7 @@
       "purchaseOffers": [],
       "offerStatus": {
         "state": "no_available_offer",
-        "syncedAt": "2026-07-01T04:53:47.677Z",
+        "syncedAt": null,
         "checkedOffers": 0
       },
       "memo": "",
@@ -1525,12 +1412,18 @@
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 1,
+        "warningCount": 2,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
             "severity": "warning",
             "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          },
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
           }
         ]
       },
@@ -1538,7 +1431,14 @@
         "2bbb4abb-08ed-8077-a1e4-fe4abaa47d58"
       ],
       "candidateOffers": [],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "unavailable",
+        "kind": "none",
+        "url": null,
+        "checkedAt": null,
+        "source": "no-current-non-coupang-evidence"
+      }
     },
     {
       "id": "item-30c64e909c",
@@ -1547,12 +1447,12 @@
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://link.coupang.com/a/cFYlhP",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EB%A9%A7+%EC%8A%A4%ED%85%8C%EC%9D%B8%EB%A0%88%EC%8A%A4+%EC%82%AC%EA%B0%81+%EC%84%A4%EA%B1%B0%EC%A7%80%ED%86%B5+10L",
       "partnerLinks": [
         {
-          "url": "https://link.coupang.com/a/cFYlhP",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EB%A9%A7+%EC%8A%A4%ED%85%8C%EC%9D%B8%EB%A0%88%EC%8A%A4+%EC%82%AC%EA%B0%81+%EC%84%A4%EA%B1%B0%EC%A7%80%ED%86%B5+10L",
           "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "2bbb4abb-08ed-80f0-a404-cd5000501f7e"
+          "sourceItemId": "purchase-policy:item-30c64e909c"
         }
       ],
       "price": null,
@@ -1574,6 +1474,7 @@
         "status": "usable_with_warnings",
         "errorCount": 0,
         "warningCount": 1,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
@@ -1664,6 +1565,13 @@
         "productName": "코멧 스테인레스 사각 설거지통 10L",
         "source": "naver-shopping-search-api",
         "syncedAt": "2026-07-01T04:53:48.362Z"
+      },
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EB%A9%A7+%EC%8A%A4%ED%85%8C%EC%9D%B8%EB%A0%88%EC%8A%A4+%EC%82%AC%EA%B0%81+%EC%84%A4%EA%B1%B0%EC%A7%80%ED%86%B5+10L",
+        "checkedAt": "2026-07-01T04:53:48.362Z",
+        "source": "naver-shopping-search-api"
       }
     },
     {
@@ -1673,12 +1581,12 @@
         "💩배변아이템"
       ],
       "primaryCategory": "💩배변아이템",
-      "partnerLink": "https://smartstore.naver.com/ppbb/products/3478201617",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%ED%8F%AC%ED%94%84%EB%B2%A0%EB%B2%A0+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0",
       "partnerLinks": [
         {
-          "url": "https://smartstore.naver.com/ppbb/products/3478201617",
+          "url": "https://search.shopping.naver.com/search/all?query=%ED%8F%AC%ED%94%84%EB%B2%A0%EB%B2%A0+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0",
           "category": "💩배변아이템",
-          "sourceItemId": "248b4abb-08ed-8073-9619-fa443f18f0bd"
+          "sourceItemId": "purchase-policy:item-08cfcdce92"
         }
       ],
       "price": 87200,
@@ -1690,7 +1598,7 @@
       "offerStatus": {
         "state": "candidates_available",
         "syncedAt": "2026-07-01T05:49:29.175Z",
-        "checkedOffers": 4
+        "checkedOffers": 2
       },
       "memo": "",
       "imagePath": "https://shopping-phinf.pstatic.net/main_5947234/59472342713.20260331163857.jpg",
@@ -1700,6 +1608,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -1750,46 +1659,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=6388545460&ctag=6388545460&lptag=l222253972921&itemId=52221322979&vendorItemId=71416515164&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 88200,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T05:49:29.175Z",
-          "matchConfidence": "high",
-          "productName": "[포프베베] 다기능 아기 비데(세면대형) 목욕의자",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5976807/59768078911.2.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다.",
-          "reviewFlags": [
-            "title_mismatch"
-          ]
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=8653586404&ctag=8653586404&lptag=I25122293927&itemId=25122293927&vendorItemId=71416515164&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 88200,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T05:49:29.175Z",
-          "matchConfidence": "high",
-          "productName": "[포프베베] 다기능 아기 비데(세면대형) 목욕의자 그레이",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5923226/59232264729.2.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 구매처에서 최종 확인해야 합니다.",
-          "reviewFlags": [
-            "title_mismatch"
-          ]
-        }
-      ]
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%ED%8F%AC%ED%94%84%EB%B2%A0%EB%B2%A0+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0",
+        "checkedAt": "2026-07-01T05:49:29.175Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-7993572892",
@@ -1798,12 +1675,12 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🧼목욕/세탁 아이템",
-      "partnerLink": "https://www.coupang.com/vp/products/7993572892?itemId=22226708048&vendorItemId=89272628995&src=1191000&spec=10999999&addtag=400&ctag=7993572892&lptag=CFM59422370&itime=20260701165520&pageType=PRODUCT&pageValue=7993572892&wPcid=17828620151193510270454&wRef=&wTime=20260701165520&redirect=landing&abTestInfo=&mcid=502a8429551e43779e71ca071fa46f91&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EB%B0%94%EC%8A%A4+%EC%95%A4+%EC%83%B4%ED%91%B8%2C+500ml%2C+1%EA%B0%9C",
       "partnerLinks": [
         {
-          "url": "https://www.coupang.com/vp/products/7993572892?itemId=22226708048&vendorItemId=89272628995&src=1191000&spec=10999999&addtag=400&ctag=7993572892&lptag=CFM59422370&itime=20260701165520&pageType=PRODUCT&pageValue=7993572892&wPcid=17828620151193510270454&wRef=&wTime=20260701165520&redirect=landing&abTestInfo=&mcid=502a8429551e43779e71ca071fa46f91&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+          "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EB%B0%94%EC%8A%A4+%EC%95%A4+%EC%83%B4%ED%91%B8%2C+500ml%2C+1%EA%B0%9C",
           "category": "🧼목욕/세탁 아이템",
-          "sourceItemId": "coupang-7993572892-22226708048"
+          "sourceItemId": "purchase-policy:item-7993572892"
         }
       ],
       "price": null,
@@ -1815,7 +1692,7 @@
       "offerStatus": {
         "state": "candidates_available",
         "syncedAt": "2026-07-01T13:02:18.155Z",
-        "checkedOffers": 4
+        "checkedOffers": 3
       },
       "memo": "",
       "imagePath": "https://shopping-phinf.pstatic.net/main_5557388/55573888013.jpg",
@@ -1825,6 +1702,7 @@
         "status": "usable_with_warnings",
         "errorCount": 0,
         "warningCount": 1,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
@@ -1846,23 +1724,6 @@
         "syncedAt": "2026-07-01T13:02:18.155Z"
       },
       "candidateOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7993572892&ctag=7993572892&lptag=I22226708048&itemId=22226708048&vendorItemId=89272628995&spec=10305197",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 21900,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T13:02:18.155Z",
-          "matchConfidence": "medium",
-          "productName": "FRANKLIIN 바스 앤 샴푸 500ml  신생아 및 어린이용 올인원 워시",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5557388/55573888013.jpg",
-          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다.",
-          "reviewFlags": []
-        },
         {
           "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=9145020904&tid=1000000061",
           "platform": "naver",
@@ -1918,7 +1779,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EB%B0%94%EC%8A%A4+%EC%95%A4+%EC%83%B4%ED%91%B8%2C+500ml%2C+1%EA%B0%9C",
+        "checkedAt": "2026-07-01T13:02:18.155Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-8360713149",
@@ -1927,12 +1795,12 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🧼목욕/세탁 아이템",
-      "partnerLink": "https://www.coupang.com/vp/products/8360713149?itemId=24161000200&vendorItemId=95690820792&src=1191000&spec=10999999&addtag=400&ctag=8360713149&lptag=CFM59422370&itime=20260701165544&pageType=PRODUCT&pageValue=8360713149&wPcid=17828620151193510270454&wRef=&wTime=20260701165544&redirect=landing&abTestInfo=&mcid=20b8f53773554a808dcd1e687d2e8573&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%84%B8%ED%83%81%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5",
       "partnerLinks": [
         {
-          "url": "https://www.coupang.com/vp/products/8360713149?itemId=24161000200&vendorItemId=95690820792&src=1191000&spec=10999999&addtag=400&ctag=8360713149&lptag=CFM59422370&itime=20260701165544&pageType=PRODUCT&pageValue=8360713149&wPcid=17828620151193510270454&wRef=&wTime=20260701165544&redirect=landing&abTestInfo=&mcid=20b8f53773554a808dcd1e687d2e8573&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+          "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%84%B8%ED%83%81%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5",
           "category": "🧼목욕/세탁 아이템",
-          "sourceItemId": "coupang-8360713149-24161000200"
+          "sourceItemId": "purchase-policy:item-8360713149"
         }
       ],
       "price": null,
@@ -1944,7 +1812,7 @@
       "offerStatus": {
         "state": "candidates_available",
         "syncedAt": "2026-07-01T13:02:18.155Z",
-        "checkedOffers": 4
+        "checkedOffers": 2
       },
       "memo": "",
       "imagePath": "https://shopping-phinf.pstatic.net/main_6059213/60592132678.1.jpg",
@@ -1954,6 +1822,7 @@
         "status": "usable_with_warnings",
         "errorCount": 0,
         "warningCount": 1,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
@@ -1975,40 +1844,6 @@
         "syncedAt": "2026-07-01T13:02:18.155Z"
       },
       "candidateOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=3081617934&ctag=3081617934&lptag=l210041220006&itemId=46201010002&vendorItemId=95690820792&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 12130,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T13:02:18.155Z",
-          "matchConfidence": "high",
-          "productName": "FRANKLIIN 세탁세제 무향",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_6059213/60592132678.1.jpg",
-          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다.",
-          "reviewFlags": []
-        },
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=8360713149&ctag=8360713149&lptag=I24161000200&itemId=24161000200&vendorItemId=95690820792&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 12130,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T13:02:18.155Z",
-          "matchConfidence": "high",
-          "productName": "FRANKLIIN 세탁세제 무향  1L  1개",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5811078/58110782960.28.jpg",
-          "note": "수동 검토로 확정한 네이버 쇼핑 검색 API 후보입니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다.",
-          "reviewFlags": []
-        },
         {
           "url": "https://search.shopping.naver.com/catalog/54368734319",
           "platform": "naver",
@@ -2044,7 +1879,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%84%B8%ED%83%81%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5",
+        "checkedAt": "2026-07-01T13:02:18.155Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-8309014082",
@@ -2054,12 +1896,12 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://www.coupang.com/vp/products/8309014082?itemId=23974362780&vendorItemId=86714034495&src=1191000&spec=10999999&addtag=400&ctag=8309014082&lptag=CFM59422370&itime=20260701165551&pageType=PRODUCT&pageValue=8309014082&wPcid=17828620151193510270454&wRef=&wTime=20260701165551&redirect=landing&abTestInfo=&mcid=d6726ec896a14405b5ab5054e9c658a5&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C%26%EC%A0%96%EB%B3%91%EC%84%B8%EC%A0%95%EC%A0%9C%2C+500ml%2C+1%EA%B0%9C",
       "partnerLinks": [
         {
-          "url": "https://www.coupang.com/vp/products/8309014082?itemId=23974362780&vendorItemId=86714034495&src=1191000&spec=10999999&addtag=400&ctag=8309014082&lptag=CFM59422370&itime=20260701165551&pageType=PRODUCT&pageValue=8309014082&wPcid=17828620151193510270454&wRef=&wTime=20260701165551&redirect=landing&abTestInfo=&mcid=d6726ec896a14405b5ab5054e9c658a5&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+          "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C%26%EC%A0%96%EB%B3%91%EC%84%B8%EC%A0%95%EC%A0%9C%2C+500ml%2C+1%EA%B0%9C",
           "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "coupang-8309014082-23974362780"
+          "sourceItemId": "purchase-policy:item-8309014082"
         }
       ],
       "price": null,
@@ -2081,6 +1923,7 @@
         "status": "usable_with_warnings",
         "errorCount": 0,
         "warningCount": 1,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
@@ -2176,7 +2019,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C%26%EC%A0%96%EB%B3%91%EC%84%B8%EC%A0%95%EC%A0%9C%2C+500ml%2C+1%EA%B0%9C",
+        "checkedAt": "2026-07-01T13:02:18.155Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-8631775229",
@@ -2185,12 +2035,12 @@
         "🍼수유아이템"
       ],
       "primaryCategory": "🍼수유아이템",
-      "partnerLink": "https://www.coupang.com/vp/products/8631775229?itemId=13528009204&vendorItemId=78809898534&src=1191000&spec=10999999&addtag=400&ctag=8631775229&lptag=CFM59422370&itime=20260701165604&pageType=PRODUCT&pageValue=8631775229&wPcid=17828620151193510270454&wRef=&wTime=20260701165604&redirect=landing&abTestInfo=&mcid=5dc1144792d54e77add106a2a98920f1&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%95%B1%EC%86%94%EB%A3%A8%ED%8A%B8+%EB%AA%85%EC%9E%91+%EB%B6%84%EC%9C%A0+1%EB%8B%A8%EA%B3%84%2C+800g%2C+1%EA%B0%9C",
       "partnerLinks": [
         {
-          "url": "https://www.coupang.com/vp/products/8631775229?itemId=13528009204&vendorItemId=78809898534&src=1191000&spec=10999999&addtag=400&ctag=8631775229&lptag=CFM59422370&itime=20260701165604&pageType=PRODUCT&pageValue=8631775229&wPcid=17828620151193510270454&wRef=&wTime=20260701165604&redirect=landing&abTestInfo=&mcid=5dc1144792d54e77add106a2a98920f1&sharesource=sharebutton&style=&isshortened=Y&settlement=N",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%95%B1%EC%86%94%EB%A3%A8%ED%8A%B8+%EB%AA%85%EC%9E%91+%EB%B6%84%EC%9C%A0+1%EB%8B%A8%EA%B3%84%2C+800g%2C+1%EA%B0%9C",
           "category": "🍼수유아이템",
-          "sourceItemId": "coupang-8631775229-13528009204"
+          "sourceItemId": "purchase-policy:item-8631775229"
         }
       ],
       "price": null,
@@ -2212,6 +2062,7 @@
         "status": "usable_with_warnings",
         "errorCount": 0,
         "warningCount": 1,
+        "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
@@ -2308,7 +2159,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%95%B1%EC%86%94%EB%A3%A8%ED%8A%B8+%EB%AA%85%EC%9E%91+%EB%B6%84%EC%9C%A0+1%EB%8B%A8%EA%B3%84%2C+800g%2C+1%EA%B0%9C",
+        "checkedAt": "2026-07-01T13:02:18.155Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-5833708604",
@@ -2317,12 +2175,12 @@
         "🍼수유아이템"
       ],
       "primaryCategory": "🍼수유아이템",
-      "partnerLink": "https://brand.naver.com/nutricia/products/5833708604",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%28%ED%95%9C%EA%B5%AD%EA%B3%B5%EC%8B%9D%29+%EC%95%95%ED%83%80%EB%B0%80+%ED%94%84%EB%A1%9C%ED%91%B8%ED%8A%B8%EB%9D%BC+%EB%93%80%EC%98%A4%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4+1%EB%8B%A8%EA%B3%84+%EB%B6%84%EC%9C%A0+800g%2C+1%EA%B0%9C",
       "partnerLinks": [
         {
-          "url": "https://brand.naver.com/nutricia/products/5833708604",
+          "url": "https://search.shopping.naver.com/search/all?query=%28%ED%95%9C%EA%B5%AD%EA%B3%B5%EC%8B%9D%29+%EC%95%95%ED%83%80%EB%B0%80+%ED%94%84%EB%A1%9C%ED%91%B8%ED%8A%B8%EB%9D%BC+%EB%93%80%EC%98%A4%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4+1%EB%8B%A8%EA%B3%84+%EB%B6%84%EC%9C%A0+800g%2C+1%EA%B0%9C",
           "category": "🍼수유아이템",
-          "sourceItemId": "naver-brand-5833708604"
+          "sourceItemId": "purchase-policy:item-5833708604"
         }
       ],
       "price": 47500,
@@ -2368,7 +2226,7 @@
       "offerStatus": {
         "state": "stale",
         "syncedAt": "2026-07-01T13:32:54.923Z",
-        "checkedOffers": 3
+        "checkedOffers": 2
       },
       "memo": "",
       "imagePath": "https://shopping-phinf.pstatic.net/main_8337820/83378208018.5.jpg",
@@ -2378,6 +2236,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -2392,25 +2251,7 @@
         "source": "manual-reviewed",
         "syncedAt": "2026-07-01T13:32:54.923Z"
       },
-      "candidateOffers": [
-        {
-          "url": "https://link.coupang.com/re/PCSNAVERPCSDP?pageKey=7116177395&ctag=7116177395&lptag=V78412809197&itemId=17804673630&vendorItemId=78412809197&spec=10305199",
-          "platform": "naver",
-          "mallName": "쿠팡",
-          "price": 47500,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T13:32:54.923Z",
-          "matchConfidence": "high",
-          "productName": "압타밀 프로푸트라 듀오어드밴스 분유 1단계  800g  1개",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_5957524/59575240696.10.jpg",
-          "note": "사용자가 전달한 Naver BrandStore 상품과 네이버 쇼핑 검색 API 후보를 수동 검토해 확정했습니다. 배송비와 결제 단계 재고는 구매처에서 최종 확인해야 합니다.",
-          "reviewFlags": []
-        }
-      ],
+      "candidateOffers": [],
       "rejectedOffers": [
         {
           "url": "https://search.shopping.naver.com/catalog/52324414621",
@@ -2431,7 +2272,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%28%ED%95%9C%EA%B5%AD%EA%B3%B5%EC%8B%9D%29+%EC%95%95%ED%83%80%EB%B0%80+%ED%94%84%EB%A1%9C%ED%91%B8%ED%8A%B8%EB%9D%BC+%EB%93%80%EC%98%A4%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4+1%EB%8B%A8%EA%B3%84+%EB%B6%84%EC%9C%A0+800g%2C+1%EA%B0%9C",
+        "checkedAt": "2026-07-01T13:32:54.923Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-11657920227",
@@ -2440,12 +2288,12 @@
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://brand.naver.com/motherk/products/11657920227",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%5B%EC%8A%88%ED%8D%BC%EC%A0%81%EB%A6%BD%5D+%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%A1%B1%ED%95%B8%EB%93%A4+%EB%A6%AC%ED%95%84%ED%98%95+%EC%8A%A4%ED%8E%80%EC%A7%80+%EC%A0%96%EB%B3%91%EC%86%94%26%EC%A0%96%EA%BC%AD%EC%A7%80%EC%86%94%2B%EC%86%8C%EB%8F%85%EC%A7%91%EA%B2%8C+%EC%84%B8%ED%8A%B8+1%EA%B0%9C%EC%9E%85%2C+%ED%81%AC%EB%A6%BC%2F%ED%81%AC%EB%A6%BC",
       "partnerLinks": [
         {
-          "url": "https://brand.naver.com/motherk/products/11657920227",
+          "url": "https://search.shopping.naver.com/search/all?query=%5B%EC%8A%88%ED%8D%BC%EC%A0%81%EB%A6%BD%5D+%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%A1%B1%ED%95%B8%EB%93%A4+%EB%A6%AC%ED%95%84%ED%98%95+%EC%8A%A4%ED%8E%80%EC%A7%80+%EC%A0%96%EB%B3%91%EC%86%94%26%EC%A0%96%EA%BC%AD%EC%A7%80%EC%86%94%2B%EC%86%8C%EB%8F%85%EC%A7%91%EA%B2%8C+%EC%84%B8%ED%8A%B8+1%EA%B0%9C%EC%9E%85%2C+%ED%81%AC%EB%A6%BC%2F%ED%81%AC%EB%A6%BC",
           "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "naver-brand-11657920227"
+          "sourceItemId": "purchase-policy:item-11657920227"
         }
       ],
       "price": 32900,
@@ -2501,6 +2349,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -2516,7 +2365,14 @@
         "syncedAt": "2026-07-01T13:37:51.328Z"
       },
       "candidateOffers": [],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%5B%EC%8A%88%ED%8D%BC%EC%A0%81%EB%A6%BD%5D+%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%A1%B1%ED%95%B8%EB%93%A4+%EB%A6%AC%ED%95%84%ED%98%95+%EC%8A%A4%ED%8E%80%EC%A7%80+%EC%A0%96%EB%B3%91%EC%86%94%26%EC%A0%96%EA%BC%AD%EC%A7%80%EC%86%94%2B%EC%86%8C%EB%8F%85%EC%A7%91%EA%B2%8C+%EC%84%B8%ED%8A%B8+1%EA%B0%9C%EC%9E%85%2C+%ED%81%AC%EB%A6%BC%2F%ED%81%AC%EB%A6%BC",
+        "checkedAt": "2026-07-01T13:37:51.328Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-4252707619",
@@ -2525,12 +2381,12 @@
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://brand.naver.com/bellacuisine/products/4252707619",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%B2%A8%EB%9D%BC%EC%BF%A0%EC%A7%84+%EC%9E%BC%ED%8C%9F+6%EB%A6%AC%ED%84%B0%2B%EC%9C%A0%EB%A6%AC%EB%9A%9C%EA%BB%91+%EC%84%B8%ED%8A%B8+%2F%EC%9D%B8%EB%8D%95%EC%85%98+%EA%B0%80%EB%8A%A5",
       "partnerLinks": [
         {
-          "url": "https://brand.naver.com/bellacuisine/products/4252707619",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%B2%A8%EB%9D%BC%EC%BF%A0%EC%A7%84+%EC%9E%BC%ED%8C%9F+6%EB%A6%AC%ED%84%B0%2B%EC%9C%A0%EB%A6%AC%EB%9A%9C%EA%BB%91+%EC%84%B8%ED%8A%B8+%2F%EC%9D%B8%EB%8D%95%EC%85%98+%EA%B0%80%EB%8A%A5",
           "category": "🍼젖병 열탕 소독",
-          "sourceItemId": "naver-brand-4252707619"
+          "sourceItemId": "purchase-policy:item-4252707619"
         }
       ],
       "price": 39800,
@@ -2586,6 +2442,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -2636,7 +2493,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%B2%A8%EB%9D%BC%EC%BF%A0%EC%A7%84+%EC%9E%BC%ED%8C%9F+6%EB%A6%AC%ED%84%B0%2B%EC%9C%A0%EB%A6%AC%EB%9A%9C%EA%BB%91+%EC%84%B8%ED%8A%B8+%2F%EC%9D%B8%EB%8D%95%EC%85%98+%EA%B0%80%EB%8A%A5",
+        "checkedAt": "2026-07-01T13:43:31.746Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-57429157998",
@@ -2645,12 +2509,12 @@
         "💤수면 아이템"
       ],
       "primaryCategory": "💤수면 아이템",
-      "partnerLink": "https://search.shopping.naver.com/catalog/57429157998",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A7%90%EB%9E%91%ED%95%98%EB%8B%88+%ED%84%B0%EC%B9%98%ED%98%95+%EB%B0%B1%EB%9D%BC%EC%9D%B4%ED%8A%B8+%EC%98%A8%EC%8A%B5%EB%8F%84%EA%B3%84",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/catalog/57429157998",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%90%EB%9E%91%ED%95%98%EB%8B%88+%ED%84%B0%EC%B9%98%ED%98%95+%EB%B0%B1%EB%9D%BC%EC%9D%B4%ED%8A%B8+%EC%98%A8%EC%8A%B5%EB%8F%84%EA%B3%84",
           "category": "💤수면 아이템",
-          "sourceItemId": "57429157998"
+          "sourceItemId": "purchase-policy:item-57429157998"
         }
       ],
       "price": 19900,
@@ -2672,6 +2536,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -2725,7 +2590,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%90%EB%9E%91%ED%95%98%EB%8B%88+%ED%84%B0%EC%B9%98%ED%98%95+%EB%B0%B1%EB%9D%BC%EC%9D%B4%ED%8A%B8+%EC%98%A8%EC%8A%B5%EB%8F%84%EA%B3%84",
+        "checkedAt": "2026-07-01T14:06:58.926Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-9157246424",
@@ -2734,12 +2606,12 @@
         "👶300일간 매일 사용한 육아템 정리"
       ],
       "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
-      "partnerLink": "https://www.coupang.com/vp/products/9157246424?itemId=26948035575&vendorItemId=88164930006",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=BRAUN+%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%B2%B4%EC%98%A8%EA%B3%84+%EB%B8%8C%EB%9D%BC%EC%9A%B4+%EA%B7%80%EC%B2%B4%EC%98%A8%EA%B3%84+IRT-6525",
       "partnerLinks": [
         {
-          "url": "https://www.coupang.com/vp/products/9157246424?itemId=26948035575&vendorItemId=88164930006",
+          "url": "https://search.shopping.naver.com/search/all?query=BRAUN+%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%B2%B4%EC%98%A8%EA%B3%84+%EB%B8%8C%EB%9D%BC%EC%9A%B4+%EA%B7%80%EC%B2%B4%EC%98%A8%EA%B3%84+IRT-6525",
           "category": "👶300일간 매일 사용한 육아템 정리",
-          "sourceItemId": "9157246424"
+          "sourceItemId": "purchase-policy:item-9157246424"
         }
       ],
       "price": 93000,
@@ -2761,6 +2633,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -2814,7 +2687,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=BRAUN+%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%B2%B4%EC%98%A8%EA%B3%84+%EB%B8%8C%EB%9D%BC%EC%9A%B4+%EA%B7%80%EC%B2%B4%EC%98%A8%EA%B3%84+IRT-6525",
+        "checkedAt": "2026-07-01T14:06:58.926Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-3962205",
@@ -2823,12 +2703,12 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🧼목욕/세탁 아이템",
-      "partnerLink": "https://www.29cm.co.kr/products/3962205",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%5B%EB%B0%A4%EB%B6%80%EB%B2%A0%EB%B2%A0%5D+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+%EA%B1%B0%EC%A6%88%EC%86%90%EC%88%98%EA%B1%B4_%ED%93%A8%EC%96%B4+10%EC%9E%A5",
       "partnerLinks": [
         {
-          "url": "https://www.29cm.co.kr/products/3962205",
+          "url": "https://search.shopping.naver.com/search/all?query=%5B%EB%B0%A4%EB%B6%80%EB%B2%A0%EB%B2%A0%5D+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+%EA%B1%B0%EC%A6%88%EC%86%90%EC%88%98%EA%B1%B4_%ED%93%A8%EC%96%B4+10%EC%9E%A5",
           "category": "🧼목욕/세탁 아이템",
-          "sourceItemId": "3962205"
+          "sourceItemId": "purchase-policy:item-3962205"
         }
       ],
       "price": 22500,
@@ -2850,6 +2730,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -2917,7 +2798,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%5B%EB%B0%A4%EB%B6%80%EB%B2%A0%EB%B2%A0%5D+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+%EA%B1%B0%EC%A6%88%EC%86%90%EC%88%98%EA%B1%B4_%ED%93%A8%EC%96%B4+10%EC%9E%A5",
+        "checkedAt": "2026-07-01T14:06:58.926Z",
+        "source": "naver-shopping-search-api"
+      }
     },
     {
       "id": "item-100700814",
@@ -2926,12 +2814,12 @@
         "💩배변아이템"
       ],
       "primaryCategory": "💩배변아이템",
-      "partnerLink": "https://smartstore.naver.com/magikan/products/100700814",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A7%A4%EC%A7%81%EC%BA%94+%ED%9E%88%ED%8F%AC21L+%ED%9C%B4%EC%A7%80%ED%86%B5+%EB%83%84%EC%83%88%EC%B0%A8%EB%8B%A8+%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4+%ED%8E%98%EB%8B%AC+%EB%AC%B4%EC%86%8C%EC%9D%8C",
       "partnerLinks": [
         {
-          "url": "https://smartstore.naver.com/magikan/products/100700814",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%A4%EC%A7%81%EC%BA%94+%ED%9E%88%ED%8F%AC21L+%ED%9C%B4%EC%A7%80%ED%86%B5+%EB%83%84%EC%83%88%EC%B0%A8%EB%8B%A8+%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4+%ED%8E%98%EB%8B%AC+%EB%AC%B4%EC%86%8C%EC%9D%8C",
           "category": "💩배변아이템",
-          "sourceItemId": "100700814"
+          "sourceItemId": "purchase-policy:item-100700814"
         }
       ],
       "price": 56900,
@@ -2953,6 +2841,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -2986,7 +2875,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%A4%EC%A7%81%EC%BA%94+%ED%9E%88%ED%8F%AC21L+%ED%9C%B4%EC%A7%80%ED%86%B5+%EB%83%84%EC%83%88%EC%B0%A8%EB%8B%A8+%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4+%ED%8E%98%EB%8B%AC+%EB%AC%B4%EC%86%8C%EC%9D%8C",
+        "checkedAt": "2026-07-01T14:06:58.926Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-13303567063",
@@ -2995,12 +2891,12 @@
         "💩배변아이템"
       ],
       "primaryCategory": "💩배변아이템",
-      "partnerLink": "https://smartstore.naver.com/kimsa0408/products/13303567063",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%8C%80%EB%A6%BC%EB%B0%94%EC%8A%A4+%EC%84%B8%EB%A9%B4%EB%8C%80+%EC%84%B8%EB%A9%B4%EA%B8%B0+%ED%95%84%ED%84%B0+%EC%9B%8C%ED%84%B0%ED%83%AD+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0+%EC%96%91%EC%B9%98%EC%88%98%EC%A0%84+%EC%88%98%EB%8F%84%EA%BC%AD%EC%A7%80+%ED%86%A0%EC%88%98%EA%B5%AC+%EA%B5%90%EC%B2%B4",
       "partnerLinks": [
         {
-          "url": "https://smartstore.naver.com/kimsa0408/products/13303567063",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%8C%80%EB%A6%BC%EB%B0%94%EC%8A%A4+%EC%84%B8%EB%A9%B4%EB%8C%80+%EC%84%B8%EB%A9%B4%EA%B8%B0+%ED%95%84%ED%84%B0+%EC%9B%8C%ED%84%B0%ED%83%AD+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0+%EC%96%91%EC%B9%98%EC%88%98%EC%A0%84+%EC%88%98%EB%8F%84%EA%BC%AD%EC%A7%80+%ED%86%A0%EC%88%98%EA%B5%AC+%EA%B5%90%EC%B2%B4",
           "category": "💩배변아이템",
-          "sourceItemId": "13303567063"
+          "sourceItemId": "purchase-policy:item-13303567063"
         }
       ],
       "price": 34000,
@@ -3022,6 +2918,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -3055,7 +2952,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%8C%80%EB%A6%BC%EB%B0%94%EC%8A%A4+%EC%84%B8%EB%A9%B4%EB%8C%80+%EC%84%B8%EB%A9%B4%EA%B8%B0+%ED%95%84%ED%84%B0+%EC%9B%8C%ED%84%B0%ED%83%AD+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0+%EC%96%91%EC%B9%98%EC%88%98%EC%A0%84+%EC%88%98%EB%8F%84%EA%BC%AD%EC%A7%80+%ED%86%A0%EC%88%98%EA%B5%AC+%EA%B5%90%EC%B2%B4",
+        "checkedAt": "2026-07-01T14:06:58.926Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-10126755890",
@@ -3064,12 +2968,12 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🧼목욕/세탁 아이템",
-      "partnerLink": "https://brand.naver.com/artex/products/10126755890",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%8B%A8%EB%8F%85%2F%EC%95%84%ED%85%8D%EC%8A%A4+%ED%95%9C%EB%B0%A9%EC%97%90%EC%B0%A9+%EC%A0%91%EC%9D%B4%EC%8B%9D+%EC%A1%B0%EB%A6%BD%EC%97%86%EB%8A%94+%EB%AF%B8%EB%8B%88+%EC%96%91%EB%A7%90+%EB%B9%A8%EB%9E%98%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%86%8D%EC%98%B7%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%9B%90%EB%A3%B8%ED%98%95",
       "partnerLinks": [
         {
-          "url": "https://brand.naver.com/artex/products/10126755890",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%8B%A8%EB%8F%85%2F%EC%95%84%ED%85%8D%EC%8A%A4+%ED%95%9C%EB%B0%A9%EC%97%90%EC%B0%A9+%EC%A0%91%EC%9D%B4%EC%8B%9D+%EC%A1%B0%EB%A6%BD%EC%97%86%EB%8A%94+%EB%AF%B8%EB%8B%88+%EC%96%91%EB%A7%90+%EB%B9%A8%EB%9E%98%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%86%8D%EC%98%B7%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%9B%90%EB%A3%B8%ED%98%95",
           "category": "🧼목욕/세탁 아이템",
-          "sourceItemId": "10126755890"
+          "sourceItemId": "purchase-policy:item-10126755890"
         }
       ],
       "price": 26000,
@@ -3091,6 +2995,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -3144,7 +3049,14 @@
             "title_mismatch"
           ]
         }
-      ]
+      ],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%8B%A8%EB%8F%85%2F%EC%95%84%ED%85%8D%EC%8A%A4+%ED%95%9C%EB%B0%A9%EC%97%90%EC%B0%A9+%EC%A0%91%EC%9D%B4%EC%8B%9D+%EC%A1%B0%EB%A6%BD%EC%97%86%EB%8A%94+%EB%AF%B8%EB%8B%88+%EC%96%91%EB%A7%90+%EB%B9%A8%EB%9E%98%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%86%8D%EC%98%B7%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%9B%90%EB%A3%B8%ED%98%95",
+        "checkedAt": "2026-07-01T14:06:58.926Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-13059044648",
@@ -3153,12 +3065,12 @@
         "😎외출 아이템"
       ],
       "primaryCategory": "😎외출 아이템",
-      "partnerLink": "https://smartstore.naver.com/littlebaby/products/13059044648",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%5B%EC%BB%A8%EB%94%94%EC%85%98A+%EB%8C%80%EC%97%AC%5DNEW+%EC%8B%B8%EC%9D%B4%EB%B2%A1%EC%8A%A4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%8B%B0+i-Size+%EC%8B%A0%EC%83%9D%EC%95%84+%EB%B0%94%EA%B5%AC%EB%8B%88+%EC%B9%B4%EC%8B%9C%ED%8A%B8+7%EC%9D%BC%EB%8C%80%EC%97%AC+%EB%A0%8C%ED%83%88",
       "partnerLinks": [
         {
-          "url": "https://smartstore.naver.com/littlebaby/products/13059044648",
+          "url": "https://search.shopping.naver.com/search/all?query=%5B%EC%BB%A8%EB%94%94%EC%85%98A+%EB%8C%80%EC%97%AC%5DNEW+%EC%8B%B8%EC%9D%B4%EB%B2%A1%EC%8A%A4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%8B%B0+i-Size+%EC%8B%A0%EC%83%9D%EC%95%84+%EB%B0%94%EA%B5%AC%EB%8B%88+%EC%B9%B4%EC%8B%9C%ED%8A%B8+7%EC%9D%BC%EB%8C%80%EC%97%AC+%EB%A0%8C%ED%83%88",
           "category": "😎외출 아이템",
-          "sourceItemId": "13059044648"
+          "sourceItemId": "purchase-policy:item-13059044648"
         }
       ],
       "price": 45000,
@@ -3180,6 +3092,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -3213,7 +3126,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%5B%EC%BB%A8%EB%94%94%EC%85%98A+%EB%8C%80%EC%97%AC%5DNEW+%EC%8B%B8%EC%9D%B4%EB%B2%A1%EC%8A%A4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%8B%B0+i-Size+%EC%8B%A0%EC%83%9D%EC%95%84+%EB%B0%94%EA%B5%AC%EB%8B%88+%EC%B9%B4%EC%8B%9C%ED%8A%B8+7%EC%9D%BC%EB%8C%80%EC%97%AC+%EB%A0%8C%ED%83%88",
+        "checkedAt": "2026-07-01T14:06:58.926Z",
+        "source": "manual-reviewed"
+      }
     },
     {
       "id": "item-4422933574",
@@ -3222,12 +3142,12 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🧼목욕/세탁 아이템",
-      "partnerLink": "https://smartstore.naver.com/cocobebe__towel/products/4422933574",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EC%BD%94%EB%B2%A0%EB%B2%A0+3%2B1+%EB%B0%A4%EB%B6%80+%EC%95%84%EA%B8%B0%EB%AA%A9%EC%9A%95%ED%83%80%EC%98%AC+360g",
       "partnerLinks": [
         {
-          "url": "https://smartstore.naver.com/cocobebe__towel/products/4422933574",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EC%BD%94%EB%B2%A0%EB%B2%A0+3%2B1+%EB%B0%A4%EB%B6%80+%EC%95%84%EA%B8%B0%EB%AA%A9%EC%9A%95%ED%83%80%EC%98%AC+360g",
           "category": "🧼목욕/세탁 아이템",
-          "sourceItemId": "4422933574"
+          "sourceItemId": "purchase-policy:item-4422933574"
         }
       ],
       "price": 11900,
@@ -3249,6 +3169,7 @@
         "status": "ready",
         "errorCount": 0,
         "warningCount": 0,
+        "infoCount": 0,
         "issues": []
       },
       "sourceItemIds": [
@@ -3299,7 +3220,14 @@
           "reviewFlags": []
         }
       ],
-      "rejectedOffers": []
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EC%BD%94%EB%B2%A0%EB%B2%A0+3%2B1+%EB%B0%A4%EB%B6%80+%EC%95%84%EA%B8%B0%EB%AA%A9%EC%9A%95%ED%83%80%EC%98%AC+360g",
+        "checkedAt": "2026-07-01T14:06:58.926Z",
+        "source": "naver-shopping-search-api"
+      }
     }
   ],
   "imageSync": {
@@ -3329,7 +3257,20 @@
     "migratedAt": "2026-07-26T06:11:28.586Z",
     "freshnessHours": 48,
     "verifiedOffers": 3,
-    "candidateOffers": 60,
-    "rejectedOffers": 23
+    "candidateOffers": 44,
+    "rejectedOffers": 21,
+    "purchaseLinkFreshnessHours": 720,
+    "blockedPurchaseHosts": [
+      "coupang.com",
+      "link.coupang.com"
+    ]
+  },
+  "purchaseLinkPolicy": {
+    "totalItems": 31,
+    "verifiedPurchaseLinks": 29,
+    "hiddenPurchaseLinks": 2,
+    "naverSearchLinks": 27,
+    "officialLinks": 2,
+    "remainingBlockedPurchaseEntries": 0
   }
 }

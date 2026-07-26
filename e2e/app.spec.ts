@@ -24,7 +24,7 @@ test("opens and closes product details with the keyboard", async ({ page }) => {
   await expect(
     page
       .getByRole("dialog")
-      .getByRole("link", { name: /구매처에서 최신가 확인/ })
+      .getByRole("link", { name: /네이버에서 판매 상품 찾기/ })
       .first(),
   ).toBeVisible();
   await page.keyboard.press("Escape");
@@ -51,6 +51,21 @@ test("shows products in smaller pages", async ({ page }) => {
   await expect(page.getByRole("article")).toHaveCount(9);
   await page.getByRole("button", { name: /육아템 더 보기/ }).click();
   await expect(page.getByRole("article")).toHaveCount(18);
+});
+
+test("publishes no Coupang purchase links and hides unverified CTAs", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const coupangLinks = await page.locator('a[href*="coupang.com"]').count();
+  expect(coupangLinks).toBe(0);
+
+  await page
+    .getByRole("searchbox", { name: "제품명 또는 카테고리 검색" })
+    .fill("젖병 소독 냄비");
+  const card = page.getByRole("article");
+  await expect(card.getByText("현재 판매 링크 확인 중")).toBeVisible();
+  await expect(card.getByRole("link")).toHaveCount(0);
 });
 
 test.describe("mobile layout", () => {

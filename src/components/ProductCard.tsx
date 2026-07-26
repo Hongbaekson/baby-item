@@ -4,8 +4,10 @@ import { categoryLabel, categoryTone, placeholderFor } from "../lib/categories";
 import {
   currentVerifiedOffers,
   linkHost,
+  primaryActionLabel,
   primaryPurchaseUrl,
   productImageUrl,
+  purchaseLinkStatusLabel,
 } from "../lib/offers";
 import { displayTitle, isDailyPick, productSummary } from "../lib/products";
 import type { Item } from "../types";
@@ -90,23 +92,33 @@ export function ProductCard({
           <span>
             {hasFreshPrice
               ? "배송비 포함 최근 확인 가격"
-              : "현재 가격은 구매처에서 확인"}
+              : purchaseLinkStatusLabel(item)}
           </span>
         </div>
 
-        <a
-          className="primary-link"
-          href={purchaseUrl}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          aria-label={`${title} 구매처 열기, ${linkHost(purchaseUrl)}`}
-        >
-          <ShoppingBag size={17} aria-hidden="true" />
-          <span>
-            <strong>{hasFreshPrice ? "최저가 보기" : "가격 확인하기"}</strong>
-            <small>{linkHost(purchaseUrl)}</small>
-          </span>
-        </a>
+        {purchaseUrl ? (
+          <a
+            className="primary-link"
+            href={purchaseUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            aria-label={`${title} 판매 상품 찾기, ${linkHost(purchaseUrl)}`}
+          >
+            <ShoppingBag size={17} aria-hidden="true" />
+            <span>
+              <strong>{primaryActionLabel(item)}</strong>
+              <small>{linkHost(purchaseUrl)}</small>
+            </span>
+          </a>
+        ) : (
+          <div className="primary-link disabled" role="status">
+            <ShoppingBag size={17} aria-hidden="true" />
+            <span>
+              <strong>현재 판매 링크 확인 중</strong>
+              <small>확인된 페이지가 생기면 공개합니다</small>
+            </span>
+          </div>
+        )}
       </div>
     </article>
   );

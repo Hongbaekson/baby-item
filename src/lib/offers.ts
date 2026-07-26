@@ -2,6 +2,8 @@ import offerPolicy from "../../config/offer-policy.json";
 import type { Item, Offer, QualityStatus } from "../types";
 
 const FRESHNESS_MS = offerPolicy.freshnessHours * 60 * 60 * 1000;
+const PURCHASE_LINK_FRESHNESS_MS =
+  offerPolicy.purchaseLinkFreshnessHours * 60 * 60 * 1000;
 
 export function qualityLabel(status: QualityStatus) {
   if (status === "ready") return "확인 완료";
@@ -15,6 +17,7 @@ export function issueLabel(code: string) {
   if (code === "missing_image") return "기본 이미지 사용";
   if (code === "suspicious_unrelated_memo") return "메모 확인 필요";
   if (code === "normalized_partner_link") return "링크 보정됨";
+  if (code === "no_verified_purchase_link") return "확인된 판매처 없음";
   return "정보 확인 필요";
 }
 
@@ -61,7 +64,6 @@ export function offerShippingLabel(offer: Offer) {
 
 export function platformLabel(platform: string | undefined, mallName: string) {
   if (platform === "naver") return "네이버";
-  if (platform === "coupang") return "쿠팡";
   return mallName;
 }
 
@@ -138,12 +140,34 @@ export function itemOfferStatusLabel(item: Item) {
   return "확인된 가격 후보가 없습니다.";
 }
 
+export function hasCurrentPurchaseLink(item: Item, now = Date.now()) {
+  const checkedAt = Date.parse(String(item.purchaseLink?.checkedAt ?? ""));
+  return Boolean(
+    item.purchaseLink?.status === "verified" &&
+    item.purchaseLink.url &&
+    Number.isFinite(checkedAt) &&
+    Math.max(0, now - checkedAt) <= PURCHASE_LINK_FRESHNESS_MS,
+  );
+}
+
 export function primaryPurchaseUrl(item: Item) {
-  return currentVerifiedOffers(item)[0]?.url ?? item.partnerLink;
+  return hasCurrentPurchaseLink(item) ? item.purchaseLink.url : null;
 }
 
 export function primaryActionLabel(item: Item) {
-  return currentVerifiedOffers(item).length > 0 ? "최저가 보기" : "구매처 확인";
+  if (!hasCurrentPurchaseLink(item)) return "검증된 판매처 없음";
+  return item.purchaseLink.kind === "naver_search"
+    ? "네이버에서 판매 상품 찾기"
+    : "공식 판매처 보기";
+}
+
+export function purchaseLinkStatusLabel(item: Item) {
+  if (!hasCurrentPurchaseLink(item)) {
+    return "현재 확인된 판매 페이지가 없어 링크를 숨겼습니다.";
+  }
+  return item.purchaseLink.kind === "naver_search"
+    ? "최근 검색 결과가 확인된 상품만 네이버에서 보여줍니다."
+    : "실제 상품 페이지 응답과 상품명을 확인했습니다.";
 }
 
 export function productImageUrl(item: Item) {

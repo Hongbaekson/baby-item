@@ -7,6 +7,7 @@ const POLICY_PATH = fileURLToPath(
 
 export const offerPolicy = JSON.parse(readFileSync(POLICY_PATH, "utf8"));
 export const trustedPurchaseHosts = new Set(offerPolicy.trustedPurchaseHosts);
+export const blockedPurchaseHosts = new Set(offerPolicy.blockedPurchaseHosts);
 export const trustedImageHosts = new Set(offerPolicy.trustedImageHosts);
 export const shortUrlHosts = new Set(offerPolicy.shortUrlHosts);
 
@@ -73,6 +74,10 @@ export function isHttpsUrl(value) {
 export function isTrustedPurchaseUrl(value) {
   const host = hostFrom(value);
   return isHttpsUrl(value) && trustedPurchaseHosts.has(host);
+}
+
+export function isBlockedPurchaseUrl(value) {
+  return blockedPurchaseHosts.has(hostFrom(value));
 }
 
 export function isTrustedImageUrl(value) {
@@ -187,6 +192,22 @@ export function offerAgeHours(offer, now = new Date()) {
 
 export function isFreshOffer(offer, now = new Date()) {
   return offerAgeHours(offer, now) <= offerPolicy.freshnessHours;
+}
+
+export function purchaseLinkAgeHours(value, now = new Date()) {
+  const checkedAt = Date.parse(String(value ?? ""));
+
+  if (!Number.isFinite(checkedAt)) {
+    return Number.POSITIVE_INFINITY;
+  }
+
+  return Math.max(0, (now.getTime() - checkedAt) / 3_600_000);
+}
+
+export function isCurrentPurchaseEvidence(value, now = new Date()) {
+  return (
+    purchaseLinkAgeHours(value, now) <= offerPolicy.purchaseLinkFreshnessHours
+  );
 }
 
 export function sortOffersByEffectivePrice(offers) {

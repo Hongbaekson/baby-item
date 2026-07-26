@@ -52,18 +52,42 @@ describe("App", () => {
     expect(trigger).toHaveFocus();
   });
 
-  it("does not label old or shipping-unknown candidates as current lowest prices", () => {
+  it("uses a Naver search instead of a stale candidate product page", () => {
     render(<App />);
     const card = screen
       .getAllByRole("heading", { name: "말랑하니 백색소음기" })[0]
       .closest("article");
     expect(card).not.toBeNull();
     expect(
-      within(card as HTMLElement).getByText("현재 가격은 구매처에서 확인"),
-    ).toBeInTheDocument();
-    expect(
       within(card as HTMLElement).queryByText(/최저가/),
     ).not.toBeInTheDocument();
+    const link = within(card as HTMLElement).getByRole("link", {
+      name: /말랑하니 백색소음기 판매 상품 찾기/,
+    });
+    expect(link).toHaveTextContent("네이버에서 판매 상품 찾기");
+    expect(link).toHaveAttribute(
+      "href",
+      expect.stringMatching(/^https:\/\/search\.shopping\.naver\.com\//),
+    );
+  });
+
+  it("hides the CTA when no current non-Coupang sales evidence exists", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.type(
+      screen.getByRole("searchbox", { name: "제품명 또는 카테고리 검색" }),
+      "젖병 소독 냄비",
+    );
+    const card = screen
+      .getByRole("heading", { name: "젖병 소독 냄비" })
+      .closest("article");
+    expect(card).not.toBeNull();
+    expect(
+      within(card as HTMLElement).queryByRole("link"),
+    ).not.toBeInTheDocument();
+    expect(
+      within(card as HTMLElement).getByText("현재 판매 링크 확인 중"),
+    ).toBeInTheDocument();
   });
 
   it("shows the affiliate disclosure in the footer", () => {
