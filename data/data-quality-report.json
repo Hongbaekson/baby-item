@@ -1,48 +1,43 @@
 {
-  "generatedAt": "2026-07-01T14:06:58.926Z",
+  "generatedAt": "2026-07-27T06:32:23.441Z",
   "source": "src/data/items.json",
   "summary": {
     "totalItems": 31,
-    "readyItems": 20,
-    "usableWithWarningsItems": 11,
+    "readyItems": 16,
+    "usableWithWarningsItems": 15,
     "needsReviewItems": 0,
     "issueCounts": {
+      "no_verified_purchase_link": 6,
       "missing_price": 11,
-      "no_verified_purchase_link": 2,
       "missing_image": 1
     }
   },
   "pricing": {
     "freshnessHours": 48,
-    "verifiedOffers": 3,
-    "candidateOffers": 44,
-    "rejectedOffers": 21,
+    "verifiedOffers": 0,
+    "candidateOffers": 49,
+    "rejectedOffers": 139,
     "offerStates": {
       "available": 0,
-      "stale": 3,
+      "stale": 0,
       "candidates_available": 24,
-      "needs_review": 2,
-      "no_available_offer": 2,
+      "needs_review": 7,
+      "no_available_offer": 0,
       "not_synced": 0
     }
   },
   "purchaseLinks": {
     "freshnessHours": 720,
-    "verified": 29,
-    "hidden": 2,
-    "naverSearch": 27,
+    "verified": 25,
+    "hidden": 6,
+    "naverSearch": 23,
     "official": 2
   },
   "needsReviewItems": [
     {
-      "id": "item-8e7ce75a58",
-      "title": "올투게더나우 허리보호대",
+      "id": "item-b74f1aa7c3",
+      "title": "헤이홈 프로 홈캠 가정용 CCTV 펫 베이비캠 홈카메라",
       "dataIssues": [
-        {
-          "code": "missing_price",
-          "severity": "warning",
-          "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
-        },
         {
           "code": "no_verified_purchase_link",
           "severity": "warning",
@@ -51,79 +46,379 @@
       ],
       "rejectedOffers": [
         {
-          "url": "https://search.shopping.naver.com/catalog/41013582042",
+          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=8809634261&tid=1000000061",
+          "platform": "naver",
+          "mallName": "11번가",
+          "price": 2300,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:09.999Z",
+          "matchConfidence": "low",
+          "productName": "샘스 홈 CCTV 베이비 펫 캠 거치 대 받침 스탠드 홀더 가정용 벽 헤이홈홈카메라거치대 웹캠스탠드",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5753510/57535102836.3.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/10281540709",
+          "platform": "naver",
+          "mallName": "아트센",
+          "price": 2900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:09.999Z",
+          "matchConfidence": "medium",
+          "productName": "홈캠거치대 홈카메라 헤이홈 cctv 펫캠 베이비캠 거치대 무타공 부착식 받침대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8782604/87826044533.3.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://www.compuzone.co.kr/product/product_detail.htm?ProductNo=1289282&banner_check=naver",
+          "platform": "naver",
+          "mallName": "컴퓨존",
+          "price": 4260,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:09.999Z",
+          "matchConfidence": "low",
+          "productName": "[헤이홈] 홈카메라 PRO PRO+ 전용 캐릭터커버 헤이캣 (카메라 미포함) [GKN-SC051-CATPRO]",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5848890/58488900898.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "untrusted_purchase_host",
+            "title_mismatch",
+            "accessory_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=8198709394&tid=1000000061",
+          "platform": "naver",
+          "mallName": "11번가",
+          "price": 4690,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:09.999Z",
+          "matchConfidence": "low",
+          "productName": "홈캠거치대 무타공 벽부착형 스탠드 지지대 헤이홈 타포 이글루캠 티피링크 샤오미 호환",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5427358/54273588469.3.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "accessory_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11732271093",
+          "platform": "naver",
+          "mallName": "우리스타일",
+          "price": 4900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:09.999Z",
+          "matchConfidence": "low",
+          "productName": "홈캠거치대 무타공 벽부착형 스탠드 지지대 헤이홈 타포 이글루캠 티피링크 샤오미 호환",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8927678/89276781592.3.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "accessory_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/4992603536",
+          "platform": "naver",
+          "mallName": "에디트홈",
+          "price": 4900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:09.999Z",
+          "matchConfidence": "low",
+          "productName": "헤이캣 캐릭터 커버 초소형 베이비 캠 가정용 ip 카메라 헤이홈 IoT 스마트홈 CCTV",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8253712/82537124203.2.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "accessory_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/5062182628",
+          "platform": "naver",
+          "mallName": "똑똑한집",
+          "price": 4900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:09.999Z",
+          "matchConfidence": "medium",
+          "productName": "캐릭터 커버 헤이켓 초소형 베이비캠 가정용 CCTV 똑똑한집 헤이홈 ip스마트 홈카메라",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8260670/82606704087.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "accessory_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item-9a9c893193",
+      "title": "뮤라(mula)방수패드",
+      "dataIssues": [
+        {
+          "code": "no_verified_purchase_link",
+          "severity": "warning",
+          "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+        }
+      ],
+      "rejectedOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/52541962757",
           "platform": "naver",
           "mallName": "네이버",
-          "price": 12400,
+          "price": 200,
           "shippingFee": null,
           "totalPrice": null,
           "priceBasis": "listed_price",
           "inStock": true,
           "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:47.249Z",
-          "matchConfidence": "high",
-          "productName": "물리치료사가 판매하는 올투게더나우 다이어트 복부 스웨트 벨트",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_4101358/41013582042.20230705193359.jpg",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "천위룡-물라아다라 Ultra Rare 한글판 유희왕 SUDA-KR042",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5254196/52541962757.20250118002850.jpg",
           "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
           "reviewFlags": [
-            "title_mismatch"
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
           ]
         },
         {
-          "url": "https://ohou.se/productions/2060884/selling?utm_source=naver_shop&bp_sub_id_2=search&bp_sub_id_3=inorganic&utm_medium=cpc&utm_campaign=2060884-16650775&utm_term={query}&utm_content={ad}&bp_adset={network}_{media}",
-          "platform": "naver",
-          "mallName": "오늘의집",
-          "price": 12400,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:47.249Z",
-          "matchConfidence": "high",
-          "productName": "올투게더나우 물리치료사가 판매하는 다이어트 복부 스웻 벨트",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_3986019/39860199760.1.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": [
-            "title_mismatch"
-          ]
-        },
-        {
-          "url": "https://smartstore.naver.com/main/products/11192125210",
-          "platform": "naver",
-          "mallName": "솔저맘파파",
-          "price": 15700,
-          "shippingFee": null,
-          "totalPrice": null,
-          "priceBasis": "listed_price",
-          "inStock": true,
-          "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:47.249Z",
-          "matchConfidence": "high",
-          "productName": "가벼운 허리 보호대 허리복대 복부 복대 의료용 허리지지대 헬스 코어 허리벨트-당일출고",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_8873663/88736635532.jpg",
-          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
-          "reviewFlags": [
-            "title_mismatch"
-          ]
-        },
-        {
-          "url": "https://search.shopping.naver.com/catalog/41067307356",
+          "url": "https://search.shopping.naver.com/catalog/52581636683",
           "platform": "naver",
           "mallName": "네이버",
-          "price": 16110,
+          "price": 200,
           "shippingFee": null,
           "totalPrice": null,
           "priceBasis": "listed_price",
           "inStock": true,
           "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:47.249Z",
-          "matchConfidence": "high",
-          "productName": "올투게더나우 물리치료사가 판매하는 얇은 허리 보호대",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_4106730/41067307356.20230709190922.jpg",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "유희왕 한글판 천위룡-물라아다라 얼티미트레어 SUDA-KR042",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5258163/52581636683.20250120220009.jpg",
           "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
           "reviewFlags": [
-            "title_mismatch"
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11329288486",
+          "platform": "naver",
+          "mallName": "TCG마트",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "천위룡-물라아다라 (SUDA-KR042) Ultra Rare 한글판 유희왕",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8887379/88873798817.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11339228475",
+          "platform": "naver",
+          "mallName": "티씨지 트레이서즈",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "천위룡 물라아다라(SUDA-KR042)울트라레어",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8888373/88883738806.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11341742602",
+          "platform": "naver",
+          "mallName": "카드Labo",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "천위룡-물라아다라 [울트라] SUDA-KR042",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8888625/88886252933.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11343026410",
+          "platform": "naver",
+          "mallName": "Tcg랜드",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "유희왕 한글판 천위룡-물라아다라 울트라레어 SUDA-KR042",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8888753/88887536741.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11343027798",
+          "platform": "naver",
+          "mallName": "Tcg랜드",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "유희왕 한글판 천위룡-물라아다라 얼티미트레어 SUDA-KR042",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8888753/88887538129.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11345837583",
+          "platform": "naver",
+          "mallName": "듀얼스페이스",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "천위룡-물라아다라 (SUDA-KR042) Ultra Rare 한글판유희왕카드",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8889034/88890347914.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/12575019574",
+          "platform": "naver",
+          "mallName": "안성 하얀 숲 카드하우스",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "천위룡-물라아다라 (울트라 레어), SUDA-KR042",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9011953/90119530427.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/12575026197",
+          "platform": "naver",
+          "mallName": "안성 하얀 숲 카드하우스",
+          "price": 200,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:11.422Z",
+          "matchConfidence": "low",
+          "productName": "천위룡-물라아다라 (얼티미트 레어), SUDA-KR042",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9011953/90119537050.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
           ]
         }
       ]
@@ -143,13 +438,14 @@
           "priceBasis": "listed_price",
           "inStock": true,
           "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:47.481Z",
-          "matchConfidence": "high",
+          "syncedAt": "2026-07-27T06:32:13.195Z",
+          "matchConfidence": "medium",
           "productName": "하베브릭스 바람개비 아기체육관 신생아선물",
           "imageUrl": "https://shopping-phinf.pstatic.net/main_8541341/85413411527.7.jpg",
           "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
           "reviewFlags": [
-            "title_mismatch"
+            "title_mismatch",
+            "low_match_confidence"
           ]
         },
         {
@@ -162,51 +458,702 @@
           "priceBasis": "listed_price",
           "inStock": true,
           "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:47.481Z",
-          "matchConfidence": "high",
+          "syncedAt": "2026-07-27T06:32:13.195Z",
+          "matchConfidence": "medium",
           "productName": "하베브릭스 바람개비 아기체육관^(신생아선물)",
           "imageUrl": "https://shopping-phinf.pstatic.net/main_5747426/57474262688.jpg",
           "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
           "reviewFlags": [
-            "title_mismatch"
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://www.whittlestore.com/views/shop/shopview?pack_content_id=5971&TR_REF=naver_open",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 91000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.195Z",
+          "matchConfidence": "low",
+          "productName": "하베브릭스 [자사단독] 아기체육관+변신큐브",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5834205/58342053745.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
           ]
         },
         {
           "url": "https://smartstore.naver.com/main/products/12901150396",
           "platform": "naver",
           "mallName": "위틀스토어",
-          "price": 87000,
+          "price": 95000,
           "shippingFee": null,
           "totalPrice": null,
           "priceBasis": "listed_price",
           "inStock": true,
           "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:47.481Z",
-          "matchConfidence": "high",
+          "syncedAt": "2026-07-27T06:32:13.195Z",
+          "matchConfidence": "medium",
           "productName": "하베브릭스 바람개비 아기체육관+회전 링쌓기 링끼우기 소근육 발달 신생아 아기 장난감",
           "imageUrl": "https://shopping-phinf.pstatic.net/main_9044566/90445661388.jpg",
           "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
           "reviewFlags": [
-            "title_mismatch"
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://www.whittlestore.com/views/shop/shopview?pack_content_id=6220&TR_REF=naver_open",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 119000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.195Z",
+          "matchConfidence": "medium",
+          "productName": "위틀스토어 [신생아 국민템SET] 국민 아기욕조+ 6in1변신큐브+아기체육관",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5862864/58628643942.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://www.whittlestore.com/views/shop/shopview?pack_content_id=6279&TR_REF=naver_open",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 191000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.195Z",
+          "matchConfidence": "medium",
+          "productName": "하베브릭스 아기 양방향 모빌+바람개비 아기체육관",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5938734/59387346973.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_high_vs_reference",
+            "low_match_confidence"
           ]
         },
         {
           "url": "https://smartstore.naver.com/main/products/12385960170",
           "platform": "naver",
           "mallName": "위틀스토어",
-          "price": 182000,
+          "price": 196000,
           "shippingFee": null,
           "totalPrice": null,
           "priceBasis": "listed_price",
           "inStock": true,
           "source": "naver-shopping-search-api",
-          "syncedAt": "2026-07-01T04:53:47.481Z",
-          "matchConfidence": "high",
-          "productName": "하베브릭스 신생아 아기 모빌 양방향 흑백 컬러 인형 거치대 풀세트+바람개비 아기 체육관",
-          "imageUrl": "https://shopping-phinf.pstatic.net/main_8993047/89930470895.28.jpg",
+          "syncedAt": "2026-07-27T06:32:13.195Z",
+          "matchConfidence": "low",
+          "productName": "하베브릭스 아기 신생아 아기체육관 양방향 모빌 풀세트 흑백 컬러 인형 거치대 포함",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8993047/89930470895.31.jpg",
           "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
           "reviewFlags": [
-            "title_mismatch"
+            "title_mismatch",
+            "price_too_high_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://www.whittlestore.com/views/shop/shopview?pack_content_id=6252&TR_REF=naver_open",
+          "platform": "naver",
+          "mallName": "위틀스토어",
+          "price": 199000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.195Z",
+          "matchConfidence": "medium",
+          "productName": "위틀스토어 아기 낮시간 필수루틴세트 (아기체육관+흑백＆컬러 모빌+잼잼이 딸랑이 8종)",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5938733/59387334503.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_high_vs_reference",
+            "low_match_confidence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item-f8e90a98ec",
+      "title": "젖병 소독 냄비",
+      "dataIssues": [
+        {
+          "code": "missing_price",
+          "severity": "warning",
+          "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+        },
+        {
+          "code": "missing_image",
+          "severity": "warning",
+          "message": "쿠팡 외부 이미지를 제거하고 기본 이미지를 사용합니다."
+        },
+        {
+          "code": "no_verified_purchase_link",
+          "severity": "warning",
+          "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+        }
+      ],
+      "rejectedOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/12659612913",
+          "platform": "naver",
+          "mallName": "사로와몰",
+          "price": 760,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.527Z",
+          "matchConfidence": "low",
+          "productName": "2P 후라이팬 찌든때 브러쉬 싱크대 냄비 청소솔 녹제거 얼룩 젖병세척솔",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9020412/90204123819.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://www.lotteon.com/p/product/LO2723347288?sitmNo=LO2723347288_2723347289&ch_no=100065&ch_dtl_no=1000030&entryPoint=pcs&dp_infw_cd=CHT",
+          "platform": "naver",
+          "mallName": "롯데ON",
+          "price": 900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.527Z",
+          "matchConfidence": "low",
+          "productName": "주방 냄비뚜껑 홀더 식기건조대 냄비뚜껑정리대 그릇정리",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6084476/60844762857.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "untrusted_purchase_host",
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/60834216167",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 930,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.527Z",
+          "matchConfidence": "low",
+          "productName": "손잡이 철수세미 탄냄비 후라이팬 찌든때 제거 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6083421/60834216167.20260714011949.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://link.gmarket.co.kr/gate/pcs?item-no=4588943698&sub-id=1003&service-code=10000003&lcd=100000006",
+          "platform": "naver",
+          "mallName": "G마켓",
+          "price": 950,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.527Z",
+          "matchConfidence": "low",
+          "productName": "2P 후라이팬 찌든때 브러쉬 싱크대 냄비 청소솔 녹제거 얼룩 빨대솔 젖병세척솔 야채솔 실리콘세척솔",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6057164/60571647273.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/12860331238",
+          "platform": "naver",
+          "mallName": "추천네오프로비즈",
+          "price": 1040,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.527Z",
+          "matchConfidence": "low",
+          "productName": "네오 다목적 오븐 접시집게 뜨거운거잡는냄비집게 식당집게 뜨거운냄비 다용도집게 냄비손잡이",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_9040484/90404842230.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://link.gmarket.co.kr/gate/pcs?item-no=4658532535&sub-id=1003&service-code=10000003&lcd=100000031",
+          "platform": "naver",
+          "mallName": "G마켓",
+          "price": 1080,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.527Z",
+          "matchConfidence": "low",
+          "productName": "냄비뚜껑 패드 냄비정리대 식기건조대 냄비거치대주방정리대 그릇건조대",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6057117/60571174282.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/11732409129",
+          "platform": "naver",
+          "mallName": "파니펀",
+          "price": 1120,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.527Z",
+          "matchConfidence": "low",
+          "productName": "펀펀 핸들 수세미 브러쉬 냄비수세미 욕실수세미",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8927691/89276919628.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=9519937096&tid=1000000061",
+          "platform": "naver",
+          "mallName": "11번가",
+          "price": 1150,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:13.527Z",
+          "matchConfidence": "low",
+          "productName": "[달빛] 주방 수납 받침 칼보관 냄비뚜껑받침",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6101660/61016608740.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item-08cfcdce92",
+      "title": "포프베베 아기비데",
+      "dataIssues": [
+        {
+          "code": "no_verified_purchase_link",
+          "severity": "warning",
+          "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+        }
+      ],
+      "rejectedOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/11174654419",
+          "platform": "naver",
+          "mallName": "포프베베",
+          "price": 800,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:14.208Z",
+          "matchConfidence": "high",
+          "productName": "포프베베 다기능 아기비데 부속품 (3) bolt body (2ea)",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8871916/88719164741.2.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "price_too_low_vs_reference"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/4523203718",
+          "platform": "naver",
+          "mallName": "포프베베",
+          "price": 2900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:14.208Z",
+          "matchConfidence": "high",
+          "productName": "포프베베 다기능 아기비데 부속품 (1) 여분 접착테이프Set+방수테이프1set",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8206772/82067726989.9.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "price_too_low_vs_reference"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/4523146897",
+          "platform": "naver",
+          "mallName": "포프베베",
+          "price": 7600,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:14.208Z",
+          "matchConfidence": "high",
+          "productName": "포프베베 다기능 아기비데 부속품 (2) 욕조 실리콘",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8206767/82067670168.4.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "price_too_low_vs_reference"
+          ]
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/56784301931",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 9600,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:14.208Z",
+          "matchConfidence": "high",
+          "productName": "포프베베 아기비데 앤 욕조 클리너 500ml",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5678430/56784301931.20250918155409.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "price_too_low_vs_reference"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/8161832385",
+          "platform": "naver",
+          "mallName": "포프베베",
+          "price": 9600,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:14.208Z",
+          "matchConfidence": "high",
+          "productName": "[포프베베] 아기비데 & 아기욕조 클리너 500ml",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8570633/85706332709.7.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "price_too_low_vs_reference"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/10108555267",
+          "platform": "naver",
+          "mallName": "더퓨어버블",
+          "price": 13400,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:14.208Z",
+          "matchConfidence": "low",
+          "productName": "[더퓨어버블] 신생아 세면대 워터탭 아기비데 양치수전 회전 필터형 육아 수전탭 Mini",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8765305/87653058037.3.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/8523610617",
+          "platform": "naver",
+          "mallName": "더퓨어버블",
+          "price": 15400,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:14.208Z",
+          "matchConfidence": "low",
+          "productName": "[더퓨어버블] 워터탭 아기비데 양치수전 360도 회전 필터형 세면대 수전탭",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8606811/86068110940.5.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "price_too_low_vs_reference",
+            "low_match_confidence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item-8631775229",
+      "title": "앱솔루트 명작 분유 1단계, 800g, 1개",
+      "dataIssues": [
+        {
+          "code": "missing_price",
+          "severity": "warning",
+          "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+        },
+        {
+          "code": "no_verified_purchase_link",
+          "severity": "warning",
+          "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+        }
+      ],
+      "rejectedOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/54724154632",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 9900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:15.630Z",
+          "matchConfidence": "low",
+          "productName": "남양유업 남양 유기농 산양분유 스틱 1단계 14g, 12개입, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5472415/54724154632.20250512162110.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/52382720629",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 10000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:15.630Z",
+          "matchConfidence": "low",
+          "productName": "남양유업 임페리얼드림XO 올 뉴 에디션 스틱분유 1단계 14g, 20개입, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5238272/52382720629.20250108155930.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://direct.maeil.com/m/product/productView.do?productCode=P13487&utm_source=Naver_shopping&utm_medium=SS&utm_campaign=MaeilDirect@{campaign}&utm_content={ad_group}&utm_term={query}",
+          "platform": "naver",
+          "mallName": "매일유업 공식몰",
+          "price": 10500,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:15.630Z",
+          "matchConfidence": "medium",
+          "productName": "앱솔루트 명작 2FL HMO 분유 스틱 1단계(0~6개월) 14g 20포",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_4716265/47162658205.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/52382726638",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 10500,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:15.630Z",
+          "matchConfidence": "low",
+          "productName": "매일유업 ABSOLUTE 시작부터 프리미엄 명작 2FL 스틱 1단계 14g, 20개입, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5238272/52382726638.20250108160425.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://smartstore.naver.com/main/products/5947344517",
+          "platform": "naver",
+          "mallName": "매일유업 직영스토어",
+          "price": 10500,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:15.630Z",
+          "matchConfidence": "medium",
+          "productName": "매일유업 앱솔루트 명작 2FL (HMO) 분유 스틱 1단계(0~6개월) 14g 20포 [도착보장]",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8349184/83491844005.1.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://www.11st.co.kr/connect/Gateway.tmall?method=Xsite&prdNo=3904798264&tid=1000000061",
+          "platform": "naver",
+          "mallName": "11번가",
+          "price": 10500,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:15.630Z",
+          "matchConfidence": "medium",
+          "productName": "[매일유업] 앱솔루트 명작 2FL 분유 스틱 분유 1단계, 14g 20개, 0~6개월",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_6067830/60678304271.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/52401820626",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 10600,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:15.630Z",
+          "matchConfidence": "low",
+          "productName": "매일유업 ABSOLUTE 엄마의 선물 프리미엄 명작 2FL 스틱 2단계 14g, 20개입, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5240182/52401820626.20250109094455.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://search.shopping.naver.com/catalog/54724147883",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 10600,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:15.630Z",
+          "matchConfidence": "low",
+          "productName": "매일유업 ABSOLUTE 엄마의 선물 프리미엄 명작 2FL 스틱 3단계 14g, 20개입, 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5472414/54724147883.20250512160103.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        },
+        {
+          "url": "https://link.auction.co.kr/gate/pcs?item-no=E263811583&sub-id=1&service-code=10000003",
+          "platform": "naver",
+          "mallName": "옥션",
+          "price": 11800,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:15.630Z",
+          "matchConfidence": "low",
+          "productName": "남양 남양 임페리얼 XO 스틱분유 1단계 14g x 20개입 x 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5960870/59608706965.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item-100700814",
+      "title": "매직캔 히포21L 휴지통 냄새차단 인테리어 페달 무소음",
+      "dataIssues": [
+        {
+          "code": "no_verified_purchase_link",
+          "severity": "warning",
+          "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+        }
+      ],
+      "rejectedOffers": [
+        {
+          "url": "https://search.shopping.naver.com/catalog/59493982816",
+          "platform": "naver",
+          "mallName": "네이버",
+          "price": 41900,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:32:18.211Z",
+          "matchConfidence": "low",
+          "productName": "매직캔 히포 휴지통 1개",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_5949398/59493982816.20260626070533.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": [
+            "title_mismatch",
+            "low_match_confidence"
           ]
         }
       ]
