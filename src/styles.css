@@ -792,7 +792,7 @@ a {
 
 .product-card .primary-link.disabled strong,
 .product-card .primary-link.disabled small {
-  color: var(--muted);
+  color: var(--ink);
 }
 
 .link-domain {
@@ -1828,7 +1828,7 @@ a {
 
   .modal-mobile-cta.disabled strong,
   .modal-mobile-cta.disabled small {
-    color: var(--muted);
+    color: var(--ink);
   }
 
   .modal-body .best-offer-panel {
