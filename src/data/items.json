@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-27T06:32:23.441Z",
+  "generatedAt": "2026-07-27T06:55:33.792Z",
   "site": {
     "name": "이은이 아빠가 준비하는 육아템"
   },
   "summary": {
-    "totalItems": 31,
+    "totalItems": 33,
     "categories": [
       {
         "name": "👶300일간 매일 사용한 육아템 정리",
@@ -32,7 +32,7 @@
       },
       {
         "name": "😎외출 아이템",
-        "count": 2
+        "count": 3
       },
       {
         "name": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
@@ -40,14 +40,14 @@
       },
       {
         "name": "🎉놀이아이템",
-        "count": 1
+        "count": 2
       },
       {
         "name": "🧼목욕/세탁 아이템",
         "count": 6
       }
     ],
-    "readyItems": 16,
+    "readyItems": 18,
     "usableWithWarningsItems": 15,
     "needsReviewItems": 0
   },
@@ -5672,6 +5672,160 @@
         "checkedAt": "2026-07-27T06:32:19.710Z",
         "source": "naver-shopping-search-api"
       }
+    },
+    {
+      "id": "item-2153199934",
+      "title": "타이니러브 메도우모빌",
+      "categories": [
+        "🎉놀이아이템"
+      ],
+      "primaryCategory": "🎉놀이아이템",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%ED%83%80%EC%9D%B4%EB%8B%88%EB%9F%AC%EB%B8%8C+%EB%A9%94%EB%8F%84%EC%9A%B0%EB%AA%A8%EB%B9%8C",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%ED%83%80%EC%9D%B4%EB%8B%88%EB%9F%AC%EB%B8%8C+%EB%A9%94%EB%8F%84%EC%9A%B0%EB%AA%A8%EB%B9%8C",
+          "category": "🎉놀이아이템",
+          "sourceItemId": "purchase-policy:item-2153199934"
+        }
+      ],
+      "price": 129000,
+      "priceText": "129000",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 129,000원",
+      "bestOffer": null,
+      "purchaseOffers": [],
+      "offerStatus": {
+        "state": "candidates_available",
+        "syncedAt": "2026-07-27T06:55:33.792Z",
+        "checkedOffers": 1
+      },
+      "memo": "신생아 시각·청각 자극을 위한 타이니러브 메도우 모빌.",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_1217261/12172611360.8.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "play",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "infoCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "2153199934"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_1217261/12172611360.8.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "엠베이비",
+        "productName": "[본사판매] 타이니러브 메도우모빌",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-27T06:55:33.792Z"
+      },
+      "candidateOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/2153199934",
+          "platform": "naver",
+          "mallName": "엠베이비",
+          "price": 129000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:55:33.792Z",
+          "matchConfidence": "high",
+          "productName": "[본사판매] 타이니러브 메도우모빌",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_1217261/12172611360.8.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": []
+        }
+      ],
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%ED%83%80%EC%9D%B4%EB%8B%88%EB%9F%AC%EB%B8%8C+%EB%A9%94%EB%8F%84%EC%9A%B0%EB%AA%A8%EB%B9%8C",
+        "checkedAt": "2026-07-27T06:55:33.792Z",
+        "source": "naver-shopping-search-api"
+      }
+    },
+    {
+      "id": "item-4658630775",
+      "title": "조이 아이스핀360 아이사이즈 회전형 ISOFIX 카시트",
+      "categories": [
+        "😎외출 아이템"
+      ],
+      "primaryCategory": "😎외출 아이템",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%A1%B0%EC%9D%B4+%EC%95%84%EC%9D%B4%EC%8A%A4%ED%95%80360+%EC%95%84%EC%9D%B4%EC%82%AC%EC%9D%B4%EC%A6%88+%ED%9A%8C%EC%A0%84%ED%98%95+ISOFIX+%EC%B9%B4%EC%8B%9C%ED%8A%B8",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%A1%B0%EC%9D%B4+%EC%95%84%EC%9D%B4%EC%8A%A4%ED%95%80360+%EC%95%84%EC%9D%B4%EC%82%AC%EC%9D%B4%EC%A6%88+%ED%9A%8C%EC%A0%84%ED%98%95+ISOFIX+%EC%B9%B4%EC%8B%9C%ED%8A%B8",
+          "category": "😎외출 아이템",
+          "sourceItemId": "purchase-policy:item-4658630775"
+        }
+      ],
+      "price": 648000,
+      "priceText": "648000",
+      "displayPrice": "구매처에서 최신가 확인",
+      "referencePrice": "기록가 648,000원",
+      "bestOffer": null,
+      "purchaseOffers": [],
+      "offerStatus": {
+        "state": "candidates_available",
+        "syncedAt": "2026-07-27T06:55:33.792Z",
+        "checkedOffers": 1
+      },
+      "memo": "신생아부터 사용하는 360도 회전형 ISOFIX 카시트.",
+      "imagePath": "https://shopping-phinf.pstatic.net/main_8220315/82203151304.10.jpg",
+      "hasOriginalImage": true,
+      "placeholderKey": "outing",
+      "dataQuality": {
+        "status": "ready",
+        "errorCount": 0,
+        "warningCount": 0,
+        "infoCount": 0,
+        "issues": []
+      },
+      "sourceItemIds": [
+        "4658630775"
+      ],
+      "imageSource": {
+        "imageUrl": "https://shopping-phinf.pstatic.net/main_8220315/82203151304.10.jpg",
+        "matchConfidence": "high",
+        "platform": "naver",
+        "mallName": "에이원베이비",
+        "productName": "조이 아이스핀360 아이사이즈 회전형 ISOFIX카시트",
+        "source": "naver-shopping-search-api",
+        "syncedAt": "2026-07-27T06:55:33.792Z"
+      },
+      "candidateOffers": [
+        {
+          "url": "https://smartstore.naver.com/main/products/4658630775",
+          "platform": "naver",
+          "mallName": "에이원베이비",
+          "price": 648000,
+          "shippingFee": null,
+          "totalPrice": null,
+          "priceBasis": "listed_price",
+          "inStock": true,
+          "source": "naver-shopping-search-api",
+          "syncedAt": "2026-07-27T06:55:33.792Z",
+          "matchConfidence": "high",
+          "productName": "조이 아이스핀360 아이사이즈 회전형 ISOFIX카시트",
+          "imageUrl": "https://shopping-phinf.pstatic.net/main_8220315/82203151304.10.jpg",
+          "note": "네이버 쇼핑 검색 API 후보입니다. API 응답에 배송비와 결제 단계 재고가 없어 자동 반영 전 별도 확인이 필요합니다.",
+          "reviewFlags": []
+        }
+      ],
+      "rejectedOffers": [],
+      "purchaseLink": {
+        "status": "verified",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%A1%B0%EC%9D%B4+%EC%95%84%EC%9D%B4%EC%8A%A4%ED%95%80360+%EC%95%84%EC%9D%B4%EC%82%AC%EC%9D%B4%EC%A6%88+%ED%9A%8C%EC%A0%84%ED%98%95+ISOFIX+%EC%B9%B4%EC%8B%9C%ED%8A%B8",
+        "checkedAt": "2026-07-27T06:55:33.792Z",
+        "source": "naver-shopping-search-api"
+      }
     }
   ],
   "imageSync": {
@@ -5693,16 +5847,16 @@
     "skipped": 6
   },
   "manualReview": {
-    "appliedAt": "2026-07-01T14:06:58.926Z",
-    "addedItemCount": 8,
+    "appliedAt": "2026-07-27T06:55:33.792Z",
+    "addedItemCount": 10,
     "deletedItemCount": 1,
-    "note": "사용자 요청으로 상품 8개를 추가하고 휴비딕 온습도계를 삭제했습니다."
+    "note": "사용자 요청 상품에 타이니러브 메도우모빌과 조이 아이스핀360 카시트를 추가했습니다."
   },
   "offerPolicy": {
     "migratedAt": "2026-07-26T06:11:28.586Z",
     "freshnessHours": 48,
     "verifiedOffers": 0,
-    "candidateOffers": 49,
+    "candidateOffers": 51,
     "rejectedOffers": 139,
     "purchaseLinkFreshnessHours": 720,
     "blockedPurchaseHosts": [
@@ -5724,10 +5878,10 @@
     ]
   },
   "purchaseLinkPolicy": {
-    "totalItems": 31,
-    "verifiedPurchaseLinks": 25,
+    "totalItems": 33,
+    "verifiedPurchaseLinks": 27,
     "hiddenPurchaseLinks": 6,
-    "naverSearchLinks": 23,
+    "naverSearchLinks": 25,
     "officialLinks": 2,
     "remainingBlockedPurchaseEntries": 0,
     "remainingBlockedImages": 0

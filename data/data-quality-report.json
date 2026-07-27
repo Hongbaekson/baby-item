@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-27T06:32:23.441Z",
+  "generatedAt": "2026-07-27T06:55:33.792Z",
   "source": "src/data/items.json",
   "summary": {
-    "totalItems": 31,
-    "readyItems": 16,
+    "totalItems": 33,
+    "readyItems": 18,
     "usableWithWarningsItems": 15,
     "needsReviewItems": 0,
     "issueCounts": {
@@ -15,12 +15,12 @@
   "pricing": {
     "freshnessHours": 48,
     "verifiedOffers": 0,
-    "candidateOffers": 49,
+    "candidateOffers": 51,
     "rejectedOffers": 139,
     "offerStates": {
       "available": 0,
       "stale": 0,
-      "candidates_available": 24,
+      "candidates_available": 26,
       "needs_review": 7,
       "no_available_offer": 0,
       "not_synced": 0
@@ -28,9 +28,9 @@
   },
   "purchaseLinks": {
     "freshnessHours": 720,
-    "verified": 25,
+    "verified": 27,
     "hidden": 6,
-    "naverSearch": 23,
+    "naverSearch": 25,
     "official": 2
   },
   "needsReviewItems": [

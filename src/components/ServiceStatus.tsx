@@ -28,10 +28,6 @@ export function ServiceStatus() {
           <Clock3 size={15} aria-hidden="true" />
           최근 점검 {formatCheckedDate(latestCheckedAt)}
         </span>
-        <a href="#verification-policy">
-          <ShieldCheck size={15} aria-hidden="true" />
-          검증 기준 보기
-        </a>
       </section>
 
       <section

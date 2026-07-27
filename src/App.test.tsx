@@ -49,6 +49,9 @@ describe("App", () => {
       ),
     ).toBeInTheDocument();
     expect(
+      within(status).queryByRole("link", { name: "검증 기준 보기" }),
+    ).not.toBeInTheDocument();
+    expect(
       screen.getByRole("heading", {
         name: "가격보다 판매 페이지를 먼저 확인합니다",
       }),
