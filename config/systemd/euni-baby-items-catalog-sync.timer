@@ -1,0 +1,12 @@
+[Unit]
+Description=Check for validated baby-item catalog updates
+
+[Timer]
+OnBootSec=5min
+OnUnitInactiveSec=10min
+RandomizedDelaySec=1min
+Persistent=true
+Unit=euni-baby-items-catalog-sync.service
+
+[Install]
+WantedBy=timers.target

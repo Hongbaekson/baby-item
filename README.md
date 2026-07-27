@@ -84,7 +84,7 @@ npm run data:check
 
 네이버 쇼핑 검색 API는 배송비와 결제 직전 재고를 제공하지 않으므로 결과를 `candidateOffers`로만 반영합니다. 공개 CTA도 오류가 잦은 직접 상품 URL 대신 정확한 상품명을 넣은 네이버 쇼핑 검색으로 연결합니다. 쿠팡 수집과 구매 링크는 사용하지 않습니다.
 
-매일 03:17 KST에 실행되는 `price-candidates.yml`은 GitHub Secrets의 `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`을 사용해 네이버 후보, 공식몰 실응답, 구매 링크 만료 여부를 검사한 검토용 artifact를 만듭니다. 가격을 자동 게시하거나 저장소에 커밋하지 않으므로, artifact 검토 후 승인된 데이터만 반영해야 합니다.
+매일 03:17 KST에 실행되는 `price-candidates.yml`은 네이버 후보, 공식몰 실응답, 구매 링크 만료 여부를 검사합니다. 링크·데이터·프로덕션 build 검증이 모두 성공한 경우에만 정제된 앱 데이터를 `main`에 자동 커밋합니다. OCI의 catalog-sync 타이머는 해당 세 파일만 바뀐 자동 커밋을 감지해 앱 컨테이너를 재배포하고 내부·외부 응답을 확인합니다. 배송비와 결제 단계 재고가 없는 네이버 결과는 자동 배포 후에도 비클릭 참고 후보이며 현재 최저가로 게시하지 않습니다.
 
 `production-smoke.yml`은 매시 17분과 47분에 운영 URL의 응답, 핵심 정적 파일, HTTPS 전환, 보안 헤더를 확인합니다. 실패는 GitHub Actions 실행 결과로 남으며 같은 검사는 `npm run monitor:production`으로 수동 재현할 수 있습니다.
 

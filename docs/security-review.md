@@ -53,7 +53,9 @@
 - `pull_request_target`을 사용하지 않는다.
 - 검증 job은 데이터, 가격 정책, 쿠팡 차단·구매 링크 만료, 포맷, lint, 단위/컴포넌트/E2E, 접근성, build, Docker Compose와 이미지 build를 검사한다.
 - `main` push artifact에 SHA256 체크섬과 GitHub attestation을 붙인다.
-- 가격 후보 scheduled workflow는 읽기 권한만 가지며 자동 커밋·배포하지 않는다.
+- 가격 후보 수집 job은 읽기 권한만 가지며 검증된 artifact를 적용하는 별도 job만 `contents: write`를 가진다.
+- OCI catalog-sync 타이머는 GitHub에 SSH 개인키를 저장하지 않고 데이터 전용 자동 커밋만 pull·배포한다.
+- 자동 배포는 Edge를 재생성하지 않으며 실패하면 직전 카탈로그로 앱 컨테이너를 다시 만든다.
 - 운영 smoke workflow도 읽기 권한만 가지며 매시 17분과 47분에 공개 응답·정적 자산·HTTPS 전환·보안 헤더를 확인한다.
 
 ## Caddy와 Nginx
@@ -75,4 +77,4 @@
 ## 남은 운영 보안 항목
 
 1. SSH ingress를 운영자 IP로 제한할지 결정한다.
-2. 네이버 API scheduled workflow의 첫 성공 artifact를 확인한다.
+2. 일일 자동 배포 실패 알림을 별도 운영 채널에 연결한다.

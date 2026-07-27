@@ -1,0 +1,11 @@
+[Unit]
+Description=Deploy validated baby-item catalog updates
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/opt/stacks/euni-baby-items
+ExecStart=/bin/sh /opt/stacks/euni-baby-items/scripts/deploy-daily-sale-data.sh

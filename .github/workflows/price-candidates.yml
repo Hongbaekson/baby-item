@@ -1,4 +1,4 @@
-name: Refresh price candidates
+name: Refresh and publish sale data
 
 on:
   schedule:
@@ -9,13 +9,14 @@ permissions:
   contents: read
 
 concurrency:
-  group: price-candidate-refresh
+  group: daily-sale-data
   cancel-in-progress: false
 
 jobs:
   refresh:
-    name: Build reviewable candidate data
+    name: Collect and validate sale data
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     env:
       NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
       NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
@@ -54,10 +55,13 @@ jobs:
           npm run data:check
           npm run price:check-strict
 
-      - name: Upload candidate proposal
+      - name: Verify production build
+        run: npm run build
+
+      - name: Upload validated sale data
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
-          name: price-candidate-proposal-${{ github.run_id }}
+          name: validated-sale-data-${{ github.run_id }}
           path: |
             data/price-candidates.naver.json
             data/data-quality-report.json
@@ -65,3 +69,44 @@ jobs:
             config/official-purchase-links.json
             src/data/items.json
           retention-days: 7
+
+  publish:
+    name: Commit validated sale data
+    needs: refresh
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Download validated sale data
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
+        with:
+          name: validated-sale-data-${{ github.run_id }}
+          path: validated
+
+      - name: Apply validated sale data
+        run: |
+          cp validated/config/official-purchase-links.json config/official-purchase-links.json
+          cp validated/data/data-quality-report.json data/data-quality-report.json
+          cp validated/src/data/items.json src/data/items.json
+          git diff --check
+
+      - name: Commit and push changes
+        run: |
+          git add \
+            config/official-purchase-links.json \
+            data/data-quality-report.json \
+            src/data/items.json
+
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh daily sale data"
+          git push origin HEAD:main

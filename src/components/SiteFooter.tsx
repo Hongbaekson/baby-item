@@ -7,7 +7,9 @@ export function SiteFooter() {
       <div className="footer-inner">
         <div className="footer-brand">
           <strong>이은이 아빠가 준비하는 육아템</strong>
-          <span>직접 정리하고 판매 경로를 지속적으로 점검합니다.</span>
+          <span>
+            매일 자동으로 판매 경로를 점검하고 검증된 정보만 반영합니다.
+          </span>
         </div>
         <nav aria-label="사이트 운영 정보">
           <a href="#verification-policy">

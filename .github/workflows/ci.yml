@@ -47,6 +47,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Check catalog deployment script
+        run: sh -n scripts/deploy-daily-sale-data.sh
+
       - name: Test
         run: npm test
 

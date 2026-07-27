@@ -31,7 +31,7 @@ PR은 배포 대상이 아니므로 attestation을 만들지 않는다.
 
 ## 가격 후보 scheduled workflow
 
-`price-candidates.yml`은 읽기 권한으로 공식 API 후보를 수집하고 검토용 artifact만 만든다. 가격 데이터 변경을 자동 커밋하거나 배포하지 않는다. 이는 배송비·결제 단계 재고가 불완전한 검색 결과가 현재 최저가로 게시되는 것을 방지한다.
+`price-candidates.yml`은 읽기 권한으로 공식 API 후보를 수집하고 엄격 검사와 프로덕션 build를 통과한 artifact를 만든다. 별도 최소 권한 job이 검증된 세 파일만 자동 커밋한다. OCI catalog-sync 타이머는 전체 변경 경로와 commit subject를 다시 확인한 뒤 앱 컨테이너만 재빌드한다. 배송비·결제 단계 재고가 불완전한 검색 결과는 자동 배포되더라도 비클릭 참고 후보로만 남고 현재 최저가로 게시되지 않는다.
 
 ## artifact 검증
 
@@ -41,4 +41,4 @@ gh attestation verify euni-baby-items-<commit-sha>.tar.gz \
   --repo Hongbaekson/baby-item
 ```
 
-OCI 자동 배포를 도입할 때는 두 검증이 모두 통과한 산출물만 반영하고, 재시작 후 healthcheck와 HTTPS 보안 헤더를 확인한다. `git pull && docker compose up --build`를 무조건 실행하는 방식은 기준 배포 절차로 사용하지 않는다.
+일일 데이터 배포는 엄격 검사와 build를 통과한 데이터 전용 커밋만 반영하고, 앱 컨테이너 healthcheck와 내부·외부 HTTPS 응답을 확인한다. GitHub에 OCI SSH 키를 보관하지 않으며 Edge 컨테이너와 서버의 별도 Caddy 설정도 재생성하지 않는다. 일반 소스 배포는 계속 CI artifact와 attestation 검증을 기준으로 한다.
