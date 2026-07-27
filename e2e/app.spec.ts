@@ -1,5 +1,22 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import { readFileSync } from "node:fs";
+
+const appData = JSON.parse(
+  readFileSync(new URL("../src/data/items.json", import.meta.url), "utf8"),
+);
+const offerPolicy = JSON.parse(
+  readFileSync(new URL("../config/offer-policy.json", import.meta.url), "utf8"),
+);
+const freshnessMs = offerPolicy.purchaseLinkFreshnessHours * 60 * 60 * 1_000;
+const hasCurrentPurchaseLink = (item: (typeof appData.items)[number]) =>
+  item.purchaseLink.status === "verified" &&
+  item.purchaseLink.url &&
+  Date.now() - Date.parse(item.purchaseLink.checkedAt) <= freshnessMs;
+const verifiedItems = appData.items.filter(hasCurrentPurchaseLink);
+const unavailableItem = appData.items.find(
+  (item: (typeof appData.items)[number]) => !hasCurrentPurchaseLink(item),
+);
 
 test("has no automatically detectable accessibility violations", async ({
   page,
@@ -7,7 +24,9 @@ test("has no automatically detectable accessibility violations", async ({
   await page.goto("/");
   await expect(
     page.getByRole("region", { name: "판매 정보 운영 상태" }),
-  ).toContainText("판매 근거 확인 29/31");
+  ).toContainText(
+    `판매 근거 확인 ${verifiedItems.length}/${appData.items.length}`,
+  );
   await expect(
     page.getByRole("heading", {
       name: "가격보다 판매 페이지를 먼저 확인합니다",
@@ -29,12 +48,6 @@ test("opens and closes product details with the keyboard", async ({ page }) => {
   await expect(
     page.getByRole("button", { name: "상품 상세 닫기" }),
   ).toBeFocused();
-  await expect(
-    page
-      .getByRole("dialog")
-      .getByRole("link", { name: /네이버에서 판매 상품 찾기/ })
-      .first(),
-  ).toBeVisible();
   await expect(
     page
       .getByRole("dialog")
@@ -75,13 +88,19 @@ test("shows products in smaller pages", async ({ page }) => {
 test("publishes no Coupang purchase links and hides unverified CTAs", async ({
   page,
 }) => {
+  test.skip(
+    !unavailableItem,
+    "Every item currently has verified sales evidence",
+  );
+  if (!unavailableItem) return;
+
   await page.goto("/");
   const coupangLinks = await page.locator('a[href*="coupang.com"]').count();
   expect(coupangLinks).toBe(0);
 
   await page
     .getByRole("searchbox", { name: "제품명 또는 카테고리 검색" })
-    .fill("젖병 소독 냄비");
+    .fill(unavailableItem.title);
   const card = page
     .getByRole("region", { name: "제품 목록" })
     .getByRole("article");

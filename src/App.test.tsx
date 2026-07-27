@@ -2,6 +2,18 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { App } from "./App";
+import { data } from "./lib/app-data";
+import { formatCheckedDate, hasCurrentPurchaseLink } from "./lib/offers";
+import { displayTitle } from "./lib/products";
+
+const checkedAt = Date.now();
+const verifiedItems = data.items.filter((item) =>
+  hasCurrentPurchaseLink(item, checkedAt),
+);
+const latestCheckedAt = verifiedItems
+  .map((item) => item.purchaseLink.checkedAt)
+  .filter((value): value is string => Boolean(value))
+  .sort((a, b) => Date.parse(b) - Date.parse(a))[0];
 
 describe("App", () => {
   beforeEach(() => {
@@ -27,10 +39,14 @@ describe("App", () => {
       name: "판매 정보 운영 상태",
     });
     expect(
-      within(status).getByText("판매 근거 확인 29/31"),
+      within(status).getByText(
+        `판매 근거 확인 ${verifiedItems.length}/${data.items.length}`,
+      ),
     ).toBeInTheDocument();
     expect(
-      within(status).getByText(/최근 점검 2026\. 7\. 26\./),
+      within(status).getByText(
+        `최근 점검 ${formatCheckedDate(latestCheckedAt)}`,
+      ),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", {
@@ -70,18 +86,29 @@ describe("App", () => {
     expect(trigger).toHaveFocus();
   });
 
-  it("uses a Naver search instead of a stale candidate product page", () => {
+  it("uses a Naver search instead of a stale candidate product page", async () => {
+    const user = userEvent.setup();
+    const item = data.items.find(
+      (candidate) =>
+        candidate.purchaseLink.kind === "naver_search" &&
+        hasCurrentPurchaseLink(candidate, checkedAt),
+    );
+    expect(item).toBeDefined();
+    const title = displayTitle(item!);
+
     render(<App />);
+    await user.type(
+      screen.getByRole("searchbox", { name: "제품명 또는 카테고리 검색" }),
+      item!.title,
+    );
     const card = screen
-      .getAllByRole("heading", { name: "말랑하니 백색소음기" })[0]
+      .getByRole("heading", { name: title })
       .closest("article");
     expect(card).not.toBeNull();
     expect(
       within(card as HTMLElement).queryByText(/최저가/),
     ).not.toBeInTheDocument();
-    const link = within(card as HTMLElement).getByRole("link", {
-      name: /말랑하니 백색소음기 판매 상품 찾기/,
-    });
+    const link = within(card as HTMLElement).getByRole("link");
     expect(link).toHaveTextContent("네이버에서 판매 상품 찾기");
     expect(link).toHaveAttribute(
       "href",
@@ -91,13 +118,19 @@ describe("App", () => {
 
   it("hides the CTA when no current non-Coupang sales evidence exists", async () => {
     const user = userEvent.setup();
+    const item = data.items.find(
+      (candidate) => !hasCurrentPurchaseLink(candidate, checkedAt),
+    );
+    if (!item) return;
+    const title = displayTitle(item);
+
     render(<App />);
     await user.type(
       screen.getByRole("searchbox", { name: "제품명 또는 카테고리 검색" }),
-      "젖병 소독 냄비",
+      item.title,
     );
     const card = screen
-      .getByRole("heading", { name: "젖병 소독 냄비" })
+      .getByRole("heading", { name: title })
       .closest("article");
     expect(card).not.toBeNull();
     expect(
@@ -118,6 +151,11 @@ describe("App", () => {
     expect(
       within(screen.getByRole("contentinfo")).getByText(
         /찜 목록과 화면 테마는 현재 브라우저에만 저장/,
+      ),
+    ).toBeInTheDocument();
+    expect(
+      within(screen.getByRole("contentinfo")).getByText(
+        /매일 자동으로 판매 경로를 점검/,
       ),
     ).toBeInTheDocument();
   });

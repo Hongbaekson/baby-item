@@ -1,8 +1,8 @@
 # OCI 배포 상태
 
-업데이트: 2026-07-26 (KST)
+업데이트: 2026-07-27 (KST)
 
-> 2026-07-26에 가격 신뢰성, 운영 신뢰 UX, UI·접근성, CI, 컨테이너 변경을 OCI에 배포하고 운영 URL에서 재확인했다.
+> 2026-07-27에 판매 경로 일일 수집·자동 반영·OCI 배포를 활성화하고 전체 경로를 운영 URL에서 재확인했다.
 
 ## 배포 정보
 
@@ -12,12 +12,25 @@
 - 인스턴스 표시 이름: `prod-app-01`
 - VM private IP: `10.0.0.44`
 - 배포 경로: `/opt/stacks/euni-baby-items`
-- 배포 Git commit: `e3287fa`
-- 직전 롤백 commit: `4bbd795`
+- 최근 자동 데이터 commit: `19b3991`
+- 직전 롤백 commit: `e217edd`
 - 컨테이너명: `euni-baby-items-web`
 - Edge 컨테이너명: `euni-baby-items-edge`
 - 공개 주소: `https://sonleeeun.site`
 - 내부 앱 포트 설정: `APP_PORT=1206` (`127.0.0.1` loopback 바인딩)
+
+## 2026-07-27 일일 자동 운영 결과
+
+- GitHub Actions Secrets에 네이버 쇼핑 API 값 등록
+- `price-candidates.yml` 수동 검증 run `30243039516` 성공
+- 네이버 후보 수집, 공식몰 실응답, 링크·데이터 엄격 검사, 프로덕션 build 성공
+- 자동 데이터 커밋 `19b3991` 생성: 허용된 카탈로그 파일 3개만 변경
+- OCI `euni-baby-items-catalog-sync.timer` 활성화, 10분 간격 pull 확인
+- 타이머가 데이터 전용 커밋을 감지해 앱 컨테이너 자동 재배포
+- 판매 근거 `25/31`, 숨김 `6개`, 쿠팡 링크 0개
+- `euni-baby-items-web` healthcheck `healthy`
+- 외부 운영 smoke 16개 검사 통과
+- Caddy edge 컨테이너와 서버의 별도 Caddy 수정은 재생성하지 않음
 
 ## 2026-07-26 운영 신뢰 UX 배포 결과
 
@@ -116,7 +129,7 @@ curl -I https://sonleeeun.site
 ## 남은 작업
 
 - SSH ingress를 `0.0.0.0/0`에서 본인 IP로 제한할지 결정
-- 자동 CD를 붙일 때 체크섬과 attestation 검증 후 배포하도록 구성
+- 일반 소스 CD를 붙일 때 체크섬과 attestation 검증 후 배포하도록 구성
 - IssueBot site block을 서버의 추적되지 않은 Caddyfile 수정이 아닌 별도 운영 구성으로 영구 관리
 
 ## 운영 명령
