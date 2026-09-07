@@ -10,10 +10,7 @@ const checkedAt = Date.now();
 const verifiedItems = data.items.filter((item) =>
   hasCurrentPurchaseLink(item, checkedAt),
 );
-const latestCheckedAt = verifiedItems
-  .map((item) => item.purchaseLink.checkedAt)
-  .filter((value): value is string => Boolean(value))
-  .sort((a, b) => Date.parse(b) - Date.parse(a))[0];
+const latestCheckedAt = data.purchaseLinkPolicy.checkedAt;
 
 describe("App", () => {
   beforeEach(() => {
@@ -40,12 +37,12 @@ describe("App", () => {
     });
     expect(
       within(status).getByText(
-        `판매 근거 확인 ${verifiedItems.length}/${data.items.length}`,
+        `공식몰 확인 ${verifiedItems.length}/${data.items.length}`,
       ),
     ).toBeInTheDocument();
     expect(
       within(status).getByText(
-        `최근 점검 ${formatCheckedDate(latestCheckedAt)}`,
+        `공식몰 점검 ${formatCheckedDate(latestCheckedAt)}`,
       ),
     ).toBeInTheDocument();
     expect(
@@ -53,7 +50,7 @@ describe("App", () => {
     ).not.toBeInTheDocument();
     expect(
       screen.getByRole("heading", {
-        name: "가격보다 판매 페이지를 먼저 확인합니다",
+        name: "상품 검색과 공식 판매처를 구분합니다",
       }),
     ).toBeInTheDocument();
   });
@@ -92,9 +89,7 @@ describe("App", () => {
   it("uses a Naver search instead of a stale candidate product page", async () => {
     const user = userEvent.setup();
     const item = data.items.find(
-      (candidate) =>
-        candidate.purchaseLink.kind === "naver_search" &&
-        hasCurrentPurchaseLink(candidate, checkedAt),
+      (candidate) => candidate.purchaseLink.kind === "naver_search",
     );
     expect(item).toBeDefined();
     const title = displayTitle(item!);
@@ -112,14 +107,14 @@ describe("App", () => {
       within(card as HTMLElement).queryByText(/최저가/),
     ).not.toBeInTheDocument();
     const link = within(card as HTMLElement).getByRole("link");
-    expect(link).toHaveTextContent("네이버에서 판매 상품 찾기");
+    expect(link).toHaveTextContent("네이버에서 상품 검색");
     expect(link).toHaveAttribute(
       "href",
       expect.stringMatching(/^https:\/\/search\.shopping\.naver\.com\//),
     );
   });
 
-  it("hides the CTA when no current non-Coupang sales evidence exists", async () => {
+  it("keeps product search available without claiming verified sales", async () => {
     const user = userEvent.setup();
     const item = data.items.find(
       (candidate) => !hasCurrentPurchaseLink(candidate, checkedAt),
@@ -136,11 +131,13 @@ describe("App", () => {
       .getByRole("heading", { name: title })
       .closest("article");
     expect(card).not.toBeNull();
+    expect(within(card as HTMLElement).getByRole("link")).toHaveTextContent(
+      "네이버에서 상품 검색",
+    );
     expect(
-      within(card as HTMLElement).queryByRole("link"),
-    ).not.toBeInTheDocument();
-    expect(
-      within(card as HTMLElement).getByText("현재 판매 링크 확인 중"),
+      within(card as HTMLElement).getByText(
+        "상품명으로 검색 · 가격·재고는 판매처 확인",
+      ),
     ).toBeInTheDocument();
   });
 

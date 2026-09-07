@@ -12,7 +12,7 @@ export type OfferStatusState =
 export type ThemeMode = "light" | "dark";
 
 export type PurchaseLink = {
-  status: "verified" | "unavailable";
+  status: "verified" | "search" | "unavailable";
   kind: "naver_search" | "official" | "none";
   url: string | null;
   checkedAt: string | null;
@@ -40,6 +40,7 @@ export type Offer = {
 export type Item = {
   id: string;
   title: string;
+  searchQuery: string;
   categories: string[];
   primaryCategory: string;
   partnerLink: string;
@@ -78,6 +79,7 @@ export type Item = {
 
 export type AppData = {
   generatedAt: string;
+  purchaseLinkPolicy: { checkedAt: string | null };
   site: {
     name: string;
   };

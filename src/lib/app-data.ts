@@ -23,6 +23,11 @@ function validateItem(item: unknown, index: number): asserts item is Item {
   );
   assert(Array.isArray(candidate.categories), `items[${index}].categories`);
   assert(
+    typeof candidate.searchQuery === "string" &&
+      candidate.searchQuery.trim().length > 0,
+    `items[${index}].searchQuery`,
+  );
+  assert(
     typeof candidate.partnerLink === "string",
     `items[${index}].partnerLink`,
   );

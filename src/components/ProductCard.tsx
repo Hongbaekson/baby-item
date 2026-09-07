@@ -96,29 +96,19 @@ export function ProductCard({
           </span>
         </div>
 
-        {purchaseUrl ? (
-          <a
-            className="primary-link"
-            href={purchaseUrl}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-            aria-label={`${title} 판매 상품 찾기, ${linkHost(purchaseUrl)}`}
-          >
-            <ShoppingBag size={17} aria-hidden="true" />
-            <span>
-              <strong>{primaryActionLabel(item)}</strong>
-              <small>{linkHost(purchaseUrl)}</small>
-            </span>
-          </a>
-        ) : (
-          <div className="primary-link disabled" role="status">
-            <ShoppingBag size={17} aria-hidden="true" />
-            <span>
-              <strong>현재 판매 링크 확인 중</strong>
-              <small>확인된 페이지가 생기면 공개합니다</small>
-            </span>
-          </div>
-        )}
+        <a
+          className="primary-link"
+          href={purchaseUrl}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+          aria-label={`${title} ${primaryActionLabel(item)}, ${linkHost(purchaseUrl)}`}
+        >
+          <ShoppingBag size={17} aria-hidden="true" />
+          <span>
+            <strong>{primaryActionLabel(item)}</strong>
+            <small>{linkHost(purchaseUrl)}</small>
+          </span>
+        </a>
       </div>
     </article>
   );

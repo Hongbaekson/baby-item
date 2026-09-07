@@ -55,7 +55,7 @@ test("every current offer state matches its data tier", () => {
   }
 });
 
-test("only verified non-Coupang purchase links are published", () => {
+test("published links distinguish official pages from non-Coupang searches", () => {
   const blockedHost = (value) => {
     try {
       const host = new URL(value).hostname.replace(/^www\./, "");
@@ -78,9 +78,14 @@ test("only verified non-Coupang purchase links are published", () => {
       item.title,
     );
 
-    if (item.purchaseLink.status === "verified") {
+    if (["verified", "search"].includes(item.purchaseLink.status)) {
       assert.equal(item.partnerLink, item.purchaseLink.url, item.title);
       assert.equal(item.partnerLinks.length, 1, item.title);
+      assert.equal(
+        item.purchaseLink.kind,
+        item.purchaseLink.status === "verified" ? "official" : "naver_search",
+        item.title,
+      );
     } else {
       assert.equal(item.partnerLink, "", item.title);
       assert.equal(item.partnerLinks.length, 0, item.title);

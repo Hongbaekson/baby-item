@@ -1,6 +1,6 @@
 # CI/CD 산출물 무결성
 
-업데이트: 2026-07-26 (KST)
+업데이트: 2026-09-08 (KST)
 
 ## 검증 job
 
@@ -29,9 +29,9 @@
 
 PR은 배포 대상이 아니므로 attestation을 만들지 않는다.
 
-## 가격 후보 scheduled workflow
+## 공식몰 링크 scheduled workflow
 
-`price-candidates.yml`은 읽기 권한으로 공식 API 후보를 수집하고 엄격 검사와 프로덕션 build를 통과한 artifact를 만든다. 별도 최소 권한 job이 검증된 세 파일만 자동 커밋한다. OCI catalog-sync 타이머는 전체 변경 경로와 commit subject를 다시 확인한 뒤 앱 컨테이너만 재빌드한다. 배송비·결제 단계 재고가 불완전한 검색 결과는 자동 배포되더라도 비클릭 참고 후보로만 남고 현재 최저가로 게시되지 않는다.
+`price-candidates.yml`은 읽기 권한으로 공식몰 실응답을 점검하고 엄격 검사와 프로덕션 build를 통과한 artifact를 만든다. 2026-07-31 종료된 네이버 쇼핑 API는 호출하지 않는다. 별도 최소 권한 job이 검증된 세 파일만 자동 커밋한다. OCI catalog-sync 타이머는 전체 변경 경로와 commit subject를 다시 확인한 뒤 앱 컨테이너만 재빌드한다. 공식몰 실패·만료는 상품 검색으로 전환하며 검색을 검증 가격으로 표시하지 않는다. 운영 smoke는 HTML의 점검 시각이 48시간 이내인지와 전체 상품의 링크 수를 함께 검사한다.
 
 ## artifact 검증
 

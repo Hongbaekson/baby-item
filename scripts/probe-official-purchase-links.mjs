@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import {
   isTrustedPurchaseUrl,
   normalizeText,
@@ -14,14 +15,18 @@ const updateConfig = process.argv.includes("--update-config");
 
 function titleCoverage(expectedTitle, body) {
   const tokens = significantTokens(expectedTitle);
-  const pageText = normalizeText(body);
+  const pageText = normalizeText(
+    body
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " "),
+  ).replace(/\s/g, "");
   if (tokens.length === 0) return 0;
   return (
     tokens.filter((token) => pageText.includes(token)).length / tokens.length
   );
 }
 
-async function probe(entry) {
+export async function probe(entry) {
   if (!isTrustedPurchaseUrl(entry.url)) {
     return {
       ...entry,
@@ -52,11 +57,13 @@ async function probe(entry) {
     const state =
       response.status >= 400
         ? "http_error"
-        : unavailableMarker
-          ? "unavailable"
-          : coverage < 0.5
-            ? "title_mismatch"
-            : "available";
+        : !isTrustedPurchaseUrl(response.url)
+          ? "untrusted_redirect"
+          : unavailableMarker
+            ? "unavailable"
+            : coverage < 1
+              ? "title_mismatch"
+              : "available";
 
     return {
       ...entry,
@@ -75,6 +82,19 @@ async function probe(entry) {
   } finally {
     clearTimeout(timeout);
   }
+}
+
+export function updateOfficialConfig(config, report) {
+  return {
+    ...config,
+    checkedAt: report.checkedAt,
+    links: config.links.map((entry, index) => ({
+      ...entry,
+      checkedAt:
+        report.results[index]?.state === "available" ? report.checkedAt : null,
+      source: "live-http",
+    })),
+  };
 }
 
 async function main() {
@@ -99,33 +119,33 @@ async function main() {
 
   const failures = results.filter((result) => result.state !== "available");
   if (failures.length > 0) {
-    console.error(
+    console.warn(
       failures
         .map((result) => `${result.itemId}: ${result.state} -> ${result.url}`)
         .join("\n"),
     );
-    process.exit(1);
   }
 
   if (updateConfig) {
-    const checkedAt = report.checkedAt;
-    const output = {
-      ...config,
-      links: config.links.map((entry) => ({
-        ...entry,
-        checkedAt,
-        source: "live-http",
-      })),
-    };
+    const output = updateOfficialConfig(config, report);
     await writeFile(INPUT_PATH, `${JSON.stringify(output, null, 2)}\n`);
   }
 
   console.log(
     JSON.stringify({ ...report.summary, updatedConfig: updateConfig }, null, 2),
   );
+  if (
+    failures.length > 0 &&
+    (!updateConfig || process.argv.includes("--strict"))
+  )
+    process.exitCode = 1;
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
+)
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });

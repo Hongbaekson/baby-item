@@ -12,6 +12,7 @@ import {
 
 const APP_DATA_PATH = path.join("src", "data", "items.json");
 const OFFICIAL_LINKS_PATH = path.join("config", "official-purchase-links.json");
+const SEARCH_QUERIES_PATH = path.join("config", "product-search-queries.json");
 
 function isCoupangEntry(entry) {
   return Boolean(
@@ -23,19 +24,6 @@ function isCoupangEntry(entry) {
 
 function withoutCoupang(entries = []) {
   return entries.filter((entry) => !isCoupangEntry(entry));
-}
-
-function validEvidenceOffers(item) {
-  return [...(item.purchaseOffers ?? []), ...(item.candidateOffers ?? [])]
-    .filter(
-      (offer) =>
-        !isCoupangEntry(offer) &&
-        offer.platform === "naver" &&
-        isTrustedPurchaseUrl(offer.url) &&
-        (offer.reviewFlags?.length ?? 0) === 0 &&
-        isCurrentPurchaseEvidence(offer.syncedAt),
-    )
-    .sort((a, b) => Date.parse(b.syncedAt) - Date.parse(a.syncedAt));
 }
 
 function createNaverSearchUrl(title) {
@@ -79,7 +67,7 @@ function applyPurchaseQuality(item, hasVerifiedLink, replacedBlockedImage) {
     issues.push({
       code: "no_verified_purchase_link",
       severity: "warning",
-      message: "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다.",
+      message: "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다.",
     });
   }
 
@@ -110,7 +98,7 @@ function applyPurchaseQuality(item, hasVerifiedLink, replacedBlockedImage) {
   return { status, errorCount, warningCount, infoCount, issues };
 }
 
-function applyToItem(item, officialLinks) {
+function applyToItem(item, officialLinks, searchQueries) {
   const replacedBlockedImage = isBlockedImageUrl(item.imagePath);
   const purchaseOffers = withoutCoupang(item.purchaseOffers);
   const candidateOffers = withoutCoupang(item.candidateOffers);
@@ -131,7 +119,8 @@ function applyToItem(item, officialLinks) {
     delete filteredItem.imageSource;
   }
   const official = officialLinks.get(item.id);
-  const evidence = validEvidenceOffers(filteredItem)[0];
+  const searchQuery =
+    searchQueries[item.id] ?? item.title.replace(/\s+/g, " ").trim();
   const currentOfficial =
     official &&
     !isBlockedPurchaseUrl(official.url) &&
@@ -147,24 +136,17 @@ function applyToItem(item, officialLinks) {
         checkedAt: currentOfficial.checkedAt,
         source: currentOfficial.source,
       }
-    : evidence
-      ? {
-          status: "verified",
-          kind: "naver_search",
-          url: createNaverSearchUrl(item.title),
-          checkedAt: evidence.syncedAt,
-          source: evidence.source,
-        }
-      : {
-          status: "unavailable",
-          kind: "none",
-          url: null,
-          checkedAt: null,
-          source: "no-current-non-coupang-evidence",
-        };
+    : {
+        status: "search",
+        kind: "naver_search",
+        url: createNaverSearchUrl(searchQuery),
+        checkedAt: null,
+        source: "product-search-query",
+      };
   const hasVerifiedLink = purchaseLink.status === "verified";
   const next = {
     ...filteredItem,
+    searchQuery,
     partnerLink: purchaseLink.url ?? "",
     partnerLinks: purchaseLink.url
       ? [
@@ -203,9 +185,7 @@ function summarize(items) {
     verifiedPurchaseLinks: items.filter(
       (item) => item.purchaseLink.status === "verified",
     ).length,
-    hiddenPurchaseLinks: items.filter(
-      (item) => item.purchaseLink.status !== "verified",
-    ).length,
+    hiddenPurchaseLinks: items.filter((item) => !item.purchaseLink.url).length,
     naverSearchLinks: items.filter(
       (item) => item.purchaseLink.kind === "naver_search",
     ).length,
@@ -231,9 +211,10 @@ function summarize(items) {
 }
 
 async function main() {
-  const [data, officialConfig] = await Promise.all([
+  const [data, officialConfig, searchQueries] = await Promise.all([
     readFile(APP_DATA_PATH, "utf8").then(JSON.parse),
     readFile(OFFICIAL_LINKS_PATH, "utf8").then(JSON.parse),
+    readFile(SEARCH_QUERIES_PATH, "utf8").then(JSON.parse),
   ]);
   const officialLinks = new Map(
     officialConfig.links.map((entry) => [entry.itemId, entry]),
@@ -248,8 +229,13 @@ async function main() {
       ].filter(isCoupangEntry).length,
     0,
   );
-  const items = data.items.map((item) => applyToItem(item, officialLinks));
-  const linkSummary = summarize(items);
+  const items = data.items.map((item) =>
+    applyToItem(item, officialLinks, searchQueries),
+  );
+  const linkSummary = {
+    ...summarize(items),
+    checkedAt: officialConfig.checkedAt ?? null,
+  };
   const summary = {
     ...data.summary,
     readyItems: items.filter((item) => item.dataQuality.status === "ready")

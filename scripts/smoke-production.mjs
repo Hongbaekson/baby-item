@@ -1,3 +1,5 @@
+import { offerPolicy } from "./lib/offer-policy.mjs";
+
 const DEFAULT_BASE_URL = "https://sonleeeun.site";
 const REQUEST_TIMEOUT_MS = 15_000;
 const MAX_ATTEMPTS = 3;
@@ -71,6 +73,33 @@ async function main() {
 
   const html = await homepage.text();
   record("homepage", homepage.ok, `HTTP ${homepage.status}`);
+  const catalog = (name) =>
+    html.match(
+      new RegExp(`<meta name="catalog-${name}" content="([^"]*)"`),
+    )?.[1];
+  const checkedAt = catalog("checked-at");
+  const age = Date.now() - Date.parse(checkedAt ?? "");
+  record(
+    "catalog-freshness",
+    Number.isFinite(age) &&
+      age >= 0 &&
+      age <= offerPolicy.freshnessHours * 3_600_000,
+    checkedAt ?? "missing official-link check timestamp",
+  );
+  const itemCount = Number(catalog("items"));
+  const searchCount = Number(catalog("search-links"));
+  const officialCount = Number(catalog("official-links"));
+  record(
+    "catalog-actions",
+    Number.isInteger(itemCount) &&
+      itemCount > 0 &&
+      Number.isInteger(searchCount) &&
+      searchCount >= 0 &&
+      Number.isInteger(officialCount) &&
+      officialCount >= 0 &&
+      searchCount + officialCount === itemCount,
+    `${officialCount} official + ${searchCount} search / ${itemCount} items`,
+  );
   record(
     "react-root",
     html.includes('<div id="root"></div>'),

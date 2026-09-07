@@ -39,11 +39,6 @@ for (const item of items) {
   }
 }
 
-const env = {
-  naverShoppingApiReady: Boolean(
-    process.env.NAVER_CLIENT_ID && process.env.NAVER_CLIENT_SECRET,
-  ),
-};
 const verifiedOffers = items.flatMap((item) => item.purchaseOffers ?? []);
 const candidateOffers = items.flatMap((item) => item.candidateOffers ?? []);
 const rejectedOffers = items.flatMap((item) => item.rejectedOffers ?? []);
@@ -62,8 +57,10 @@ if (shortLinks.length > 0)
 if (untrustedLinks.length > 0) {
   failures.push(`${untrustedLinks.length} untrusted partner links remain`);
 }
-if (requireApi && !env.naverShoppingApiReady) {
-  failures.push("Naver Shopping API credentials are not configured");
+if (requireApi) {
+  failures.push(
+    "Naver Shopping Search API ended on 2026-07-31. Automatic price collection is unavailable; use reviewed manual candidates.",
+  );
 }
 
 const summary = {
@@ -82,18 +79,16 @@ const summary = {
   ),
   shortLinks: shortLinks.length,
   untrustedLinks: untrustedLinks.length,
-  env,
+  priceCollection: "manual",
   strict,
   ready: failures.length === 0,
   nextAction:
-    verifiedOffers.length === staleVerifiedOffers.length
-      ? "Refresh official price sources. The UI will treat all current prices as old candidates."
-      : "Keep the scheduled refresh running and review rejected candidates.",
+    "Use product search for current prices; import prices only after manual product, stock and shipping verification.",
 };
 
 console.log(JSON.stringify(summary, null, 2));
 
-if (strict && failures.length > 0) {
+if ((strict || requireApi) && failures.length > 0) {
   console.error(failures.join("\n"));
   process.exit(1);
 }

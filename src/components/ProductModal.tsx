@@ -276,31 +276,24 @@ export function ProductModal({
             ))}
           </div>
 
-          {purchaseUrl ? (
-            <a
-              className="best-offer-panel"
-              href={purchaseUrl}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-            >
-              <ShoppingBag size={19} aria-hidden="true" />
+          <a
+            className="best-offer-panel"
+            href={purchaseUrl}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+          >
+            <ShoppingBag size={19} aria-hidden="true" />
+            <span>
+              <strong>{purchaseLabel}</strong>
               <span>
-                <strong>{purchaseLabel}</strong>
-                <span>
-                  {linkHost(purchaseUrl)} · {purchaseLinkStatusLabel(item)}
-                </span>
+                {linkHost(purchaseUrl)} · {purchaseLinkStatusLabel(item)}
               </span>
-              <ExternalLink size={17} aria-hidden="true" />
-            </a>
-          ) : (
-            <div className="best-offer-panel disabled" role="status">
-              <ShoppingBag size={19} aria-hidden="true" />
-              <span>
-                <strong>현재 판매 링크 확인 중</strong>
-                <span>존재가 확인된 페이지가 없어 링크를 숨겼습니다.</span>
-              </span>
-            </div>
-          )}
+            </span>
+            <ExternalLink size={17} aria-hidden="true" />
+          </a>
+          <p className="section-help">
+            검색어: {item.searchQuery} · 모델·용량·구성은 판매처에서 확인하세요.
+          </p>
 
           <div className="modal-price-panel">
             <p className="modal-price">
@@ -421,29 +414,19 @@ export function ProductModal({
           </p>
         </div>
 
-        {purchaseUrl ? (
-          <a
-            className="modal-mobile-cta"
-            href={purchaseUrl}
-            target="_blank"
-            rel="noopener noreferrer sponsored"
-          >
-            <ShoppingBag size={18} aria-hidden="true" />
-            <span>
-              <strong>{purchaseLabel}</strong>
-              <small>{linkHost(purchaseUrl)}</small>
-            </span>
-            <ExternalLink size={16} aria-hidden="true" />
-          </a>
-        ) : (
-          <div className="modal-mobile-cta disabled" role="status">
-            <ShoppingBag size={18} aria-hidden="true" />
-            <span>
-              <strong>판매 링크 확인 중</strong>
-              <small>검증된 페이지가 없습니다</small>
-            </span>
-          </div>
-        )}
+        <a
+          className="modal-mobile-cta"
+          href={purchaseUrl}
+          target="_blank"
+          rel="noopener noreferrer sponsored"
+        >
+          <ShoppingBag size={18} aria-hidden="true" />
+          <span>
+            <strong>{purchaseLabel}</strong>
+            <small>{linkHost(purchaseUrl)}</small>
+          </span>
+          <ExternalLink size={16} aria-hidden="true" />
+        </a>
       </section>
     </div>
   );

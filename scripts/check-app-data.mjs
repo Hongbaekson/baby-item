@@ -13,6 +13,9 @@ import {
 
 const APP_DATA_PATH = path.join("src", "data", "items.json");
 const data = JSON.parse(readFileSync(APP_DATA_PATH, "utf8"));
+const searchQueries = JSON.parse(
+  readFileSync("config/product-search-queries.json", "utf8"),
+);
 const items = data.items ?? [];
 const failures = [];
 const warnings = [];
@@ -102,6 +105,12 @@ for (const item of items) {
   ids.add(item.id);
 
   if (!item.title?.trim()) fail(`missing title: ${item.id}`);
+  if (
+    !item.searchQuery?.trim() ||
+    item.searchQuery !==
+      (searchQueries[item.id] ?? item.title.replace(/\s+/g, " ").trim())
+  )
+    fail(`invalid product search query: ${item.id}`);
   if (!Array.isArray(item.categories) || item.categories.length === 0) {
     fail(`missing categories: ${item.title}`);
   }
@@ -132,7 +141,7 @@ for (const item of items) {
     fail(`bad or untrusted image path: ${item.title} -> ${item.imagePath}`);
   }
 
-  if (item.purchaseLink?.status === "verified") {
+  if (["verified", "search"].includes(item.purchaseLink?.status)) {
     if (
       !item.partnerLink ||
       item.purchaseLink.url !== item.partnerLink ||

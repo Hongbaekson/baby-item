@@ -50,6 +50,33 @@ export function displayTitle(item: Item) {
   return SHORT_TITLES.get(item.title) ?? item.title.replace(/\s+/g, " ").trim();
 }
 
+export function productSearchUrl(item: Item) {
+  const url = new URL("https://search.shopping.naver.com/search/all");
+  url.searchParams.set("query", item.searchQuery);
+  return url.toString();
+}
+
+export function matchesProductQuery(item: Item, query: string) {
+  const normalize = (value: string) =>
+    value
+      .normalize("NFKC")
+      .toLocaleLowerCase("ko-KR")
+      .replace(/[^\p{L}\p{N}]/gu, "");
+  const text = normalize(
+    [
+      item.title,
+      item.searchQuery,
+      displayTitle(item),
+      item.memo,
+      ...item.categories,
+    ].join(" "),
+  );
+  return query
+    .trim()
+    .split(/\s+/)
+    .every((word) => text.includes(normalize(word)));
+}
+
 export function productSummary(item: Item) {
   return item.memo.replace(/->/g, "").replace(/\s+/g, " ").trim();
 }

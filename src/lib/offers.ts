@@ -1,5 +1,6 @@
 import offerPolicy from "../../config/offer-policy.json";
 import type { Item, Offer, QualityStatus } from "../types";
+import { productSearchUrl } from "./products";
 
 const FRESHNESS_MS = offerPolicy.freshnessHours * 60 * 60 * 1000;
 const PURCHASE_LINK_FRESHNESS_MS =
@@ -154,6 +155,7 @@ export function hasCurrentPurchaseLink(item: Item, now = Date.now()) {
   const checkedAt = Date.parse(String(item.purchaseLink?.checkedAt ?? ""));
   return Boolean(
     item.purchaseLink?.status === "verified" &&
+    item.purchaseLink.kind === "official" &&
     item.purchaseLink.url &&
     Number.isFinite(checkedAt) &&
     Math.max(0, now - checkedAt) <= PURCHASE_LINK_FRESHNESS_MS,
@@ -161,23 +163,22 @@ export function hasCurrentPurchaseLink(item: Item, now = Date.now()) {
 }
 
 export function primaryPurchaseUrl(item: Item) {
-  return hasCurrentPurchaseLink(item) ? item.purchaseLink.url : null;
+  return (
+    (hasCurrentPurchaseLink(item) && item.purchaseLink.url) ||
+    productSearchUrl(item)
+  );
 }
 
 export function primaryActionLabel(item: Item) {
-  if (!hasCurrentPurchaseLink(item)) return "검증된 판매처 없음";
-  return item.purchaseLink.kind === "naver_search"
-    ? "네이버에서 판매 상품 찾기"
-    : "공식 판매처 보기";
+  if (!hasCurrentPurchaseLink(item)) return "네이버에서 상품 검색";
+  return "공식 판매처 보기";
 }
 
 export function purchaseLinkStatusLabel(item: Item) {
   if (!hasCurrentPurchaseLink(item)) {
-    return "현재 확인된 판매 페이지가 없어 링크를 숨겼습니다.";
+    return "상품명으로 검색 · 가격·재고는 판매처 확인";
   }
-  return item.purchaseLink.kind === "naver_search"
-    ? `${formatCheckedDate(item.purchaseLink.checkedAt)} 네이버 판매 결과 확인`
-    : `${formatCheckedDate(item.purchaseLink.checkedAt)} 공식 판매 페이지 확인`;
+  return `${formatCheckedDate(item.purchaseLink.checkedAt)} 공식 판매 페이지 확인`;
 }
 
 export function productImageUrl(item: Item) {

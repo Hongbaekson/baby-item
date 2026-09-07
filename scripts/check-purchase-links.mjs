@@ -41,9 +41,11 @@ function validateNaverSearch(item, url) {
   }
 
   const query = parsed.searchParams.get("query")?.replace(/\s+/g, " ").trim();
-  const title = item.title.replace(/\s+/g, " ").trim();
+  const title = item.searchQuery;
   if (!query || query !== title) {
-    fail(`Naver search query must equal the item title: ${item.title}`);
+    fail(
+      `Naver search query must equal the reviewed search query: ${item.title}`,
+    );
   }
 }
 
@@ -88,10 +90,25 @@ for (const item of data.items ?? []) {
       else warn(message);
     }
 
-    if (purchaseLink.kind === "naver_search") {
+    if (purchaseLink.kind !== "official") {
+      fail(`only official pages can be verified purchase links: ${item.title}`);
+    }
+  } else if (purchaseLink.status === "search") {
+    if (!purchaseLink.url || !isTrustedPurchaseUrl(purchaseLink.url)) {
+      fail(`invalid product search link: ${item.title}`);
+    } else {
       validateNaverSearch(item, purchaseLink.url);
-    } else if (purchaseLink.kind !== "official") {
-      fail(`unknown purchase-link kind: ${item.title} -> ${purchaseLink.kind}`);
+    }
+    if (
+      purchaseLink.kind !== "naver_search" ||
+      purchaseLink.checkedAt !== null ||
+      item.partnerLink !== purchaseLink.url ||
+      item.partnerLinks.length !== 1 ||
+      item.partnerLinks[0]?.url !== purchaseLink.url
+    ) {
+      fail(
+        `search link must be distinct from verified sales evidence: ${item.title}`,
+      );
     }
   } else if (purchaseLink.status === "unavailable") {
     if (
@@ -113,8 +130,7 @@ const summary = {
   verified: data.items.filter(
     (item) => item.purchaseLink?.status === "verified",
   ).length,
-  hidden: data.items.filter((item) => item.purchaseLink?.status !== "verified")
-    .length,
+  hidden: data.items.filter((item) => !item.purchaseLink?.url).length,
   naverSearch: data.items.filter(
     (item) => item.purchaseLink?.kind === "naver_search",
   ).length,

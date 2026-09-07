@@ -47,8 +47,8 @@
         "count": 6
       }
     ],
-    "readyItems": 17,
-    "usableWithWarningsItems": 16,
+    "readyItems": 1,
+    "usableWithWarningsItems": 32,
     "needsReviewItems": 0
   },
   "items": [
@@ -84,11 +84,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "32eb4abb-08ed-80f4-a319-f79a86a68b1a",
@@ -264,12 +270,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
         "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%90%EB%9E%91%ED%95%98%EB%8B%88+%EB%B0%B1%EC%83%89%EC%86%8C%EC%9D%8C%EA%B8%B0",
-        "checkedAt": "2026-07-30T18:49:13.404Z",
-        "source": "naver-shopping-search-api"
-      }
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "말랑하니 백색소음기"
     },
     {
       "id": "item-7995e62fc2",
@@ -303,11 +310,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "32eb4abb-08ed-80d5-9011-f4eab770f1d2",
@@ -397,12 +410,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
         "url": "https://search.shopping.naver.com/search/all?query=%EB%B3%B4%EB%A5%B4%EB%A5%B4+%EB%B6%84%EC%9C%A0%ED%8F%AC%ED%8A%B8",
-        "checkedAt": "2026-07-30T18:49:13.784Z",
-        "source": "naver-shopping-search-api"
-      }
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "보르르 분유포트"
     },
     {
       "id": "item-35daf7dc3f",
@@ -436,11 +450,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "32eb4abb-08ed-80d6-9e4f-e1f079a14bc2",
@@ -531,12 +551,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
         "url": "https://search.shopping.naver.com/search/all?query=%EC%9C%A0%ED%8C%A1+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+2+%EC%A0%96%EB%B3%91+%EC%86%8C%EB%8F%85%EA%B8%B0",
-        "checkedAt": "2026-07-30T18:49:14.162Z",
-        "source": "naver-shopping-search-api"
-      }
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "유팡 시그니처 2 젖병 소독기"
     },
     {
       "id": "item-b74f1aa7c3",
@@ -545,8 +566,14 @@
         "👶300일간 매일 사용한 육아템 정리"
       ],
       "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
-      "partnerLink": "",
-      "partnerLinks": [],
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%ED%97%A4%EC%9D%B4%ED%99%88+%ED%94%84%EB%A1%9C+%ED%99%88%EC%BA%A0",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%ED%97%A4%EC%9D%B4%ED%99%88+%ED%94%84%EB%A1%9C+%ED%99%88%EC%BA%A0",
+          "category": "👶300일간 매일 사용한 육아템 정리",
+          "sourceItemId": "purchase-policy:item-b74f1aa7c3"
+        }
+      ],
       "price": 72900,
       "priceText": "72900",
       "displayPrice": "구매처에서 최신가 확인",
@@ -571,7 +598,7 @@
           {
             "code": "no_verified_purchase_link",
             "severity": "warning",
-            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -766,12 +793,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "unavailable",
-        "kind": "none",
-        "url": null,
+        "status": "search",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%ED%97%A4%EC%9D%B4%ED%99%88+%ED%94%84%EB%A1%9C+%ED%99%88%EC%BA%A0",
         "checkedAt": null,
-        "source": "no-current-non-coupang-evidence"
-      }
+        "source": "product-search-query"
+      },
+      "searchQuery": "헤이홈 프로 홈캠"
     },
     {
       "id": "item-c31a58fcb7",
@@ -804,11 +832,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "sleep",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "248b4abb-08ed-80e9-94a4-d61b7c6cc61c"
@@ -987,12 +1021,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
         "url": "https://search.shopping.naver.com/search/all?query=%EC%95%88%EC%A0%84%ED%97%AC%ED%8D%BC+%ED%99%88%EC%BA%A0+%EA%B1%B0%EC%B9%98%EB%8C%80",
-        "checkedAt": "2026-07-30T18:49:14.945Z",
-        "source": "naver-shopping-search-api"
-      }
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "안전헬퍼 홈캠 거치대"
     },
     {
       "id": "item-c095ae487b",
@@ -1025,11 +1060,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "diaper",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "248b4abb-08ed-8083-8b05-f318ca827206"
@@ -1135,12 +1176,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
         "url": "https://search.shopping.naver.com/search/all?query=%EB%A1%A4%EB%B2%A0%EC%9D%B4%EB%B9%84+%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
-        "checkedAt": "2026-07-30T18:49:15.325Z",
-        "source": "naver-shopping-search-api"
-      }
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "롤베이비 방수패드"
     },
     {
       "id": "item-194c1a1120",
@@ -1149,10 +1191,10 @@
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%94%94%EC%95%84+%EC%A0%96%EB%B3%91+%EC%9C%A0%EC%95%84+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5%2C+1%EA%B0%9C%2C+500ml",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%94%94%EC%95%84+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5+500ml+1%EA%B0%9C",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%94%94%EC%95%84+%EC%A0%96%EB%B3%91+%EC%9C%A0%EC%95%84+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5%2C+1%EA%B0%9C%2C+500ml",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%94%94%EC%95%84+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5+500ml+1%EA%B0%9C",
           "category": "🍼젖병 열탕 소독",
           "sourceItemId": "purchase-policy:item-194c1a1120"
         }
@@ -1175,13 +1217,18 @@
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 1,
+        "warningCount": 2,
         "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
             "severity": "warning",
             "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          },
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -1313,12 +1360,13 @@
         "syncedAt": "2026-07-01T04:53:44.072Z"
       },
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%94%94%EC%95%84+%EC%A0%96%EB%B3%91+%EC%9C%A0%EC%95%84+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5%2C+1%EA%B0%9C%2C+500ml",
-        "checkedAt": "2026-07-30T18:49:15.751Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%94%94%EC%95%84+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5+500ml+1%EA%B0%9C",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "마더케이 디아 주방세제 무향 500ml 1개"
     },
     {
       "id": "item-9a9c893193",
@@ -1327,8 +1375,14 @@
         "💤수면 아이템"
       ],
       "primaryCategory": "💤수면 아이템",
-      "partnerLink": "",
-      "partnerLinks": [],
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%AE%A4%EB%9D%BC+%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%AE%A4%EB%9D%BC+%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
+          "category": "💤수면 아이템",
+          "sourceItemId": "purchase-policy:item-9a9c893193"
+        }
+      ],
       "price": 42000,
       "priceText": "42000",
       "displayPrice": "구매처에서 최신가 확인",
@@ -1353,7 +1407,7 @@
           {
             "code": "no_verified_purchase_link",
             "severity": "warning",
-            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -1585,12 +1639,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "unavailable",
-        "kind": "none",
-        "url": null,
+        "status": "search",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%AE%A4%EB%9D%BC+%EB%B0%A9%EC%88%98%ED%8C%A8%EB%93%9C",
         "checkedAt": null,
-        "source": "no-current-non-coupang-evidence"
-      }
+        "source": "product-search-query"
+      },
+      "searchQuery": "뮤라 방수패드"
     },
     {
       "id": "item-073cb29318",
@@ -1599,10 +1654,10 @@
         "💩신생아 배앓이 꿀템"
       ],
       "primaryCategory": "💩신생아 배앓이 꿀템",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%B0%94%EC%9D%B4%EC%98%A4+%EA%B0%80%EC%9D%B4%EC%95%84+%EC%9C%A0%EC%82%B0%EA%B7%A0",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%B0%94%EC%9D%B4%EC%98%A4%EA%B0%80%EC%9D%B4%EC%95%84+%EC%9C%A0%EC%82%B0%EA%B7%A0",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%EB%B0%94%EC%9D%B4%EC%98%A4+%EA%B0%80%EC%9D%B4%EC%95%84+%EC%9C%A0%EC%82%B0%EA%B7%A0",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%B0%94%EC%9D%B4%EC%98%A4%EA%B0%80%EC%9D%B4%EC%95%84+%EC%9C%A0%EC%82%B0%EA%B7%A0",
           "category": "💩신생아 배앓이 꿀템",
           "sourceItemId": "purchase-policy:item-073cb29318"
         }
@@ -1625,13 +1680,18 @@
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 1,
+        "warningCount": 2,
         "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
             "severity": "warning",
             "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          },
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -1770,12 +1830,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%EB%B0%94%EC%9D%B4%EC%98%A4+%EA%B0%80%EC%9D%B4%EC%95%84+%EC%9C%A0%EC%82%B0%EA%B7%A0",
-        "checkedAt": "2026-07-30T18:49:16.531Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%B0%94%EC%9D%B4%EC%98%A4%EA%B0%80%EC%9D%B4%EC%95%84+%EC%9C%A0%EC%82%B0%EA%B7%A0",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "바이오가이아 유산균"
     },
     {
       "id": "item-b6cc51720e",
@@ -1877,9 +1938,10 @@
         "status": "verified",
         "kind": "official",
         "url": "https://www.i-angel.co.kr/product/%EB%8B%A5%ED%84%B0%EB%8B%A4%EC%9D%B4%EC%96%BC-%ED%8F%B4%EB%93%9C%EC%97%90%EC%96%B4-%EC%98%AC%EC%9D%B8%EC%9B%90-%ED%9E%99%EC%8B%9C%ED%8A%B8-%EC%95%84%EA%B8%B0%EB%9D%A0/",
-        "checkedAt": "2026-07-30T18:49:30.716Z",
+        "checkedAt": "2026-09-07T23:39:31.475Z",
         "source": "live-http"
-      }
+      },
+      "searchQuery": "아이엔젤 닥터다이얼 폴드에어 올인원 힙시트 아기띠"
     },
     {
       "id": "item-4f18824aa0",
@@ -1914,13 +1976,18 @@
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 1,
+        "warningCount": 2,
         "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
             "severity": "warning",
             "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          },
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -2058,12 +2125,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
         "url": "https://search.shopping.naver.com/search/all?query=%EC%95%84%EB%82%98%ED%8C%8C+%EC%86%90%EB%AA%A9%EB%B3%B4%ED%98%B8%EB%8C%80",
-        "checkedAt": "2026-07-30T18:49:17.320Z",
-        "source": "naver-shopping-search-api"
-      }
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "아나파 손목보호대"
     },
     {
       "id": "item-8e7ce75a58",
@@ -2072,8 +2140,14 @@
         "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)"
       ],
       "primaryCategory": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
-      "partnerLink": "",
-      "partnerLinks": [],
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%98%AC%ED%88%AC%EA%B2%8C%EB%8D%94%EB%82%98%EC%9A%B0+%ED%97%88%EB%A6%AC%EB%B3%B4%ED%98%B8%EB%8C%80",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%98%AC%ED%88%AC%EA%B2%8C%EB%8D%94%EB%82%98%EC%9A%B0+%ED%97%88%EB%A6%AC%EB%B3%B4%ED%98%B8%EB%8C%80",
+          "category": "🧑‍🍼손목&허리보호대(양육자를 위한 아이템)",
+          "sourceItemId": "purchase-policy:item-8e7ce75a58"
+        }
+      ],
       "price": null,
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
@@ -2103,7 +2177,7 @@
           {
             "code": "no_verified_purchase_link",
             "severity": "warning",
-            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -2284,12 +2358,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "unavailable",
-        "kind": "none",
-        "url": null,
+        "status": "search",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%98%AC%ED%88%AC%EA%B2%8C%EB%8D%94%EB%82%98%EC%9A%B0+%ED%97%88%EB%A6%AC%EB%B3%B4%ED%98%B8%EB%8C%80",
         "checkedAt": null,
-        "source": "no-current-non-coupang-evidence"
-      }
+        "source": "product-search-query"
+      },
+      "searchQuery": "올투게더나우 허리보호대"
     },
     {
       "id": "item-e9d15fbf7f",
@@ -2510,9 +2585,10 @@
         "status": "verified",
         "kind": "official",
         "url": "https://www.whittlestore.com/views/shop/shopview?pack_content_id=5926",
-        "checkedAt": "2026-07-30T18:49:30.716Z",
+        "checkedAt": "2026-09-07T23:39:31.475Z",
         "source": "live-http"
-      }
+      },
+      "searchQuery": "위틀스토어 바람개비 아기체육관"
     },
     {
       "id": "item-f8e90a98ec",
@@ -2521,8 +2597,14 @@
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "",
-      "partnerLinks": [],
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%A0%96%EB%B3%91+%EC%86%8C%EB%8F%85+%EB%83%84%EB%B9%84",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%A0%96%EB%B3%91+%EC%86%8C%EB%8F%85+%EB%83%84%EB%B9%84",
+          "category": "🍼젖병 열탕 소독",
+          "sourceItemId": "purchase-policy:item-f8e90a98ec"
+        }
+      ],
       "price": null,
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
@@ -2557,7 +2639,7 @@
           {
             "code": "no_verified_purchase_link",
             "severity": "warning",
-            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -2709,12 +2791,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "unavailable",
-        "kind": "none",
-        "url": null,
+        "status": "search",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%A0%96%EB%B3%91+%EC%86%8C%EB%8F%85+%EB%83%84%EB%B9%84",
         "checkedAt": null,
-        "source": "no-current-non-coupang-evidence"
-      }
+        "source": "product-search-query"
+      },
+      "searchQuery": "젖병 소독 냄비"
     },
     {
       "id": "item-30c64e909c",
@@ -2749,13 +2832,18 @@
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 1,
+        "warningCount": 2,
         "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
             "severity": "warning",
             "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          },
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -2843,12 +2931,13 @@
         "syncedAt": "2026-07-01T04:53:48.362Z"
       },
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
         "url": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EB%A9%A7+%EC%8A%A4%ED%85%8C%EC%9D%B8%EB%A0%88%EC%8A%A4+%EC%82%AC%EA%B0%81+%EC%84%A4%EA%B1%B0%EC%A7%80%ED%86%B5+10L",
-        "checkedAt": "2026-07-30T18:49:19.007Z",
-        "source": "naver-shopping-search-api"
-      }
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "코멧 스테인레스 사각 설거지통 10L"
     },
     {
       "id": "item-08cfcdce92",
@@ -2857,8 +2946,14 @@
         "💩배변아이템"
       ],
       "primaryCategory": "💩배변아이템",
-      "partnerLink": "",
-      "partnerLinks": [],
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%ED%8F%AC%ED%94%84%EB%B2%A0%EB%B2%A0+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%ED%8F%AC%ED%94%84%EB%B2%A0%EB%B2%A0+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0",
+          "category": "💩배변아이템",
+          "sourceItemId": "purchase-policy:item-08cfcdce92"
+        }
+      ],
       "price": 87200,
       "priceText": "87200",
       "displayPrice": "구매처에서 최신가 확인",
@@ -2883,7 +2978,7 @@
           {
             "code": "no_verified_purchase_link",
             "severity": "warning",
-            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -3040,12 +3135,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "unavailable",
-        "kind": "none",
-        "url": null,
+        "status": "search",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%ED%8F%AC%ED%94%84%EB%B2%A0%EB%B2%A0+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0",
         "checkedAt": null,
-        "source": "no-current-non-coupang-evidence"
-      }
+        "source": "product-search-query"
+      },
+      "searchQuery": "포프베베 아기비데"
     },
     {
       "id": "item-7993572892",
@@ -3054,10 +3150,10 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🧼목욕/세탁 아이템",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EB%B0%94%EC%8A%A4+%EC%95%A4+%EC%83%B4%ED%91%B8%2C+500ml%2C+1%EA%B0%9C",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EB%B0%94%EC%8A%A4+%EC%95%A4+%EC%83%B4%ED%91%B8+500ml+1%EA%B0%9C",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EB%B0%94%EC%8A%A4+%EC%95%A4+%EC%83%B4%ED%91%B8%2C+500ml%2C+1%EA%B0%9C",
+          "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EB%B0%94%EC%8A%A4+%EC%95%A4+%EC%83%B4%ED%91%B8+500ml+1%EA%B0%9C",
           "category": "🧼목욕/세탁 아이템",
           "sourceItemId": "purchase-policy:item-7993572892"
         }
@@ -3080,13 +3176,18 @@
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 1,
+        "warningCount": 2,
         "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
             "severity": "warning",
             "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          },
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -3238,12 +3339,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EB%B0%94%EC%8A%A4+%EC%95%A4+%EC%83%B4%ED%91%B8%2C+500ml%2C+1%EA%B0%9C",
-        "checkedAt": "2026-07-30T18:49:19.780Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EB%B0%94%EC%8A%A4+%EC%95%A4+%EC%83%B4%ED%91%B8+500ml+1%EA%B0%9C",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "FRANKLIIN 바스 앤 샴푸 500ml 1개"
     },
     {
       "id": "item-8360713149",
@@ -3278,13 +3380,18 @@
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 1,
+        "warningCount": 2,
         "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
             "severity": "warning",
             "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          },
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -3498,12 +3605,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
         "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%84%B8%ED%83%81%EC%84%B8%EC%A0%9C+%EB%AC%B4%ED%96%A5",
-        "checkedAt": "2026-07-30T18:49:20.160Z",
-        "source": "naver-shopping-search-api"
-      }
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "FRANKLIIN 세탁세제 무향"
     },
     {
       "id": "item-8309014082",
@@ -3513,10 +3621,10 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C%26%EC%A0%96%EB%B3%91%EC%84%B8%EC%A0%95%EC%A0%9C%2C+500ml%2C+1%EA%B0%9C",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EC%A0%96%EB%B3%91%EC%84%B8%EC%A0%95%EC%A0%9C+500ml+1%EA%B0%9C",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C%26%EC%A0%96%EB%B3%91%EC%84%B8%EC%A0%95%EC%A0%9C%2C+500ml%2C+1%EA%B0%9C",
+          "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EC%A0%96%EB%B3%91%EC%84%B8%EC%A0%95%EC%A0%9C+500ml+1%EA%B0%9C",
           "category": "🍼젖병 열탕 소독",
           "sourceItemId": "purchase-policy:item-8309014082"
         }
@@ -3539,13 +3647,18 @@
       "dataQuality": {
         "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 1,
+        "warningCount": 2,
         "infoCount": 0,
         "issues": [
           {
             "code": "missing_price",
             "severity": "warning",
             "message": "가격이 비어 있어 화면에 기록가 없음으로 표시합니다."
+          },
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -3763,12 +3876,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C%26%EC%A0%96%EB%B3%91%EC%84%B8%EC%A0%95%EC%A0%9C%2C+500ml%2C+1%EA%B0%9C",
-        "checkedAt": "2026-07-30T18:49:20.562Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=FRANKLIIN+%EC%A3%BC%EB%B0%A9%EC%84%B8%EC%A0%9C+%EC%A0%96%EB%B3%91%EC%84%B8%EC%A0%95%EC%A0%9C+500ml+1%EA%B0%9C",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "FRANKLIIN 주방세제 젖병세정제 500ml 1개"
     },
     {
       "id": "item-8631775229",
@@ -3777,8 +3891,14 @@
         "🍼수유아이템"
       ],
       "primaryCategory": "🍼수유아이템",
-      "partnerLink": "",
-      "partnerLinks": [],
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%95%B1%EC%86%94%EB%A3%A8%ED%8A%B8+%EB%AA%85%EC%9E%91+%EB%B6%84%EC%9C%A0+1%EB%8B%A8%EA%B3%84+800g+1%EA%B0%9C",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%95%B1%EC%86%94%EB%A3%A8%ED%8A%B8+%EB%AA%85%EC%9E%91+%EB%B6%84%EC%9C%A0+1%EB%8B%A8%EA%B3%84+800g+1%EA%B0%9C",
+          "category": "🍼수유아이템",
+          "sourceItemId": "purchase-policy:item-8631775229"
+        }
+      ],
       "price": null,
       "priceText": "",
       "displayPrice": "구매처에서 최신가 확인",
@@ -3808,7 +3928,7 @@
           {
             "code": "no_verified_purchase_link",
             "severity": "warning",
-            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -4008,12 +4128,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "unavailable",
-        "kind": "none",
-        "url": null,
+        "status": "search",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%95%B1%EC%86%94%EB%A3%A8%ED%8A%B8+%EB%AA%85%EC%9E%91+%EB%B6%84%EC%9C%A0+1%EB%8B%A8%EA%B3%84+800g+1%EA%B0%9C",
         "checkedAt": null,
-        "source": "no-current-non-coupang-evidence"
-      }
+        "source": "product-search-query"
+      },
+      "searchQuery": "앱솔루트 명작 분유 1단계 800g 1개"
     },
     {
       "id": "item-5833708604",
@@ -4022,10 +4143,10 @@
         "🍼수유아이템"
       ],
       "primaryCategory": "🍼수유아이템",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%28%ED%95%9C%EA%B5%AD%EA%B3%B5%EC%8B%9D%29+%EC%95%95%ED%83%80%EB%B0%80+%ED%94%84%EB%A1%9C%ED%91%B8%ED%8A%B8%EB%9D%BC+%EB%93%80%EC%98%A4%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4+1%EB%8B%A8%EA%B3%84+%EB%B6%84%EC%9C%A0+800g%2C+1%EA%B0%9C",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%95%95%ED%83%80%EB%B0%80+%ED%94%84%EB%A1%9C%ED%91%B8%ED%8A%B8%EB%9D%BC+%EB%93%80%EC%98%A4%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4+1%EB%8B%A8%EA%B3%84+800g+1%EA%B0%9C",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%28%ED%95%9C%EA%B5%AD%EA%B3%B5%EC%8B%9D%29+%EC%95%95%ED%83%80%EB%B0%80+%ED%94%84%EB%A1%9C%ED%91%B8%ED%8A%B8%EB%9D%BC+%EB%93%80%EC%98%A4%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4+1%EB%8B%A8%EA%B3%84+%EB%B6%84%EC%9C%A0+800g%2C+1%EA%B0%9C",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%95%95%ED%83%80%EB%B0%80+%ED%94%84%EB%A1%9C%ED%91%B8%ED%8A%B8%EB%9D%BC+%EB%93%80%EC%98%A4%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4+1%EB%8B%A8%EA%B3%84+800g+1%EA%B0%9C",
           "category": "🍼수유아이템",
           "sourceItemId": "purchase-policy:item-5833708604"
         }
@@ -4046,11 +4167,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "feeding",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "naver-brand-5833708604"
@@ -4186,12 +4313,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%28%ED%95%9C%EA%B5%AD%EA%B3%B5%EC%8B%9D%29+%EC%95%95%ED%83%80%EB%B0%80+%ED%94%84%EB%A1%9C%ED%91%B8%ED%8A%B8%EB%9D%BC+%EB%93%80%EC%98%A4%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4+1%EB%8B%A8%EA%B3%84+%EB%B6%84%EC%9C%A0+800g%2C+1%EA%B0%9C",
-        "checkedAt": "2026-07-30T18:49:21.393Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%95%95%ED%83%80%EB%B0%80+%ED%94%84%EB%A1%9C%ED%91%B8%ED%8A%B8%EB%9D%BC+%EB%93%80%EC%98%A4%EC%96%B4%EB%93%9C%EB%B0%B4%EC%8A%A4+1%EB%8B%A8%EA%B3%84+800g+1%EA%B0%9C",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "압타밀 프로푸트라 듀오어드밴스 1단계 800g 1개"
     },
     {
       "id": "item-11657920227",
@@ -4200,10 +4328,10 @@
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%5B%EC%8A%88%ED%8D%BC%EC%A0%81%EB%A6%BD%5D+%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%A1%B1%ED%95%B8%EB%93%A4+%EB%A6%AC%ED%95%84%ED%98%95+%EC%8A%A4%ED%8E%80%EC%A7%80+%EC%A0%96%EB%B3%91%EC%86%94%26%EC%A0%96%EA%BC%AD%EC%A7%80%EC%86%94%2B%EC%86%8C%EB%8F%85%EC%A7%91%EA%B2%8C+%EC%84%B8%ED%8A%B8+1%EA%B0%9C%EC%9E%85%2C+%ED%81%AC%EB%A6%BC%2F%ED%81%AC%EB%A6%BC",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%A1%B1%ED%95%B8%EB%93%A4+%EB%A6%AC%ED%95%84%ED%98%95+%EC%8A%A4%ED%8E%80%EC%A7%80+%EC%A0%96%EB%B3%91%EC%86%94+%EC%A0%96%EA%BC%AD%EC%A7%80%EC%86%94+%EC%86%8C%EB%8F%85%EC%A7%91%EA%B2%8C+%EC%84%B8%ED%8A%B8+%ED%81%AC%EB%A6%BC",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%5B%EC%8A%88%ED%8D%BC%EC%A0%81%EB%A6%BD%5D+%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%A1%B1%ED%95%B8%EB%93%A4+%EB%A6%AC%ED%95%84%ED%98%95+%EC%8A%A4%ED%8E%80%EC%A7%80+%EC%A0%96%EB%B3%91%EC%86%94%26%EC%A0%96%EA%BC%AD%EC%A7%80%EC%86%94%2B%EC%86%8C%EB%8F%85%EC%A7%91%EA%B2%8C+%EC%84%B8%ED%8A%B8+1%EA%B0%9C%EC%9E%85%2C+%ED%81%AC%EB%A6%BC%2F%ED%81%AC%EB%A6%BC",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%A1%B1%ED%95%B8%EB%93%A4+%EB%A6%AC%ED%95%84%ED%98%95+%EC%8A%A4%ED%8E%80%EC%A7%80+%EC%A0%96%EB%B3%91%EC%86%94+%EC%A0%96%EA%BC%AD%EC%A7%80%EC%86%94+%EC%86%8C%EB%8F%85%EC%A7%91%EA%B2%8C+%EC%84%B8%ED%8A%B8+%ED%81%AC%EB%A6%BC",
           "category": "🍼젖병 열탕 소독",
           "sourceItemId": "purchase-policy:item-11657920227"
         }
@@ -4224,11 +4352,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "sterilize",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "naver-brand-11657920227"
@@ -4263,12 +4397,13 @@
       ],
       "rejectedOffers": [],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%5B%EC%8A%88%ED%8D%BC%EC%A0%81%EB%A6%BD%5D+%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%A1%B1%ED%95%B8%EB%93%A4+%EB%A6%AC%ED%95%84%ED%98%95+%EC%8A%A4%ED%8E%80%EC%A7%80+%EC%A0%96%EB%B3%91%EC%86%94%26%EC%A0%96%EA%BC%AD%EC%A7%80%EC%86%94%2B%EC%86%8C%EB%8F%85%EC%A7%91%EA%B2%8C+%EC%84%B8%ED%8A%B8+1%EA%B0%9C%EC%9E%85%2C+%ED%81%AC%EB%A6%BC%2F%ED%81%AC%EB%A6%BC",
-        "checkedAt": "2026-07-30T18:49:21.774Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%88%EB%8D%94%EC%BC%80%EC%9D%B4+%EB%A1%B1%ED%95%B8%EB%93%A4+%EB%A6%AC%ED%95%84%ED%98%95+%EC%8A%A4%ED%8E%80%EC%A7%80+%EC%A0%96%EB%B3%91%EC%86%94+%EC%A0%96%EA%BC%AD%EC%A7%80%EC%86%94+%EC%86%8C%EB%8F%85%EC%A7%91%EA%B2%8C+%EC%84%B8%ED%8A%B8+%ED%81%AC%EB%A6%BC",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "마더케이 롱핸들 리필형 스펀지 젖병솔 젖꼭지솔 소독집게 세트 크림"
     },
     {
       "id": "item-4252707619",
@@ -4277,10 +4412,10 @@
         "🍼젖병 열탕 소독"
       ],
       "primaryCategory": "🍼젖병 열탕 소독",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%B2%A8%EB%9D%BC%EC%BF%A0%EC%A7%84+%EC%9E%BC%ED%8C%9F+6%EB%A6%AC%ED%84%B0%2B%EC%9C%A0%EB%A6%AC%EB%9A%9C%EA%BB%91+%EC%84%B8%ED%8A%B8+%2F%EC%9D%B8%EB%8D%95%EC%85%98+%EA%B0%80%EB%8A%A5",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%B2%A8%EB%9D%BC%EC%BF%A0%EC%A7%84+%EC%9E%BC%ED%8C%9F+6L+%EC%9C%A0%EB%A6%AC%EB%9A%9C%EA%BB%91+%EC%84%B8%ED%8A%B8",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%EB%B2%A8%EB%9D%BC%EC%BF%A0%EC%A7%84+%EC%9E%BC%ED%8C%9F+6%EB%A6%AC%ED%84%B0%2B%EC%9C%A0%EB%A6%AC%EB%9A%9C%EA%BB%91+%EC%84%B8%ED%8A%B8+%2F%EC%9D%B8%EB%8D%95%EC%85%98+%EA%B0%80%EB%8A%A5",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%B2%A8%EB%9D%BC%EC%BF%A0%EC%A7%84+%EC%9E%BC%ED%8C%9F+6L+%EC%9C%A0%EB%A6%AC%EB%9A%9C%EA%BB%91+%EC%84%B8%ED%8A%B8",
           "category": "🍼젖병 열탕 소독",
           "sourceItemId": "purchase-policy:item-4252707619"
         }
@@ -4301,11 +4436,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "sterilize",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "naver-brand-4252707619"
@@ -4411,12 +4552,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%EB%B2%A8%EB%9D%BC%EC%BF%A0%EC%A7%84+%EC%9E%BC%ED%8C%9F+6%EB%A6%AC%ED%84%B0%2B%EC%9C%A0%EB%A6%AC%EB%9A%9C%EA%BB%91+%EC%84%B8%ED%8A%B8+%2F%EC%9D%B8%EB%8D%95%EC%85%98+%EA%B0%80%EB%8A%A5",
-        "checkedAt": "2026-07-30T18:49:22.164Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%B2%A8%EB%9D%BC%EC%BF%A0%EC%A7%84+%EC%9E%BC%ED%8C%9F+6L+%EC%9C%A0%EB%A6%AC%EB%9A%9C%EA%BB%91+%EC%84%B8%ED%8A%B8",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "벨라쿠진 잼팟 6L 유리뚜껑 세트"
     },
     {
       "id": "item-57429157998",
@@ -4449,11 +4591,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "sleep",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "57429157998"
@@ -4549,12 +4697,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
         "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%90%EB%9E%91%ED%95%98%EB%8B%88+%ED%84%B0%EC%B9%98%ED%98%95+%EB%B0%B1%EB%9D%BC%EC%9D%B4%ED%8A%B8+%EC%98%A8%EC%8A%B5%EB%8F%84%EA%B3%84",
-        "checkedAt": "2026-07-30T18:49:22.596Z",
-        "source": "naver-shopping-search-api"
-      }
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "말랑하니 터치형 백라이트 온습도계"
     },
     {
       "id": "item-9157246424",
@@ -4563,10 +4712,10 @@
         "👶300일간 매일 사용한 육아템 정리"
       ],
       "primaryCategory": "👶300일간 매일 사용한 육아템 정리",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=BRAUN+%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%B2%B4%EC%98%A8%EA%B3%84+%EB%B8%8C%EB%9D%BC%EC%9A%B4+%EA%B7%80%EC%B2%B4%EC%98%A8%EA%B3%84+IRT-6525",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%B8%8C%EB%9D%BC%EC%9A%B4+%EA%B7%80%EC%B2%B4%EC%98%A8%EA%B3%84+IRT-6525",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=BRAUN+%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%B2%B4%EC%98%A8%EA%B3%84+%EB%B8%8C%EB%9D%BC%EC%9A%B4+%EA%B7%80%EC%B2%B4%EC%98%A8%EA%B3%84+IRT-6525",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%B8%8C%EB%9D%BC%EC%9A%B4+%EA%B7%80%EC%B2%B4%EC%98%A8%EA%B3%84+IRT-6525",
           "category": "👶300일간 매일 사용한 육아템 정리",
           "sourceItemId": "purchase-policy:item-9157246424"
         }
@@ -4587,11 +4736,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "top-used",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "9157246424"
@@ -4825,12 +4980,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=BRAUN+%EB%B8%8C%EB%9D%BC%EC%9A%B4%EC%B2%B4%EC%98%A8%EA%B3%84+%EB%B8%8C%EB%9D%BC%EC%9A%B4+%EA%B7%80%EC%B2%B4%EC%98%A8%EA%B3%84+IRT-6525",
-        "checkedAt": "2026-07-30T18:49:22.993Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%B8%8C%EB%9D%BC%EC%9A%B4+%EA%B7%80%EC%B2%B4%EC%98%A8%EA%B3%84+IRT-6525",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "브라운 귀체온계 IRT-6525"
     },
     {
       "id": "item-3962205",
@@ -4839,10 +4995,10 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🧼목욕/세탁 아이템",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%5B%EB%B0%A4%EB%B6%80%EB%B2%A0%EB%B2%A0%5D+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+%EA%B1%B0%EC%A6%88%EC%86%90%EC%88%98%EA%B1%B4_%ED%93%A8%EC%96%B4+10%EC%9E%A5",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%B0%A4%EB%B6%80%EB%B2%A0%EB%B2%A0+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+%EA%B1%B0%EC%A6%88%EC%86%90%EC%88%98%EA%B1%B4+%ED%93%A8%EC%96%B4+10%EC%9E%A5",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%5B%EB%B0%A4%EB%B6%80%EB%B2%A0%EB%B2%A0%5D+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+%EA%B1%B0%EC%A6%88%EC%86%90%EC%88%98%EA%B1%B4_%ED%93%A8%EC%96%B4+10%EC%9E%A5",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%B0%A4%EB%B6%80%EB%B2%A0%EB%B2%A0+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+%EA%B1%B0%EC%A6%88%EC%86%90%EC%88%98%EA%B1%B4+%ED%93%A8%EC%96%B4+10%EC%9E%A5",
           "category": "🧼목욕/세탁 아이템",
           "sourceItemId": "purchase-policy:item-3962205"
         }
@@ -4863,11 +5019,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "default",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "3962205"
@@ -4992,12 +5154,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%5B%EB%B0%A4%EB%B6%80%EB%B2%A0%EB%B2%A0%5D+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+%EA%B1%B0%EC%A6%88%EC%86%90%EC%88%98%EA%B1%B4_%ED%93%A8%EC%96%B4+10%EC%9E%A5",
-        "checkedAt": "2026-07-30T18:49:23.387Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%B0%A4%EB%B6%80%EB%B2%A0%EB%B2%A0+%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98+%EA%B1%B0%EC%A6%88%EC%86%90%EC%88%98%EA%B1%B4+%ED%93%A8%EC%96%B4+10%EC%9E%A5",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "밤부베베 시그니처 거즈손수건 퓨어 10장"
     },
     {
       "id": "item-100700814",
@@ -5006,10 +5169,10 @@
         "💩배변아이템"
       ],
       "primaryCategory": "💩배변아이템",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A7%A4%EC%A7%81%EC%BA%94+%ED%9E%88%ED%8F%AC21L+%ED%9C%B4%EC%A7%80%ED%86%B5+%EB%83%84%EC%83%88%EC%B0%A8%EB%8B%A8+%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4+%ED%8E%98%EB%8B%AC+%EB%AC%B4%EC%86%8C%EC%9D%8C",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%A7%A4%EC%A7%81%EC%BA%94+%ED%9E%88%ED%8F%AC+21L+%ED%9C%B4%EC%A7%80%ED%86%B5",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%A4%EC%A7%81%EC%BA%94+%ED%9E%88%ED%8F%AC21L+%ED%9C%B4%EC%A7%80%ED%86%B5+%EB%83%84%EC%83%88%EC%B0%A8%EB%8B%A8+%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4+%ED%8E%98%EB%8B%AC+%EB%AC%B4%EC%86%8C%EC%9D%8C",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%A4%EC%A7%81%EC%BA%94+%ED%9E%88%ED%8F%AC+21L+%ED%9C%B4%EC%A7%80%ED%86%B5",
           "category": "💩배변아이템",
           "sourceItemId": "purchase-policy:item-100700814"
         }
@@ -5030,11 +5193,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "diaper",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "100700814"
@@ -5221,12 +5390,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%A4%EC%A7%81%EC%BA%94+%ED%9E%88%ED%8F%AC21L+%ED%9C%B4%EC%A7%80%ED%86%B5+%EB%83%84%EC%83%88%EC%B0%A8%EB%8B%A8+%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4+%ED%8E%98%EB%8B%AC+%EB%AC%B4%EC%86%8C%EC%9D%8C",
-        "checkedAt": "2026-07-30T18:49:23.769Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%A7%A4%EC%A7%81%EC%BA%94+%ED%9E%88%ED%8F%AC+21L+%ED%9C%B4%EC%A7%80%ED%86%B5",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "매직캔 히포 21L 휴지통"
     },
     {
       "id": "item-13303567063",
@@ -5235,10 +5405,10 @@
         "💩배변아이템"
       ],
       "primaryCategory": "💩배변아이템",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%8C%80%EB%A6%BC%EB%B0%94%EC%8A%A4+%EC%84%B8%EB%A9%B4%EB%8C%80+%EC%84%B8%EB%A9%B4%EA%B8%B0+%ED%95%84%ED%84%B0+%EC%9B%8C%ED%84%B0%ED%83%AD+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0+%EC%96%91%EC%B9%98%EC%88%98%EC%A0%84+%EC%88%98%EB%8F%84%EA%BC%AD%EC%A7%80+%ED%86%A0%EC%88%98%EA%B5%AC+%EA%B5%90%EC%B2%B4",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%8C%80%EB%A6%BC%EB%B0%94%EC%8A%A4+%ED%95%84%ED%84%B0+%EC%9B%8C%ED%84%B0%ED%83%AD+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%EB%8C%80%EB%A6%BC%EB%B0%94%EC%8A%A4+%EC%84%B8%EB%A9%B4%EB%8C%80+%EC%84%B8%EB%A9%B4%EA%B8%B0+%ED%95%84%ED%84%B0+%EC%9B%8C%ED%84%B0%ED%83%AD+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0+%EC%96%91%EC%B9%98%EC%88%98%EC%A0%84+%EC%88%98%EB%8F%84%EA%BC%AD%EC%A7%80+%ED%86%A0%EC%88%98%EA%B5%AC+%EA%B5%90%EC%B2%B4",
+          "url": "https://search.shopping.naver.com/search/all?query=%EB%8C%80%EB%A6%BC%EB%B0%94%EC%8A%A4+%ED%95%84%ED%84%B0+%EC%9B%8C%ED%84%B0%ED%83%AD+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0",
           "category": "💩배변아이템",
           "sourceItemId": "purchase-policy:item-13303567063"
         }
@@ -5259,11 +5429,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "diaper",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "13303567063"
@@ -5476,12 +5652,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%EB%8C%80%EB%A6%BC%EB%B0%94%EC%8A%A4+%EC%84%B8%EB%A9%B4%EB%8C%80+%EC%84%B8%EB%A9%B4%EA%B8%B0+%ED%95%84%ED%84%B0+%EC%9B%8C%ED%84%B0%ED%83%AD+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0+%EC%96%91%EC%B9%98%EC%88%98%EC%A0%84+%EC%88%98%EB%8F%84%EA%BC%AD%EC%A7%80+%ED%86%A0%EC%88%98%EA%B5%AC+%EA%B5%90%EC%B2%B4",
-        "checkedAt": "2026-07-30T18:49:24.202Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EB%8C%80%EB%A6%BC%EB%B0%94%EC%8A%A4+%ED%95%84%ED%84%B0+%EC%9B%8C%ED%84%B0%ED%83%AD+%EC%95%84%EA%B8%B0%EB%B9%84%EB%8D%B0",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "대림바스 필터 워터탭 아기비데"
     },
     {
       "id": "item-10126755890",
@@ -5490,10 +5667,10 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🧼목욕/세탁 아이템",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EB%8B%A8%EB%8F%85%2F%EC%95%84%ED%85%8D%EC%8A%A4+%ED%95%9C%EB%B0%A9%EC%97%90%EC%B0%A9+%EC%A0%91%EC%9D%B4%EC%8B%9D+%EC%A1%B0%EB%A6%BD%EC%97%86%EB%8A%94+%EB%AF%B8%EB%8B%88+%EC%96%91%EB%A7%90+%EB%B9%A8%EB%9E%98%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%86%8D%EC%98%B7%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%9B%90%EB%A3%B8%ED%98%95",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%95%84%ED%85%8D%EC%8A%A4+%ED%95%9C%EB%B0%A9%EC%97%90%EC%B0%A9+%EB%AF%B8%EB%8B%88+%EB%B9%A8%EB%9E%98%EA%B1%B4%EC%A1%B0%EB%8C%80",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%EB%8B%A8%EB%8F%85%2F%EC%95%84%ED%85%8D%EC%8A%A4+%ED%95%9C%EB%B0%A9%EC%97%90%EC%B0%A9+%EC%A0%91%EC%9D%B4%EC%8B%9D+%EC%A1%B0%EB%A6%BD%EC%97%86%EB%8A%94+%EB%AF%B8%EB%8B%88+%EC%96%91%EB%A7%90+%EB%B9%A8%EB%9E%98%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%86%8D%EC%98%B7%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%9B%90%EB%A3%B8%ED%98%95",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%95%84%ED%85%8D%EC%8A%A4+%ED%95%9C%EB%B0%A9%EC%97%90%EC%B0%A9+%EB%AF%B8%EB%8B%88+%EB%B9%A8%EB%9E%98%EA%B1%B4%EC%A1%B0%EB%8C%80",
           "category": "🧼목욕/세탁 아이템",
           "sourceItemId": "purchase-policy:item-10126755890"
         }
@@ -5514,11 +5691,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "default",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "10126755890"
@@ -5553,12 +5736,13 @@
       ],
       "rejectedOffers": [],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%EB%8B%A8%EB%8F%85%2F%EC%95%84%ED%85%8D%EC%8A%A4+%ED%95%9C%EB%B0%A9%EC%97%90%EC%B0%A9+%EC%A0%91%EC%9D%B4%EC%8B%9D+%EC%A1%B0%EB%A6%BD%EC%97%86%EB%8A%94+%EB%AF%B8%EB%8B%88+%EC%96%91%EB%A7%90+%EB%B9%A8%EB%9E%98%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%86%8D%EC%98%B7%EA%B1%B4%EC%A1%B0%EB%8C%80+%EC%9B%90%EB%A3%B8%ED%98%95",
-        "checkedAt": "2026-07-30T18:49:24.620Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%95%84%ED%85%8D%EC%8A%A4+%ED%95%9C%EB%B0%A9%EC%97%90%EC%B0%A9+%EB%AF%B8%EB%8B%88+%EB%B9%A8%EB%9E%98%EA%B1%B4%EC%A1%B0%EB%8C%80",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "아텍스 한방에착 미니 빨래건조대"
     },
     {
       "id": "item-13059044648",
@@ -5567,10 +5751,10 @@
         "😎외출 아이템"
       ],
       "primaryCategory": "😎외출 아이템",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%5B%EC%BB%A8%EB%94%94%EC%85%98A+%EB%8C%80%EC%97%AC%5DNEW+%EC%8B%B8%EC%9D%B4%EB%B2%A1%EC%8A%A4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%8B%B0+i-Size+%EC%8B%A0%EC%83%9D%EC%95%84+%EB%B0%94%EA%B5%AC%EB%8B%88+%EC%B9%B4%EC%8B%9C%ED%8A%B8+7%EC%9D%BC%EB%8C%80%EC%97%AC+%EB%A0%8C%ED%83%88",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%8B%B8%EC%9D%B4%EB%B2%A1%EC%8A%A4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C+T+i-Size+%EC%8B%A0%EC%83%9D%EC%95%84+%EC%B9%B4%EC%8B%9C%ED%8A%B8+7%EC%9D%BC+%EB%8C%80%EC%97%AC",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%5B%EC%BB%A8%EB%94%94%EC%85%98A+%EB%8C%80%EC%97%AC%5DNEW+%EC%8B%B8%EC%9D%B4%EB%B2%A1%EC%8A%A4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%8B%B0+i-Size+%EC%8B%A0%EC%83%9D%EC%95%84+%EB%B0%94%EA%B5%AC%EB%8B%88+%EC%B9%B4%EC%8B%9C%ED%8A%B8+7%EC%9D%BC%EB%8C%80%EC%97%AC+%EB%A0%8C%ED%83%88",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%8B%B8%EC%9D%B4%EB%B2%A1%EC%8A%A4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C+T+i-Size+%EC%8B%A0%EC%83%9D%EC%95%84+%EC%B9%B4%EC%8B%9C%ED%8A%B8+7%EC%9D%BC+%EB%8C%80%EC%97%AC",
           "category": "😎외출 아이템",
           "sourceItemId": "purchase-policy:item-13059044648"
         }
@@ -5591,11 +5775,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "outing",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "13059044648"
@@ -5667,12 +5857,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%5B%EC%BB%A8%EB%94%94%EC%85%98A+%EB%8C%80%EC%97%AC%5DNEW+%EC%8B%B8%EC%9D%B4%EB%B2%A1%EC%8A%A4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%8B%B0+i-Size+%EC%8B%A0%EC%83%9D%EC%95%84+%EB%B0%94%EA%B5%AC%EB%8B%88+%EC%B9%B4%EC%8B%9C%ED%8A%B8+7%EC%9D%BC%EB%8C%80%EC%97%AC+%EB%A0%8C%ED%83%88",
-        "checkedAt": "2026-07-30T18:49:25.037Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%8B%B8%EC%9D%B4%EB%B2%A1%EC%8A%A4+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C+T+i-Size+%EC%8B%A0%EC%83%9D%EC%95%84+%EC%B9%B4%EC%8B%9C%ED%8A%B8+7%EC%9D%BC+%EB%8C%80%EC%97%AC",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "싸이벡스 클라우드 T i-Size 신생아 카시트 7일 대여"
     },
     {
       "id": "item-4422933574",
@@ -5681,10 +5872,10 @@
         "🧼목욕/세탁 아이템"
       ],
       "primaryCategory": "🧼목욕/세탁 아이템",
-      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EC%BD%94%EB%B2%A0%EB%B2%A0+3%2B1+%EB%B0%A4%EB%B6%80+%EC%95%84%EA%B8%B0%EB%AA%A9%EC%9A%95%ED%83%80%EC%98%AC+360g",
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EC%BD%94%EB%B2%A0%EB%B2%A0+%EB%B0%A4%EB%B6%80+%EC%95%84%EA%B8%B0%EB%AA%A9%EC%9A%95%ED%83%80%EC%98%AC+360g+3%2B1",
       "partnerLinks": [
         {
-          "url": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EC%BD%94%EB%B2%A0%EB%B2%A0+3%2B1+%EB%B0%A4%EB%B6%80+%EC%95%84%EA%B8%B0%EB%AA%A9%EC%9A%95%ED%83%80%EC%98%AC+360g",
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EC%BD%94%EB%B2%A0%EB%B2%A0+%EB%B0%A4%EB%B6%80+%EC%95%84%EA%B8%B0%EB%AA%A9%EC%9A%95%ED%83%80%EC%98%AC+360g+3%2B1",
           "category": "🧼목욕/세탁 아이템",
           "sourceItemId": "purchase-policy:item-4422933574"
         }
@@ -5705,11 +5896,17 @@
       "hasOriginalImage": true,
       "placeholderKey": "default",
       "dataQuality": {
-        "status": "ready",
+        "status": "usable_with_warnings",
         "errorCount": 0,
-        "warningCount": 0,
+        "warningCount": 1,
         "infoCount": 0,
-        "issues": []
+        "issues": [
+          {
+            "code": "no_verified_purchase_link",
+            "severity": "warning",
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
+          }
+        ]
       },
       "sourceItemIds": [
         "4422933574"
@@ -5744,12 +5941,13 @@
       ],
       "rejectedOffers": [],
       "purchaseLink": {
-        "status": "verified",
+        "status": "search",
         "kind": "naver_search",
-        "url": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EC%BD%94%EB%B2%A0%EB%B2%A0+3%2B1+%EB%B0%A4%EB%B6%80+%EC%95%84%EA%B8%B0%EB%AA%A9%EC%9A%95%ED%83%80%EC%98%AC+360g",
-        "checkedAt": "2026-07-30T18:49:25.413Z",
-        "source": "naver-shopping-search-api"
-      }
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%BD%94%EC%BD%94%EB%B2%A0%EB%B2%A0+%EB%B0%A4%EB%B6%80+%EC%95%84%EA%B8%B0%EB%AA%A9%EC%9A%95%ED%83%80%EC%98%AC+360g+3%2B1",
+        "checkedAt": null,
+        "source": "product-search-query"
+      },
+      "searchQuery": "코코베베 밤부 아기목욕타올 360g 3+1"
     },
     {
       "id": "item-2153199934",
@@ -5758,8 +5956,14 @@
         "🎉놀이아이템"
       ],
       "primaryCategory": "🎉놀이아이템",
-      "partnerLink": "",
-      "partnerLinks": [],
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%ED%83%80%EC%9D%B4%EB%8B%88%EB%9F%AC%EB%B8%8C+%EB%A9%94%EB%8F%84%EC%9A%B0+%EB%AA%A8%EB%B9%8C",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%ED%83%80%EC%9D%B4%EB%8B%88%EB%9F%AC%EB%B8%8C+%EB%A9%94%EB%8F%84%EC%9A%B0+%EB%AA%A8%EB%B9%8C",
+          "category": "🎉놀이아이템",
+          "sourceItemId": "purchase-policy:item-2153199934"
+        }
+      ],
       "price": 129000,
       "priceText": "129000",
       "displayPrice": "구매처에서 최신가 확인",
@@ -5784,7 +5988,7 @@
           {
             "code": "no_verified_purchase_link",
             "severity": "warning",
-            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -5996,12 +6200,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "unavailable",
-        "kind": "none",
-        "url": null,
+        "status": "search",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%ED%83%80%EC%9D%B4%EB%8B%88%EB%9F%AC%EB%B8%8C+%EB%A9%94%EB%8F%84%EC%9A%B0+%EB%AA%A8%EB%B9%8C",
         "checkedAt": null,
-        "source": "no-current-non-coupang-evidence"
-      }
+        "source": "product-search-query"
+      },
+      "searchQuery": "타이니러브 메도우 모빌"
     },
     {
       "id": "item-4658630775",
@@ -6010,8 +6215,14 @@
         "😎외출 아이템"
       ],
       "primaryCategory": "😎외출 아이템",
-      "partnerLink": "",
-      "partnerLinks": [],
+      "partnerLink": "https://search.shopping.naver.com/search/all?query=%EC%A1%B0%EC%9D%B4+%EC%95%84%EC%9D%B4%EC%8A%A4%ED%95%80+360+%EC%95%84%EC%9D%B4%EC%82%AC%EC%9D%B4%EC%A6%88+ISOFIX+%EC%B9%B4%EC%8B%9C%ED%8A%B8",
+      "partnerLinks": [
+        {
+          "url": "https://search.shopping.naver.com/search/all?query=%EC%A1%B0%EC%9D%B4+%EC%95%84%EC%9D%B4%EC%8A%A4%ED%95%80+360+%EC%95%84%EC%9D%B4%EC%82%AC%EC%9D%B4%EC%A6%88+ISOFIX+%EC%B9%B4%EC%8B%9C%ED%8A%B8",
+          "category": "😎외출 아이템",
+          "sourceItemId": "purchase-policy:item-4658630775"
+        }
+      ],
       "price": 648000,
       "priceText": "648000",
       "displayPrice": "구매처에서 최신가 확인",
@@ -6036,7 +6247,7 @@
           {
             "code": "no_verified_purchase_link",
             "severity": "warning",
-            "message": "최근 판매 근거를 확인하지 못해 구매 링크를 공개하지 않습니다."
+            "message": "현재 확인된 공식몰 링크가 없어 상품 검색을 제공합니다."
           }
         ]
       },
@@ -6122,12 +6333,13 @@
         }
       ],
       "purchaseLink": {
-        "status": "unavailable",
-        "kind": "none",
-        "url": null,
+        "status": "search",
+        "kind": "naver_search",
+        "url": "https://search.shopping.naver.com/search/all?query=%EC%A1%B0%EC%9D%B4+%EC%95%84%EC%9D%B4%EC%8A%A4%ED%95%80+360+%EC%95%84%EC%9D%B4%EC%82%AC%EC%9D%B4%EC%A6%88+ISOFIX+%EC%B9%B4%EC%8B%9C%ED%8A%B8",
         "checkedAt": null,
-        "source": "no-current-non-coupang-evidence"
-      }
+        "source": "product-search-query"
+      },
+      "searchQuery": "조이 아이스핀 360 아이사이즈 ISOFIX 카시트"
     }
   ],
   "imageSync": {
@@ -6181,11 +6393,12 @@
   },
   "purchaseLinkPolicy": {
     "totalItems": 33,
-    "verifiedPurchaseLinks": 25,
-    "hiddenPurchaseLinks": 8,
-    "naverSearchLinks": 23,
+    "verifiedPurchaseLinks": 2,
+    "hiddenPurchaseLinks": 0,
+    "naverSearchLinks": 31,
     "officialLinks": 2,
     "remainingBlockedPurchaseEntries": 0,
-    "remainingBlockedImages": 0
+    "remainingBlockedImages": 0,
+    "checkedAt": "2026-09-07T23:39:31.475Z"
   }
 }

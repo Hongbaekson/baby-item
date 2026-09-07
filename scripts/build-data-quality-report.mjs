@@ -56,8 +56,8 @@ const report = {
     freshnessHours: appData.offerPolicy?.purchaseLinkFreshnessHours ?? null,
     verified: items.filter((item) => item.purchaseLink?.status === "verified")
       .length,
-    hidden: items.filter((item) => item.purchaseLink?.status !== "verified")
-      .length,
+    checkedAt: appData.purchaseLinkPolicy?.checkedAt ?? null,
+    hidden: items.filter((item) => !item.purchaseLink?.url).length,
     naverSearch: items.filter(
       (item) => item.purchaseLink?.kind === "naver_search",
     ).length,

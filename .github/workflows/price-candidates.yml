@@ -1,4 +1,4 @@
-name: Refresh and publish sale data
+name: Refresh and publish product links
 
 on:
   schedule:
@@ -14,13 +14,9 @@ concurrency:
 
 jobs:
   refresh:
-    name: Collect and validate sale data
+    name: Check and validate product links
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
-      NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-
     steps:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
@@ -31,25 +27,15 @@ jobs:
           node-version: 24
           cache: npm
 
-      - name: Require Naver Shopping secrets
-        run: |
-          if [ -z "${NAVER_CLIENT_ID}" ] || [ -z "${NAVER_CLIENT_SECRET}" ]; then
-            echo "::error::NAVER_CLIENT_ID and NAVER_CLIENT_SECRET repository secrets are required."
-            exit 1
-          fi
-
       - name: Install dependencies
         run: npm ci
-
-      - name: Collect Naver Shopping candidates
-        run: npm run price:collect-naver
 
       - name: Verify official product pages
         run: npm run links:probe-official -- --update-config
 
       - name: Build review proposal
         run: |
-          npm run price:apply-live-offers
+          npm run links:apply-policy
           npm run links:check
           npm run data:report
           npm run data:check
@@ -65,7 +51,6 @@ jobs:
         with:
           name: validated-sale-data-${{ github.run_id }}
           path: |
-            data/price-candidates.naver.json
             data/data-quality-report.json
             data/purchase-link-live-report.json
             config/official-purchase-links.json

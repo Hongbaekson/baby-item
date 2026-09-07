@@ -1,8 +1,8 @@
 # OCI 배포 상태
 
-업데이트: 2026-07-27 (KST)
+업데이트: 2026-09-08 (KST)
 
-> 2026-07-27에 판매 경로 일일 수집·자동 반영·OCI 배포를 활성화하고 전체 경로를 운영 URL에서 재확인했다.
+> 아래 과거 배포 기록의 네이버 API 수집은 2026-07-31 API 종료로 중단됐다. 현재 정책은 공식몰 실응답 점검과 상품 검색이며, 자동 가격 수집은 제공하지 않는다. 원인과 갱신 절차는 `price-sync.md`를 따른다.
 
 ## 배포 정보
 
@@ -12,8 +12,7 @@
 - 인스턴스 표시 이름: `prod-app-01`
 - VM private IP: `10.0.0.44`
 - 배포 경로: `/opt/stacks/euni-baby-items`
-- 최근 자동 데이터 commit: `19b3991`
-- 직전 롤백 commit: `e217edd`
+- 장애 조사 시 서버 commit: `ce8d9df` (2026-07-30 마지막 API 수집)
 - 컨테이너명: `euni-baby-items-web`
 - Edge 컨테이너명: `euni-baby-items-edge`
 - 공개 주소: `https://sonleeeun.site`
@@ -149,6 +148,7 @@ docker logs euni-baby-items-web --tail 100
 ```bash
 ssh oci
 cd /opt/stacks/euni-baby-items
-git pull
-docker compose up -d --build
+git fetch origin main
+git merge --ff-only origin/main
+docker compose up -d --build --wait --wait-timeout 90 --no-deps euni-baby-items
 ```

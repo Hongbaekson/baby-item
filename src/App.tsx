@@ -16,7 +16,7 @@ import { ServiceStatus } from "./components/ServiceStatus";
 import { SiteFooter } from "./components/SiteFooter";
 import { categoryLabel, categoryTone } from "./lib/categories";
 import { data } from "./lib/app-data";
-import { isDailyPick } from "./lib/products";
+import { isDailyPick, matchesProductQuery } from "./lib/products";
 import type { Item, ThemeMode } from "./types";
 
 const THEME_STORAGE_KEY = "euni-baby-items-theme";
@@ -207,7 +207,6 @@ export function App() {
   }, []);
 
   const filteredItems = useMemo(() => {
-    const normalizedQuery = query.trim().toLocaleLowerCase("ko-KR");
     const sourceIndexes = new Map(
       data.items.map((item, index) => [item.id, index]),
     );
@@ -215,12 +214,7 @@ export function App() {
       const matchesCategory =
         activeCategory === ALL_CATEGORY ||
         item.categories.includes(activeCategory);
-      const matchesQuery =
-        !normalizedQuery ||
-        [item.title, item.memo, item.categories.join(" ")]
-          .join(" ")
-          .toLocaleLowerCase("ko-KR")
-          .includes(normalizedQuery);
+      const matchesQuery = matchesProductQuery(item, query);
       return (
         matchesCategory &&
         matchesQuery &&
