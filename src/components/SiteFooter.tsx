@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="footer-brand">
           <strong>이은이 아빠가 준비하는 육아템</strong>
           <span>
-            매일 자동으로 판매 경로를 점검하고 검증된 정보만 반영합니다.
+            공개 목록의 제품 후보를 정리하고 판매 경로를 매일 점검합니다.
           </span>
         </div>
         <nav aria-label="사이트 운영 정보">
@@ -23,8 +23,20 @@ export function SiteFooter() {
           </a>
         </nav>
         <p className="privacy-note">
-          회원가입이나 서버 개인정보 저장 기능은 없습니다. 찜 목록과 화면 테마는
-          현재 브라우저에만 저장됩니다.
+          회원가입이나 서버 개인정보 저장 기능은 없습니다. 찜·준비 목록과 화면
+          테마는 현재 브라우저에 저장됩니다. 공유 주소에는 준비 목록 정보가
+          포함됩니다.
+        </p>
+        <p className="privacy-note">
+          구매 전{" "}
+          <a
+            href="https://www.safetykorea.kr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            제품안전정보센터
+          </a>
+          에서 인증·리콜 정보를 확인할 수 있습니다.
         </p>
         <p className="affiliate-notice">
           일부 구매 링크는 제휴 링크일 수 있으며, 구매 시 운영자에게 수수료가

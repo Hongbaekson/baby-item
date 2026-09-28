@@ -74,12 +74,16 @@ function OfferList({
 export function ProductModal({
   item,
   isFavorite,
+  isInPreparation,
   onClose,
+  onAddToPreparation,
   onToggleFavorite,
 }: {
   item: Item;
   isFavorite: boolean;
+  isInPreparation: boolean;
   onClose: () => void;
+  onAddToPreparation: (item: Item) => void;
   onToggleFavorite: (itemId: string) => void;
 }) {
   const fallbackImage = placeholderFor(item.primaryCategory);
@@ -236,7 +240,7 @@ export function ProductModal({
             {isDailyPick(item) && (
               <span className="recommendation-badge">
                 <Sparkles size={13} aria-hidden="true" />
-                매일 쓰는 추천
+                원본 목록 상위 분류
               </span>
             )}
             <div className="modal-quick-actions">
@@ -268,7 +272,32 @@ export function ProductModal({
           </p>
 
           <h2 id={titleId}>{title}</h2>
-          {summary && <p className="modal-summary">{summary}</p>}
+          <p className="product-provenance">
+            공개 목록에서 가져온 제품 후보입니다. 직접 사용 여부는 확인되지
+            않았습니다.
+          </p>
+          {summary && <p className="modal-summary">검토 메모: {summary}</p>}
+          {item.id === "item-7995e62fc2" && (
+            <p className="product-safety-note">
+              분유용 물의 준비 방법은 아기의 상황에 따라 다릅니다. 분유 제조사
+              설명과 의료진의 안내를 확인하세요.{" "}
+              <a
+                href="https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                CDC 분유 조제 안내
+              </a>
+            </p>
+          )}
+
+          <button
+            type="button"
+            className="preparation-card-button"
+            onClick={() => onAddToPreparation(item)}
+          >
+            {isInPreparation ? "준비 목록에서 보기" : "준비 목록에 추가"}
+          </button>
 
           <div className="category-list expanded" aria-label="포함 카테고리">
             {item.categories.map((category) => (

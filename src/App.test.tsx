@@ -150,12 +150,12 @@ describe("App", () => {
     ).toBeInTheDocument();
     expect(
       within(screen.getByRole("contentinfo")).getByText(
-        /찜 목록과 화면 테마는 현재 브라우저에만 저장/,
+        /찜·준비 목록과 화면 테마는 현재 브라우저에 저장/,
       ),
     ).toBeInTheDocument();
     expect(
       within(screen.getByRole("contentinfo")).getByText(
-        /매일 자동으로 판매 경로를 점검/,
+        /판매 경로를 매일 점검/,
       ),
     ).toBeInTheDocument();
   });
@@ -213,5 +213,43 @@ describe("App", () => {
         name: "말랑하니 백색소음기 찜 해제",
       }),
     ).toBeInTheDocument();
+  });
+
+  it("tracks a need once and separates an unknown estimate from spending", async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const card = screen
+      .getByRole("heading", { name: "롤베이비 방수패드" })
+      .closest("article")!;
+    await user.click(
+      within(card).getByRole("button", {
+        name: "롤베이비 방수패드 준비 목록에 추가",
+      }),
+    );
+    const board = screen.getByRole("region", {
+      name: "필요한 품목부터 정하세요",
+    });
+    expect(within(board).getByText("0/1")).toBeInTheDocument();
+    expect(within(board).getByText("금액 미입력 1품목")).toBeInTheDocument();
+    await user.selectOptions(
+      within(board).getByRole("combobox", { name: "상태" }),
+      "준비 완료",
+    );
+    await user.type(
+      within(board).getByRole("spinbutton", { name: "예상 총비용 (원)" }),
+      "20000",
+    );
+    await user.type(
+      within(board).getByRole("spinbutton", { name: "실제 총지출 (원)" }),
+      "18000",
+    );
+    expect(within(board).getByText("1/1")).toBeInTheDocument();
+    expect(within(board).getByText("예상 비용 20,000원")).toBeInTheDocument();
+    expect(within(board).getByText("실제 지출 18,000원")).toBeInTheDocument();
+    expect(
+      JSON.parse(
+        window.localStorage.getItem("euni-baby-items-preparation-v1")!,
+      ),
+    ).toHaveLength(1);
   });
 });

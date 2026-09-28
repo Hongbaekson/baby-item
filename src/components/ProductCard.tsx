@@ -15,12 +15,16 @@ import type { Item } from "../types";
 export function ProductCard({
   item,
   isFavorite,
+  isInPreparation,
   onSelect,
+  onAddToPreparation,
   onToggleFavorite,
 }: {
   item: Item;
   isFavorite: boolean;
+  isInPreparation: boolean;
   onSelect: (item: Item) => void;
+  onAddToPreparation: (item: Item) => void;
   onToggleFavorite: (itemId: string) => void;
 }) {
   const fallbackImage = placeholderFor(item.primaryCategory);
@@ -69,7 +73,7 @@ export function ProductCard({
           {isDailyPick(item) && (
             <span className="recommendation-badge">
               <Sparkles size={13} aria-hidden="true" />
-              매일 쓰는 추천
+              원본 목록 상위 분류
             </span>
           )}
           <span className="category-badge">
@@ -85,7 +89,16 @@ export function ProductCard({
           <h3>{title}</h3>
         </button>
 
-        {summary && <p className="memo">{summary}</p>}
+        {summary && <p className="memo">검토 메모: {summary}</p>}
+
+        <button
+          type="button"
+          className="preparation-card-button"
+          onClick={() => onAddToPreparation(item)}
+          aria-label={`${title} ${isInPreparation ? "준비 목록에서 보기" : "준비 목록에 추가"}`}
+        >
+          {isInPreparation ? "준비 목록에서 보기" : "준비 목록에 추가"}
+        </button>
 
         <div className="card-price-summary">
           <strong>{item.referencePrice ?? "기록가 없음"}</strong>

@@ -12,15 +12,25 @@ import {
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ProductCard } from "./components/ProductCard";
 import { ProductModal } from "./components/ProductModal";
+import { PreparationBoard } from "./components/PreparationBoard";
 import { ServiceStatus } from "./components/ServiceStatus";
 import { SiteFooter } from "./components/SiteFooter";
 import { categoryLabel, categoryTone } from "./lib/categories";
 import { data } from "./lib/app-data";
 import { isDailyPick, matchesProductQuery } from "./lib/products";
+import {
+  entriesFromHash,
+  needByKey,
+  needForProduct,
+  newEntry,
+  parseEntries,
+  type PreparationEntry,
+} from "./lib/preparation";
 import type { Item, ThemeMode } from "./types";
 
 const THEME_STORAGE_KEY = "euni-baby-items-theme";
 const FAVORITES_STORAGE_KEY = "euni-baby-items-favorites";
+const PREPARATION_STORAGE_KEY = "euni-baby-items-preparation-v1";
 const PAGE_SIZE = 9;
 const ALL_CATEGORY = "전체";
 const validCategories = new Set([
@@ -99,6 +109,17 @@ function getInitialFavorites() {
   }
 }
 
+function getInitialPreparation(): PreparationEntry[] {
+  if (typeof window === "undefined") return [];
+  try {
+    return parseEntries(
+      JSON.parse(window.localStorage.getItem(PREPARATION_STORAGE_KEY) ?? "[]"),
+    );
+  } catch {
+    return [];
+  }
+}
+
 function updateUrl(
   values: {
     query: string;
@@ -144,6 +165,12 @@ export function App() {
     initialSelectedItem,
   );
   const [favoriteIds, setFavoriteIds] = useState(getInitialFavorites);
+  const [preparation, setPreparation] = useState(getInitialPreparation);
+  const [sharedPreparation, setSharedPreparation] = useState(() =>
+    typeof window === "undefined"
+      ? null
+      : entriesFromHash(window.location.hash),
+  );
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [theme, setTheme] = useState<ThemeMode>(getInitialTheme);
   const resultHeadingRef = useRef<HTMLElement>(null);
@@ -175,6 +202,24 @@ export function App() {
       // Favorite persistence is optional.
     }
   }, [favoriteIds]);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(
+        PREPARATION_STORAGE_KEY,
+        JSON.stringify(preparation),
+      );
+    } catch {
+      // The checklist remains usable when browser storage is unavailable.
+    }
+  }, [preparation]);
+
+  useEffect(() => {
+    const onHashChange = () =>
+      setSharedPreparation(entriesFromHash(window.location.hash));
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
 
   useEffect(() => {
     updateUrl(urlValues);
@@ -270,6 +315,39 @@ export function App() {
     });
   }, []);
 
+  function addNeed(needId: string) {
+    const need = needByKey(needId);
+    if (!need) return;
+    setPreparation((current) =>
+      current.some((entry) => entry.id === needId)
+        ? current
+        : [...current, newEntry(need)],
+    );
+  }
+
+  function addProductToPreparation(item: Item) {
+    const need = needForProduct(item.id);
+    if (!need) return;
+    if (sharedPreparation) closeSharedPreparation();
+    setPreparation((current) =>
+      current.some((entry) => entry.id === need.id)
+        ? current.map((entry) =>
+            entry.id === need.id ? { ...entry, productId: item.id } : entry,
+          )
+        : [...current, newEntry(need, item.id)],
+    );
+    document
+      .getElementById("preparation-board")
+      ?.scrollIntoView?.({ behavior: "smooth", block: "start" });
+  }
+
+  function closeSharedPreparation() {
+    const url = currentUrl();
+    url.hash = "";
+    window.history.replaceState(window.history.state, "", url);
+    setSharedPreparation(null);
+  }
+
   function selectCategory(category: string) {
     setActiveCategory(category);
     setVisibleCount(PAGE_SIZE);
@@ -302,7 +380,7 @@ export function App() {
             </span>
             <div>
               <h1>{data.site.name}</h1>
-              <p>아빠가 직접 고르고 정리한 실사용 중심 육아템</p>
+              <p>공개 목록의 제품 후보를 살펴보고 우리 집 준비를 기록하세요</p>
             </div>
           </div>
           <div className="topbar-actions">
@@ -342,8 +420,27 @@ export function App() {
         </header>
 
         <main>
-          <ServiceStatus />
-
+          <PreparationBoard
+            entries={preparation}
+            sharedEntries={sharedPreparation}
+            onChange={setPreparation}
+            onAddNeed={addNeed}
+            onSelectProduct={openModal}
+            onCopyShared={() => {
+              if (sharedPreparation)
+                setPreparation((current) => {
+                  const existing = new Set(current.map((entry) => entry.id));
+                  return [
+                    ...current,
+                    ...sharedPreparation.filter(
+                      (entry) => !existing.has(entry.id),
+                    ),
+                  ];
+                });
+              closeSharedPreparation();
+            }}
+            onCloseShared={closeSharedPreparation}
+          />
           <section className="toolbar" aria-label="제품 검색과 카테고리 필터">
             <label className="search-box">
               <Search size={18} aria-hidden="true" />
@@ -409,6 +506,8 @@ export function App() {
             </div>
           </section>
 
+          <ServiceStatus />
+
           <section
             ref={resultHeadingRef}
             id="product-results"
@@ -435,7 +534,7 @@ export function App() {
                 }}
                 aria-label="제품 정렬"
               >
-                <option value="recommended">추천순</option>
+                <option value="recommended">원본 목록순</option>
                 <option value="name">이름순</option>
                 <option value="reference-price">기록가 낮은순</option>
               </select>
@@ -449,7 +548,11 @@ export function App() {
                 key={item.id}
                 item={item}
                 isFavorite={favoriteIds.has(item.id)}
+                isInPreparation={preparation.some(
+                  (entry) => entry.productId === item.id,
+                )}
                 onSelect={openModal}
+                onAddToPreparation={addProductToPreparation}
                 onToggleFavorite={toggleFavorite}
               />
             ))}
@@ -492,7 +595,14 @@ export function App() {
         <ProductModal
           item={selectedItem}
           isFavorite={favoriteIds.has(selectedItem.id)}
+          isInPreparation={preparation.some(
+            (entry) => entry.productId === selectedItem.id,
+          )}
           onClose={closeModal}
+          onAddToPreparation={(item) => {
+            closeModal();
+            addProductToPreparation(item);
+          }}
           onToggleFavorite={toggleFavorite}
         />
       )}

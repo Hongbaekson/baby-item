@@ -140,7 +140,11 @@ function toAppItem(item, previousItem) {
     candidateOffers: previousItem?.candidateOffers ?? [],
     rejectedOffers: previousItem?.rejectedOffers ?? [],
     offerStatus: previousItem?.offerStatus ?? { ...DEFAULT_OFFER_STATUS },
-    memo: item.memo,
+    // The imported note states one formula mixing temperature for every infant.
+    memo:
+      item.id === "item-7995e62fc2"
+        ? "물을 끓이고 온도를 유지하는 기능을 비교하세요. 분유 조제 방법은 제품 설명서와 의료진 안내를 확인하세요."
+        : item.memo,
     imagePath: syncedImage ?? getImagePath(item),
     hasOriginalImage: Boolean(syncedImage ?? getRemoteImageUrl(item)),
     placeholderKey:

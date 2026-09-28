@@ -83,6 +83,49 @@ test("saves a favorite and filters to the saved list", async ({ page }) => {
   await expect(page.getByRole("button", { name: /내 찜 1/ })).toBeVisible();
 });
 
+test("shares a preparation snapshot across browsers without overwriting the recipient", async ({
+  page,
+  browser,
+  baseURL,
+}) => {
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "롤베이비 방수패드 준비 목록에 추가" })
+    .click();
+  await page.getByRole("button", { name: "현재 목록 공유" }).click();
+  const shareUrl = await page
+    .getByRole("textbox", { name: "공유 주소" })
+    .inputValue();
+  const recipient = await browser.newContext();
+  try {
+    const otherPage = await recipient.newPage();
+    await otherPage.goto(baseURL!);
+    await otherPage
+      .getByRole("button", { name: "말랑하니 백색소음기 준비 목록에 추가" })
+      .click();
+    await otherPage.goto(`${baseURL}/${new URL(shareUrl).hash}`);
+    await expect(
+      otherPage.getByText("공유받은 목록 · 열람 전용"),
+    ).toBeVisible();
+    await expect(
+      otherPage.getByRole("heading", { name: "방수패드", exact: true }),
+    ).toBeVisible();
+    await expect(
+      otherPage.getByRole("heading", { name: "백색소음기", exact: true }),
+    ).toBeHidden();
+    await otherPage.getByRole("button", { name: "내 목록에 추가" }).click();
+    await otherPage.reload();
+    await expect(
+      otherPage.getByRole("heading", { name: "방수패드", exact: true }),
+    ).toBeVisible();
+    await expect(
+      otherPage.getByRole("heading", { name: "백색소음기", exact: true }),
+    ).toBeVisible();
+  } finally {
+    await recipient.close();
+  }
+});
+
 test("shows products in smaller pages", async ({ page }) => {
   await page.goto("/");
   const products = page
@@ -159,6 +202,13 @@ test.describe("mobile layout", () => {
       scrollWidth: element.scrollWidth,
     }));
     expect(sizes.scrollWidth).toBeGreaterThan(sizes.clientWidth);
+    expect(
+      await page.evaluate(
+        () =>
+          document.documentElement.scrollWidth <=
+          document.documentElement.clientWidth,
+      ),
+    ).toBe(true);
 
     const card = page
       .getByRole("region", { name: "제품 목록" })
